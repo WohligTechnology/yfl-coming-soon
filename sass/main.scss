@@ -1,0 +1,305 @@
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+@import "../bower_components/flexslider/flexslider.css";
+@import "../bower_components/font-awesome/css/font-awesome.min.css";
+@import "../bower_components/fancyBox/source/jquery.fancybox.css";
+@import "../bower_components/swiper/dist/css/swiper.min.css";
+@import "../bower_components/smart-app-banner/smart-app-banner.css";
+/* Bootstrap Variables Goes Here */
+$brand-primary: #0d9dff !default;
+$brand-success: #84ce3c !default;
+$brand-warning: #ffec39 !default;
+$brand-danger:  #fc483f !default;
+$brand-info:    #000072 !default;
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+body {
+padding-top: 82px;
+}
+img.loading {
+  text-align: center;
+  opacity: 1;
+  width: 32px !important;
+  height: auto;
+}
+img {
+  opacity: 0;
+  width: 50px;
+  height: 55px;
+  @include transition(all 300ms ease);
+}
+img.doneLoading {
+  opacity: 1;
+}
+nav li:hover .dropdown-menu {
+  display: block;
+}
+a, .btn {
+  cursor: pointer;
+  @include transition(all ease 300ms);
+}
+//bootstrap forms
+.input-lg,
+.input-group-lg > .form-control,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-btn > .btn,
+.btn,
+.form-control {
+  border-radius: 0;
+  @include box-shadow(none);
+}
+.form-control:focus {
+  border-color: $brand-primary;
+  outline: 0;
+  @include box-shadow(none);
+}
+//bootstrap forms
+/* Start writing sass here */
+@import "fancybox-override";
+
+@font-face {
+  font-family: "jurabold";
+  src: url('../fonts/Jura-Bold.ttf');
+}
+@font-face {
+  font-family: "juraregular";
+  src: url('../fonts/Jura-Regular.ttf');
+}
+
+
+
+.navbar{
+  min-height: 82px;
+}
+.become-member{
+  text-align: right;
+  padding: 25px;
+}
+.back-color{
+  background-color: #51b1ac;
+}
+.btn-text{
+  text-transform: uppercase;
+  color: #fff;
+}
+.flexslider{
+  border: none;
+  .flex-control-nav{
+    width: 100%;
+    position: absolute;
+    bottom: -40px;
+    text-align: center;
+    top: 97%;
+    left: 47%;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+  }
+  .flex-direction-nav a{
+    display: none;
+    width: 40px;
+    height: 45px;
+    margin: -20px 0 0;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    overflow: hidden;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .flex-direction-nav .flex-prev .flex-next{
+    display: none;
+  }
+}
+.yfl-relative{
+  position: relative;
+  .main-middle{
+    background-image: url(../img/subscribe_bg.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 29%;
+    z-index: 2;
+    padding-bottom: 20px;
+    .logo{
+        position: relative;
+        // background-image: url(../img/logo.png);
+        text-align: center;
+        margin-top: 20px;
+          img {
+            width: 95px;
+            height: 100px;
+            margin: 0 auto;
+          }
+      }
+      h1{
+        font-size: 22px;
+        margin: 30px 0 0 0;
+        font-family: "jurabold";
+        text-transform: uppercase;
+        // font-weight: bold;
+        }
+        .mid-cont{
+          margin: 0 0 30px 0;
+        }
+        p{
+          font-family: 'juraregular';
+          font-size: 16px;
+          line-height: 30px;
+          padding: 0 44px 0 54px;
+        }
+      .red-text{
+        color: red;
+      }
+      .search{
+        margin: 0 auto;
+        position: relative;
+        width: 62%;
+        margin-bottom: 90px;
+      }
+      .search-input{
+        height: 65px;
+        border: none;
+        font-family: 'jurabold';
+        font-size: 15px;
+      }
+      .go-btn{
+        width: 80px;
+        height: 65px;
+        border: none;
+        background-color: #97d3d3;
+        font-size: 35px;
+        color: #fff;
+        background-image: url(../img/yfl_spritesheet.png);
+        background-position: -339px -31px;
+        background-size: 1000px;
+      }
+    //   .newsletter {
+    //     width: 100%;
+    //     float: left;
+    //     position: relative;
+    //     margin: 22px 0px;
+    //      input {
+    //       background-color: white;
+    //       color: black;
+    //       height: 65px;
+    //       max-width: 300px;
+    //       font-size: 15px;
+    //    }
+    //    .submit{
+    //      font-size: 36px;
+    //      max-width: 57px;
+    //      height: 65px;
+    //      background-color: #97d3d3;
+    //      padding: 5px 0 5px 13px;
+    //      color: #fff;
+    //    }
+    // }
+  }
+
+}
+
+
+
+
+.social-name {
+  position: relative;
+  p {
+    margin: 30px auto 5px auto;
+    font-family: 'jurabold';
+    color: black;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  .border-image {
+    background-image: url(../img/yfl_spritesheet.png);
+    width: 130px;
+    height: 12px;
+    margin: auto;
+    background-size: 1000px;
+    background-position: -432px -59px;
+  }
+
+  .new-widget{
+    padding-top: 25px;
+  }
+}
+
+footer{
+  width: 100%;
+  background-color: #97d3d3;
+  float: left;
+  position: relative;
+  z-index: 100000;
+  margin-top: 50px;
+  p{
+    font-family: 'jurabold';
+    color: black;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  .footer-top-border{
+    margin-top: -10px;
+    background-image: url(../img/footer_bord2.png);
+    width: 100%;
+    height: 10px;
+  }
+  .footer-bottom-border{
+    background-image: url(../img/footer_bord.png);
+    height: 9px;
+    float: left;
+    width: 100%;
+  }
+  .social-icons{
+    float: left;
+    background-color: #000;
+    opacity: 0.7;
+    text-align: center;
+    border-radius: 50%;
+    width: 33px;
+    height: 33px;
+    margin: 5px;
+    cursor: pointer;
+    a{
+      color: #fff;
+    }
+    i{
+      font-size: 20px;
+      line-height: 35px;
+    }
+    img{
+      opacity: 1;
+      width: 55%;
+      height: 75%;
+      margin: 2px 0 0;
+    }
+  }
+  .stay-connected{
+    margin-top: 25px;
+  }
+  .join-us{
+    float: left;
+  }
+  .text{
+    text-align: center;
+    font-family: 'juraregular';
+    font-size: 16px;
+    color: #414042;
+    line-height: 23px;
+    text-transform: none;
+    margin: 20px auto;
+  }
+  .copyright-back{
+    background-color: #fff;
+  }
+  .copyright{
+    // width: 50%;
+    font-family: 'jurabold';
+    float: left;
+    line-height: 40px;
+    font-size: 12px;
+    text-transform: none;
+    margin: 0;
+  }
+}
+@import "mobile";
