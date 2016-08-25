@@ -16,6 +16,62 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     'img/slider_love.jpg'
 
   ];
+
+  setTimeout(function() {
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.7";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+         ! function(d, s, id) {
+             var js, fjs = d.getElementsByTagName(s)[0],
+                 p = /^http:/.test(d.location) ? 'http' : 'https';
+             if (!d.getElementById(id)) {
+                 js = d.createElement(s);
+                 js.id = id;
+                 js.src = p + "://platform.twitter.com/widgets.js";
+                 fjs.parentNode.insertBefore(js, fjs);
+             }
+         }(document, "script", "twitter-wjs");
+     })
+})
+
+.controller('PrivacyCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  //Used to name the .html file
+
+  console.log("Testing Consoles");
+
+  $scope.template = TemplateService.changecontent("privacy-policy");
+  $scope.menutitle = NavigationService.makeactive("Privacy Policy");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
+
+  $scope.mySlides = [
+    'img/slider_yoga.jpg',
+    'img/slider_food.jpg',
+    'img/slider_love.jpg'
+
+  ];
+})
+
+.controller('PartnerWithUsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  //Used to name the .html file
+
+  console.log("Testing Consoles");
+
+  $scope.template = TemplateService.changecontent("partner-with-us");
+  $scope.menutitle = NavigationService.makeactive("Partner with us");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
+
+  $scope.mySlides = [
+    'img/slider_yoga.jpg',
+    'img/slider_food.jpg',
+    'img/slider_love.jpg'
+
+  ];
 })
 
 .controller('headerctrl', function($scope, TemplateService) {

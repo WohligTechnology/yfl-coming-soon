@@ -22,7 +22,17 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
   url: "/",
   templateUrl: "views/template.html",
   controller: 'mCtrl'
-});
+  })
+  .state('privacy-policy', {
+  url: "/privacy-policy",
+  templateUrl: "views/template.html",
+  controller: 'PrivacyCtrl'
+  })
+  .state('partner-with-us', {
+  url: "/partner-with-us",
+  templateUrl: "views/template.html",
+  controller: 'PartnerWithUsCtrl'
+  })
   $urlRouterProvider.otherwise("/");
   $locationProvider.html5Mode(isproduction);
 });

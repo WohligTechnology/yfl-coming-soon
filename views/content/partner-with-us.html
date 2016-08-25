@@ -1,0 +1,306 @@
+<div>
+  <div class="big-yoga">
+    <!-- <img src="img/yoga.jpg"> -->
+  </div>
+</div>
+
+<div class="container main-form">
+  <h3 class="text-center">please enter the details below to reserve the yoga pass</h3>
+<form name="userForm" class="mid-form">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <input type="text" name="name" ng-model="formData.name" class="form-control" placeholder="Name*" required>
+            <div class="error-msg" ng-if="userForm.name.$invalid && userForm.name.$touched">Please Enter Your Full Name</div>
+          </div>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <!-- <label for="email">Email address:</label> -->
+            <input type="text" name="contact" ng-model="formData.name" class="form-control" id="contact" placeholder="Contact" required>
+            <div class="error-msg" ng-if="userForm.contact.$invalid && userForm.contact.$touched">Please Enter Your Contact</div>
+          </div>
+      </div>
+    </div>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <!-- <label for="email">Email address:</label> -->
+              <input type="text" name="phoneNumber" ng-model="formData.name" class="form-control" id="phone" placeholder="Phone" required>
+              <div class="error-msg" ng-if="userForm.phoneNumber.$invalid && userForm.phoneNumber.$touched">Please Enter Your Full Name.</div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <!-- <label for="email">Email address:</label> -->
+              <input type="email" name="emailId" ng-model="formData.name" class="form-control" id="email" placeholder="Email" required>
+              <div class="error-msg" ng-if="userForm.emailId.$invalid && userForm.emailId.$touched">Please Enter Your Email Id</div>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <!-- <label for="email">Email address:</label> -->
+              <input type="text" name="address" ng-model="formData.name" class="form-control" id="address" placeholder="Address" required>
+              <div class="error-msg" ng-if="userForm.address.$invalid && userForm.address.$touched">Please Enter Your Address</div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <!-- <label for="email">Email address:</label> -->
+              <input type="text" name="city" ng-model="formData.name" class="form-control" id="city" placeholder="City" required>
+              <div class="error-msg" ng-if="userForm.city.$invalid && userForm.city.$touched">Please Enter Your City</div>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <input type="text" name="organisation" ng-model="formData.name" class="form-control" id="organisation" placeholder="Name of your organisation" required>
+              <div class="error-msg" ng-if="userForm.organisation.$invalid && userForm.organisation.$touched">Please Enter Your Organisation</div>
+            </div>
+        </div>
+      </div>
+
+       <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <h4>Please select the amenities offered at your studio</h4>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="terms" data-error="Before you wreck yourself" required>
+                Lockers
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="terms" data-error="Before you wreck yourself" required>
+                Showers
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="terms" data-error="Before you wreck yourself" required>
+                Changing Room
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="terms" data-error="Before you wreck yourself" required>
+                Yoga Mats
+              </label>
+            </div>
+            <div class="checkbox">
+              <label class="display-inline">
+                <input type="checkbox" id="terms" data-error="Before you wreck yourself" required>
+                Other :
+              </label>
+              <input type="#" class="form-control textbox-other" id="#" placeholder="">
+            </div>
+          </div>
+        </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <h4>Style of Yoga offered at your studio</h4>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="terms" data-error="Before you wreck yourself" required>
+                Power Yoga
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="terms" data-error="Before you wreck yourself" required>
+                Iyengar Yoga
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="terms" data-error="Before you wreck yourself" required>
+                Ashtanga Yoga
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="terms" data-error="Before you wreck yourself" required>
+                Bikram Yoga
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="terms" data-error="Before you wreck yourself" required>
+                Vinyasa Yoga
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="terms" data-error="Before you wreck yourself" required>
+                Hatha Yoga
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="terms" data-error="Before you wreck yourself" required>
+                Sivananda Yoga
+              </label>
+            </div>
+            <div class="checkbox">
+              <label class="display-inline">
+                <input type="checkbox" id="terms" data-error="Before you wreck yourself" required>
+                Other :
+              </label>
+              <input type="#" class="form-control textbox-other" id="#" placeholder="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <input type="text" name="description" ng-model="formData.name" class="form-control" id="description" placeholder="Give a brief description about the type of yoga taught at your institute." required>
+              <div class="error-msg" ng-if="userForm.description.$invalid && userForm.description.$touched">Please Enter Your Description</div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <input type="text" name="studio" ng-model="formData.name" class="form-control" id="studio" placeholder="Please list the teachers/instructors at your studio" required>
+              <div class="error-msg" ng-if="userForm.studio.$invalid && userForm.studio.$touched">Please Enter Your Studio</div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <h4>Kindly provide the class level.</h4>
+            <div class="radio">
+              <label>
+                <input type="radio" name="underwear" required>
+                Beginner
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="underwear" required>
+                Advanced
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="underwear" required>
+                Open Level
+              </label>
+            </div>
+            <div class="radio">
+              <label class="display-inline">
+                <input type="checkbox" id="terms" data-error="Before you wreck yourself" required>
+                Other :
+              </label>
+              <input type="#" class="form-control textbox-other" id="#" placeholder="">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <h4>Do you have an official website?</h4>
+            <div class="radio">
+              <label>
+                <input type="radio" name="underwear" required>
+                Yes
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="underwear" required>
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <input type="text" name="websiteAddress" ng-model="formData.name" class="form-control" id="websiteaddress" placeholder="Please provide your website address." required>
+              <div class="error-msg" ng-if="userForm.websiteAddress.$invalid && userForm.websiteAddress.$touched">Please provide your website address</div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <input type="text" name="facebookpagelink" ng-model="formData.name" class="form-control" id="facebookpagelink" placeholder="Please provide a link to your Facebook Page." required>
+              <div class="error-msg" ng-if="userForm.facebookpagelink.$invalid && userForm.facebookpagelink.$touched">Please provide a link to your Facebook Page</div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <input type="text" name="instagrampagelink" ng-model="formData.name" class="form-control" id="instagrampagelink" placeholder="Please provide a link to your Instagram account." required>
+              <div class="error-msg" ng-if="userForm.instagrampagelink.$invalid && userForm.instagrampagelink.$touched">Please provide a link to your Instagram account</div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+              <input type="text" name="anyothersocialmedia" ng-model="formData.name" class="form-control" id="othersociallink" placeholder="Are you active on any other social media platforms? (Pinterest, Youtube, Twitter, Google +, etc)" required>
+              <div class="error-msg" ng-if="userForm.anyothersocialmedia.$invalid && userForm.anyothersocialmedia.$touched">Are you active on any other social media platforms? (Pinterest, Youtube, Twitter, Google +, etc)</div>
+            </div>
+          </div>
+        </div>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <input type="text" name="listaddressurbranches" ng-model="formData.name" class="form-control" id="branchlink" placeholder="List the address for your branches" required>
+            <div class="error-msg" ng-if="userForm.listaddressurbranches.$invalid && userForm.listaddressurbranches.$touched">List the address for your branches</div>
+          </div>
+        </div>
+      </div>
+
+          <div class="form-group">
+            <h4>Do you have other branches?</h4>
+            <div class="radio">
+              <label>
+                <input type="radio" name="underwear" required>
+                Yes
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="underwear" required>
+                No
+              </label>
+            </div>
+          </div>
+
+
+
+
+
+
+
+          <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary btn-lg sub-btn">Submit</button>
+          </div>
+
+        </div>
+
+
+
+
+    </form>

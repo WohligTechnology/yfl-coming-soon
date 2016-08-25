@@ -1,7 +1,43 @@
 @media (max-width:$screen-xs-max) {
   .yfl-relative .main-middle {
-    position: static;
-}
+      position: static;
+  }
+  .yfl-relative .main-middle .logo{
+    margin: 0;
+    padding: 30px 0 0 0;
+  }
 }
 @media (max-width:480px) {
+  .main-form{
+    h3{
+      font-size: 16px;
+    }
+  }
+  .yfl-relative .main-middle h1{
+    font-size: 19px;
+  }
+  .yfl-relative .main-middle p {
+    font-family: 'juraregular';
+    font-size: 14px;
+    line-height: 30px;
+    padding: 0;
+}
+footer .social-icons img {
+    opacity: 1;
+    width: 55%;
+    height: 59%;
+    margin: 6px 0 15px;
+  }
+  footer .social-icons {
+    float: none;
+    display: inline-block;
+  }
+  footer .copyright{
+    float: none;
+    font-size: 10px;
+  }
+  .createdby{
+    float: none !important;
+  }
+
 }
