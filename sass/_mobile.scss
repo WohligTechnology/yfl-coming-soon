@@ -27,6 +27,8 @@
 @media (max-width:$screen-xs-max) {
   .yfl-relative .main-middle {
       position: static;
+      @include transform(translateX(0%));
+      width: 100%;
   }
   .yfl-relative .main-middle .logo{
     margin: 0;
@@ -43,7 +45,6 @@
     font-size: 19px;
   }
   .yfl-relative .main-middle p {
-    font-family: 'juraregular';
     font-size: 14px;
     line-height: 30px;
     padding: 0;
