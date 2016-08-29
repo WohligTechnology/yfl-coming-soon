@@ -10,10 +10,10 @@
 /* Start writing sass here */
 @import "fancybox-override";
 /* Bootstrap Variables Goes Here */
-$brand-primary: #51b1ac !default;
+$brand-primary: #67acaa !default;
 $brand-success: #84ce3c !default;
-$brand-warning: #ffec39 !default;
-$brand-danger: #ac1e4f !default;
+$brand-warning: #f6c83c !default;
+$brand-danger: #ee425c !default;
 $brand-info: #000072 !default;
 $magic-radio-size: 20px !default;
 $magic-checkbox-size: 20px !default;
@@ -47,9 +47,27 @@ button {
     font-family: $font-family-sans-serif;
     @include transition(all 300ms ease);
 }
-.strong {
-  font-weight: bold;
+.btn {
+  &.btn-texture {
+    background-color: transparent !important;
+    background-image: url('../img/btn-primary.png');
+    background-size: 100% 100%;
+    border: 0px !important;
+    &.btn-primary {
+      background-image: url('../img/btn-primary.png');
+    }
+    &.btn-danger {
+      background-image: url('../img/btn-danger.png');
+    }
+    &.btn-warning {
+      background-image: url('../img/btn-warning.png');
+    }
+  }
 }
+.strong {
+    font-weight: bold;
+}
+
 h1,
 h2,
 h3,
@@ -278,7 +296,7 @@ a {
         }
 
         .red-text {
-            color: red;
+            color: $brand-danger;
         }
 
         .search {
@@ -366,13 +384,11 @@ footer {
     background-color: #97d3d3;
     float: left;
     position: relative;
-    z-index: 100000;
     margin-top: 50px;
 
     p {
         font-family: $font-family-sans-serif;
         font-weight: 700;
-        color: black;
         font-size: 18px;
         text-transform: uppercase;
     }
@@ -458,7 +474,6 @@ footer {
     background-color: #97d3d3;
     float: left;
     position: relative;
-    z-index: 100000;
     margin-top: 50px;
 
     h1 {
@@ -540,10 +555,12 @@ footer {
         text-align: center;
         font-family: $font-family-sans-serif;
         font-size: 16px;
-        color: #414042;
         line-height: 23px;
         text-transform: none;
         margin: 20px auto;
+        a {
+          color: inherit;
+        }
     }
 
     .copyright-back {
@@ -816,11 +833,13 @@ footer {
     position: absolute;
     left: 50%;
     @include transform(translateX(-50%));
-    background-color: #fc483f;
+    background-color: $brand-danger;
     color: #fff;
     padding: 4px 10px;
     border-radius: 6px;
-    top: -32px;
+    top: -5px;
+    text-transform: uppercase;
+    font-size: 12px;
 
     &:after {
         position: absolute;
@@ -830,7 +849,7 @@ footer {
         height: 0;
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
-        border-top: 5px solid #fc483f;
+        border-top: 5px solid $brand-danger;
         bottom: -5px;
         content: '';
     }
@@ -840,7 +859,7 @@ footer {
     background-color: #fff;
     border-color: #fff;
     margin: 0;
-    box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
 }
 
 .black-overlay {
@@ -892,56 +911,86 @@ footer {
 .relative {
     position: relative;
     border: 1px solid #e8e8e8;
+
     &:hover {
-      border-color: $brand-primary;
-      .caption, .prod_info {
-        opacity: 1;
-      }
+        border-color: $brand-primary;
+
+        .caption,
+        .prod_info {
+            opacity: 1;
+        }
+        .caption {
+            overflow-y: auto;
+        }
     }
+
     .caption {
-      @include display(flex);
-      align-items: center;
-      @include transition(all 300ms ease);
-      opacity: 0;
+        cursor: pointer;
+        @include transition(all 300ms ease);
+        opacity: 0;
+        overflow-y: auto;
         position: absolute;
         left: 0;
         top: 0;
-        height: 100%;
+        bottom: 40px;
         width: 100%;
         overflow: hidden;
-        background-color: rgba(0, 0, 0, 0.45);
+        background-color: rgba(0, 0, 0, 0.55);
         color: white;
-        padding: 15px;
+        padding: 10px;
         text-align: center;
     }
+
     .prod_info {
-      @include transition(all 300ms ease);
-      opacity: 0;
+        @include transition(all 300ms ease);
+        opacity: 0;
         position: absolute;
         width: 100%;
-        bottom: 5px;
+        bottom: 0;
+        height: 40px;
         left: 0;
         text-align: center;
+        background-color: rgba(0, 0, 0, 0.55);
+        padding: 7px 0 0;
+
         a {
-          color: white;
-          font-size: 20px;
-          margin: 0 5px;
-          &:hover {
-            color: $brand-primary;
-            text-decoration: none;
-          }
+            color: white;
+            font-size: 20px;
+            margin: 0 5px;
+
+            &:hover {
+                color: $brand-primary;
+                text-decoration: none;
+            }
         }
     }
 }
+
 .logo-header {
     display: inline-block;
     width: 90px;
+
     img {
-      width: 100%;
-      height: auto;
+        width: 100%;
+        height: auto;
     }
 }
+
 .uppercase {
-  text-transform: uppercase;
+    text-transform: uppercase;
+}
+
+#instafeed {
+    img {
+        opacity: 1;
+    }
+}
+
+.middle-margin {
+    margin: 0 auto;
+}
+
+.margin-bot {
+    margin-bottom: 25px;
 }
 @import "mobile";

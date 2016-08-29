@@ -5,6 +5,8 @@ var jsArray = [
     './bower_components/fancyBox/source/jquery.fancybox.js',
     './bower_components/swiper/dist/js/swiper.js',
     './bower_components/smart-app-banner/smart-app-banner.js',
+    './bower_components/instafeed.js/instafeed.js',
+
     './bower_components/angular/angular.min.js',
     './bower_components/angular-sanitize/angular-sanitize.min.js',
     './bower_components/angular-animate/angular-animate.min.js',
@@ -17,6 +19,7 @@ var jsArray = [
     './bower_components/angulartics/dist/angulartics.min.js',
     './bower_components/angulartics-google-analytics/dist/angulartics-google-analytics.min.js',
     './bower_components/angular-swiper/dist/angular-swiper.js',
+
     './js/app.js',
     './js/language.js',
     './js/controllers.js',

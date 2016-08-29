@@ -9,7 +9,7 @@ else {
 
 var navigationservice = angular.module('navigationservice', [])
 
-.factory('NavigationService', function() {
+.factory('NavigationService', function($http) {
   var navigation = [{
     name: "Home",
     classis: "active",
@@ -35,6 +35,9 @@ var navigationservice = angular.module('navigationservice', [])
       }
       return menuname;
     },
+    getInstaHash:function(hashtag) {
+        $http.get("https://api.instagram.com/v1/tags/yogafoodlove/media/recent?access_token=3102400429.d6bc71c.1fb75e5d39b24625843acfea8cd1972a");
+    }
 
   };
 });
