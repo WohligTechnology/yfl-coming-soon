@@ -191,7 +191,7 @@ a {
 
 .navbar-header {
     float: none;
-    padding: 5px 0;
+    padding: 5px;
 }
 
 .btn-dark {
@@ -459,7 +459,7 @@ footer {
     font-family: $font-family-sans-serif;
     font-weight: 700;
     float: left;
-    line-height: 40px;
+    line-height: 180%;
     font-size: 12px;
     text-transform: none;
     margin: 0;
