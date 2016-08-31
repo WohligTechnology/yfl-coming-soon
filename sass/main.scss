@@ -34,7 +34,9 @@ $font-family-serif: "Rubik", "Times New Roman", Times, serif !default;
     font-family: "Jura";
     src: url('../fonts/Jura-Regular.ttf');
 }
-
+a {
+  color: inherit;
+}
 body {
     padding-top: 69px;
     -webkit-font-smoothing: antialiased;
@@ -425,7 +427,8 @@ footer {
         background-repeat: no-repeat;
         display: inline-block;
         cursor: pointer;
-        @include transtion(300ms all ease);
+        @include transition(300ms all ease);
+
         &:hover {
             opacity: 1;
         }
