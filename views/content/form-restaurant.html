@@ -1,21 +1,21 @@
 <div class="big-yoga">
     <div class="black-overlay"></div>
     <div class="container yoga-title text-center">
-        <h1>Sell on YogaFoodLove</h1>
+        <h1>Restaurant Listing on YogaFoodLove</h1>
     </div>
 </div>
 
 <div class="container main-form">
     <h3 class="text-center">Please enter the details below to collaborate with us</h3>
     <form name="userForm" class="mid-form">
-        <h4>Enter Your Business Details</h4>
+        <h4>Your Personal Details</h4>
         <hr>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Store Name*</label>
-                    <input type="text" name="storename" ng-model="formData.storename" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.storename.$invalid && userForm.storename.$touched">Please Enter Your Store Name</div>
+                    <label>First Name*</label>
+                    <input type="text" name="firstname" ng-model="formData.firstname" class="form-control" placeholder="" required>
+                    <div class="error-msg" ng-if="userForm.firstname.$invalid && userForm.firstname.$touched">Please Enter Your First Name</div>
                 </div>
             </div>
         </div>
@@ -23,8 +23,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Name of Contact Person*</label>
-                    <input type="text" name="contactpersonname" ng-model="formData.contactpersonname" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.contactpersonname.$invalid && userForm.contactpersonname.$touched">Please Enter Contact Person's Name</div>
+                    <input type="text" name="name" ng-model="formData.name" class="form-control" placeholder="" required>
+                    <div class="error-msg" ng-if="userForm.name.$invalid && userForm.name.$touched">Please Enter Your Full Name</div>
                 </div>
             </div>
         </div>
