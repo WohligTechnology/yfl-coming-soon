@@ -76,6 +76,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 })
+.controller('FormYogaLabelCollaborationCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+  //Used to name the .html file
+  $scope.template = TemplateService.changecontent("form-yoga-label");
+  $scope.menutitle = NavigationService.makeactive("Yoga Label Collaboration Form");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
+})
 
 .controller('headerctrl', function($scope, TemplateService) {
   $scope.template = TemplateService;

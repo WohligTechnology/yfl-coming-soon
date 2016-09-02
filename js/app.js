@@ -41,6 +41,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
         url: "/form-yoga-studio",
         templateUrl: "views/template.html",
         controller: 'FormYogaStudioCtrl'
+    })
+    .state('form-yoga-label', {
+        url: "/form-yoga-label",
+        templateUrl: "views/template.html",
+        controller: 'FormYogaLabelCollaborationCtrl'
     });
     $urlRouterProvider.otherwise("/");
     $locationProvider.html5Mode(isproduction);
