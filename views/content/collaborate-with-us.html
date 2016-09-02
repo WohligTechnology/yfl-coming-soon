@@ -4,3 +4,119 @@
         <h1>Collaborate With Us</h1>
     </div>
 </div>
+<div class="container main-form">
+    <h3 class="text-center">Please select your profile</h3>
+    <div class="row">
+        <div class="col-md-offset-3 col-md-3">
+            <div class="form-group">
+                <div class="magic-form">
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="radio" id="1" value="form-yoga-studio" ng-model="formData.goURL">
+                        <label class="text" for="1">
+                            Yoga Studio
+                        </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="radio" id="2" value="form-yoga-instructor" ng-model="formData.goURL">
+                        <label class="text" for="2">
+                            Yoga Instructor/Teacher
+                        </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="radio" id="3" value="form-yoga-enthusiast" ng-model="formData.goURL">
+                        <label class="text" for="3">
+                            Yoga Enthusiast
+                        </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="radio" id="4" value="form-yoga-label" ng-model="formData.goURL">
+                        <label class="text" for="4">
+                            Yoga Label Collaboration
+                        </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="radio" id="5" value="form-restaurant" ng-model="formData.goURL">
+                        <label class="text" for="5">
+                            Restaurant
+                        </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="radio" id="6" value="form-chef" ng-model="formData.goURL">
+                        <label class="text" for="6">
+                            Chef
+                        </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="radio" id="7" value="form-nutrionist" ng-model="formData.goURL">
+                        <label class="text" for="7">
+                            Nutritionist
+                        </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="radio" id="8" value="form-foodie" ng-model="formData.goURL">
+                        <label class="text" for="8">
+                            Foodie
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <div class="magic-form">
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="radio" id="9" value="form-food-product" ng-model="formData.goURL">
+                        <label class="text" for="9">
+                            Food Product
+                        </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="radio" id="10" value="form-food-manufacturer" ng-model="formData.goURL">
+                        <label class="text" for="10">
+                            Food Manufacturer
+                        </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="radio" id="11" value="form-artist" ng-model="formData.goURL">
+                        <label class="text" for="11">
+                            Artist
+                        </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="radio" id="12" value="form-product-owner" ng-model="formData.goURL">
+                        <label class="text" for="12">
+                            Product owner
+                        </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="radio" id="13" value="form-product-manufacturer" ng-model="formData.goURL">
+                        <label class="text" for="13">
+                            Product Manufacturer
+                        </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="radio" id="14" value="form-food-manufacturer" ng-model="formData.goURL">
+                        <label class="text" for="14">
+                            Food Manufacturer
+                        </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="radio" id="15" value="form-ngo" ng-model="formData.goURL">
+                        <label class="text" for="15">
+                            NGO / Charitable Trust
+                        </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="radio" id="16" value="form-personal-campaign" ng-model="formData.goURL">
+                        <label class="text" for="16">
+                            Personal Campaign
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ng-click="goTo(formData.goURL)" ng-disabled="!formData.goURL">Submit</button>
+    </div>
+</div>

@@ -61,12 +61,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   ];
 })
 
-.controller('CollaborateWithUsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+.controller('CollaborateWithUsCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
   //Used to name the .html file
   $scope.template = TemplateService.changecontent("collaborate-with-us");
   $scope.menutitle = NavigationService.makeactive("Collaborate With Us");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
+
+  $scope.goTo =  function(data) {
+    $state.go(data);
+  };
 })
 
 .controller('FormYogaStudioCtrl', function($scope, TemplateService, NavigationService, $timeout) {
