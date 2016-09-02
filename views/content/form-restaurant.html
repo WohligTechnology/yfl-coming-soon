@@ -1,7 +1,7 @@
 <div class="big-yoga">
     <div class="black-overlay"></div>
     <div class="container yoga-title text-center">
-        <h1>Restaurant Listing on YogaFoodLove</h1>
+        <h1>Restaurant Listing</h1>
     </div>
 </div>
 
@@ -14,323 +14,93 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>First Name*</label>
-                    <input type="text" name="firstname" ng-model="formData.firstname" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.firstname.$invalid && userForm.firstname.$touched">Please Enter Your First Name</div>
+                    <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
+                    <div class="error-msg" ng-if="userForm.firstName.$invalid && userForm.firstName.$touched">Please Enter Your First Name</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Last Name*</label>
+                    <input type="text" name="lastName" ng-model="formData.lastName" class="form-control" required aplha-only>
+                    <div class="error-msg" ng-if="userForm.lastName.$invalid && userForm.lastName.$touched">Please Enter Your Last Name</div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Name of Contact Person*</label>
-                    <input type="text" name="name" ng-model="formData.name" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.name.$invalid && userForm.name.$touched">Please Enter Your Full Name</div>
+                    <label>Mobile*</label>
+                    <input type="text" name="mobile" ng-model="formData.mobile" class="form-control" required numbers-only>
+                    <div class="error-msg" ng-if="userForm.mobile.$invalid && userForm.mobile.$touched">Please Enter Your Mobile</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Landline</label>
+                    <input type="text" name="landline" ng-model="formData.phone" class="form-control" numbers-only>
+                    <div class="error-msg" ng-if="userForm.landline.$invalid && userForm.landline.$touched">Please Enter Your Phone Number</div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Phone Number - Landline and Mobile *</label>
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="phone" id="18" value="option1">
-                            <label class="text" for="18">
-                              Option1
-                          </label>
-                        </div>
-                    </div>
+                    <label>Email*</label>
+                    <input type="email" name="emailId" ng-model="formData.email" class="form-control" required>
+                    <div class="error-msg" ng-if="userForm.emailId.$invalid && userForm.emailId.$touched">Please Enter Your Email Id</div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Primary Category*</label>
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="primarycategory" id="1" value="option2">
-                            <label class="text" for="1">
-                              Yoga Mat
-                          </label>
-                        </div>
-                    </div>
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="primarycategory" id="2" value="option2">
-                            <label class="text" for="2">
-                              Yoga Clothing
-                          </label>
-                        </div>
-                    </div>
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="primarycategory" id="3" value="option2">
-                            <label class="text" for="3">
-                              Other Yoga Products
-                          </label>
-                        </div>
-                    </div>
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="primarycategory" id="4" value="option2">
-                            <label class="text" for="4">
-                              Organic Food
-                          </label>
-                        </div>
-                    </div>
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="primarycategory" id="5" value="option2">
-                            <label class="text" for="5">
-                               Organic Beauty Care
-                          </label>
-                        </div>
-                    </div>
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="primarycategory" id="6" value="option2">
-                            <label class="text" for="6">
-                               Organic Clothing
-                          </label>
-                        </div>
-                    </div>
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="primarycategory" id="7" value="option2">
-                            <label class="labewidtxt" for="7">
-              Other :
-              <input type="text" class="form-control textbox-other" placeholder="">
-          </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <h4>Enter your Business Address</h4>
+        <h4>Restaurant Details</h4>
         <hr>
+        <p>All fields required</p>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Address Line 1*</label>
-                    <input type="text" name="address" ng-model="formData.address" class="form-control" placeholder="">
-                    <div class="error-msg" ng-if="userForm.address.$invalid && userForm.address.$touched">Please Enter Your Address</div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Pin Code*</label>
-                    <input type="text" name="pincode" ng-model="formData.pincode" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.pincode.$invalid && userForm.pincode.$touched">Please Enter Your Pincode</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Address Line 2*</label>
-                    <input type="text" name="address2" ng-model="formData.organisation" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.address2.$invalid && userForm.address2.$touched">Please Enter Your Address</div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>City*</label>
-                    <input type="text" name="city" ng-model="formData.city" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.city.$invalid && userForm.city.$touched">Please Enter Your City</div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>State*</label>
-                    <input type="text" name="state" ng-model="formData.state" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.state.$invalid && userForm.state.$touched">Please Enter Your State</div>
+                    <label>Name of the restaurant</label>
+                    <input type="text" name="restname" ng-model="formData.restname" class="form-control" required aplha-only>
+                    <div class="error-msg" ng-if="userForm.restname.$invalid && userForm.restname.$touched">Please Enter Restaurant Name</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Country*</label>
-                    <input type="text" name="country" ng-model="formData.country" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.country.$invalid && userForm.country.$touched">Please Enter Your Country</div>
-                </div>
-            </div>
-        </div>
-        <h4>Update your VAT and CST details</h4>
-        <hr>
-        <p>If you sell only Books or Fabrics/Textiles (unstitched) then you are generally exempted from providing VAT & CST registration number.</p>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>Pan number*</label>
-                    <input type="text" name="pan" ng-model="formData.pan" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.pan.$invalid && userForm.pan.$touched">Please Enter Your Pan number</div>
-                </div>
-                <div class="form-group">
-                    <label>VAT / TIN Number*</label>
-                    <input type="text" name="vat" ng-model="formData.vat" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.vat.$invalid && userForm.vat.$touched">Please Enter Your Vat/TIN number</div>
-                </div>
-                <div class="form-group">
-                    <label>CST number*</label>
-                    <input type="text" name="cst" ng-model="formData.cst" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.cst.$invalid && userForm.cst.$touched">Please Enter Your CST number</div>
+                    <select class="form-control" name="country" ng-model="formData.country" required>
+                        <option value="{{country.name}}" ng-repeat="country in countries">{{country.name}}</option>
+                    </select>
+                    <div class="error-msg" ng-if="userForm.country.$invalid && userForm.country.$touched">Please Select Your Country</div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Don't have VAT/CST?</label>
-
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="vat" id="8" value="option3">
-                            <label class="text" for="8">
-                    Sell in VAT exempted categories
-                  </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <h4>Choose categories you wish to sell</h4>
-        <hr>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Books, Movies & Games</label>
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="movieandgames" id="9" value="option4">
-                            <label class="text" for="9">
-        Books
-      </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="movieandgames" id="10" value="option4">
-                            <label class="text" for="10">
-        Movies
-      </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="movieandgames" id="11" value="option4">
-                            <label class="text" for="11">
-        Musical Instruments
-      </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="movieandgames" id="12" value="option4">
-                            <label class="text" for="12">
-        Musical
-      </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="movieandgames" id="13" value="option4">
-                            <label class="text" for="13">
-        Video Games
-      </label>
-                        </div>
-                    </div>
+                    <label>Address</label>
+                    <input type="text" name="address" ng-model="formData.address" class="form-control" required aplha-only>
+                    <div class="error-msg" ng-if="userForm.address.$invalid && userForm.address.$touched">Please Enter Address</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Clothing, Shoes & Jewelry</label>
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="CSJ" id="14" value="option5">
-                            <label class="text" for="14">
-        Clothing
-      </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="CSJ" id="15" value="option5">
-                            <label class="text" for="15">
-        Shoes
-      </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="CSJ" id="16" value="option5">
-                            <label class="text" for="16">
-        Watches
-      </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="CSJ" id="17" value="option5">
-                            <label class="text" for="17">
-        Jewelery
-      </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="CSJ" id="18" value="option5">
-                            <label class="text" for="18">
-        Luggage
-      </label>
-                        </div>
-                    </div>
+                    <label>State</label>
+                    <input type="text" name="state" ng-model="formData.state" class="form-control" required aplha-only>
+                    <div class="error-msg" ng-if="userForm.state.$invalid && userForm.state.$touched">Please Enter Your State</div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Beauty, Health & Groceries</label>
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="BHG" id="19" value="option6">
-                            <label class="text" for="19">
-        Beauty
-      </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="BHG" id="20" value="option6">
-                            <label class="text" for="20">
-        Grocery
-      </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="BHG" id="21" value="option6">
-                            <label class="text" for="21">
-        Health
-      </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="BHG" id="22" value="option6">
-                            <label class="text" for="22">
-        Personal Care Appliances
-      </label>
-                        </div>
-                    </div>
+                    <label>Zip Code</label>
+                    <input type="text" name="zip" ng-model="formData.zip" class="form-control" number-only>
+                    <div class="error-msg" ng-if="userForm.zip.$invalid && userForm.zip.$touched">Please Enter Zip Code</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Yoga Products</label>
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="YP" id="23" value="option7">
-                            <label class="text" for="23">
-        Yoga Mats
-      </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="YP" id="24" value="option7">
-                            <label class="text" for="24">
-       Yoga Clothing
-      </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="primarycategory" id="25" value="option7">
-                            <label class="labewidtxt" for="7">
-  Other :
-  <input type="text" class="form-control textbox-other" placeholder="">
-</label>
-                        </div>
-
-                    </div>
+                    <label>City</label>
+                    <input type="text" name="city" ng-model="formData.city" class="form-control" required aplha-only>
+                    <div class="error-msg" ng-if="userForm.city.$invalid && userForm.city.$touched">Please Enter Your City</div>
                 </div>
             </div>
         </div>
@@ -338,114 +108,319 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Other</label>
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="BHG" id="26" value="option8">
-                            <label class="text" for="26">
-          My Category is not here
-        </label>
-                        </div>
-                    </div>
+                    <label>Phone Number</label>
+                    <input type="text" name="phone" ng-model="formData.phone" class="form-control" number-only>
+                    <div class="error-msg" ng-if="userForm.phone.$invalid && userForm.phone.$touched">Please Enter Phone Number</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Where do you get products from?</label>
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="BHG" id="27" value="option9">
-                            <label class="text" for="27">
-          I manufacture them
-        </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="BHG" id="28" value="option9">
-                            <label class="text" for="28">
-          I resell product that I buy
-        </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="BHG" id="29" value="option9">
-                            <label class="text" for="29">
-          I sell products manufactured from me
-        </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="BHG" id="30" value="option9">
-                            <label class="text" for="30">
-           I import them
-        </label>
-                        </div>
-                    </div>
+                    <label>Operations Manager Contact Name</label>
+                    <input type="text" name="managename" ng-model="formData.managename" class="form-control" required aplha-only>
+                    <div class="error-msg" ng-if="userForm.managename.$invalid && userForm.managename.$touched">Please Enter Operation Manager Name</div>
                 </div>
             </div>
         </div>
-<div class="row">
-  <div class="col-md-6">
-    <div class="form-group">
-        <label>What is your annual turnover? *</label>
-      <select name="income" id="">
-        <option value=""></option>
-        <option value="">Less Than 1 lakh</option>
-        <option value="">Between 1 lakh and 10 lakh</option>
-        <option value="">Between 10 lakh and 1 crore</option>
-        <option value="">More than 1 crore</option>
-        <option value="">I don't know</option>
-      </select>
+        <div class="row">
+        <div class="col-md-6">
+                <div class="form-group">
+                    <label>Operations Manager Contact Name</label>
+                    <input type="text" name="managename1" ng-model="formData.managename1" class="form-control" required aplha-only>
+                    <div class="error-msg" ng-if="userForm.managename1.$invalid && userForm.managename1.$touched">Please Enter Operation Manager Name</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Timings</label>
+                    <input type="text" name="timings" ng-model="formData.timings" class="form-control" required>
+                    <div class="error-msg" ng-if="userForm.timings.$invalid && userForm.timings.$touched">Please Enter Time</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-md-6">
+                <div class="form-group">
+                    <label>Cuisines (Please list all)</label>
+                    <input type="text" name="cuisines" ng-model="formData.cuisines" class="form-control" required aplha-only>
+                    <div class="error-msg" ng-if="userForm.cuisines.$invalid && userForm.cuisines.$touched">Please Enter Cuisine</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Average cost for two</label>
+                    <input type="text" name="avgcost" ng-model="formData.avgcost" class="form-control" required>
+                    <div class="error-msg" ng-if="userForm.avgcost.$invalid && userForm.avgcost.$touched">Please Enter Average Cost</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="">Home Delivery</label>
+              <div class="magic-form">
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="homedel" id="1" value="option1">
+                      <label class="text" for="1">
+                        Yes
+                    </label>
+                  </div>
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="homedel" id="2" value="option1">
+                      <label class="text" for="2">
+                        No
+                    </label>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="">Minumum Order Delivery</label>
+            <input type="text" name="minimumorderdel" ng-model="formData.minimumorderdel" class="form-control" required>
+            <div class="error-msg" ng-if="userForm.minimumorderdel.$invalid && userForm.minimumorderdel.$touched">Please Enter Minimum Order For Delivery</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="">Dine-in Facility</label>
+              <div class="magic-form">
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="dinein" id="3" value="option2">
+                      <label class="text" for="3">
+                        Yes
+                    </label>
+                  </div>
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="dinein" id="4" value="option2">
+                      <label class="text" for="4">
+                        No
+                    </label>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="">Bar</label>
+              <div class="magic-form">
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="bar" id="5" value="option3">
+                      <label class="text" for="5">
+                        Yes
+                    </label>
+                  </div>
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="bar" id="6" value="option3">
+                      <label class="text" for="6">
+                        No
+                    </label>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="">Happy Hours</label>
+              <div class="magic-form">
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="happyhr" id="7" value="option4">
+                      <label class="text" for="7">
+                        Yes
+                    </label>
+                  </div>
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="happyhr" id="8" value="option4">
+                      <label class="text" for="8">
+                        No
+                    </label>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="">Air-conditioned (AC)</label>
+              <div class="magic-form">
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="AC" id="9" value="option5">
+                      <label class="text" for="9">
+                        Yes
+                    </label>
+                  </div>
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="AC" id="10" value="option5">
+                      <label class="text" for="10">
+                        No
+                    </label>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="">Wifi available</label>
+              <div class="magic-form">
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="wifi" id="11" value="option6">
+                      <label class="text" for="11">
+                        Yes
+                    </label>
+                  </div>
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="wifi" id="12" value="option6">
+                      <label class="text" for="12">
+                        No
+                    </label>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="">Outdoor dining facility</label>
+              <div class="magic-form">
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="otherfacility" id="13" value="option7">
+                      <label class="text" for="13">
+                        Yes
+                    </label>
+                  </div>
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="otherfacility" id="14" value="option7">
+                      <label class="text" for="14">
+                        No
+                    </label>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="">Live Music</label>
+              <div class="magic-form">
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="livemusic" id="15" value="option8">
+                      <label class="text" for="15">
+                        Yes
+                    </label>
+                  </div>
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="livemusic" id="16" value="option8">
+                      <label class="text" for="16">
+                        No
+                    </label>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="">Pure Vegetarian</label>
+              <div class="magic-form">
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="pureveg" id="17" value="option9">
+                      <label class="text" for="17">
+                        Yes
+                    </label>
+                  </div>
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="pureveg" id="18" value="option9">
+                      <label class="text" for="18">
+                        No
+                    </label>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="">Credit Cards accepted</label>
+              <div class="magic-form">
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="creditcard" id="19" value="option10">
+                      <label class="text" for="19">
+                        Yes
+                    </label>
+                  </div>
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="creditcard" id="20" value="option10">
+                      <label class="text" for="20">
+                        No
+                    </label>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="">Smoking Area</label>
+              <div class="magic-form">
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="smoke" id="21" value="option11">
+                      <label class="text" for="21">
+                        Yes
+                    </label>
+                  </div>
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="smoke" id="22" value="option12">
+                      <label class="text" for="22">
+                        No
+                    </label>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="">Buffet Details (If any)</label>
+              <input type="text" name="buffet" ng-model="formData.buffet" class="form-control" required aplha-only>
+              <div class="error-msg" ng-if="userForm.buffet.$invalid && userForm.buffet.$touched">Please Enter Buffet Details</div>
     </div>
-  </div>
-  <div class="col-md-6">
-    <div class="form-group">
-        <label>How many products do you sell? *</label>
-      <select name="sales" id="">
-        <option value=""></option>
-        <option value="">1-10</option>
-        <option value="">11-100</option>
-        <option value="">101-500</option>
-        <option value="">More than 500</option>
-        <option value="">I don't know</option>
-      </select>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-6">
-    <div class="form-group">
-        <label>Do you sell on other websites? *</label>
-        <div class="magic-form">
-            <div class="magic-resize">
-                <input class="magic-radio" type="radio" name="otherweb" id="31" value="option10">
-                <label class="text" for="31">
-  Yes
-  </label>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="">Catering Services</label>
+              <div class="magic-form">
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="catering" id="23" value="option12">
+                      <label class="text" for="23">
+                        Yes
+                    </label>
+                  </div>
+                  <div class="magic-resize">
+                      <input class="magic-radio" type="radio" name="catering" id="24" value="option12">
+                      <label class="text" for="24">
+                        No
+                    </label>
+                  </div>
+              </div>
+            
             </div>
-            <div class="magic-resize">
-                <input class="magic-radio" type="radio" name="otherweb" id="32" value="option10">
-                <label class="text" for="32">
-  No
-  </label>
-            </div>
-  </div>
-  </div>
-  </div>
-
-</div>
-<div class="row">
-  <div class="col-md-6">
-    <div class="form-group">
-      Please provide url of any product from the other website.
-      <div class="magic-resize">
-
-  <input type="text" class="form-control textbox-other" placeholder="">
-  </label>
-      </div>
-     </div>
-  </div>
-</div>
-        <div class="form-group text-center">
-            <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn">Submit</button>
+          </div>
         </div>
+</div>
+<div class="form-group text-center">
+    <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn">Submit</button>
+</div>
 </div>
 
 </form>

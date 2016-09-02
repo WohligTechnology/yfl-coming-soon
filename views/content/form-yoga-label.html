@@ -18,6 +18,13 @@
                     <div class="error-msg" ng-if="userForm.storename.$invalid && userForm.storename.$touched">Please Enter Your Store Name</div>
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Phone Number - Landline*</label>
+                    <input type="text" name="contactdetails1" ng-model="formData.contactdetails1" class="form-control" placeholder="" required>
+                    <div class="error-msg" ng-if="userForm.contactdetails1.$invalid && userForm.contactdetails1.$touched">Please Enter Contact Details</div>
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-6">
@@ -27,19 +34,11 @@
                     <div class="error-msg" ng-if="userForm.contactpersonname.$invalid && userForm.contactpersonname.$touched">Please Enter Contact Person's Name</div>
                 </div>
             </div>
-        </div>
-        <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Phone Number - Landline and Mobile *</label>
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="phone" id="18" value="option1">
-                            <label class="text" for="18">
-                              Option1
-                          </label>
-                        </div>
-                    </div>
+                    <label>Phone Number - Mobile*</label>
+                    <input type="text" name="contactdetails" ng-model="formData.contactdetails" class="form-control" placeholder="" required>
+                    <div class="error-msg" ng-if="userForm.contactdetails.$invalid && userForm.contactdetails.$touched">Please Enter Contact Details</div>
                 </div>
             </div>
         </div>
@@ -54,48 +53,36 @@
                               Yoga Mat
                           </label>
                         </div>
-                    </div>
-                    <div class="magic-form">
                         <div class="magic-resize">
                             <input class="magic-radio" type="radio" name="primarycategory" id="2" value="option2">
                             <label class="text" for="2">
                               Yoga Clothing
                           </label>
                         </div>
-                    </div>
-                    <div class="magic-form">
                         <div class="magic-resize">
                             <input class="magic-radio" type="radio" name="primarycategory" id="3" value="option2">
                             <label class="text" for="3">
                               Other Yoga Products
                           </label>
                         </div>
-                    </div>
-                    <div class="magic-form">
                         <div class="magic-resize">
                             <input class="magic-radio" type="radio" name="primarycategory" id="4" value="option2">
                             <label class="text" for="4">
                               Organic Food
                           </label>
                         </div>
-                    </div>
-                    <div class="magic-form">
                         <div class="magic-resize">
                             <input class="magic-radio" type="radio" name="primarycategory" id="5" value="option2">
                             <label class="text" for="5">
                                Organic Beauty Care
                           </label>
                         </div>
-                    </div>
-                    <div class="magic-form">
                         <div class="magic-resize">
                             <input class="magic-radio" type="radio" name="primarycategory" id="6" value="option2">
                             <label class="text" for="6">
                                Organic Clothing
                           </label>
                         </div>
-                    </div>
-                    <div class="magic-form">
                         <div class="magic-resize">
                             <input class="magic-radio" type="radio" name="primarycategory" id="7" value="option2">
                             <label class="labewidtxt" for="7">
@@ -104,6 +91,7 @@
           </label>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -119,9 +107,11 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Pin Code*</label>
-                    <input type="text" name="pincode" ng-model="formData.pincode" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.pincode.$invalid && userForm.pincode.$touched">Please Enter Your Pincode</div>
+                    <label>Country*</label>
+                    <select class="form-control" name="country" ng-model="formData.country" required>
+                        <option value="{{country.name}}" ng-repeat="country in countries">{{country.name}}</option>
+                    </select>
+                    <div class="error-msg" ng-if="userForm.country.$invalid && userForm.country.$touched">Please Select Your Country</div>
                 </div>
             </div>
         </div>
@@ -136,25 +126,25 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>City*</label>
-                    <input type="text" name="city" ng-model="formData.city" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.city.$invalid && userForm.city.$touched">Please Enter Your City</div>
+                    <label>State*</label>
+                    <input type="text" name="state" ng-model="formData.state" class="form-control" placeholder="" required>
+                    <div class="error-msg" ng-if="userForm.state.$invalid && userForm.state.$touched">Please Enter Your State</div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>State*</label>
-                    <input type="text" name="state" ng-model="formData.state" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.state.$invalid && userForm.state.$touched">Please Enter Your State</div>
+                    <label>Pin Code*</label>
+                    <input type="text" name="pincode" ng-model="formData.pincode" class="form-control" placeholder="" required>
+                    <div class="error-msg" ng-if="userForm.pincode.$invalid && userForm.pincode.$touched">Please Enter Your Pincode</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Country*</label>
-                    <input type="text" name="country" ng-model="formData.country" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.country.$invalid && userForm.country.$touched">Please Enter Your Country</div>
+                    <label>City*</label>
+                    <input type="text" name="city" ng-model="formData.city" class="form-control" placeholder="" required>
+                    <div class="error-msg" ng-if="userForm.city.$invalid && userForm.city.$touched">Please Enter Your City</div>
                 </div>
             </div>
         </div>
@@ -323,11 +313,10 @@
       </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="primarycategory" id="25" value="option7">
-                            <label class="labewidtxt" for="7">
-  Other :
-  <input type="text" class="form-control textbox-other" placeholder="">
-</label>
+                            <input class="magic-checkbox" type="checkbox" name="yogaproduct" id="25" value="other" ng-model="formData.yogaproduct.other">
+                            <label class="labewidtxt" for="25">
+                                Other
+                            </label>
                         </div>
 
                     </div>
@@ -381,11 +370,11 @@
                 </div>
             </div>
         </div>
-<div class="row">
-  <div class="col-md-6">
-    <div class="form-group">
-        <label>What is your annual turnover? *</label>
-      <select name="income" id="">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>What is your annual turnover? *</label>
+                    <select name="income" id="">
         <option value=""></option>
         <option value="">Less Than 1 lakh</option>
         <option value="">Between 1 lakh and 10 lakh</option>
@@ -393,12 +382,12 @@
         <option value="">More than 1 crore</option>
         <option value="">I don't know</option>
       </select>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="form-group">
-        <label>How many products do you sell? *</label>
-      <select name="sales" id="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>How many products do you sell? *</label>
+                    <select name="sales" id="">
         <option value=""></option>
         <option value="">1-10</option>
         <option value="">11-100</option>
@@ -406,43 +395,43 @@
         <option value="">More than 500</option>
         <option value="">I don't know</option>
       </select>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-6">
-    <div class="form-group">
-        <label>Do you sell on other websites? *</label>
-        <div class="magic-form">
-            <div class="magic-resize">
-                <input class="magic-radio" type="radio" name="otherweb" id="31" value="option10">
-                <label class="text" for="31">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Do you sell on other websites? *</label>
+                    <div class="magic-form">
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="otherweb" id="31" value="option10">
+                            <label class="text" for="31">
   Yes
   </label>
-            </div>
-            <div class="magic-resize">
-                <input class="magic-radio" type="radio" name="otherweb" id="32" value="option10">
-                <label class="text" for="32">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="otherweb" id="32" value="option10">
+                            <label class="text" for="32">
   No
   </label>
+                        </div>
+                    </div>
+                </div>
             </div>
-  </div>
-  </div>
-  </div>
 
-</div>
-<div class="row">
-  <div class="col-md-6">
-    <div class="form-group">
-      Please provide url of any product from the other website.
-      <div class="magic-resize">
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    Please provide url of any product from the other website.
+                    <div class="magic-resize">
 
-  <input type="text" class="form-control textbox-other" placeholder="">
-  </label>
-      </div>
-     </div>
-  </div>
-</div>
+                        <input type="text" class="form-control textbox-other" placeholder="">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="form-group text-center">
             <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn">Submit</button>
         </div>
