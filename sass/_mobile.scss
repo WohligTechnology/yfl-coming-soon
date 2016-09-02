@@ -25,6 +25,10 @@
 }
 
 @media (max-width:$screen-xs-max) {
+  .big-yoga {
+    height: 200px;
+  }
+
   .magic-form {
       .magic-resize {
           padding: 5px;
