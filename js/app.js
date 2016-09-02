@@ -32,9 +32,15 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     })
 
     .state('collaborate-with-us', {
-        url: "/collaborate-with-us",
+      url: "/collaborate-with-us",
+      templateUrl: "views/template.html",
+      controller: 'CollaborateWithUsCtrl'
+  })
+
+    .state('form-yoga-studio', {
+        url: "/form-yoga-studio",
         templateUrl: "views/template.html",
-        controller: 'CollaborateWithUsCtrl'
+        controller: 'FormYogaStudioCtrl'
     });
     $urlRouterProvider.otherwise("/");
     $locationProvider.html5Mode(isproduction);
@@ -130,6 +136,46 @@ firstapp.directive('autoHeightfixed', function($compile, $parse) {
         }
     };
 });
+
+
+firstapp.directive('numbersOnly', function () {
+    return {
+        require: 'ngModel',
+        link: function (scope, element, attr, ngModelCtrl) {
+            function fromUser(text) {
+                if (text) {
+                    var transformedInput = text.replace(/[^0-9]/g, '');
+
+                    if (transformedInput !== text) {
+                        ngModelCtrl.$setViewValue(transformedInput);
+                        ngModelCtrl.$render();
+                    }
+                    return transformedInput;
+                }
+                return undefined;
+            }
+            ngModelCtrl.$parsers.push(fromUser);
+        }
+    };
+});
+
+firstapp.directive('aplhaOnly', function () {
+  return {
+    require: 'ngModel',
+    link: function(scope, element, attr, ngModelCtrl) {
+      function fromUser(text) {
+        var transformedInput = text.replace(/[^a-zA-Z]/g, '');
+        if (transformedInput !== text) {
+          ngModelCtrl.$setViewValue(transformedInput);
+          ngModelCtrl.$render();
+        }
+        return transformedInput;
+      }
+      ngModelCtrl.$parsers.push(fromUser);
+    }
+  };
+});
+
 
 firstapp.config(function($translateProvider) {
     $translateProvider.translations('en', LanguageEnglish);
