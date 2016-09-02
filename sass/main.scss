@@ -628,11 +628,13 @@ footer {
 }
 
 .textbox-other {
-    width: 80%;
+    width: 100%;
     border: none;
     border-bottom: 1px solid #D0D0D0;
 }
-
+hr {
+  background-color: #D0D0D0;
+}
 .main-form {
     position: relative;
 
@@ -669,7 +671,8 @@ footer {
 .magic-form {
     .magic-resize {
         padding: 5px;
-
+        display: inline-block;
+        width: 32.33%;
         input[type="checkbox"],
         input[type="radio"] {
             display: none;

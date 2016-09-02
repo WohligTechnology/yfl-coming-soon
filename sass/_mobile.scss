@@ -25,6 +25,13 @@
 }
 
 @media (max-width:$screen-xs-max) {
+  .magic-form {
+      .magic-resize {
+          padding: 5px;
+          display: block;
+          width: 100%;
+        }
+      }
   .yfl-relative .main-middle {
       position: static;
       @include transform(translateX(0%));
