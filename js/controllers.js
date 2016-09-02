@@ -79,6 +79,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.menutitle = NavigationService.makeactive("Yoga Studio Collaboration Form");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
+  $scope.countries = NavigationService.getcountries();
 })
 .controller('FormYogaLabelCollaborationCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   //Used to name the .html file

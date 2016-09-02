@@ -167,7 +167,7 @@ a {
             box-sizing: border-box;
             width: 6px;
             height: 12px;
-            transform: rotate(45deg);
+            @include transform(rotate(45deg));
             border-width: 2px;
             border-style: solid;
             border-color: #fff;
@@ -381,10 +381,6 @@ a {
     .new-widget {
         padding-top: 25px;
     }
-}
-
-.form-group {
-    margin-bottom: 30px;
 }
 
 footer {
@@ -601,7 +597,7 @@ footer {
     background-size: cover;
     height: 300px;
     background-attachment: fixed;
-    background-position: 100% -240px;
+    background-position: center;
     background-repeat: no-repeat;
     position: relative;
 
@@ -609,7 +605,7 @@ footer {
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%,-50%);
+        @include transform(translate(-50%,-50%));
 
         h1 {
             color: #fff;
@@ -644,26 +640,26 @@ footer {
         text-transform: uppercase;
         font-family: $font-family-serif;
         font-weight: 200;
-        margin: 50px 0 30px;
+        margin: 50px 0 10px;
+    }
+    label {
+      font-weight: normal;
     }
 
     h4 {
         font-family: $font-family-serif;
-        font-weight: 200;
+        font-weight: normal;
+        margin-top: 20px;
     }
-
-    [type="email"],
-    [type="password"],
-    input[type="text"] {
-        height: 50px;
+    hr {
+      margin-top: 10px;
     }
-
     .mid-form {
         padding: 20px;
     }
 
     .sub-btn {
-        margin-top: 50px;
+        margin-top: 30px;
         font-size: 16px;
         width: 40%;
         text-transform: uppercase;
@@ -698,7 +694,7 @@ footer {
                 box-sizing: border-box;
                 width: 6px;
                 height: 12px;
-                transform: rotate(45deg);
+                @include transform(rotate(45deg));
                 border-width: 2px;
                 border-style: solid;
                 border-color: #fff;
