@@ -21,10 +21,15 @@
 }
 
 @media (max-width:$screen-sm-max) {
-
+  .main-form .sub-btn {
+    width: 90%;
+  }
 }
 
 @media (max-width:$screen-xs-max) {
+  .main-form .sub-btn {
+    width: 100%;
+  }
   .big-yoga {
     height: 200px;
   }

@@ -672,7 +672,12 @@ hr {
         text-transform: uppercase;
     }
 }
-
+ .blocker {
+  .magic-form .magic-resize {
+     display: block;
+     width: 100%
+   }
+ }
 .magic-form {
     .magic-resize {
         padding: 5px;
