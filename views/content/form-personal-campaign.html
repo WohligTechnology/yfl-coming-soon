@@ -1,0 +1,254 @@
+
+<div class="big-yoga food-banner">
+    <div class="black-overlay"></div>
+    <div class="container yoga-title text-center">
+        <h1>Personal Campaign</h1>
+    </div>
+</div>
+
+<div class="container main-form">
+    <h3 class="text-center">Please enter the below details</h3>
+    <form name="userForm" class="mid-form">
+        <h4>Personal Details</h4>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>First Name*</label>
+                    <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
+                    <div class="error-msg" ng-if="userForm.firstName.$invalid && userForm.firstName.$touched">Please Enter Your First Name</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Last Name*</label>
+                    <input type="text" name="lastName" ng-model="formData.lastName" class="form-control" required aplha-only>
+                    <div class="error-msg" ng-if="userForm.lastName.$invalid && userForm.lastName.$touched">Please Enter Your Last Name</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Mobile*</label>
+                    <input type="text" name="mobile" ng-model="formData.mobile" class="form-control" required numbers-only>
+                    <div class="error-msg" ng-if="userForm.mobile.$invalid && userForm.mobile.$touched">Please Enter Your Mobile</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Landline</label>
+                    <input type="text" name="landline" ng-model="formData.phone" class="form-control" numbers-only>
+                    <div class="error-msg" ng-if="userForm.landline.$invalid && userForm.landline.$touched">Please Enter Your Phone Number</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Email*</label>
+                    <input type="email" name="emailId" ng-model="formData.email" class="form-control" required>
+                    <div class="error-msg" ng-if="userForm.emailId.$invalid && userForm.emailId.$touched">Please Enter Your Email Id</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Country*</label>
+                    <select class="form-control" name="country" ng-model="formData.country" required>
+                        <option value="{{country.name}}" ng-repeat="country in countries">{{country.name}}</option>
+                    </select>
+                    <div class="error-msg" ng-if="userForm.country.$invalid && userForm.country.$touched">Please Select Your Country</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>State*</label>
+                    <input type="text" name="state" ng-model="formData.state" class="form-control" required>
+                    <div class="error-msg" ng-if="userForm.state.$invalid && userForm.state.$touched">Please Enter Your State</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>City*</label>
+                    <input type="text" name="city" ng-model="formData.city" class="form-control" required>
+                    <div class="error-msg" ng-if="userForm.city.$invalid && userForm.city.$touched">Please Enter Your City</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Pincode*</label>
+                    <input type="text" name="pincode" ng-model="formData.pincode" class="form-control" required>
+                    <div class="error-msg" ng-if="userForm.pincode.$invalid && userForm.pincode.$touched">Please Enter Your Pincode</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Address Line 1*</label>
+                    <input type="text" name="address" ng-model="formData.address" class="form-control" required>
+                    <div class="error-msg" ng-if="userForm.address.$invalid && userForm.address.$touched">Please Enter Your Address</div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Address Line 2</label>
+                    <input type="text" name="address2" ng-model="formData.address2" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+                <label>Campaign Title (What are you raising funds for?)</label>
+               <input type="text" name="campaigntitle" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+                <label>Goal (How much do you want to raise?)</label>
+               <input type="text" name="goal" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+                <label for="samples">Campaign picture (Upload) (This is going to be the face of your campaign. Upload a non-pixelated, clear image preferably. Ideal Size: 700x400. If it's bigger, don’t worry, we’ll crop it for you.)
+
+</label>
+              <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span><input type="file" id="AdditionalQualification" class="form-control"></button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+                   <div class="form-group practice relate">
+                     <label for="samples">End Date (Choose a campaign end date)
+
+                 </label>
+                      <input type="text" class="form-control " uib-datepicker-popup="{{format}}" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-model="formData.date" />
+                      <a href="" class="down" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+                   </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+                <label>Cause</label>
+                <select class="form-control" name="country">
+                    <option>Acid attack victim</option>
+                    <option>Acid attack victim</option>
+                    <option>Acid attack victim</option>
+                </select>
+                <div class="error-msg" ng-if="userForm.country.$invalid && userForm.country.$touched">Please Select Your Country</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+                <label for="samples">Short Description (Explain your campaign in short)
+</label>
+              <input type="text" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+                <label for="samples">Campaign Story (Write a story that does justice to your cause and makes the supporter reach the donate button.Don't get overwhelmed, if you feel stuck. Follow these steps:1. Talk about who you're raising funds for, be it yourself or your loved one.2. Explain why you're raising funds.3. Make an appeal to your supporters.Avoid pasting information directly from a Word document.)
+</label>
+              <textarea rows="4" cols="50" class="form-control resize">
+
+                </textarea>
+            </div>
+          </div>
+        </div>
+                <!-- <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="samples">Other Media : (Please give an additional description of your work, including information about the process used to create your artwork.)
+</label>
+<input type="text" class="form-control" >
+
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="samples">Artwork Description:
+</label>
+<input type="text" class="form-control" >
+
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="samples">Work Sample (Upload 3)
+</label>
+<input type="text" class="form-control" >
+
+                    </div>
+                  </div>
+                </div> -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Recipient</label>
+                      <div class="magic-form">
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="classLevel" id="14" value="beginner" ng-model="formData.classLevel">
+                        <label class="text" for="14">
+                          myself
+                        </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="classLevel" id="15" value="advanced" ng-model="formData.classLevel">
+                        <label class="text" for="15">
+                        someone else
+                        </label>
+                    </div>
+
+                  </div>
+                </div>
+                </div>
+                </div>
+                <!-- <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="samples">If yes, what technique or craft would you be demonstrating?
+</label>
+                      <input type="text" class="form-control">
+                    </div>
+                  </div>
+                </div> -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="samples">Link to your best social footprint
+</label>
+                      <input type="text" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="magic-form text-center">
+                    <div class="magic-resize">
+                        <input class="magic-checkbox" type="checkbox" id="terms" name="terms" value="true" required>
+                        <label class="text" for="terms">
+                            I have read and accept the&nbsp;<u>Terms &amp; Conditions</u>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ng-disabled="userForm.$invalid"><span ng-if="userForm.$invalid">Please Enter Compulsory fields</span><span ng-if="!userForm.$invalid">Submit</span></button>
+                </div>
+            </form>
+        </div>
