@@ -47,6 +47,17 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
         templateUrl: "views/template.html",
         controller: 'FormYogaLabelCollaborationCtrl'
     })
+
+    .state('form-nutrionist', {
+        url: "/form-nutrionist",
+        templateUrl: "views/template.html",
+        controller: 'FormNutrionistCtrl'
+    })
+
+
+
+
+
     .state('form-restaurant', {
         url: "/form-restaurant",
         templateUrl: "views/template.html",

@@ -602,7 +602,7 @@ footer {
     &.yoga-banner {
       background-image: url("../img/form-yoga.jpg");
     }
-    &.yoga-food {
+    &.food-banner {
       background-image: url("../img/form-food.jpg");
     }
 
@@ -1027,5 +1027,28 @@ hr {
 }
 .content {
   min-height: 400px;
+}
+
+.choosing{
+  input [type="file"]{
+    opacity: 0;
+  }
+}
+
+.relate{
+  position: relative;
+}
+.choosing{
+  input[type="file"]{
+    position: absolute;
+      top: 5px;
+      opacity: 0;
+      left: 0;
+      right: 0;
+      cursor: pointer;
+  }
+}
+.margin0{
+  margin-top: 0!important;
 }
 @import "mobile";
