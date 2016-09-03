@@ -119,10 +119,10 @@
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-                <label for="samples">Campaign picture (Upload) (This is going to be the face of your campaign. Upload a non-pixelated, clear image preferably. Ideal Size: 700x400. If it's bigger, don’t worry, we’ll crop it for you.)
+                <label for="Campaignpicture">Campaign picture (Upload) (This is going to be the face of your campaign. Upload a non-pixelated, clear image preferably. Ideal Size: 700x400. If it's bigger, don’t worry, we’ll crop it for you.)
 
 </label>
-              <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span><input type="file" id="AdditionalQualification" class="form-control"></button>
+              <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span><input type="file" id="Campaignpicture" class="form-control"></button>
             </div>
           </div>
         </div>
@@ -139,80 +139,50 @@
           <div class="col-md-6">
             <div class="form-group">
                 <label>Cause</label>
-                <select class="form-control" name="country">
+                <select class="form-control" name="cause">
                     <option>Acid attack victim</option>
                     <option>Acid attack victim</option>
                     <option>Acid attack victim</option>
                 </select>
-                <div class="error-msg" ng-if="userForm.country.$invalid && userForm.country.$touched">Please Select Your Country</div>
+                <div class="error-msg" ng-if="userForm.cause.$invalid && userForm.cause.$touched">Please Select Your Country</div>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-                <label for="samples">Short Description (Explain your campaign in short)
+                <label for="desc">Short Description (Explain your campaign in short)
 </label>
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" id="desc">
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-                <label for="samples">Campaign Story (Write a story that does justice to your cause and makes the supporter reach the donate button.Don't get overwhelmed, if you feel stuck. Follow these steps:1. Talk about who you're raising funds for, be it yourself or your loved one.2. Explain why you're raising funds.3. Make an appeal to your supporters.Avoid pasting information directly from a Word document.)
+                <label for="story">Campaign Story (Write a story that does justice to your cause and makes the supporter reach the donate button.Don't get overwhelmed, if you feel stuck. Follow these steps:1. Talk about who you're raising funds for, be it yourself or your loved one.2. Explain why you're raising funds.3. Make an appeal to your supporters.Avoid pasting information directly from a Word document.)
 </label>
-              <textarea rows="4" cols="50" class="form-control resize">
+              <textarea rows="4" cols="50" class="form-control resize" id="story">
 
                 </textarea>
             </div>
           </div>
         </div>
-                <!-- <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                        <label for="samples">Other Media : (Please give an additional description of your work, including information about the process used to create your artwork.)
-</label>
-<input type="text" class="form-control" >
-
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                        <label for="samples">Artwork Description:
-</label>
-<input type="text" class="form-control" >
-
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                        <label for="samples">Work Sample (Upload 3)
-</label>
-<input type="text" class="form-control" >
-
-                    </div>
-                  </div>
-                </div> -->
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
                         <label>Recipient</label>
                       <div class="magic-form">
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="classLevel" id="14" value="beginner" ng-model="formData.classLevel">
-                        <label class="text" for="14">
-                          myself
+                        <input class="magic-radio" type="radio" name="myLevel" id="me" value="myself" ng-model="formData.myLevel">
+                        <label class="text" for="me">
+                          Myself
                         </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="classLevel" id="15" value="advanced" ng-model="formData.classLevel">
-                        <label class="text" for="15">
-                        someone else
+                        <input class="magic-radio" type="radio" name="myLevel" id="else" value="someoneelse" ng-model="formData.myLevel">
+                        <label class="text" for="else">
+                        Someone else
                         </label>
                     </div>
 
@@ -232,9 +202,9 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
-                        <label for="samples">Link to your best social footprint
+                        <label for="footprint">Link to your best social footprint
 </label>
-                      <input type="text" class="form-control">
+                      <input type="text" class="form-control" id="footprint">
                     </div>
                   </div>
                 </div>
