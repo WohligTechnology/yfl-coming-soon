@@ -1,13 +1,13 @@
 <div class="big-yoga food-banner">
     <div class="black-overlay"></div>
     <div class="container yoga-title text-center">
-        <h1>Nutrionist</h1>
+        <h1>Nutritionist</h1>
     </div>
 </div>
 
 <div class="container main-form">
     <h3 class="text-center">Please enter the below details</h3>
-    <form name="userForm" class="mid-form">
+    <form name="nutrionistForm" class="mid-form">
         <h4>Personal Details</h4>
         <hr>
         <div class="row">
@@ -15,21 +15,21 @@
                 <div class="form-group">
                     <label>First Name*</label>
                     <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
-                    <div class="error-msg" ng-if="userForm.firstName.$invalid && userForm.firstName.$touched">Please Enter Your First Name</div>
+                    <div class="error-msg" ng-if="nutrionistForm.firstName.$invalid && nutrionistForm.firstName.$touched">Please Enter Your First Name</div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label>Middle Name*</label>
                     <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" required aplha-only>
-                    <div class="error-msg" ng-if="userForm.middleName.$invalid && userForm.lastName.$touched">Please Enter Your Last Name</div>
+                    <div class="error-msg" ng-if="nutrionistForm.middleName.$invalid && nutrionistForm.middleName.$touched">Please Enter Your Middle Name</div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label>Last Name*</label>
                     <input type="text" name="lastName" ng-model="formData.lastName" class="form-control" required aplha-only>
-                    <div class="error-msg" ng-if="userForm.lastName.$invalid && userForm.lastName.$touched">Please Enter Your Last Name</div>
+                    <div class="error-msg" ng-if="nutrionistForm.lastName.$invalid && nutrionistForm.lastName.$touched">Please Enter Your Last Name</div>
                 </div>
             </div>
         </div>
@@ -38,14 +38,14 @@
                 <div class="form-group">
                     <label>Mobile*</label>
                     <input type="text" name="mobile" ng-model="formData.mobile" class="form-control" required numbers-only>
-                    <div class="error-msg" ng-if="userForm.mobile.$invalid && userForm.mobile.$touched">Please Enter Your Mobile</div>
+                    <div class="error-msg" ng-if="nutrionistForm.mobile.$invalid && nutrionistForm.mobile.$touched">Please Enter Your Mobile</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Landline</label>
                     <input type="text" name="landline" ng-model="formData.phone" class="form-control" numbers-only>
-                    <div class="error-msg" ng-if="userForm.landline.$invalid && userForm.landline.$touched">Please Enter Your Phone Number</div>
+                    <div class="error-msg" ng-if="nutrionistForm.landline.$invalid && nutrionistForm.landline.$touched">Please Enter Your Phone Number</div>
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@
                 <div class="form-group">
                     <label>Email*</label>
                     <input type="email" name="emailId" ng-model="formData.email" class="form-control" required>
-                    <div class="error-msg" ng-if="userForm.emailId.$invalid && userForm.emailId.$touched">Please Enter Your Email Id</div>
+                    <div class="error-msg" ng-if="nutrionistForm.emailId.$invalid && nutrionistForm.emailId.$touched">Please Enter Your Email Id</div>
                 </div>
             </div>
             <div class="col-md-6">
@@ -63,7 +63,7 @@
                     <select class="form-control" name="country" ng-model="formData.country" required>
                         <option value="{{country.name}}" ng-repeat="country in countries">{{country.name}}</option>
                     </select>
-                    <div class="error-msg" ng-if="userForm.country.$invalid && userForm.country.$touched">Please Select Your Country</div>
+                    <div class="error-msg" ng-if="nutrionistForm.country.$invalid && nutrionistForm.country.$touched">Please Select Your Country</div>
                 </div>
             </div>
         </div>
@@ -72,14 +72,14 @@
                 <div class="form-group">
                     <label>State*</label>
                     <input type="text" name="state" ng-model="formData.state" class="form-control" required>
-                    <div class="error-msg" ng-if="userForm.state.$invalid && userForm.state.$touched">Please Enter Your State</div>
+                    <div class="error-msg" ng-if="nutrionistForm.state.$invalid && nutrionistForm.state.$touched">Please Enter Your State</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>City*</label>
                     <input type="text" name="city" ng-model="formData.city" class="form-control" required>
-                    <div class="error-msg" ng-if="userForm.city.$invalid && userForm.city.$touched">Please Enter Your City</div>
+                    <div class="error-msg" ng-if="nutrionistForm.city.$invalid && nutrionistForm.city.$touched">Please Enter Your City</div>
                 </div>
             </div>
         </div>
@@ -89,14 +89,14 @@
                 <div class="form-group">
                     <label>Pincode*</label>
                     <input type="text" name="pincode" ng-model="formData.pincode" class="form-control" required>
-                    <div class="error-msg" ng-if="userForm.pincode.$invalid && userForm.pincode.$touched">Please Enter Your Pincode</div>
+                    <div class="error-msg" ng-if="nutrionistForm.pincode.$invalid && nutrionistForm.pincode.$touched">Please Enter Your Pincode</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Address Line 1*</label>
                     <input type="text" name="address" ng-model="formData.address" class="form-control" required>
-                    <div class="error-msg" ng-if="userForm.address.$invalid && userForm.address.$touched">Please Enter Your Address</div>
+                    <div class="error-msg" ng-if="nutrionistForm.address.$invalid && nutrionistForm.address.$touched">Please Enter Your Address</div>
                 </div>
             </div>
             <div class="col-md-12">
@@ -155,45 +155,6 @@
 
 
                 <div class="row">
-                    <!-- <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Please select the amenities offered at your studio*</label>
-                            <div class="magic-form">
-                                <div class="magic-resize">
-                                    <input class="magic-checkbox" type="checkbox" name="amenities" id="1" ng-value="lockers" ng-model="formData.amenities.lockers">
-                                    <label class="text" for="1">
-                                        Lockers
-                                    </label>
-                                </div>
-                                <div class="magic-resize">
-                                    <input class="magic-checkbox" type="checkbox" name="amenities" id="2" value="showers" ng-model="formData.amenities.showers">
-                                    <label class="text" for="2">
-                                        Showers
-                                    </label>
-                                </div>
-                                <div class="magic-resize">
-                                    <input class="magic-checkbox" type="checkbox" name="amenities" id="3" value="changing room" ng-model="formData.amenities.changingRoom">
-                                    <label class="text" for="3">
-                                        Changing Room
-                                    </label>
-                                </div>
-                                <div class="magic-resize">
-                                    <input class="magic-checkbox" type="checkbox" name="amenities" id="4" value="yoga mats" ng-model="formData.amenities.yogaMats">
-                                    <label class="text" for="4">
-                                        Yoga Mats
-                                    </label>
-                                </div>
-                                <div class="magic-resize">
-                                    <input class="magic-checkbox" type="checkbox" name="amenities" id="5" value="other" ng-model="formData.amenities.other">
-                                    <label class="labewidtxt" for="5">
-                                        Other
-                                    </label>
-                                </div>
-                                <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.amenities.other">
-                            </div>
-                        </div>
-                    </div> -->
-
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Please choose how you would like to contribute to YogaFoodLove</label>
@@ -268,14 +229,14 @@
                 <div class="form-group">
                     <label>Name of your organisation*</label>
                     <input type="text" name="organisation" ng-model="formData.organisation" class="form-control" required>
-                    <div class="error-msg" ng-if="userForm.organisation.$invalid && userForm.organisation.$touched">Please Enter Your Organisation</div>
+                    <div class="error-msg" ng-if="nutrionistForm.organisation.$invalid && nutrionistForm.organisation.$touched">Please Enter Your Organisation</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Give a brief description about the type of yoga taught at your institute</label>
                     <input type="text" name="description" ng-model="formData.description" class="form-control">
-                    <div class="error-msg" ng-if="userForm.description.$invalid && userForm.description.$touched">Please Enter Your Description</div>
+                    <div class="error-msg" ng-if="nutrionistForm.description.$invalid && nutrionistForm.description.$touched">Please Enter Your Description</div>
                 </div>
             </div>
         </div>
@@ -451,7 +412,7 @@
                 </div>
                 <div class="form-group">
                     <input type="text" name="website" placeholder="Please provide your website address*" ng-model="formData.website" class="form-control textbox-other" ng-if="formData.ifWebsite == 'true'" required>
-                    <div class="error-msg" ng-if="userForm.website.$invalid && userForm.website.$touched">Please provide your website address</div>
+                    <div class="error-msg" ng-if="nutrionistForm.website.$invalid && nutrionistForm.website.$touched">Please provide your website address</div>
                 </div>
             </div>
         </div>
@@ -461,14 +422,14 @@
                 <div class="form-group">
                     <label>Please provide a link to your Facebook Page</label>
                     <input type="text" name="facebookpagelink" ng-model="formData.facebookpagelink" class="form-control">
-                    <div class="error-msg" ng-if="userForm.facebookpagelink.$invalid && userForm.facebookpagelink.$touched">Please provide a link to your Facebook Page</div>
+                    <div class="error-msg" ng-if="nutrionistForm.facebookpagelink.$invalid && nutrionistForm.facebookpagelink.$touched">Please provide a link to your Facebook Page</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Please provide a link to your Instagram account</label>
                     <input type="text" name="instagrampagelink" ng-model="formData.instagrampagelink" class="form-control">
-                    <div class="error-msg" ng-if="userForm.instagrampagelink.$invalid && userForm.instagrampagelink.$touched">Please provide a link to your Instagram account</div>
+                    <div class="error-msg" ng-if="nutrionistForm.instagrampagelink.$invalid && nutrionistForm.instagrampagelink.$touched">Please provide a link to your Instagram account</div>
                 </div>
             </div>
         </div>
@@ -478,7 +439,7 @@
                 <div class="form-group">
                     <label>Are you active on any other social media platforms?*</label>
                     <input type="text" name="anyothersocialmedia" ng-model="formData.anyothersocialmedia" class="form-control" required>
-                    <div class="error-msg" ng-if="userForm.anyothersocialmedia.$invalid && userForm.anyothersocialmedia.$touched">Are you active on any other social media platforms?</div>
+                    <div class="error-msg" ng-if="nutrionistForm.anyothersocialmedia.$invalid && nutrionistForm.anyothersocialmedia.$touched">Are you active on any other social media platforms?</div>
                 </div>
             </div>
             <div class="col-md-6">
@@ -507,7 +468,7 @@
                 <div class="form-group">
                     <label>List the address for your branches*</label>
                     <textarea name="branches" ng-model="formData.branches" class="form-control" required></textarea>
-                            <div class="error-msg" ng-if="userForm.branches.$invalid && userForm.branches.$touched">List the address for your branches</div>
+                            <div class="error-msg" ng-if="nutrionistForm.branches.$invalid && nutrionistForm.branches.$touched">List the address for your branches</div>
                         </div>
                     </div>
                 </div>--->
@@ -516,7 +477,7 @@
                     <div class="form-group">
                         <label for="samples">Sample articles that you may wish to submit to help your portfolio (Upload)
 </label>
-                      <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span><input type="file" id="AdditionalQualification" class="form-control"></button>
+                      <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span><input type="file" id="samples" class="form-control"></button>
                     </div>
                   </div>
                 </div>
@@ -530,7 +491,7 @@
                 </div>
 
                 <div class="form-group text-center">
-                    <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ng-disabled="userForm.$invalid"><span ng-if="userForm.$invalid">Please Enter Compulsory fields</span><span ng-if="!userForm.$invalid">Submit</span></button>
+                    <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ng-disabled="nutrionistForm.$invalid"><span ng-if="nutrionistForm.$invalid">Please Enter Compulsory fields</span><span ng-if="!nutrionistForm.$invalid">Submit</span></button>
                 </div>
             </form>
         </div>

@@ -1084,12 +1084,21 @@ hr {
     border-radius: 1px;
   }
 }
-.title{
-  text-transform: uppercase;
-  padding: 15px;
-  vertical-align: middle;
+// .title{
+//   text-transform: uppercase;
+//   padding: 15px;
+//   vertical-align: middle;
+//   display: inline-block;
+//   cursor: pointer;
+// }
+ .logo-header{
   display: inline-block;
-  cursor: pointer;
+    width: 175px;
+    padding: 10px 0 0;
+    img {
+        width: 100%;
+        height: auto;
+    }
 }
 // display: inline-block;
 //     font: normal normal normal 14px/1 FontAwesome;

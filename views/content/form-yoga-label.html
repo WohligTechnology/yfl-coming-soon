@@ -7,7 +7,7 @@
 
 <div class="container main-form">
     <h3 class="text-center">Please enter the details below to collaborate with us</h3>
-    <form name="userForm" class="mid-form">
+    <form name="labelForm" class="mid-form">
         <h4>Enter Your Business Details</h4>
         <hr>
         <div class="row">
@@ -15,14 +15,14 @@
                 <div class="form-group">
                     <label>Store Name*</label>
                     <input type="text" name="storename" ng-model="formData.storename" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.storename.$invalid && userForm.storename.$touched">Please Enter Your Store Name</div>
+                    <div class="error-msg" ng-if="labelForm.storename.$invalid && labelForm.storename.$touched">Please Enter Your Store Name</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Phone Number - Landline*</label>
                     <input type="text" name="contactdetails1" ng-model="formData.contactdetails1" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.contactdetails1.$invalid && userForm.contactdetails1.$touched">Please Enter Contact Details</div>
+                    <div class="error-msg" ng-if="labelForm.contactdetails1.$invalid && labelForm.contactdetails1.$touched">Please Enter Contact Details</div>
                 </div>
             </div>
         </div>
@@ -31,14 +31,14 @@
                 <div class="form-group">
                     <label>Name of Contact Person*</label>
                     <input type="text" name="contactpersonname" ng-model="formData.contactpersonname" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.contactpersonname.$invalid && userForm.contactpersonname.$touched">Please Enter Contact Person's Name</div>
+                    <div class="error-msg" ng-if="labelForm.contactpersonname.$invalid && labelForm.contactpersonname.$touched">Please Enter Contact Person's Name</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Phone Number - Mobile*</label>
                     <input type="text" name="contactdetails" ng-model="formData.contactdetails" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.contactdetails.$invalid && userForm.contactdetails.$touched">Please Enter Contact Details</div>
+                    <div class="error-msg" ng-if="labelForm.contactdetails.$invalid && labelForm.contactdetails.$touched">Please Enter Contact Details</div>
                 </div>
             </div>
         </div>
@@ -102,7 +102,7 @@
                 <div class="form-group">
                     <label>Address Line 1*</label>
                     <input type="text" name="address" ng-model="formData.address" class="form-control" placeholder="">
-                    <div class="error-msg" ng-if="userForm.address.$invalid && userForm.address.$touched">Please Enter Your Address</div>
+                    <div class="error-msg" ng-if="labelForm.address.$invalid && labelForm.address.$touched">Please Enter Your Address</div>
                 </div>
             </div>
             <div class="col-md-6">
@@ -111,7 +111,7 @@
                     <select class="form-control" name="country" ng-model="formData.country" required>
                         <option value="{{country.name}}" ng-repeat="country in countries">{{country.name}}</option>
                     </select>
-                    <div class="error-msg" ng-if="userForm.country.$invalid && userForm.country.$touched">Please Select Your Country</div>
+                    <div class="error-msg" ng-if="labelForm.country.$invalid && labelForm.country.$touched">Please Select Your Country</div>
                 </div>
             </div>
         </div>
@@ -121,14 +121,14 @@
                 <div class="form-group">
                     <label>Address Line 2*</label>
                     <input type="text" name="address2" ng-model="formData.organisation" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.address2.$invalid && userForm.address2.$touched">Please Enter Your Address</div>
+                    <div class="error-msg" ng-if="labelForm.address2.$invalid && labelForm.address2.$touched">Please Enter Your Address</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>State*</label>
                     <input type="text" name="state" ng-model="formData.state" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.state.$invalid && userForm.state.$touched">Please Enter Your State</div>
+                    <div class="error-msg" ng-if="labelForm.state.$invalid && labelForm.state.$touched">Please Enter Your State</div>
                 </div>
             </div>
         </div>
@@ -137,14 +137,14 @@
                 <div class="form-group">
                     <label>Pin Code*</label>
                     <input type="text" name="pincode" ng-model="formData.pincode" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.pincode.$invalid && userForm.pincode.$touched">Please Enter Your Pincode</div>
+                    <div class="error-msg" ng-if="labelForm.pincode.$invalid && labelForm.pincode.$touched">Please Enter Your Pincode</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>City*</label>
                     <input type="text" name="city" ng-model="formData.city" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.city.$invalid && userForm.city.$touched">Please Enter Your City</div>
+                    <div class="error-msg" ng-if="labelForm.city.$invalid && labelForm.city.$touched"> Please Enter Your City</div>
                 </div>
             </div>
         </div>
@@ -156,17 +156,17 @@
                 <div class="form-group">
                     <label>Pan number*</label>
                     <input type="text" name="pan" ng-model="formData.pan" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.pan.$invalid && userForm.pan.$touched">Please Enter Your Pan number</div>
+                    <div class="error-msg" ng-if="labelForm.pan.$invalid && labelForm.pan.$touched"> Please Enter Your Pan number</div>
                 </div>
                 <div class="form-group">
                     <label>VAT / TIN Number*</label>
                     <input type="text" name="vat" ng-model="formData.vat" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.vat.$invalid && userForm.vat.$touched">Please Enter Your Vat/TIN number</div>
+                    <div class="error-msg" ng-if="labelForm.vat.$invalid && labelForm.vat.$touched"> Please Enter Your Vat/TIN number</div>
                 </div>
                 <div class="form-group">
                     <label>CST number*</label>
                     <input type="text" name="cst" ng-model="formData.cst" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="userForm.cst.$invalid && userForm.cst.$touched">Please Enter Your CST number</div>
+                    <div class="error-msg" ng-if="labelForm.cst.$invalid && labelForm.cst.$touched"> Please Enter Your CST number</div>
                 </div>
             </div>
         </div>
