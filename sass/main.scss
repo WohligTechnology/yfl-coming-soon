@@ -1071,6 +1071,20 @@ hr {
   content:"\f054" ;
     font-family: FontAwesome;
 }
+.hamburger{
+  float: right;
+  margin: 15px 20px;
+  cursor: pointer;
+  span.icon-bar{
+    background-color: #000;
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin-top: 5px;
+    border-radius: 1px;
+  }
+}
+
 // display: inline-block;
 //     font: normal normal normal 14px/1 FontAwesome;
 //     font-size: inherit;

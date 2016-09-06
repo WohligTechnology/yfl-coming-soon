@@ -11,14 +11,21 @@
         <h4>Personal Details</h4>
         <hr>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="form-group">
                     <label>First Name*</label>
                     <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
                     <div class="error-msg" ng-if="userForm.firstName.$invalid && userForm.firstName.$touched">Please Enter Your First Name</div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Middle Name*</label>
+                    <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" required aplha-only>
+                    <div class="error-msg" ng-if="userForm.middleName.$invalid && userForm.lastName.$touched">Please Enter Your Last Name</div>
+                </div>
+            </div>
+            <div class="col-md-4">
                 <div class="form-group">
                     <label>Last Name*</label>
                     <input type="text" name="lastName" ng-model="formData.lastName" class="form-control" required aplha-only>
