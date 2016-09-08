@@ -1,4 +1,4 @@
-var adminURL = "";
+var adminurl = "http://10.0.0.63:1337/";
 if (isproduction) {
     adminURL = "http://www.wohlig.co.in/demo/index.php";
 } else {
@@ -770,7 +770,15 @@ var navigationservice = angular.module('navigationservice', [])
         },
         getInstaHash: function(hashtag) {
             $http.get("https://api.instagram.com/v1/tags/yogafoodlove/media/recent?access_token=3102400429.d6bc71c.1fb75e5d39b24625843acfea8cd1972a");
-        }
+        },
+        saveArtistForm: function(formData, callback) {
+console.log(formData,'**********************');
+            $http({
+                url: adminurl + 'ArtistCollaboration/save',
+                method: 'POST',
+                data: formData
+            }).success(callback);
+        },
 
     };
 });
