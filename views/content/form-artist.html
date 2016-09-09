@@ -130,9 +130,10 @@
             <div class="form-group">
                <label>Media</label>
                <div class="magic-form">
+
                   <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="fine-art" value="fineArt" ng-model="formData.style.fineArt" ng-click="mediafor('fineArt')">
-                     <label class="text" for="fine-art">
+                     <input class="magic-checkbox" type="checkbox" name="style" id="fineArt" value="fineArt" ng-model="formData.style.fineArt" ng-click="mediafor('fineArt')">
+                     <label class="text" for="fineArt">
                         Painting - fine art
                      </label>
                   </div>
@@ -252,16 +253,15 @@
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="nutrition" id="otheroption" value="{{formData.myother}}" ng-model="formData.nutrition.other" ng-click="mediafor(formData.myother)">
+                     <input class="magic-checkbox" type="checkbox" name="nutrition" id="otheroption" ng-model="formData.nutrition.other" ng-click="mediafor('other')">
                      <label class="labewidtxt" for="otheroption">
                         Other
                      </label>
                   </div>
                   <input ng-model="formData.myother" type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.nutrition.other">
-
                </div>
                <div ng-if="noMedia" style="font-size:16px;margin:10px 0 0;">
-                 Please select a Media
+                  Please select a Media
                </div>
             </div>
          </div>
@@ -346,7 +346,7 @@
       </div>
 
       <div class="form-group text-center">
-         <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ><span ng-if="artistForm.$invalid">Please Enter Compulsory fields</span><span ng-if="!artistForm.$invalid">Submit</span></button>
+         <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn"><span ng-if="artistForm.$invalid">Please Enter Compulsory fields</span><span ng-if="!artistForm.$invalid">Submit</span></button>
          <!-- <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ng-disabled="artistForm.$invalid"><span ng-if="artistForm.$invalid">Please Enter Compulsory fields</span><span ng-if="!artistForm.$invalid">Submit</span></button> -->
       </div>
    </form>

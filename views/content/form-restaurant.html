@@ -1,433 +1,433 @@
 <div class="big-yoga">
-    <div class="black-overlay"></div>
-    <div class="container yoga-title text-center">
-        <h1>Restaurant Listing</h1>
-    </div>
+   <div class="black-overlay"></div>
+   <div class="container yoga-title text-center">
+      <h1>Restaurant Listing</h1>
+   </div>
 </div>
 
 <div class="container main-form">
-    <h3 class="text-center">Please enter the details below to collaborate with us</h3>
-    <form name="restaurantForm" class="mid-form">
-        <h4>Your Personal Details</h4>
-        <hr>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>First Name*</label>
-                    <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
-                    <div class="error-msg" ng-if="restaurantForm.firstName.$invalid && restaurantForm.firstName.$touched">Please Enter Your First Name</div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>Middle Name*</label>
-                    <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" required aplha-only>
-                    <div class="error-msg" ng-if="restaurantForm.middleName.$invalid && restaurantForm.middleName.$touched">Please Enter Your Middle Name</div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>Last Name*</label>
-                    <input type="text" name="lastName" ng-model="formData.lastName" class="form-control" required aplha-only>
-                    <div class="error-msg" ng-if="restaurantForm.lastName.$invalid && restaurantForm.lastName.$touched">Please Enter Your Last Name</div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Mobile*</label>
-                    <input type="text" name="mobile" ng-model="formData.mobile" class="form-control" required numbers-only>
-                    <div class="error-msg" ng-if="restaurantForm.mobile.$invalid && restaurantForm.mobile.$touched">Please Enter Your Mobile</div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Landline</label>
-                    <input type="text" name="landline" ng-model="formData.phone" class="form-control" numbers-only>
-                    <div class="error-msg" ng-if="restaurantForm.landline.$invalid && restaurantForm.landline.$touched">Please Enter Your Phone Number</div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Email*</label>
-                    <input type="email" name="emailId" ng-model="formData.email" class="form-control" required>
-                    <div class="error-msg" ng-if="restaurantForm.emailId.$invalid && restaurantForm.emailId.$touched">Please Enter Your Email Id</div>
-                </div>
-            </div>
-        </div>
-        <h4>Restaurant Details</h4>
-        <hr>
-        <p>All fields required</p>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Name of the restaurant</label>
-                    <input type="text" name="restname" ng-model="formData.restname" class="form-control" required aplha-only>
-                    <div class="error-msg" ng-if="restaurantForm.restname.$invalid && restaurantForm.restname.$touched">Please Enter Restaurant Name</div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Country*</label>
-                    <select class="form-control" name="country" ng-model="formData.country" required>
-                        <option value="{{country.name}}" ng-repeat="country in countries">{{country.name}}</option>
-                    </select>
-                    <div class="error-msg" ng-if="restaurantForm.country.$invalid && restaurantForm.country.$touched">Please Select Your Country</div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Address</label>
-                    <input type="text" name="address" ng-model="formData.address" class="form-control" required aplha-only>
-                    <div class="error-msg" ng-if="restaurantForm.address.$invalid && restaurantForm.address.$touched">Please Enter Address</div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>State</label>
-                    <input type="text" name="state" ng-model="formData.state" class="form-control" required aplha-only>
-                    <div class="error-msg" ng-if="restaurantForm.state.$invalid && restaurantForm.state.$touched">Please Enter Your State</div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Zip Code</label>
-                    <input type="text" name="zip" ng-model="formData.zip" class="form-control" number-only>
-                    <div class="error-msg" ng-if="restaurantForm.zip.$invalid && restaurantForm.zip.$touched">Please Enter Zip Code</div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>City</label>
-                    <input type="text" name="city" ng-model="formData.city" class="form-control" required aplha-only>
-                    <div class="error-msg" ng-if="restaurantForm.city.$invalid && restaurantForm.city.$touched">Please Enter Your City</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Phone Number</label>
-                    <input type="text" name="phone" ng-model="formData.phone" class="form-control" number-only>
-                    <div class="error-msg" ng-if="restaurantForm.phone.$invalid && restaurantForm.phone.$touched">Please Enter Phone Number</div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Operations Manager Contact Name</label>
-                    <input type="text" name="managename" ng-model="formData.managename" class="form-control" required aplha-only>
-                    <div class="error-msg" ng-if="restaurantForm.managename.$invalid && restaurantForm.managename.$touched">Please Enter Operation Manager Name</div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-        <div class="col-md-6">
-                <div class="form-group">
-                    <label>Operations Manager Contact Name</label>
-                    <input type="text" name="managename1" ng-model="formData.managename1" class="form-control" required aplha-only>
-                    <div class="error-msg" ng-if="restaurantForm.managename1.$invalid && restaurantForm.managename1.$touched">Please Enter Operation Manager Name</div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Timings</label>
-                    <input type="text" name="timings" ng-model="formData.timings" class="form-control" required>
-                    <div class="error-msg" ng-if="restaurantForm.timings.$invalid && restaurantForm.timings.$touched">Please Enter Time</div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-        <div class="col-md-6">
-                <div class="form-group">
-                    <label>Cuisines (Please list all)</label>
-                    <input type="text" name="cuisines" ng-model="formData.cuisines" class="form-control" required aplha-only>
-                    <div class="error-msg" ng-if="restaurantForm.cuisines.$invalid && restaurantForm.cuisines.$touched">Please Enter Cuisine</div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Average cost for two</label>
-                    <input type="text" name="avgcost" ng-model="formData.avgcost" class="form-control" required>
-                    <div class="error-msg" ng-if="restaurantForm.avgcost.$invalid && restaurantForm.avgcost.$touched">Please Enter Average Cost</div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
+   <h3 class="text-center">Please enter the details below to collaborate with us</h3>
+   <form name="restaurantForm" class="mid-form" ng-submit="submitRestaurantForm(formData)">
+      <h4>Your Personal Details</h4>
+      <hr>
+      <div class="row">
+         <div class="col-md-4">
             <div class="form-group">
-              <label for="">Home Delivery</label>
-              <div class="magic-form">
-                  <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="homedel" id="1" value="option1">
-                      <label class="text" for="1">
-                        Yes
-                    </label>
-                  </div>
-                  <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="homedel" id="2" value="option1">
-                      <label class="text" for="2">
-                        No
-                    </label>
-                  </div>
-              </div>
+               <label>First Name*</label>
+               <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
+               <div class="error-msg" ng-if="restaurantForm.firstName.$invalid && restaurantForm.firstName.$touched">Please Enter Your First Name</div>
             </div>
-          </div>
-          <div class="col-md-6">
+         </div>
+         <div class="col-md-4">
+            <div class="form-group">
+               <label>Middle Name*</label>
+               <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" required aplha-only>
+               <div class="error-msg" ng-if="restaurantForm.middleName.$invalid && restaurantForm.middleName.$touched">Please Enter Your Middle Name</div>
+            </div>
+         </div>
+         <div class="col-md-4">
+            <div class="form-group">
+               <label>Last Name*</label>
+               <input type="text" name="lastName" ng-model="formData.lastName" class="form-control" required aplha-only>
+               <div class="error-msg" ng-if="restaurantForm.lastName.$invalid && restaurantForm.lastName.$touched">Please Enter Your Last Name</div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
+            <div class="form-group">
+               <label>Mobile*</label>
+               <input type="text" name="mobileNumber" ng-model="formData.mobileNumber" class="form-control" required numbers-only>
+               <div class="error-msg" ng-if="restaurantForm.mobileNumber.$invalid && restaurantForm.mobileNumber.$touched">Please Enter Your Mobile</div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="form-group">
+               <label>Landline</label>
+               <input type="text" name="landline" ng-model="formData.landlineNumber" class="form-control" numbers-only>
+               <div class="error-msg" ng-if="restaurantForm.landline.$invalid && restaurantForm.landline.$touched">Please Enter Your Phone Number</div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
+            <div class="form-group">
+               <label>Email*</label>
+               <input type="email" name="emailId" ng-model="formData.email" class="form-control" required>
+               <div class="error-msg" ng-if="restaurantForm.emailId.$invalid && restaurantForm.emailId.$touched">Please Enter Your Email Id</div>
+            </div>
+         </div>
+      </div>
+      <h4>Restaurant Details</h4>
+      <hr>
+      <p>All fields required</p>
+      <div class="row">
+         <div class="col-md-6">
+            <div class="form-group">
+               <label>Name of the restaurant</label>
+               <input type="text" name="restaurantName" ng-model="formData.restaurantName" class="form-control" required aplha-only>
+               <div class="error-msg" ng-if="restaurantForm.restaurantName.$invalid && restaurantForm.restaurantName.$touched">Please Enter Restaurant Name</div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="form-group">
+               <label>Country*</label>
+               <select class="form-control" name="country" ng-model="formData.country" required>
+                  <option value="{{country.name}}" ng-repeat="country in countries">{{country.name}}</option>
+               </select>
+               <div class="error-msg" ng-if="restaurantForm.country.$invalid && restaurantForm.country.$touched">Please Select Your Country</div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
+            <div class="form-group">
+               <label>Address</label>
+               <input type="text" name="address" ng-model="formData.address" class="form-control" required aplha-only>
+               <div class="error-msg" ng-if="restaurantForm.address.$invalid && restaurantForm.address.$touched">Please Enter Address</div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="form-group">
+               <label>State</label>
+               <input type="text" name="state" ng-model="formData.state" class="form-control" required aplha-only>
+               <div class="error-msg" ng-if="restaurantForm.state.$invalid && restaurantForm.state.$touched">Please Enter Your State</div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
+            <div class="form-group">
+               <label>Zip Code</label>
+               <input type="text" name="zipcode" ng-model="formData.zipcode" class="form-control" number-only>
+               <div class="error-msg" ng-if="restaurantForm.zipcode.$invalid && restaurantForm.zipcode.$touched">Please Enter Zip Code</div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="form-group">
+               <label>City</label>
+               <input type="text" name="city" ng-model="formData.city" class="form-control" required aplha-only>
+               <div class="error-msg" ng-if="restaurantForm.city.$invalid && restaurantForm.city.$touched">Please Enter Your City</div>
+            </div>
+         </div>
+      </div>
+
+      <div class="row">
+         <div class="col-md-6">
+            <div class="form-group">
+               <label>Phone Number</label>
+               <input type="text" name="landlineNumber" ng-model="formData.landlineNumber" class="form-control" number-only>
+               <div class="error-msg" ng-if="restaurantForm.landlineNumber.$invalid && restaurantForm.landlineNumber.$touched">Please Enter Phone Number</div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="form-group">
+               <label>Operations Manager Contact Name</label>
+               <input type="text" name="managerName" ng-model="formData.managerName" class="form-control" required aplha-only>
+               <div class="error-msg" ng-if="restaurantForm.managerName.$invalid && restaurantForm.managerName.$touched">Please Enter Operation Manager Name</div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
+            <div class="form-group">
+               <label>Operations Manager Contact Number</label>
+               <input type="text" name="managerNumber" ng-model="formData.managerNumber" class="form-control" required>
+               <div class="error-msg" ng-if="restaurantForm.managerNumber.$invalid && restaurantForm.managerNumber.$touched">Please Enter Operation Manager Number</div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="form-group">
+               <label>Timings</label>
+               <input type="text" name="timings" ng-model="formData.timings" class="form-control" required>
+               <div class="error-msg" ng-if="restaurantForm.timings.$invalid && restaurantForm.timings.$touched">Please Enter Time</div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
+            <div class="form-group">
+               <label>Cuisines (Please list all)</label>
+               <input type="text" name="cuisines" ng-model="formData.cuisines" class="form-control" required aplha-only>
+               <div class="error-msg" ng-if="restaurantForm.cuisines.$invalid && restaurantForm.cuisines.$touched">Please Enter Cuisine</div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="form-group">
+               <label>Average cost for two</label>
+               <input type="text" name="avgCost" ng-model="formData.avgCost" class="form-control" required>
+               <div class="error-msg" ng-if="restaurantForm.avgCost.$invalid && restaurantForm.avgCost.$touched">Please Enter Average Cost</div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
+            <div class="form-group">
+               <label for="">Home Delivery</label>
+               <div class="magic-form">
+                  <div class="magic-resize">
+                     <input class="magic-radio" type="radio" name="homeDelivery" id="1" value="yes" ng-model="formData.homeDelivery">
+                     <label class="text" for="1">
+                        Yes
+                     </label>
+                  </div>
+                  <div class="magic-resize">
+                     <input class="magic-radio" type="radio" name="homeDelivery" id="2" value="no" ng-model="formData.homeDelivery">
+                     <label class="text" for="2">
+                        No
+                     </label>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6">
             <label for="">Minumum Order Delivery</label>
-            <input type="text" name="minimumorderdel" ng-model="formData.minimumorderdel" class="form-control" required>
-            <div class="error-msg" ng-if="restaurantForm.minimumorderdel.$invalid && restaurantForm.minimumorderdel.$touched">Please Enter Minimum Order For Delivery</div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
+            <input type="text" name="minOrder" ng-model="formData.minOrder" class="form-control" required>
+            <div class="error-msg" ng-if="restaurantForm.minOrder.$invalid && restaurantForm.minOrder.$touched">Please Enter Minimum Order For Delivery</div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
             <div class="form-group">
-              <label for="">Dine-in Facility</label>
-              <div class="magic-form">
+               <label for="">Dine-in Facility</label>
+               <div class="magic-form">
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="dinein" id="3" value="option2">
-                      <label class="text" for="3">
+                     <input class="magic-radio" type="radio" name="dineIn" id="3" value="yes" ng-model="formData.dineIn">
+                     <label class="text" for="3">
                         Yes
-                    </label>
+                     </label>
                   </div>
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="dinein" id="4" value="option2">
-                      <label class="text" for="4">
+                     <input class="magic-radio" type="radio" name="dineIn" id="4" value="no" ng-model="formData.dineIn">
+                     <label class="text" for="4">
                         No
-                    </label>
+                     </label>
                   </div>
-              </div>
+               </div>
 
             </div>
-          </div>
-          <div class="col-md-6">
+         </div>
+         <div class="col-md-6">
             <div class="form-group">
-              <label for="">Bar</label>
-              <div class="magic-form">
+               <label for="">Bar</label>
+               <div class="magic-form">
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="bar" id="5" value="option3">
-                      <label class="text" for="5">
+                     <input class="magic-radio" type="radio" name="bar" id="5" value="yes" ng-model="formData.bar">
+                     <label class="text" for="5">
                         Yes
-                    </label>
+                     </label>
                   </div>
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="bar" id="6" value="option3">
-                      <label class="text" for="6">
+                     <input class="magic-radio" type="radio" name="bar" id="6" value="no" ng-model="formData.bar">
+                     <label class="text" for="6">
                         No
-                    </label>
+                     </label>
                   </div>
-              </div>
+               </div>
 
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
             <div class="form-group">
-              <label for="">Happy Hours</label>
-              <div class="magic-form">
+               <label for="">Happy Hours</label>
+               <div class="magic-form">
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="happyhr" id="7" value="option4">
-                      <label class="text" for="7">
+                     <input class="magic-radio" type="radio" name="happyHours" id="7" value="yes" ng-model="formData.happyHours">
+                     <label class="text" for="7">
                         Yes
-                    </label>
+                     </label>
                   </div>
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="happyhr" id="8" value="option4">
-                      <label class="text" for="8">
+                     <input class="magic-radio" type="radio" name="happyHours" id="8" value="no" ng-model="formData.happyHours">
+                     <label class="text" for="8">
                         No
-                    </label>
+                     </label>
                   </div>
-              </div>
+               </div>
 
             </div>
-          </div>
-          <div class="col-md-6">
+         </div>
+         <div class="col-md-6">
             <div class="form-group">
-              <label for="">Air-conditioned (AC)</label>
-              <div class="magic-form">
+               <label for="">Air-conditioned (AC)</label>
+               <div class="magic-form">
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="AC" id="9" value="option5">
-                      <label class="text" for="9">
+                     <input class="magic-radio" type="radio" name="air" id="9" value="yes" ng-model="formData.ac" required>
+                     <label class="text" for="9">
                         Yes
-                    </label>
+                     </label>
                   </div>
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="AC" id="10" value="option5">
-                      <label class="text" for="10">
+                     <input class="magic-radio" type="radio" name="air" id="10" value="no" ng-model="formData.ac" required>
+                     <label class="text" for="10">
                         No
-                    </label>
+                     </label>
                   </div>
-              </div>
+               </div>
 
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
             <div class="form-group">
-              <label for="">Wifi available</label>
-              <div class="magic-form">
+               <label for="">Wifi available</label>
+               <div class="magic-form">
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="wifi" id="11" value="option6">
-                      <label class="text" for="11">
+                     <input class="magic-radio" type="radio" name="wifi" id="11" value="yes" ng-model="formData.wifi">
+                     <label class="text" for="11">
                         Yes
-                    </label>
+                     </label>
                   </div>
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="wifi" id="12" value="option6">
-                      <label class="text" for="12">
+                     <input class="magic-radio" type="radio" name="wifi" id="12" value="no" ng-model="formData.wifi">
+                     <label class="text" for="12">
                         No
-                    </label>
+                     </label>
                   </div>
-              </div>
+               </div>
 
             </div>
-          </div>
-          <div class="col-md-6">
+         </div>
+         <div class="col-md-6">
             <div class="form-group">
-              <label for="">Outdoor dining facility</label>
-              <div class="magic-form">
+               <label for="">Outdoor dining facility</label>
+               <div class="magic-form">
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="otherfacility" id="13" value="option7">
-                      <label class="text" for="13">
+                     <input class="magic-radio" type="radio" name="outDoorDining" id="13" value="yes" ng-model="formData.outDoorDining">
+                     <label class="text" for="13">
                         Yes
-                    </label>
+                     </label>
                   </div>
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="otherfacility" id="14" value="option7">
-                      <label class="text" for="14">
+                     <input class="magic-radio" type="radio" name="outDoorDining" id="14" value="no" ng-model="formData.outDoorDining">
+                     <label class="text" for="14">
                         No
-                    </label>
+                     </label>
                   </div>
-              </div>
+               </div>
 
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
             <div class="form-group">
-              <label for="">Live Music</label>
-              <div class="magic-form">
+               <label for="">Live Music</label>
+               <div class="magic-form">
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="livemusic" id="15" value="option8">
-                      <label class="text" for="15">
+                     <input class="magic-radio" type="radio" name="liveMusic" id="15" value="yes" ng-model="formData.liveMusic">
+                     <label class="text" for="15">
                         Yes
-                    </label>
+                     </label>
                   </div>
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="livemusic" id="16" value="option8">
-                      <label class="text" for="16">
+                     <input class="magic-radio" type="radio" name="liveMusic" id="16" value="no" ng-model="formData.liveMusic">
+                     <label class="text" for="16">
                         No
-                    </label>
+                     </label>
                   </div>
-              </div>
+               </div>
 
             </div>
-          </div>
-          <div class="col-md-6">
+         </div>
+         <div class="col-md-6">
             <div class="form-group">
-              <label for="">Pure Vegetarian</label>
-              <div class="magic-form">
+               <label for="">Pure Vegetarian</label>
+               <div class="magic-form">
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="pureveg" id="17" value="option9">
-                      <label class="text" for="17">
+                     <input class="magic-radio" type="radio" name="pureVeg" id="17" value="yes" ng-model="formData.pureVeg">
+                     <label class="text" for="17">
                         Yes
-                    </label>
+                     </label>
                   </div>
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="pureveg" id="18" value="option9">
-                      <label class="text" for="18">
+                     <input class="magic-radio" type="radio" name="pureVeg" id="18" value="no" ng-model="formData.pureVeg">
+                     <label class="text" for="18">
                         No
-                    </label>
+                     </label>
                   </div>
-              </div>
+               </div>
 
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
             <div class="form-group">
-              <label for="">Credit Cards accepted</label>
-              <div class="magic-form">
+               <label for="">Credit Cards accepted</label>
+               <div class="magic-form">
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="creditcard" id="19" value="option10">
-                      <label class="text" for="19">
+                     <input class="magic-radio" type="radio" name="creditCard" id="19" value="yes" ng-model="formData.creditCard">
+                     <label class="text" for="19">
                         Yes
-                    </label>
+                     </label>
                   </div>
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="creditcard" id="20" value="option10">
-                      <label class="text" for="20">
+                     <input class="magic-radio" type="radio" name="creditCard" id="20" value="no" ng-model="formData.creditCard">
+                     <label class="text" for="20">
                         No
-                    </label>
+                     </label>
                   </div>
-              </div>
+               </div>
             </div>
-          </div>
-          <div class="col-md-6">
+         </div>
+         <div class="col-md-6">
             <div class="form-group">
-              <label for="">Smoking Area</label>
-              <div class="magic-form">
+               <label for="">Smoking Area</label>
+               <div class="magic-form">
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="smoke" id="21" value="option11">
-                      <label class="text" for="21">
+                     <input class="magic-radio" type="radio" name="smokingArea" id="21" value="yes" ng-model="formData.smokingArea">
+                     <label class="text" for="21">
                         Yes
-                    </label>
+                     </label>
                   </div>
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="smoke" id="22" value="option12">
-                      <label class="text" for="22">
+                     <input class="magic-radio" type="radio" name="smokingArea" id="22" value="no" ng-model="formData.smokingArea">
+                     <label class="text" for="22">
                         No
-                    </label>
+                     </label>
                   </div>
-              </div>
+               </div>
 
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
             <div class="form-group">
-              <label for="">Buffet Details (If any)</label>
-              <input type="text" name="buffet" ng-model="formData.buffet" class="form-control" required aplha-only>
-              <div class="error-msg" ng-if="restaurantForm.buffet.$invalid && restaurantForm.buffet.$touched">Please Enter Buffet Details</div>
-    </div>
-          </div>
-          <div class="col-md-6">
+               <label for="">Buffet Details (If any)</label>
+               <input type="text" name="buffetDetails" ng-model="formData.buffetDetails" class="form-control" required aplha-only>
+               <div class="error-msg" ng-if="restaurantForm.buffetDetails.$invalid && restaurantForm.buffetDetails.$touched">Please Enter Buffet Details</div>
+            </div>
+         </div>
+         <div class="col-md-6">
             <div class="form-group">
-              <label for="">Catering Services</label>
-              <div class="magic-form">
+               <label for="">Catering Services</label>
+               <div class="magic-form">
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="catering" id="23" value="option12">
-                      <label class="text" for="23">
+                     <input class="magic-radio" type="radio" name="catering" id="23" value="yes" ng-model="formData.catering">
+                     <label class="text" for="23">
                         Yes
-                    </label>
+                     </label>
                   </div>
                   <div class="magic-resize">
-                      <input class="magic-radio" type="radio" name="catering" id="24" value="option12">
-                      <label class="text" for="24">
+                     <input class="magic-radio" type="radio" name="catering" id="24" value="No" ng-model="formData.catering">
+                     <label class="text" for="24">
                         No
-                    </label>
+                     </label>
                   </div>
-              </div>
+               </div>
 
             </div>
-          </div>
-        </div>
+         </div>
+      </div>
+      <div class="form-group text-center">
+         <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn">Submit</button>
+      </div>
+   </form>
 </div>
-<div class="form-group text-center">
-    <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn">Submit</button>
-</div>
-</div>
 
-</form>
+<!-- </div> -->

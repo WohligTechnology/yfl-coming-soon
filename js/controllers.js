@@ -81,6 +81,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.countries = NavigationService.getcountries();
+        $scope.formData={};
+
     })
     .controller('FormYogaLabelCollaborationCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
@@ -88,6 +90,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Yoga Label Collaboration Form");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+
     })
     .controller('FormRestaurantCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
@@ -95,6 +98,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Form Restaurant");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.countries = NavigationService.getcountries();
+        $scope.formData={};
+        $scope.submitRestaurantForm=function(formData){
+          console.log("formData",formData);
+          if (formData) {
+            NavigationService.saveRestaurantForm(formData,function(data){
+              console.log(data,"data");
+            })
+          }
+
+        }
+
+
     })
 
 .controller('FormNutrionistCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -103,6 +119,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Form Nutritonist");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.countries = NavigationService.getcountries();
+    $scope.formData={};
+    $scope.submitNutrionistForm=function(formData){
+      console.log("formData",formData);
+      if (formData) {
+NavigationService.saveNutrionistForm(formData,function(data){
+  console.log(data,"data");
+})
+      }
+    }
 })
 
 .controller('FormPersonalCampaignCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -213,6 +239,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Form Artist");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    // $scope.medias=NavigationService.getMedias();
+
+
 
     $scope.formComplete = false;
     $scope.exist = false;
@@ -220,9 +249,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.validMobileno = false;
     $scope.formData = {};
     $scope.formData.mediaArray = [];
-$scope.noMedia = false;
+    $scope.noMedia = false;
     $scope.submitArtistForm = function(formData) {
-      $scope.noMedia = false;
+        $scope.noMedia = false;
+        _.each($scope.formData.mediaArray, function(data,key){
+          if (data === "other") {
+            $scope.formData.mediaArray[key] = $scope.formData.myother;
+          }
+        });
+        console.log($scope.formData.mediaArray);
         if ($scope.formData) {
             console.log("  $scope.formData", $scope.formData);
             $scope.formData.mediaFor = " ";
@@ -251,12 +286,10 @@ $scope.noMedia = false;
                         console.log("imin else", data.error.errors);
                         $scope.exist = true;
                         $scope.validMobileno = false;
-                    }
-                    else if (data.value==false && data.error.errors.pincode) {
-                    $scope.invalidPincode=true;
-                    $scope.validMobileno=false;
-                    }
-                    else if (data.value == false && data.error.errors.mobileNumber) {
+                    } else if (data.value == false && data.error.errors.pincode) {
+                        $scope.invalidPincode = true;
+                        $scope.validMobileno = false;
+                    } else if (data.value == false && data.error.errors.mobileNumber) {
                         $scope.validMobileno = true;
 
                     }
@@ -267,13 +300,15 @@ $scope.noMedia = false;
 
 
             } else {
-  $scope.noMedia = true;
+                $scope.noMedia = true;
             }
 
         }
     }
 
+
     $scope.mediafor = function(val) {
+
         var foundIndex = _.findIndex($scope.formData.mediaArray, function(key) {
             return key == val;
         });
@@ -282,11 +317,14 @@ $scope.noMedia = false;
         } else {
             $scope.formData.mediaArray.splice(foundIndex, 1);
         }
+
         console.log($scope.formData.mediaArray);
     };
+
     $scope.countries = NavigationService.getcountries();
 
     console.log("$scope.countries", $scope.countries);
+
 
 })
 

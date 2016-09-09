@@ -1,4 +1,5 @@
 var adminurl = "http://10.0.0.63:1337/";
+// var imgurl="http://10.0.0.63:1337/"
 if (isproduction) {
     adminURL = "http://www.wohlig.co.in/demo/index.php";
 } else {
@@ -751,12 +752,17 @@ var navigationservice = angular.module('navigationservice', [])
     }];
 
 
+
+
     return {
         getnav: function() {
             return navigation;
         },
         getcountries: function() {
             return countries;
+        },
+        getMedias:function(){
+          return medias;
         },
         makeactive: function(menuname) {
             for (var i = 0; i < navigation.length; i++) {
@@ -775,6 +781,22 @@ var navigationservice = angular.module('navigationservice', [])
 console.log(formData,'**********************');
             $http({
                 url: adminurl + 'ArtistCollaboration/save',
+                method: 'POST',
+                data: formData
+            }).success(callback);
+        },
+        saveNutrionistForm: function(formData, callback) {
+console.log(formData,'**********************');
+            $http({
+                url: adminurl + 'NutritionistCollaboration/save',
+                method: 'POST',
+                data: formData
+            }).success(callback);
+        },
+        saveRestaurantForm: function(formData, callback) {
+console.log(formData,'**********************');
+            $http({
+                url: adminurl + 'RestaurantOnYfl/save',
                 method: 'POST',
                 data: formData
             }).success(callback);
