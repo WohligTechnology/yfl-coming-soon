@@ -198,7 +198,7 @@ a {
 
 .navbar-header {
     float: none;
-    padding: 5px;
+    padding: 10px 5px;
 }
 
 .btn-dark {
@@ -994,7 +994,7 @@ hr {
 .logo-header {
     display: inline-block;
     width: 55px;
-    padding: 10px 0 0;
+    // padding: 10px 0 0;
 
     img {
         width: 100%;
@@ -1069,11 +1069,10 @@ hr {
     font-family: FontAwesome;
 }
 .hamburger{
-  float: right;
-  margin: 15px 20px;
-  cursor: pointer;
-  height: auto;
-    width: 50px;
+  margin: 5px 0px 0px 20px;
+      cursor: pointer;
+      height: auto;
+      width: 28px;
   span.icon-bar{
     background-color: #000;
     display: block;
@@ -1086,7 +1085,7 @@ hr {
 
 .become-member{
   text-align: right;
-  padding: 18px 0 0;
+    padding: 3px 0 0 0;
   a:hover{
     color: #000 !important;
     text-decoration: none;
@@ -1101,11 +1100,13 @@ hr {
     color: #000;
     text-align: center;
     margin: 0 auto;
+    padding: 10px 0 5px 0;
     border-top:1px solid #000;
     li{
-      display: table-cell;
-    padding: 15px 50px;
-    font-size: 16px;
+      display: inline-block;
+      padding: 0px 15px 5px 15px;
+      font-size: 14px;
+      vertical-align: middle;
     a{
       &:hover{
         color: #ff004d !important;
@@ -1133,8 +1134,8 @@ hr {
 // }
  .logo-header{
   display: inline-block;
-    width: 175px;
-    padding: 10px 0 0;
+    width: 160px;
+    // padding: 5px 0 ;
     img {
         width: 100%;
         height: auto;
