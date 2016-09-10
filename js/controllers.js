@@ -264,12 +264,12 @@ NavigationService.saveNutrionistForm(formData,function(data){
             if ($scope.formData.mediaArray.length > 0) {
                 _.each($scope.formData.mediaArray, function(n) {
                     $scope.formData.mediaFor += n + ",";
-                })
+                });
                 $scope.formData.mediaFor = $scope.formData.mediaFor.substring(0, $scope.formData.mediaFor.length - 1);
                 NavigationService.saveArtistForm($scope.formData, function(data) {
                     console.log("iminnavigation", $scope.formData);
                     console.log("formData", data);
-                    if (data.value == true) {
+                    if (data.value === true) {
                         $scope.formComplete = true;
                         $scope.exist = false;
                         $scope.invalidPincode = false;
@@ -282,14 +282,14 @@ NavigationService.saveNutrionistForm(formData,function(data){
                             $scope.formData.mediaArray = [];
 
                         }, 2000);
-                    } else if (data.value == false && data.error.errors.email) {
+                    } else if (data.value === false && data.error.errors.email) {
                         console.log("imin else", data.error.errors);
                         $scope.exist = true;
                         $scope.validMobileno = false;
-                    } else if (data.value == false && data.error.errors.pincode) {
+                    } else if (data.value === false && data.error.errors.pincode) {
                         $scope.invalidPincode = true;
                         $scope.validMobileno = false;
-                    } else if (data.value == false && data.error.errors.mobileNumber) {
+                    } else if (data.value === false && data.error.errors.mobileNumber) {
                         $scope.validMobileno = true;
 
                     }
@@ -304,7 +304,7 @@ NavigationService.saveNutrionistForm(formData,function(data){
             }
 
         }
-    }
+    };
 
 
     $scope.mediafor = function(val) {

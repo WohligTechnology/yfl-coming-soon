@@ -91,7 +91,7 @@
                <input type="text" name="pincode" ng-model="formData.pincode" class="form-control" required>
                <div class="error-msg" ng-if="artistForm.pincode.$invalid && artistForm.pincode.$touched">Please Enter Your Pincode</div>
             </div>
-            <div ng-if="invalidPincode">Enter Valid Pincode.</div>
+            <div ng-if="invalidPincode">Enter Valid Pincode</div>
          </div>
          <div class="col-md-6">
             <div class="form-group">
@@ -344,8 +344,7 @@
       </div>
 
       <div class="form-group text-center">
-         <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn"><span ng-if="artistForm.$invalid">Please Enter Compulsory fields</span><span ng-if="!artistForm.$invalid">Submit</span></button>
-         <!-- <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ng-disabled="artistForm.$invalid"><span ng-if="artistForm.$invalid">Please Enter Compulsory fields</span><span ng-if="!artistForm.$invalid">Submit</span></button> -->
+         <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ng-disabled="artistForm.$invalid"><span ng-if="artistForm.$invalid">Please Enter Compulsory fields</span><span ng-if="!artistForm.$invalid">Submit</span></button>
       </div>
    </form>
 
