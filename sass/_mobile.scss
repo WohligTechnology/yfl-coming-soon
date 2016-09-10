@@ -14,9 +14,6 @@
     }
 }
 @media (max-width:$screen-md-max) {
-    footer .social-icons {
-        margin: 5px 3px;
-    }
 }
 @media (max-width:$screen-sm-max) {
     .main-form .sub-btn {
@@ -102,13 +99,9 @@
 
     footer .social-icons img {
         opacity: 1;
-        width: 55%;
-        height: 59%;
-        margin: 6px 0 15px;
     }
 
     footer .social-icons {
-        margin: 5px 4px;
     }
 
     footer .copyright {

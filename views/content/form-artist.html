@@ -18,9 +18,8 @@
          </div>
          <div class="col-md-4">
             <div class="form-group">
-               <label>Middle Name*</label>
-               <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" required aplha-only>
-               <div class="error-msg" ng-if="artistForm.middleName.$invalid && artistForm.middleName.$touched">Please Enter Your Middle Name</div>
+               <label>Middle Name</label>
+               <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" aplha-only>
             </div>
          </div>
          <div class="col-md-4">
@@ -350,5 +349,6 @@
 
 </div>
 <div class="submit-thank min-h1" ng-if="formComplete">
-   <h1 class="text-center" style="font-size:40px">Thank You, we get back to you soon.</h1>
+   <h3 class="text-center">Thank You, we'll get back to you soon.</h3>
+
 </div>
