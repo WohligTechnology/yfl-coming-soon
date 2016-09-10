@@ -8,8 +8,6 @@
 <div class="container main-form" ng-if="!formComplete">
    <h3 class="text-center">Please enter the below details</h3>
    <form name="artistForm" class="mid-form" ng-submit="submitArtistForm(formData)" ng-if="!formComplete">
-      <h4>Personal Details</h4>
-      <hr>
       <div class="row">
          <div class="col-md-4">
             <div class="form-group">
@@ -339,7 +337,7 @@
       <div class="magic-form text-center">
          <div class="magic-resize">
             <input class="magic-checkbox" type="checkbox" id="terms" name="terms" value="true" required ng-model="formData.termsConditions">
-            <label class="text" for="terms">
+            <label class="text text-left" for="terms">
                I have read and accept the&nbsp;<u>Terms &amp; Conditions</u>
             </label>
          </div>
@@ -353,5 +351,5 @@
 
 </div>
 <div class="submit-thank min-h1" ng-if="formComplete">
-   <h1 class="text-center" style="font-size:40px">Thank You</h1>
+   <h1 class="text-center" style="font-size:40px">Thank You, we get back to you soon.</h1>
 </div>
