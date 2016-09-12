@@ -59,8 +59,8 @@ button {
         background-size: 100% 100%;
         border: 0 !important;
 
-        &.btn-primary {
-            background-image: url('../img/btn-primary.png');
+        &.btn-fb {
+            background-image: url('../img/btn-fb.png');
         }
 
         &.btn-danger {
@@ -1196,6 +1196,24 @@ hr {
   }
 }
 .facebook{
+      padding: 10px 0 20px;
+  .btn-fb,.btn-danger {
+      background-image: url('../img/btn-fb.png');
+      background-color: transparent;
+      background-repeat: no-repeat;
+      border-color: transparent;
+      margin-bottom: 15px;
+      &:focus{
+        outline: 0;
+      }
+  }
+  .btn-danger {
+      background-image: url('../img/btn-danger.png');
+      margin-bottom: 0!important;
+  }
+  .fa-facebook-official:before{
+    color: #fff;
+  }
   span{
     display: inline-block;
     vertical-align: middle;
@@ -1204,12 +1222,64 @@ hr {
     display: inline-block;
     margin: 0 10px;
     letter-spacing: 1px;
+      background-color: transparent;
+      color: #fff;
+  }
+  .magic-form .magic-resize{
+    width: 60%;
+ .magic-checkbox + label{
+       padding-top: 2px;
+      font-size: 18px;
+      font-weight: 700;
+      font-family: "Jura";
+    }
+    .magic-checkbox:checked + label:before{
+      border:yellow;
+      background: yellow;
+    }
+    i{
+      margin-right: 10px;
+    }
+  }
+  .magic-form .magic-resize .magic-checkbox + label:before{
+    left: -35px;
+  }
+  .magic-form .magic-resize .magic-checkbox + label:after{
+    left:-27px;
   }
 }
+.strike {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
 }
-// display: inline-block;
-//     font: normal normal normal 14px/1 FontAwesome;
-//     font-size: inherit;
-//     text-rendering: auto;
-//     -webkit-font-smoothing: antialiased;
+
+.strike > span {
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+}
+
+.strike > span:before,
+.strike > span:after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    width: 999px;
+    height: 1px;
+    background-color: #b0b0b0;
+}
+
+.strike > span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.strike > span:after {
+    left: 100%;
+    margin-left: 15px;
+}
+
+}
 @import "mobile";

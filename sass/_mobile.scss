@@ -80,6 +80,62 @@
             width: 16px;
         }
     }
+    .sign-up {
+      .mt{
+        margin-top: 10px;
+      }
+      .close{
+        margin: 0 -20px 0 0;
+      }
+      h3{
+        font-size: 14px;
+      }
+      h4{
+        font-size: 12px;
+      }
+      .logo{
+        padding: 0;
+        height: 100px;
+        width: 100px;
+      }
+      .facebook{
+        padding: 0px 0 10px;
+        span{
+          font-size: 12px;
+        }
+      }
+      .magic-resize{
+        i{
+          margin-right: 10px;
+         margin-left: 10px;
+      }
+    }
+      .magic-form .magic-resize {
+          width: 100% !important;
+          .magic-checkbox + label{
+            font-size: 12px !important;
+          &:before{
+            width: 15px;
+            height: 15px;
+            top:2px;
+            left: -15px !important;
+          }
+          &:after{
+            left: -30px;
+            top: 3px;
+          }
+        }
+      }
+      .legal{
+        margin: 0;
+        padding: 0;
+      }
+.account{
+  h3{
+    padding: 10px 43px;
+  }
+}
+    }
 }
 @media (max-width:480px) {
     .main-form {
