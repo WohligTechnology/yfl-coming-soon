@@ -5,9 +5,9 @@
    </div>
 </div>
 
-<div class="container main-form">
+<div class="container main-form" ng-if="!formComplete">
    <h3 class="text-center">Please enter the below details</h3>
-   <form name="nutrionistForm" class="mid-form" ng-submit="submitNutrionistForm(formData)">
+   <form name="nutrionistForm" class="mid-form" ng-submit="submitNutrionistForm(formData)" ng-if="!formComplete">
       <h4>Personal Details</h4>
       <hr>
       <div class="row">
@@ -40,6 +40,7 @@
                <input type="text" name="mobileNumber" ng-model="formData.mobileNumber" class="form-control" required numbers-only>
                <div class="error-msg" ng-if="nutrionistForm.mobileNumber.$invalid && nutrionistForm.mobileNumber.$touched">Please Enter Your Mobile</div>
             </div>
+              <div ng-if="validMobileno">Mobile Number is not valid or it should be 10 digits</div>
          </div>
          <div class="col-md-6">
             <div class="form-group">
@@ -56,6 +57,7 @@
                <input type="email" name="email" ng-model="formData.email" class="form-control" required>
                <div class="error-msg" ng-if="nutrionistForm.email.$invalid && nutrionistForm.email.$touched">Please Enter Your Email Id</div>
             </div>
+              <div ng-if="exist">Email Already Exist</div>
          </div>
          <div class="col-md-6">
             <div class="form-group">
@@ -91,12 +93,13 @@
                <input type="text" name="zipcode" ng-model="formData.zipcode" class="form-control" required>
                <div class="error-msg" ng-if="nutrionistForm.zipcode.$invalid && nutrionistForm.zipcode.$touched">Please Enter Your Pincode</div>
             </div>
+              <div ng-if="invalidPincode">Enter Valid Pincode</div>
          </div>
          <div class="col-md-6">
             <div class="form-group">
                <label>Address Line 1*</label>
-               <input type="text" name="address" ng-model="formData.address" class="form-control" required>
-               <div class="error-msg" ng-if="nutrionistForm.address.$invalid && nutrionistForm.address.$touched">Please Enter Your Address</div>
+               <input type="text" name="address1" ng-model="formData.address1" class="form-control" required>
+               <div class="error-msg" ng-if="nutrionistForm.address1.$invalid && nutrionistForm.address1.$touched">Please Enter Your Address</div>
             </div>
          </div>
          <div class="col-md-12">
@@ -110,16 +113,19 @@
          <div class="col-md-12">
             <div class="form-group">
                <label>Educational Qualifications</label>
-               <input type="text" name="qualifications" class="form-control">
+               <input type="text" name="qualifications" class="form-control" ng-model="formData.qualifications">
 
             </div>
          </div>
          <div class="col-md-6">
             <div class="form-group">
                <label for="DegreeQualification">Photocopy of your degree/qualification certificate (Upload)</label>
-               <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span>
-                  <input type="file" id="DegreeQualification" class="form-control">
-               </button>
+                 <img ng-src="{{formData.qualificationCertificate|uploadpath}}" ng-if="formData.qualificationCertificate" alt="" class="img-responsive margin-auto">
+               <!-- <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span> -->
+                  <!-- <input type="file" id="DegreeQualification" class="form-control"> -->
+ <!-- </button> -->
+                  <upload-image ng-model="formData.qualificationCertificate" no-view></upload-image>
+
 
             </div>
          </div>
@@ -127,10 +133,11 @@
             <div class="form-group">
                <label for="AdditionalQualification">Any additional certificates you may wish to submit (Upload)
                </label>
-               <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span>
+                <img ng-src="{{formData.additionalCertificates|uploadpath}}" ng-if="formData.additionalCertificates" alt="" class="img-responsive margin-auto">
+               <!-- <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span>
                   <input type="file" id="AdditionalQualification" class="form-control">
-               </button>
-
+               </button> -->
+  <upload-image ng-model="formData.additionalCertificates" no-view></upload-image>
             </div>
          </div>
       </div>
@@ -142,10 +149,10 @@
                </label>
                <div class="row">
                   <div class="col-md-6">
-                     <input type="text" name="references" class="form-control">
+                     <input type="text" name="references" class="form-control" ng-model=formData.reference1>
                   </div>
                   <div class="col-md-6">
-                     <input type="text" name="references" class="form-control">
+                     <input type="text" name="references" class="form-control" ng-model="formData.reference2" >
                   </div>
                </div>
             </div>
@@ -157,39 +164,42 @@
                <label>Please choose how you would like to contribute to YogaFoodLove</label>
                <div class="magic-form">
                   <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="diet-nutrition" value="reviewDiet" ng-model="formData.style.reviewDiet">
+                     <input class="magic-checkbox" type="checkbox" name="style" id="diet-nutrition" value="reviewDiet" ng-model="formData.style.reviewDiet" ng-click="contributionType('reviewDiet')">
                      <label class="text" for="diet-nutrition">
                         Review diet and nutrition related articles
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="write-article" value="writeArticles" ng-model="formData.style.writeArticles">
+                     <input class="magic-checkbox" type="checkbox" name="style" id="write-article" value="writeArticles" ng-model="formData.style.writeArticles" ng-click="contributionType('writeArticles')">
                      <label class="text" for="write-article">
                         Write articles for YogaFoodLove
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="free-consultation" value="onlineFree" ng-model="formData.style.onlineFree">
+                     <input class="magic-checkbox" type="checkbox" name="style" id="free-consultation" value="onlineFree" ng-model="formData.style.onlineFree" ng-click="contributionType('onlineFree')">
                      <label class="text" for="free-consultation">
                         Online free consultation
                      </label>
                   </div>
 
                   <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="paid-consultation" value="onlinePaid" ng-model="formData.style.onlinePaid">
+                     <input class="magic-checkbox" type="checkbox" name="style" id="paid-consultation" value="onlinePaid" ng-model="formData.style.onlinePaid" ng-click="contributionType('onlinePaid')">
                      <label class="text" for="paid-consultation">
                         Online paid consultation
                      </label>
                   </div>
 
                   <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="nutrition" id="otheroption" value="other" ng-model="formData.nutrition.other">
+                     <input class="magic-checkbox" type="checkbox" name="nutrition" id="otheroption" value="other" ng-model="formData.nutrition.other"  ng-click="contributionType('other')">
                      <label class="labewidtxt" for="otheroption">
                         Other
                      </label>
                   </div>
-                  <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.nutrition.other">
+                  <input type="text" ng-model="formData.myother" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.nutrition.other">
 
+               </div>
+               <div ng-if="noContrubution" style="font-size:16px;margin:10px 0 0;">
+                  Please select your  Contribution
                </div>
 
             </div>
@@ -200,15 +210,17 @@
             <div class="form-group">
                <label for="samples">Sample articles that you may wish to submit to help your portfolio (Upload)
                </label>
-               <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span>
+                         <img ng-src="{{formData.sampleArticles|uploadpath}}" ng-if="formData.sampleArticles" alt="" class="img-responsive margin-auto">
+               <!-- <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span>
                   <input type="file" id="samples" class="form-control">
-               </button>
+               </button> -->
+               <upload-image ng-model="formData.sampleArticles" no-view></upload-image>
             </div>
          </div>
       </div>
       <div class="magic-form text-center">
          <div class="magic-resize">
-            <input class="magic-checkbox" type="checkbox" id="terms" name="terms" value="true" required>
+            <input class="magic-checkbox" type="checkbox" id="terms" name="terms" value="true" required ng-model="formData.termsConditions">
             <label class="text text-left" for="terms">
                I have read and accept the&nbsp;<u>Terms &amp; Conditions</u>
             </label>
@@ -219,4 +231,8 @@
          <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ng-disabled="nutrionistForm.$invalid"><span ng-if="nutrionistForm.$invalid">Please Enter Compulsory fields</span><span ng-if="!nutrionistForm.$invalid">Submit</span></button>
       </div>
    </form>
+</div>
+<div class="submit-thank min-h1" ng-if="formComplete">
+   <h3 class="text-center">Thank You, we'll get back to you soon.</h3>
+
 </div>

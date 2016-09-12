@@ -7,22 +7,22 @@
 
 <div class="container main-form">
     <h3 class="text-center">Please enter the details below to collaborate with us</h3>
-    <form name="labelForm" class="mid-form">
+    <form name="labelForm" class="mid-form" ng-submit="submitYogaLabelForm(formData)">
         <h4>Enter Your Business Details</h4>
         <hr>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Store Name*</label>
-                    <input type="text" name="storename" ng-model="formData.storename" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="labelForm.storename.$invalid && labelForm.storename.$touched">Please Enter Your Store Name</div>
+                    <input type="text" name="storeName" ng-model="formData.storeName" class="form-control" placeholder="" required>
+                    <div class="error-msg" ng-if="labelForm.storeName.$invalid && labelForm.storeName.$touched">Please Enter Your Store Name</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Phone Number - Landline*</label>
-                    <input type="text" name="contactdetails1" ng-model="formData.contactdetails1" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="labelForm.contactdetails1.$invalid && labelForm.contactdetails1.$touched">Please Enter Contact Details</div>
+                    <input type="text" name="landlineNumber" ng-model="formData.landlineNumber" class="form-control" placeholder="" required numbers-only>
+                    <div class="error-msg" ng-if="labelForm.landlineNumber.$invalid && labelForm.landlineNumber.$touched">Please Enter Contact Details</div>
                 </div>
             </div>
         </div>
@@ -30,15 +30,15 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Name of Contact Person*</label>
-                    <input type="text" name="contactpersonname" ng-model="formData.contactpersonname" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="labelForm.contactpersonname.$invalid && labelForm.contactpersonname.$touched">Please Enter Contact Person's Name</div>
+                    <input type="text" name="contactPerson" ng-model="formData.contactPerson" class="form-control" placeholder="" required aplha-only>
+                    <div class="error-msg" ng-if="labelForm.contactPerson.$invalid && labelForm.contactPerson.$touched">Please Enter Contact Person's Name</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Phone Number - Mobile*</label>
-                    <input type="text" name="contactdetails" ng-model="formData.contactdetails" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="labelForm.contactdetails.$invalid && labelForm.contactdetails.$touched">Please Enter Contact Details</div>
+                    <input type="text" name="mobileNumber" ng-model="formData.mobileNumber" class="form-control" placeholder="" required numbers-only>
+                    <div class="error-msg" ng-if="labelForm.mobileNumber.$invalid && labelForm.mobileNumber.$touched">Please Enter Contact Details</div>
                 </div>
             </div>
         </div>
@@ -48,46 +48,46 @@
                     <label>Primary Category*</label>
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="primarycategory" id="1" value="option2">
+                            <input class="magic-radio" type="radio" name="primarycategory" id="1" value="yogaMat" ng-model="formData.primaryCategory">
                             <label class="text" for="1">
                               Yoga Mat
                           </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="primarycategory" id="2" value="option2">
+                            <input class="magic-radio" type="radio" name="primarycategory" id="2" value="yogaCloth" ng-model="formData.primaryCategory">
                             <label class="text" for="2">
                               Yoga Clothing
                           </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="primarycategory" id="3" value="option2">
+                            <input class="magic-radio" type="radio" name="primarycategory" id="3" value="otheryogaProducts" ng-model="formData.primaryCategory">
                             <label class="text" for="3">
                               Other Yoga Products
                           </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="primarycategory" id="4" value="option2">
+                            <input class="magic-radio" type="radio" name="primarycategory" id="4" value="organicFood" ng-model="formData.primaryCategory">
                             <label class="text" for="4">
                               Organic Food
                           </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="primarycategory" id="5" value="option2">
+                            <input class="magic-radio" type="radio" name="primarycategory" id="5" value="beautyCare" ng-model="formData.primaryCategory">
                             <label class="text" for="5">
                                Organic Beauty Care
                           </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="primarycategory" id="6" value="option2">
+                            <input class="magic-radio" type="radio" name="primarycategory" id="6" value="organicClothing" ng-model="formData.primaryCategory">
                             <label class="text" for="6">
                                Organic Clothing
                           </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="primarycategory" id="7" value="option2">
+                            <input class="magic-radio" type="radio" name="primarycategory" id="7" value="other" ng-model="formData.primaryCategory">
                             <label class="labewidtxt" for="7">
               Other :
-              <input type="text" class="form-control textbox-other" placeholder="">
+              <input type="text" class="form-control textbox-other" placeholder="" ng-model="formData.otherCat">
           </label>
                         </div>
                     </div>
@@ -101,8 +101,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Address Line 1*</label>
-                    <input type="text" name="address" ng-model="formData.address" class="form-control" placeholder="">
-                    <div class="error-msg" ng-if="labelForm.address.$invalid && labelForm.address.$touched">Please Enter Your Address</div>
+                    <input type="text" name="address1" ng-model="formData.address1" class="form-control" placeholder="">
+                    <div class="error-msg" ng-if="labelForm.address1.$invalid && labelForm.address1.$touched">Please Enter Your Address</div>
                 </div>
             </div>
             <div class="col-md-6">
@@ -160,8 +160,8 @@
                 </div>
                 <div class="form-group">
                     <label>VAT / TIN Number*</label>
-                    <input type="text" name="vat" ng-model="formData.vat" class="form-control" placeholder="" required>
-                    <div class="error-msg" ng-if="labelForm.vat.$invalid && labelForm.vat.$touched"> Please Enter Your Vat/TIN number</div>
+                    <input type="text" name="vatTin" ng-model="formData.vatTin" class="form-control" placeholder="" required>
+                    <div class="error-msg" ng-if="labelForm.vatTin.$invalid && labelForm.vatTin.$touched"> Please Enter Your Vat/TIN number</div>
                 </div>
                 <div class="form-group">
                     <label>CST number*</label>
@@ -177,7 +177,7 @@
 
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="vat" id="8" value="option3">
+                            <input class="magic-checkbox" type="checkbox" name="isVatCst" id="8" value="option3">
                             <label class="text" for="8">
                     Sell in VAT exempted categories
                   </label>
@@ -194,31 +194,31 @@
                     <label>Books, Movies & Games</label>
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="movieandgames" id="9" value="option4">
+                            <input class="magic-checkbox" type="checkbox" name="movieandgames" id="9" value="Books" ng-click="booksGame('Books')">
                             <label class="text" for="9">
         Books
       </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="movieandgames" id="10" value="option4">
+                            <input class="magic-checkbox" type="checkbox" name="movieandgames" id="10" value="Movies" ng-click="booksGame('Movies')">
                             <label class="text" for="10">
         Movies
       </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="movieandgames" id="11" value="option4">
+                            <input class="magic-checkbox" type="checkbox" name="movieandgames" id="11" value="MusicalInstruments" ng-click="booksGame('MusicalInstruments')">
                             <label class="text" for="11">
         Musical Instruments
       </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="movieandgames" id="12" value="option4">
+                            <input class="magic-checkbox" type="checkbox" name="movieandgames" id="12" value="Musical" ng-click="booksGame('Musical')">
                             <label class="text" for="12">
         Musical
       </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="movieandgames" id="13" value="option4">
+                            <input class="magic-checkbox" type="checkbox" name="movieandgames" id="13" value="VideoGames" ng-click="booksGame('VideoGames')">
                             <label class="text" for="13">
         Video Games
       </label>
@@ -330,7 +330,7 @@
                     <label>Other</label>
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="BHG" id="26" value="option8">
+                            <input class="magic-checkbox" type="checkbox" name="BHG" id="26" value="option8" ng-model="formData.other">
                             <label class="text" for="26">
           My Category is not here
         </label>
@@ -374,26 +374,26 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>What is your annual turnover? *</label>
-                    <select name="income" id="">
-        <option value=""></option>
-        <option value="">Less Than 1 lakh</option>
-        <option value="">Between 1 lakh and 10 lakh</option>
-        <option value="">Between 10 lakh and 1 crore</option>
-        <option value="">More than 1 crore</option>
-        <option value="">I don't know</option>
+                    <select name="income" id="" ng-model="formData.annualTurnover">
+        <option value="" ng-selected="true">Please select </option>
+        <option value="Less Than 1 lakh">Less Than 1 lakh</option>
+        <option value="Between 1 lakh and 10 lakh">Between 1 lakh and 10 lakh</option>
+        <option value="Between 10 lakh and 1 crore">Between 10 lakh and 1 crore</option>
+        <option value="More than 1 crore">More than 1 crore</option>
+        <option value="I don't know">I don't know</option>
       </select>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>How many products do you sell? *</label>
-                    <select name="sales" id="">
-        <option value=""></option>
-        <option value="">1-10</option>
-        <option value="">11-100</option>
-        <option value="">101-500</option>
-        <option value="">More than 500</option>
-        <option value="">I don't know</option>
+                    <select name="sales" id="" ng-model="formData.productSell">
+        <option value="" ng-selected="true">Please select </option>
+        <option value="1-10">1-10</option>
+        <option value="11-100">11-100</option>
+        <option value="101-500">101-500</option>
+        <option value="More than 500">More than 500</option>
+        <option value="I don't know">I don't know</option>
       </select>
                 </div>
             </div>
@@ -404,13 +404,13 @@
                     <label>Do you sell on other websites? *</label>
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="otherweb" id="31" value="option10">
+                            <input class="magic-radio" type="radio" name="otherweb" id="31" value="Yes" ng-model="formData.sellOtherWebsite">
                             <label class="text" for="31">
   Yes
   </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="otherweb" id="32" value="option10">
+                            <input class="magic-radio" type="radio" name="otherweb" id="32" value="No" ng-model="formData.sellOtherWebsite">
                             <label class="text" for="32">
   No
   </label>
@@ -426,7 +426,7 @@
                     Please provide url of any product from the other website.
                     <div class="magic-resize">
 
-                        <input type="text" class="form-control textbox-other" placeholder="">
+                        <input type="text" class="form-control textbox-other" placeholder="" ng-model="formData.url">
                         </label>
                     </div>
                 </div>

@@ -5,7 +5,7 @@
    </div>
 </div>
 
-<div class="container main-form">
+<div class="container main-form" ng-if="!formComplete">
    <h3 class="text-center">Please enter the details below to collaborate with us</h3>
    <form name="restaurantForm" class="mid-form" ng-submit="submitRestaurantForm(formData)" ng-if="!formComplete">
       <h4>Your Personal Details</h4>
