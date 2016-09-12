@@ -1172,15 +1172,38 @@ hr {
   }
   .account{
     h3{
-      border-top: 2px solid;
+      border-top: 2px solid #b0b0b0;
       display: inline-block;
-      padding: 10px 20px;
+      padding: 10px 30px;
+    }
+    .btn{
+      display: block;
+    margin: 0 auto;
     }
   }
 .legal{
   h3{
     cursor: pointer;
     text-decoration: underline;
+
+  }
+}
+.question{
+  h3+h3{
+    cursor: pointer;
+    text-decoration: underline;
+      color: #ff004d !important;
+  }
+}
+.facebook{
+  span{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  span+span{
+    display: inline-block;
+    margin: 0 10px;
+    letter-spacing: 1px;
   }
 }
 }
