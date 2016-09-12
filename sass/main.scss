@@ -1156,6 +1156,34 @@ hr {
         height: auto;
     }
 }
+.sign-up{
+      padding: 10px 40px;
+  .close{
+    margin: 66px 25px;
+  }
+  .logo{
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    padding: 20px 0;
+    img{
+      margin: 0 auto;
+    }
+  }
+  .account{
+    h3{
+      border-top: 2px solid;
+      display: inline-block;
+      padding: 10px 20px;
+    }
+  }
+.legal{
+  h3{
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+}
 // display: inline-block;
 //     font: normal normal normal 14px/1 FontAwesome;
 //     font-size: inherit;
