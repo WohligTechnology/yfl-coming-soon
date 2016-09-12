@@ -59,8 +59,8 @@ button {
         background-size: 100% 100%;
         border: 0 !important;
 
-        &.btn-primary {
-            background-image: url('../img/btn-primary.png');
+        &.btn-fb {
+            background-image: url('../img/btn-fb.png');
         }
 
         &.btn-danger {
@@ -1100,10 +1100,16 @@ hr {
     text-align: right;
     padding: 3px 0 0;
 
-    a:hover {
-        color: #000 !important;
-        text-decoration: none;
+    a{
+      &:hover {
+          color: #000 !important;
+          text-decoration: none;
+      }
+      &:focus{
+        outline: 0;
+      }
     }
+
 }
 
 .additional-nav {
@@ -1156,7 +1162,7 @@ hr {
         height: auto;
     }
 }
-.sign-up{
+.sign-up,.signs{
       padding: 10px 40px;
   .close{
     margin: 66px 25px;
@@ -1195,21 +1201,139 @@ hr {
       color: #ff004d !important;
   }
 }
-.facebook{
+.facebook,.sign-in{
+      padding: 10px 0 20px;
+  .btn-fb,.btn-danger {
+      background-image: url('../img/btn-fb.png');
+      background-color: transparent;
+      background-repeat: no-repeat;
+      border-color: transparent;
+      margin-bottom: 15px;
+      &:focus{
+        outline: 0;
+      }
+  }
+  .btn-danger {
+      background-image: url('../img/btn-danger.png');
+      margin-bottom: 0!important;
+  }
+  .fa-facebook-official:before{
+    color: #fff;
+  }
   span{
     display: inline-block;
     vertical-align: middle;
+  }
+  .socio{
+    height: 30px;
+    width: 30px;
   }
   span+span{
     display: inline-block;
     margin: 0 10px;
     letter-spacing: 1px;
+      background-color: transparent;
+      color: #fff;
+  }
+  .magic-form .magic-resize{
+    width: 60%;
+ .magic-checkbox + label{
+       padding-top: 2px;
+      font-size: 18px;
+      font-weight: 700;
+      font-family: "Jura";
+    }
+    .magic-checkbox:checked + label:before{
+      border:yellow;
+      background: yellow;
+    }
+    i{
+      margin-right: 10px;
+    }
+  }
+  .magic-form .magic-resize .magic-checkbox + label:before{
+    left: -35px;
+  }
+  .magic-form .magic-resize .magic-checkbox + label:after{
+    left:-27px;
   }
 }
+.strike {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
 }
-// display: inline-block;
-//     font: normal normal normal 14px/1 FontAwesome;
-//     font-size: inherit;
-//     text-rendering: auto;
-//     -webkit-font-smoothing: antialiased;
+
+.strike > span {
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+}
+
+.strike > span:before,
+.strike > span:after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    width: 999px;
+    height: 1px;
+    background-color: #b0b0b0;
+}
+
+.strike > span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.strike > span:after {
+    left: 100%;
+    margin-left: 15px;
+}
+
+}
+.signs{
+  h3{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-top: 2px solid #b0b0b0;
+    padding: 10px 0 0 0;
+  }
+  .sign-in{
+    text-align: center;
+    .btn{
+      padding: 10px 80px;
+    }
+  }
+  .capitalize{
+    text-transform: capitalize;
+  }
+  .forms{
+    .form-group{
+      margin: 0;
+      padding: 20px 0;
+      .form-control{
+        background-image: url(../img/input-bg.png) !important;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding: 25px 20px;
+        background-color: #f9f7f7 !important;
+      }
+
+    }
+  }
+.forgot{
+  padding: 40px 0 10px 0;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #f9f7f7 inset;}
+
+// input:focus,
+// input:-webkit-autofill:focus {
+//     border-color: #66afe9;
+//     -webkit-box-shadow: inset 0 0 0px 9999px #fff,
+//                         0 0 8px rgba(102, 175, 233, 0.6);
+// }
+}
 @import "mobile";
