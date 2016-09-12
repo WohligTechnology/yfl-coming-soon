@@ -417,6 +417,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 scope: $scope
             });
         };
+        $scope.signup = function() {
+                $uibModal.open({
+                    animation: true,
+                    templateUrl: "views/modal/sign.html",
+                    scope: $scope
+                });
+            };
 
 })
 

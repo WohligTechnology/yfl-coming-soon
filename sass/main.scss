@@ -1100,10 +1100,16 @@ hr {
     text-align: right;
     padding: 3px 0 0;
 
-    a:hover {
-        color: #000 !important;
-        text-decoration: none;
+    a{
+      &:hover {
+          color: #000 !important;
+          text-decoration: none;
+      }
+      &:focus{
+        outline: 0;
+      }
     }
+
 }
 
 .additional-nav {
@@ -1156,7 +1162,7 @@ hr {
         height: auto;
     }
 }
-.sign-up{
+.sign-up,.signs{
       padding: 10px 40px;
   .close{
     margin: 66px 25px;
@@ -1195,7 +1201,7 @@ hr {
       color: #ff004d !important;
   }
 }
-.facebook{
+.facebook,.sign-in{
       padding: 10px 0 20px;
   .btn-fb,.btn-danger {
       background-image: url('../img/btn-fb.png');
@@ -1286,4 +1292,47 @@ hr {
 }
 
 }
+.signs{
+  h3{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-top: 2px solid #b0b0b0;
+    padding: 10px 0 0 0;
+  }
+  .sign-in{
+    text-align: center;
+    .btn{
+      padding: 10px 80px;
+    }
+  }
+  .capitalize{
+    text-transform: capitalize;
+  }
+  .forms{
+    .form-group{
+      margin: 0;
+      padding: 20px 0;
+      .form-control{
+        background-image: url(../img/input-bg.png) !important;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
+    }
+  }
+.forgot{
+  padding: 40px 0 10px 0;
+}
+input:-webkit-autofill {
+    border: 1px solid #ccc;
+    -webkit-box-shadow: inset 0 0 0px 9999px #fff;
+}
+
+input:focus,
+input:-webkit-autofill:focus {
+    border-color: #66afe9;
+    -webkit-box-shadow: inset 0 0 0px 9999px #fff,
+                        0 0 8px rgba(102, 175, 233, 0.6);
+}}
 @import "mobile";
