@@ -7,14 +7,14 @@
 
 <div class="container main-form">
    <h3 class="text-center">Please enter the details below to collaborate with us</h3>
-   <form name="restaurantForm" class="mid-form" ng-submit="submitRestaurantForm(formData)">
+   <form name="restaurantForm" class="mid-form" ng-submit="submitRestaurantForm(formData)" ng-if="!formComplete">
       <h4>Your Personal Details</h4>
       <hr>
       <div class="row">
          <div class="col-md-4">
             <div class="form-group">
                <label>First Name*</label>
-               <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
+               <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" aplha-only required>
                <div class="error-msg" ng-if="restaurantForm.firstName.$invalid && restaurantForm.firstName.$touched">Please Enter Your First Name</div>
             </div>
          </div>
@@ -40,12 +40,13 @@
                <input type="text" name="mobileNumber" ng-model="formData.mobileNumber" class="form-control" required numbers-only>
                <div class="error-msg" ng-if="restaurantForm.mobileNumber.$invalid && restaurantForm.mobileNumber.$touched">Please Enter Your Mobile</div>
             </div>
+              <div ng-if="validMobileno">Mobile Number is not valid or it should be 10 digits</div>
          </div>
          <div class="col-md-6">
             <div class="form-group">
                <label>Landline</label>
                <input type="text" name="landline" ng-model="formData.landlineNumber" class="form-control" numbers-only>
-               <div class="error-msg" ng-if="restaurantForm.landline.$invalid && restaurantForm.landline.$touched">Please Enter Your Phone Number</div>
+               <!-- <div class="error-msg" ng-if="restaurantForm.landline.$invalid && restaurantForm.landline.$touched">Please Enter Your Phone Number</div> -->
             </div>
          </div>
       </div>
@@ -53,9 +54,10 @@
          <div class="col-md-6">
             <div class="form-group">
                <label>Email*</label>
-               <input type="email" name="emailId" ng-model="formData.email" class="form-control" required>
-               <div class="error-msg" ng-if="restaurantForm.emailId.$invalid && restaurantForm.emailId.$touched">Please Enter Your Email Id</div>
+               <input type="email" name="email" ng-model="formData.email" class="form-control" required>
+               <div class="error-msg" ng-if="restaurantForm.email.$invalid && restaurantForm.email.$touched">Please Enter Your Email Id</div>
             </div>
+            <div ng-if="exist">Email Already Exist</div>
          </div>
       </div>
       <h4>Restaurant Details</h4>
@@ -99,7 +101,7 @@
          <div class="col-md-6">
             <div class="form-group">
                <label>Zip Code</label>
-               <input type="text" name="zipcode" ng-model="formData.zipcode" class="form-control" number-only>
+               <input type="text" name="zipcode" ng-model="formData.zipcode" class="form-control" numbers-only>
                <div class="error-msg" ng-if="restaurantForm.zipcode.$invalid && restaurantForm.zipcode.$touched">Please Enter Zip Code</div>
             </div>
          </div>
@@ -116,9 +118,10 @@
          <div class="col-md-6">
             <div class="form-group">
                <label>Phone Number</label>
-               <input type="text" name="landlineNumber" ng-model="formData.landlineNumber" class="form-control" number-only>
-               <div class="error-msg" ng-if="restaurantForm.landlineNumber.$invalid && restaurantForm.landlineNumber.$touched">Please Enter Phone Number</div>
+               <input type="text" name="resPhoneNumbers" ng-model="formData.resPhoneNumbers" class="form-control" numbers-only>
+               <div class="error-msg" ng-if="restaurantForm.resPhoneNumbers.$invalid && restaurantForm.resPhoneNumbers.$touched">Please Enter Phone Number</div>
             </div>
+            <div ng-if="resPhone">Phone Number is not valid </div>
          </div>
          <div class="col-md-6">
             <div class="form-group">
@@ -132,9 +135,10 @@
          <div class="col-md-6">
             <div class="form-group">
                <label>Operations Manager Contact Number</label>
-               <input type="text" name="managerNumber" ng-model="formData.managerNumber" class="form-control" required>
-               <div class="error-msg" ng-if="restaurantForm.managerNumber.$invalid && restaurantForm.managerNumber.$touched">Please Enter Operation Manager Number</div>
+               <input type="text" name="managerNumber" ng-model="formData.managerNumber" class="form-control" required numbers-only>
+               <div class="error-msg" ng-if="restaurantForm.managerNumber.$invalid && restaurantForm.managerNumber.$touched">Please Enter Operation Manager Contact Number</div>
             </div>
+            <div ng-if="conatctNumber">Contact Number is not valid or it should be 10 digits</div>
          </div>
          <div class="col-md-6">
             <div class="form-group">
@@ -166,14 +170,14 @@
                <label for="">Home Delivery</label>
                <div class="magic-form">
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="homeDelivery" id="1" value="yes" ng-model="formData.homeDelivery">
-                     <label class="text" for="1">
+                     <input class="magic-radio" type="radio" name="homeDelivery" id="1" value="yes" ng-model="formData.homeDelivery" required>
+                     <label class="text" for="1" >
                         Yes
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="homeDelivery" id="2" value="no" ng-model="formData.homeDelivery">
-                     <label class="text" for="2">
+                     <input class="magic-radio" type="radio" name="homeDelivery" id="2" value="no" ng-model="formData.homeDelivery" required>
+                     <label class="text" for="2" >
                         No
                      </label>
                   </div>
@@ -192,13 +196,13 @@
                <label for="">Dine-in Facility</label>
                <div class="magic-form">
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="dineIn" id="3" value="yes" ng-model="formData.dineIn">
+                     <input class="magic-radio" type="radio" name="dineIn" id="3" value="yes" ng-model="formData.dineIn" required>
                      <label class="text" for="3">
                         Yes
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="dineIn" id="4" value="no" ng-model="formData.dineIn">
+                     <input class="magic-radio" type="radio" name="dineIn" id="4" value="no" ng-model="formData.dineIn" required>
                      <label class="text" for="4">
                         No
                      </label>
@@ -212,13 +216,13 @@
                <label for="">Bar</label>
                <div class="magic-form">
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="bar" id="5" value="yes" ng-model="formData.bar">
+                     <input class="magic-radio" type="radio" name="bar" id="5" value="yes" ng-model="formData.bar" required>
                      <label class="text" for="5">
                         Yes
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="bar" id="6" value="no" ng-model="formData.bar">
+                     <input class="magic-radio" type="radio" name="bar" id="6" value="no" ng-model="formData.bar" required>
                      <label class="text" for="6">
                         No
                      </label>
@@ -234,14 +238,14 @@
                <label for="">Happy Hours</label>
                <div class="magic-form">
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="happyHours" id="7" value="yes" ng-model="formData.happyHours">
+                     <input class="magic-radio" type="radio" name="happyHours" id="7" value="yes" ng-model="formData.happyHours" required>
                      <label class="text" for="7">
                         Yes
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="happyHours" id="8" value="no" ng-model="formData.happyHours">
-                     <label class="text" for="8">
+                     <input class="magic-radio" type="radio" name="happyHours" id="8" value="no" ng-model="formData.happyHours" required>
+                     <label class="text" for="8" >
                         No
                      </label>
                   </div>
@@ -251,16 +255,16 @@
          </div>
          <div class="col-md-6">
             <div class="form-group">
-               <label for="">Air-conditioned (AC)</label>
+               <label for="">Air-conditioned </label>
                <div class="magic-form">
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="air" id="9" value="yes" ng-model="formData.ac" required>
+                     <input class="magic-radio" type="radio" name="ac" id="9" value="yes" ng-model="formData.ac" required>
                      <label class="text" for="9">
                         Yes
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="air" id="10" value="no" ng-model="formData.ac" required>
+                     <input class="magic-radio" type="radio" name="ac" id="10" value="no" ng-model="formData.ac" required>
                      <label class="text" for="10">
                         No
                      </label>
@@ -276,13 +280,13 @@
                <label for="">Wifi available</label>
                <div class="magic-form">
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="wifi" id="11" value="yes" ng-model="formData.wifi">
+                     <input class="magic-radio" type="radio" name="wifi" id="11" value="yes" ng-model="formData.wifi" required>
                      <label class="text" for="11">
                         Yes
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="wifi" id="12" value="no" ng-model="formData.wifi">
+                     <input class="magic-radio" type="radio" name="wifi" id="12" value="no" ng-model="formData.wifi" required>
                      <label class="text" for="12">
                         No
                      </label>
@@ -296,13 +300,13 @@
                <label for="">Outdoor dining facility</label>
                <div class="magic-form">
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="outDoorDining" id="13" value="yes" ng-model="formData.outDoorDining">
+                     <input class="magic-radio" type="radio" name="outDoorDining" id="13" value="yes" ng-model="formData.outDoorDining" required>
                      <label class="text" for="13">
                         Yes
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="outDoorDining" id="14" value="no" ng-model="formData.outDoorDining">
+                     <input class="magic-radio" type="radio" name="outDoorDining" id="14" value="no" ng-model="formData.outDoorDining" required>
                      <label class="text" for="14">
                         No
                      </label>
@@ -318,14 +322,14 @@
                <label for="">Live Music</label>
                <div class="magic-form">
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="liveMusic" id="15" value="yes" ng-model="formData.liveMusic">
-                     <label class="text" for="15">
+                     <input class="magic-radio" type="radio" name="liveMusic" id="15" value="yes" ng-model="formData.liveMusic" required >
+                     <label class="text" for="15" >
                         Yes
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="liveMusic" id="16" value="no" ng-model="formData.liveMusic">
-                     <label class="text" for="16">
+                     <input class="magic-radio" type="radio" name="liveMusic" id="16" value="no" ng-model="formData.liveMusic" required >
+                     <label class="text" for="16" >
                         No
                      </label>
                   </div>
@@ -338,14 +342,14 @@
                <label for="">Pure Vegetarian</label>
                <div class="magic-form">
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="pureVeg" id="17" value="yes" ng-model="formData.pureVeg">
-                     <label class="text" for="17">
+                     <input class="magic-radio" type="radio" name="pureVeg" id="17" value="yes" ng-model="formData.pureVeg" required>
+                     <label class="text" for="17" >
                         Yes
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="pureVeg" id="18" value="no" ng-model="formData.pureVeg">
-                     <label class="text" for="18">
+                     <input class="magic-radio" type="radio" name="pureVeg" id="18" value="no" ng-model="formData.pureVeg" required>
+                     <label class="text" for="18" >
                         No
                      </label>
                   </div>
@@ -360,14 +364,14 @@
                <label for="">Credit Cards accepted</label>
                <div class="magic-form">
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="creditCard" id="19" value="yes" ng-model="formData.creditCard">
-                     <label class="text" for="19">
+                     <input class="magic-radio" type="radio" name="creditCard" id="19" value="yes" ng-model="formData.creditCard" required>
+                     <label class="text" for="19" >
                         Yes
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="creditCard" id="20" value="no" ng-model="formData.creditCard">
-                     <label class="text" for="20">
+                     <input class="magic-radio" type="radio" name="creditCard" id="20" value="no" ng-model="formData.creditCard" required>
+                     <label class="text" for="20" >
                         No
                      </label>
                   </div>
@@ -379,14 +383,14 @@
                <label for="">Smoking Area</label>
                <div class="magic-form">
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="smokingArea" id="21" value="yes" ng-model="formData.smokingArea">
-                     <label class="text" for="21">
+                     <input class="magic-radio" type="radio" name="smokingArea" id="21" value="yes" ng-model="formData.smokingArea" required>
+                     <label class="text" for="21" >
                         Yes
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="smokingArea" id="22" value="no" ng-model="formData.smokingArea">
-                     <label class="text" for="22">
+                     <input class="magic-radio" type="radio" name="smokingArea" id="22" value="no" ng-model="formData.smokingArea" required>
+                     <label class="text" for="22" >
                         No
                      </label>
                   </div>
@@ -408,13 +412,13 @@
                <label for="">Catering Services</label>
                <div class="magic-form">
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="catering" id="23" value="yes" ng-model="formData.catering">
+                     <input class="magic-radio" type="radio" name="catering" id="23" value="yes" ng-model="formData.catering" required>
                      <label class="text" for="23">
                         Yes
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="catering" id="24" value="No" ng-model="formData.catering">
+                     <input class="magic-radio" type="radio" name="catering" id="24" value="No" ng-model="formData.catering" required>
                      <label class="text" for="24">
                         No
                      </label>
@@ -425,9 +429,14 @@
          </div>
       </div>
       <div class="form-group text-center">
-         <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn">Submit</button>
+         <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ng-disabled="restaurantForm.$invalid">Submit</button>
       </div>
    </form>
 </div>
+<div class="submit-thank min-h1" ng-if="formComplete">
+   <h3 class="text-center">Thank You, we'll get back to you soon.</h3>
+
+</div>
+
 
 <!-- </div> -->

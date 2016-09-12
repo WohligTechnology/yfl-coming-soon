@@ -1,5 +1,6 @@
-var adminurl = "http://104.197.77.171:1337/";
-// var imgurl="http://10.0.0.63:1337/"
+// var adminurl = "http://104.197.77.171:1337/";
+var adminurl = "http://192.168.100.101:1337/";
+// var adminurl="http://10.0.0.63:1337/";
 if (isproduction) {
     adminURL = "http://www.wohlig.co.in/demo/index.php";
 } else {

@@ -81,7 +81,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.countries = NavigationService.getcountries();
-        $scope.formData={};
+        $scope.formData = {};
 
     })
     .controller('FormYogaLabelCollaborationCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -99,16 +99,85 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.countries = NavigationService.getcountries();
-        $scope.formData={};
-        $scope.submitRestaurantForm=function(formData){
-          console.log("formData",formData);
-          if (formData) {
-            NavigationService.saveRestaurantForm(formData,function(data){
-              console.log(data,"data");
-            })
-          }
+        $scope.formData = {};
+        $scope.formComplete = false;
+        $scope.exist = false;
+        $scope.invalidPincode = false;
+        $scope.validMobileno = false;
+        $scope.conatctNumber = false;
+        $scope.resPhone = false;
+
+        $scope.submitRestaurantForm = function(formData) {
+            console.log("formData", formData);
+            if (formData) {
+                NavigationService.saveRestaurantForm($scope.formData, function(data) {
+                    console.log(data, "data");
+                    if (data.value === true) {
+                        $scope.formComplete = true;
+                        $scope.exist = false;
+                        $scope.invalidPincode = false;
+                        $scope.invalidPincode = false;
+                        $scope.conatctNumber = false;
+                        $scope.resPhone = false;
+                        $timeout(function() {
+                            $scope.formComplete = false;
+                            $scope.exist = false;
+                            $scope.invalidPincode = false;
+                            $scope.conatctNumber = false;
+                            $scope.resPhone = false;
+
+                            $scope.formData = {};
+
+
+                        }, 2000);
+
+                    } else if (data.value === false && data.error.errors.email) {
+                        $scope.formComplete = false;
+                        $scope.exist = true;
+                        $scope.invalidPincode = false;
+                        $scope.conatctNumber = false;
+                        $scope.resPhone = false;
+                        console.log("iminelse", data);
+                    } else if (data.value === false && data.error.errors.pincode) {
+                        $scope.formComplete = false;
+                        $scope.exist = false;
+                        $scope.resPhone = false;
+                        $scope.invalidPincode = true;
+                        $scope.conatctNumber = false;
+                    } else if (data.value === false && data.error.errors.mobileNumber) {
+                        $scope.formComplete = false;
+                        $scope.validMobileno = true;
+                        $scope.exist = false;
+                        $scope.resPhone = false;
+                        $scope.invalidPincode = false;
+                        $scope.conatctNumber = false;
+
+                    } else if (data.value === false && data.error.errors.managerNumber) {
+                        $scope.conatctNumber = true;
+                        $scope.formComplete = false;
+                        $scope.validMobileno = false;
+                        $scope.exist = false;
+                        $scope.invalidPincode = false;
+                        $scope.resPhone = false;
+
+                    } else if (data.value === false && data.error.errors.resPhoneNumbers) {
+                        $scope.resPhone = true;
+                        $scope.conatctNumber = false;
+                        $scope.formComplete = false;
+                        $scope.validMobileno = false;
+                        $scope.exist = false;
+                        $scope.invalidPincode = false;
+
+
+                    }
+                });
+            }
 
         }
+
+
+
+
 
 
     })
@@ -120,14 +189,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.countries = NavigationService.getcountries();
-    $scope.formData={};
-    $scope.submitNutrionistForm=function(formData){
-      console.log("formData",formData);
-      if (formData) {
-NavigationService.saveNutrionistForm(formData,function(data){
-  console.log(data,"data");
-})
-      }
+    $scope.formData = {};
+    $scope.submitNutrionistForm = function(formData) {
+        console.log("formData", formData);
+        if (formData) {
+            NavigationService.saveNutrionistForm(formData, function(data) {
+                console.log(data, "data");
+            })
+        }
     }
 })
 
@@ -252,10 +321,10 @@ NavigationService.saveNutrionistForm(formData,function(data){
     $scope.noMedia = false;
     $scope.submitArtistForm = function(formData) {
         $scope.noMedia = false;
-        _.each($scope.formData.mediaArray, function(data,key){
-          if (data === "other") {
-            $scope.formData.mediaArray[key] = $scope.formData.myother;
-          }
+        _.each($scope.formData.mediaArray, function(data, key) {
+            if (data === "other") {
+                $scope.formData.mediaArray[key] = $scope.formData.myother;
+            }
         });
         console.log($scope.formData.mediaArray);
         if ($scope.formData) {
@@ -278,6 +347,8 @@ NavigationService.saveNutrionistForm(formData,function(data){
                             $scope.formComplete = false;
                             $scope.invalidPincode = false;
                             $scope.exist = false;
+                            $scope.invalidPincode = false;
+                            $scope.validMobileno = false;
                             $scope.formData = {};
                             $scope.formData.mediaArray = [];
 
@@ -286,11 +357,15 @@ NavigationService.saveNutrionistForm(formData,function(data){
                         console.log("imin else", data.error.errors);
                         $scope.exist = true;
                         $scope.validMobileno = false;
+                        $scope.invalidPincode = false;
                     } else if (data.value === false && data.error.errors.pincode) {
                         $scope.invalidPincode = true;
+                        $scope.exist = false;
                         $scope.validMobileno = false;
                     } else if (data.value === false && data.error.errors.mobileNumber) {
                         $scope.validMobileno = true;
+                        $scope.exist = false;
+                        $scope.invalidPincode = false;
 
                     }
 

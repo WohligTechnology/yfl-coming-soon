@@ -34,10 +34,10 @@
          <div class="col-md-6">
             <div class="form-group">
                <label>Mobile*</label>
-               <input type="text" name="mobileNumber" ng-model="formData.mobile" class="form-control" required numbers-only>
+               <input type="text" name="mobileNumber" ng-model="formData.mobileNumber" class="form-control" required numbers-only>
                <div class="error-msg" ng-if="artistForm.mobileNumber.$invalid && artistForm.mobileNumber.$touched">Please Enter Your Mobile</div>
             </div>
-            <div ng-if="validMobileno">Enter valid Mobile Number</div>
+            <div ng-if="validMobileno">Mobile Number is not valid or it should be 10 digits</div>
          </div>
          <div class="col-md-6">
             <div class="form-group">
