@@ -403,12 +403,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('headerctrl', function($scope, TemplateService) {
+.controller('headerctrl', function($scope, TemplateService,$uibModal) {
     $scope.template = TemplateService;
     $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
         $(window).scrollTop(0);
     });
     $.fancybox.close(true);
+
+    $scope.sign = function() {
+            $uibModal.open({
+                animation: true,
+                templateUrl: "views/modal/signup.html",
+                scope: $scope
+            });
+        };
+
 })
 
 .controller('languageCtrl', function($scope, TemplateService, $translate, $rootScope) {
