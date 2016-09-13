@@ -40,7 +40,7 @@
                <input type="text" name="mobileNumber" ng-model="formData.mobileNumber" class="form-control" required numbers-only>
                <div class="error-msg" ng-if="restaurantForm.mobileNumber.$invalid && restaurantForm.mobileNumber.$touched">Please Enter Your Mobile</div>
             </div>
-              <div ng-if="validMobileno">Mobile Number is not valid or it should be 10 digits</div>
+              <div class="error" ng-if="validMobileno">Mobile Number is not valid or it should be 10 digits</div>
          </div>
          <div class="col-md-6">
             <div class="form-group">
@@ -57,7 +57,7 @@
                <input type="email" name="email" ng-model="formData.email" class="form-control" required>
                <div class="error-msg" ng-if="restaurantForm.email.$invalid && restaurantForm.email.$touched">Please Enter Your Email Id</div>
             </div>
-            <div ng-if="exist">Email Already Exist</div>
+            <div class="error" ng-if="exist">Email Already Exist</div>
          </div>
       </div>
       <h4>Restaurant Details</h4>
@@ -121,7 +121,7 @@
                <input type="text" name="resPhoneNumbers" ng-model="formData.resPhoneNumbers" class="form-control" numbers-only>
                <div class="error-msg" ng-if="restaurantForm.resPhoneNumbers.$invalid && restaurantForm.resPhoneNumbers.$touched">Please Enter Phone Number</div>
             </div>
-            <div ng-if="resPhone">Phone Number is not valid </div>
+            <div class="error" ng-if="resPhone">Phone Number is not valid </div>
          </div>
          <div class="col-md-6">
             <div class="form-group">
@@ -138,7 +138,7 @@
                <input type="text" name="managerNumber" ng-model="formData.managerNumber" class="form-control" required numbers-only>
                <div class="error-msg" ng-if="restaurantForm.managerNumber.$invalid && restaurantForm.managerNumber.$touched">Please Enter Operation Manager Contact Number</div>
             </div>
-            <div ng-if="conatctNumber">Contact Number is not valid or it should be 10 digits</div>
+            <div class="error" ng-if="conatctNumber">Contact Number is not valid or it should be 10 digits</div>
          </div>
          <div class="col-md-6">
             <div class="form-group">

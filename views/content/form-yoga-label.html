@@ -24,7 +24,7 @@
                <input type="text" name="landlineNumber" ng-model="formData.landlineNumber" class="form-control" placeholder="" required numbers-only>
                <div class="error-msg" ng-if="labelForm.landlineNumber.$invalid && labelForm.landlineNumber.$touched">Please Enter Contact Details</div>
             </div>
-            <div ng-if="validlandlineNo">Phone Number is not Valid</div>
+            <div class="error" ng-if="validlandlineNo">Phone Number is not Valid</div>
          </div>
       </div>
       <div class="row">
@@ -41,7 +41,7 @@
                <input type="text" name="mobileNumber" ng-model="formData.mobileNumber" class="form-control" placeholder="" required numbers-only>
                <div class="error-msg" ng-if="labelForm.mobileNumber.$invalid && labelForm.mobileNumber.$touched">Please Enter Contact Details</div>
             </div>
-            <div ng-if="validMobileno">Mobile Number is not Valid</div>
+            <div class="error" ng-if="validMobileno">Mobile Number is not Valid</div>
          </div>
       </div>
       <div class="row">
@@ -141,7 +141,7 @@
                <input type="text" name="pincode" ng-model="formData.pincode" class="form-control" placeholder="" required numbers-only>
                <div class="error-msg" ng-if="labelForm.pincode.$invalid && labelForm.pincode.$touched">Please Enter Your Pincode</div>
             </div>
-              <div ng-if="invalidPincode">Enter Valid Pincode</div>
+              <div class="error" ng-if="invalidPincode">Enter Valid Pincode</div>
          </div>
          <div class="col-md-6">
             <div class="form-group">

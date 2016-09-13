@@ -40,7 +40,7 @@
                <input type="text" name="mobileNumber" ng-model="formData.mobileNumber" class="form-control" required numbers-only>
                <div class="error-msg" ng-if="nutrionistForm.mobileNumber.$invalid && nutrionistForm.mobileNumber.$touched">Please Enter Your Mobile</div>
             </div>
-              <div ng-if="validMobileno">Mobile Number is not valid or it should be 10 digits</div>
+              <div class="error" ng-if="validMobileno">Mobile Number is not valid or it should be 10 digits</div>
          </div>
          <div class="col-md-6">
             <div class="form-group">
@@ -57,7 +57,7 @@
                <input type="email" name="email" ng-model="formData.email" class="form-control" required>
                <div class="error-msg" ng-if="nutrionistForm.email.$invalid && nutrionistForm.email.$touched">Please Enter Your Email Id</div>
             </div>
-              <div ng-if="exist">Email Already Exist</div>
+              <div class="error" ng-if="exist">Email Already Exist</div>
          </div>
          <div class="col-md-6">
             <div class="form-group">
@@ -93,7 +93,7 @@
                <input type="text" name="zipcode" ng-model="formData.zipcode" class="form-control" required>
                <div class="error-msg" ng-if="nutrionistForm.zipcode.$invalid && nutrionistForm.zipcode.$touched">Please Enter Your Pincode</div>
             </div>
-              <div ng-if="invalidPincode">Enter Valid Pincode</div>
+              <div class="error" ng-if="invalidPincode">Enter Valid Pincode</div>
          </div>
          <div class="col-md-6">
             <div class="form-group">
@@ -120,7 +120,7 @@
          <div class="col-md-6">
             <div class="form-group">
                <label for="DegreeQualification">Photocopy of your degree/qualification certificate (Upload)</label>
-                 <img ng-src="{{formData.qualificationCertificate|uploadpath}}" ng-if="formData.qualificationCertificate" alt="" class="img-responsive margin-auto">
+                 <!-- <img ng-src="{{formData.qualificationCertificate|uploadpath}}" ng-if="formData.qualificationCertificate" alt="" class="img-responsive margin-auto"> -->
                <!-- <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span> -->
                   <!-- <input type="file" id="DegreeQualification" class="form-control"> -->
  <!-- </button> -->
@@ -133,7 +133,7 @@
             <div class="form-group">
                <label for="AdditionalQualification">Any additional certificates you may wish to submit (Upload)
                </label>
-                <img ng-src="{{formData.additionalCertificates|uploadpath}}" ng-if="formData.additionalCertificates" alt="" class="img-responsive margin-auto">
+                <!-- <img ng-src="{{formData.additionalCertificates|uploadpath}}" ng-if="formData.additionalCertificates" alt="" class="img-responsive margin-auto"> -->
                <!-- <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span>
                   <input type="file" id="AdditionalQualification" class="form-control">
                </button> -->
@@ -198,7 +198,7 @@
                   <input type="text" ng-model="formData.myother" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.nutrition.other">
 
                </div>
-               <div ng-if="noContrubution" style="font-size:16px;margin:10px 0 0;">
+               <div class="error" ng-if="noContrubution" style="font-size:16px;margin:10px 0 0;">
                   Please select your  Contribution
                </div>
 
@@ -210,7 +210,7 @@
             <div class="form-group">
                <label for="samples">Sample articles that you may wish to submit to help your portfolio (Upload)
                </label>
-                         <img ng-src="{{formData.sampleArticles|uploadpath}}" ng-if="formData.sampleArticles" alt="" class="img-responsive margin-auto">
+                         <!-- <img ng-src="{{formData.sampleArticles|uploadpath}}" ng-if="formData.sampleArticles" alt="" class="img-responsive margin-auto"> -->
                <!-- <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span>
                   <input type="file" id="samples" class="form-control">
                </button> -->

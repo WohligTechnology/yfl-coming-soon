@@ -5,9 +5,9 @@
     </div>
 </div>
 
-<div class="container main-form">
+<div class="container main-form" ng-if="!formComplete">
     <h3 class="text-center">Please enter the below details</h3>
-    <form name="userForm" class="mid-form">
+    <form name="userForm" class="mid-form" ng-submit="submitYogaStudioForm(formData)">
         <h4>Personal Details</h4>
         <hr>
         <div class="row">
@@ -88,15 +88,15 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Pincode*</label>
-                    <input type="text" name="zipcode" ng-model="formData.zipcode" class="form-control" required>
-                    <div class="error-msg" ng-if="userForm.zipcode.$invalid && userForm.zipcode.$touched">Please Enter Your Pincode</div>
+                    <input type="text" name="pincode" ng-model="formData.pincode" class="form-control" required>
+                    <div class="error-msg" ng-if="userForm.pincode.$invalid && userForm.pincode.$touched">Please Enter Your Pincode</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Address Line 1*</label>
-                    <input type="text" name="address" ng-model="formData.address" class="form-control" required>
-                    <div class="error-msg" ng-if="userForm.address.$invalid && userForm.address.$touched">Please Enter Your Address</div>
+                    <input type="text" name="address" ng-model="formData.address1" class="form-control" required>
+                    <div class="error-msg" ng-if="userForm.address1.$invalid && userForm.address1.$touched">Please Enter Your Address</div>
                 </div>
             </div>
             <div class="col-md-12">
@@ -131,96 +131,96 @@
                     <label>Please select the amenities offered at your studio*</label>
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="amenities" id="1" ng-value="lockers" ng-model="formData.amenities.lockers">
+                            <input class="magic-checkbox" type="checkbox" name="amenities" id="1" value="lockers" ng-model="formData.amenities.lockers" ng-click="goToamenities('lockers')">
                             <label class="text" for="1">
                                 Lockers
                             </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="amenities" id="2" value="showers" ng-model="formData.amenities.showers">
+                            <input class="magic-checkbox" type="checkbox" name="amenities" id="2" value="showers" ng-model="formData.amenities.showers" ng-click="goToamenities('showers')">
                             <label class="text" for="2">
                                 Showers
                             </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="amenities" id="3" value="changing room" ng-model="formData.amenities.changingRoom">
+                            <input class="magic-checkbox" type="checkbox" name="amenities" id="3" value="changingRoom" ng-model="formData.amenities.changingRoom" ng-click="goToamenities('changingRoom')">
                             <label class="text" for="3">
                                 Changing Room
                             </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="amenities" id="4" value="yoga mats" ng-model="formData.amenities.yogaMats">
+                            <input class="magic-checkbox" type="checkbox" name="amenities" id="4" value="yoga mats" ng-model="formData.amenities.yogaMats" ng-click="goToamenities('amenities')">
                             <label class="text" for="4">
                                 Yoga Mats
                             </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="amenities" id="5" value="other" ng-model="formData.amenities.other">
+                            <input class="magic-checkbox" type="checkbox" name="amenities" id="5" value="other" ng-model="formData.amenities.other" ng-click="goToamenities('other')">
                             <label class="labewidtxt" for="5">
                                 Other
                             </label>
                         </div>
-                        <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.amenities.other">
+                        <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.amenities.other" ng-model="formData.myother">
                     </div>
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Style of Yoga offered at your studio*</label>
+                    <label>Style of Yoga   at your studio*</label>
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="style" id="6" value="Power Yoga" ng-model="formData.style.powerYoga">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="6" value="Power Yoga" ng-model="formData.style.powerYoga" ng-click="goToyogaOffer('Power Yoga')">
                             <label class="text" for="6">
                                 Power Yoga
                             </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="style" id="7" value="Iyengar Yoga" ng-model="formData.style.iyengarYoga">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="7" value="Iyengar Yoga" ng-model="formData.style.iyengarYoga" ng-click="goToyogaOffer('Iyengar Yoga')">
                             <label class="text" for="7">
                                 Iyengar Yoga
                             </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="style" id="8" value="Ashtanga Yoga" ng-model="formData.style.ashtangaYoga">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="8" value="Ashtanga Yoga" ng-model="formData.style.ashtangaYoga" ng-click="goToyogaOffer('Ashtanga Yoga')">
                             <label class="text" for="8">
                                 Ashtanga Yoga
                             </label>
                         </div>
 
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="style" id="9" value="Bikram Yoga" ng-model="formData.style.bikramYoga">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="9" value="Bikram Yoga" ng-model="formData.style.bikramYoga" ng-click="goToyogaOffer('Bikram Yoga')">
                             <label class="text" for="9">
                                 Bikram Yoga
                             </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="style" id="10" value="Vinyasa Yoga" ng-model="formData.style.vinyasaYoga">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="10" value="Vinyasa Yoga" ng-model="formData.style.vinyasaYoga" ng-click="goToyogaOffer('Vinyasa Yoga')">
                             <label class="text" for="10">
                                 Vinyasa Yoga
                             </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="style" id="11" value="Hatha Yoga" ng-model="formData.style.hathYoga">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="11" value="Hatha Yoga" ng-model="formData.style.hathYoga" ng-click="goToyogaOffer('Hatha Yoga')">
                             <label class="text" for="11">
                                 Hatha Yoga
                             </label>
                         </div>
 
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="style" id="12" value="Sivananda Yoga" ng-model="formData.style.sivanandaYoga">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="12" value="Sivananda Yoga" ng-model="formData.style.sivanandaYoga" ng-click="goToyogaOffer('Sivananda Yoga')">
                             <label class="text" for="12">
                                 Sivananda Yoga
                             </label>
                         </div>
 
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="style" id="13" value="other" ng-model="formData.style.other">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="13" value="other" ng-model="formData.style.other" ng-click="goToyogaOffer('other')">
                             <label class="labewidtxt" for="13">
                                 Other
                             </label>
                         </div>
-                        <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.style.other">
+                        <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.style.other" ng-model="formData.myotherYogaStyle">
 
                     </div>
 
@@ -370,4 +370,8 @@
                     <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ng-disabled="userForm.$invalid"><span ng-if="userForm.$invalid">Please Enter Compulsory fields</span><span ng-if="!userForm.$invalid">Submit</span></button>
                 </div>
             </form>
+        </div>
+        <div class="submit-thank min-h1" ng-if="formComplete">
+           <h3 class="text-center">Thank You, we'll get back to you soon.</h3>
+
         </div>

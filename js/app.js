@@ -225,6 +225,7 @@ firstapp.directive('aplhaOnly', function() {
     };
 });
 
+
 firstapp.filter('uploadpath', function() {
     return function(input, width, height, style) {
         var other = "";
@@ -246,6 +247,38 @@ firstapp.filter('uploadpath', function() {
         }
     };
 });
+
+firstapp.filter('showbtn', function(NavigationService) {
+    return function(input, data) {
+        if (input && data && input != "" && data != "") {
+            if (data._id && data.shortList && data.shortList.length > 0) {
+                var foundIndex = _.findIndex(data.shortList, {
+                    "expertUser": input
+                })
+                if (foundIndex != -1) {
+                    return false;
+                } else {
+                    return true;
+                }
+            } else {
+                return true;
+            }
+        } else {
+            return true;
+        }
+    };
+});
+firstapp.directive('imageonload', function() {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            element.bind('load', function() {
+                scope.$apply(attrs.imageonload);
+            });
+        }
+    };
+});
+
 firstapp.directive('uploadImage', function($http, $filter) {
     return {
         templateUrl: 'views/directive/uploadFile.html',
@@ -313,6 +346,88 @@ firstapp.directive('uploadImage', function($http, $filter) {
     };
 });
 
+firstapp.directive('img', function($compile, $parse) {
+
+    return {
+        restrict: 'E',
+        replace: false,
+        link: function($scope, element, attrs) {
+            var $element = $(element);
+
+            if (!attrs.noloading) {
+                $element.after("<img src='img/loading.gif' class='loading' />");
+                var $loading = $element.next(".loading");
+                $element.load(function() {
+                    $loading.remove();
+                    $(this).addClass("doneLoading");
+                });
+            } else {
+                $($element).addClass("doneLoading");
+            }
+        }
+    };
+});
+
+firstapp.directive('fancybox', function($compile, $parse) {
+    return {
+        restrict: 'EA',
+        replace: false,
+        link: function($scope, element, attrs) {
+            $element = $(element);
+            console.log("Checking Fancybox");
+            setTimeout(function() {
+                $(".various").fancybox({
+                    maxWidth: 800,
+                    maxHeight: 600,
+                    fitToView: false,
+                    width: '70%',
+                    height: '70%',
+                    autoSize: false,
+                    closeClick: false,
+                    openEffect: 'none',
+                    closeEffect: 'none'
+                });
+            }, 100);
+        }
+    };
+});
+firstapp.directive('fancybox2', function($compile, $parse) {
+    return {
+        restrict: 'C',
+        replace: false,
+        link: function($scope, element, attrs) {
+
+            $(".fancybox2").fancybox({
+                openEffect: 'none',
+                closeEffect: 'none'
+            });
+
+
+        }
+    };
+});
+
+firstapp.directive('onlyDigits', function() {
+    return {
+        require: 'ngModel',
+        restrict: 'A',
+        link: function(scope, element, attr, ctrl) {
+            function inputValue(val) {
+                if (val) {
+                    var digits = val.replace(/[^0-9]/g, '');
+
+                    if (digits !== val) {
+                        ctrl.$setViewValue(digits);
+                        ctrl.$render();
+                    }
+                    return parseInt(digits, 10);
+                }
+                return undefined;
+            }
+            ctrl.$parsers.push(inputValue);
+        }
+    };
+});
 
 
 firstapp.config(function($translateProvider) {

@@ -37,7 +37,7 @@
                <input type="text" name="mobileNumber" ng-model="formData.mobileNumber" class="form-control" required numbers-only>
                <div class="error-msg" ng-if="artistForm.mobileNumber.$invalid && artistForm.mobileNumber.$touched">Please Enter Your Mobile</div>
             </div>
-            <div ng-if="validMobileno">Mobile Number is not valid or it should be 10 digits</div>
+            <div class="error" ng-if="validMobileno">Mobile Number is not valid or it should be 10 digits</div>
          </div>
          <div class="col-md-6">
             <div class="form-group">
@@ -54,7 +54,7 @@
                <input type="email" name="email" ng-model="formData.email" class="form-control" required>
                <div class="error-msg" ng-if="artistForm.email.$invalid && artistForm.email.$touched">Please Enter Your Email Id</div>
             </div>
-            <div ng-if="exist">Email Id Already Exist</div>
+            <div class="error" ng-if="exist">Email Id Already Exist</div>
          </div>
          <div class="col-md-6">
             <div class="form-group">
@@ -90,7 +90,7 @@
                <input type="text" name="pincode" ng-model="formData.pincode" class="form-control" required>
                <div class="error-msg" ng-if="artistForm.pincode.$invalid && artistForm.pincode.$touched">Please Enter Your Pincode</div>
             </div>
-            <div ng-if="invalidPincode">Enter Valid Pincode</div>
+            <div class="error" ng-if="invalidPincode">Enter Valid Pincode</div>
          </div>
          <div class="col-md-6">
             <div class="form-group">
@@ -257,7 +257,7 @@
                   </div>
                   <input ng-model="formData.myother" type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.nutrition.other">
                </div>
-               <div ng-if="noMedia" style="font-size:16px;margin:10px 0 0;">
+               <div class="error" ng-if="noMedia" style="font-size:16px;margin:10px 0 0;">
                   Please select a Media
                </div>
             </div>

@@ -82,6 +82,68 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
         $scope.countries = NavigationService.getcountries();
         $scope.formData = {};
+        $scope.formData.amenitiesArray = [];
+        $scope.formData.yogaStyleOfferArray = [];
+        $scope.submitYogaStudioForm = function(formData) {
+            _.each($scope.formData.amenitiesArray, function(data, key) {
+                if (data === "other") {
+                    $scope.formData.amenitiesArray[key] = $scope.formData.myother;
+                }
+            });
+            console.log($scope.formData.amenitiesArray);
+            _.each($scope.formData.yogaStyleOfferArray, function(data, key) {
+                if (data === "other") {
+                    $scope.formData.yogaStyleOfferArray[key] = $scope.formData.myotherYogaStyle;
+                }
+            });
+            console.log($scope.formData.yogaStyleOfferArray);
+            $scope.formData.amenities = " ";
+            if ($scope.formData.amenitiesArray.length > 0) {
+                _.each($scope.formData.amenitiesArray, function(n) {
+                    $scope.formData.amenities += n + ",";
+                });
+
+                console.log("data", $scope.formData);
+
+
+            };
+            $scope.formData.yogaOffer = " ";
+            if ($scope.formData.yogaStyleOfferArray.length > 0) {
+                _.each($scope.formData.yogaStyleOfferArray, function(n) {
+                    $scope.formData.yogaOffer += n + ",";
+                });
+
+                console.log("data", $scope.formData);
+
+
+            };
+        }
+
+        $scope.goToamenities = function(val) {
+            var foundIndex = _.findIndex($scope.formData.amenitiesArray, function(key) {
+                return key == val;
+            });
+            if (foundIndex == -1) {
+                $scope.formData.amenitiesArray.push(val);
+            } else {
+                $scope.formData.amenitiesArray.splice(foundIndex, 1);
+            }
+
+            console.log($scope.formData.amenitiesArray);
+        };
+        $scope.goToyogaOffer = function(val) {
+            var foundIndex = _.findIndex($scope.formData.yogaStyleOfferArray, function(key) {
+                return key == val;
+            });
+            if (foundIndex == -1) {
+                $scope.formData.yogaStyleOfferArray.push(val);
+            } else {
+                $scope.formData.yogaStyleOfferArray.splice(foundIndex, 1);
+            }
+
+            console.log($scope.formData.yogaStyleOfferArray);
+        };
+
 
     })
     .controller('FormYogaLabelCollaborationCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -381,6 +443,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.formData.contributArray = [];
     $scope.noContrubution = false;
     $scope.submitNutrionistForm = function(formData) {
+      console.log(formData,'*******');
         $scope.noContrubution = false;
         _.each($scope.formData.contributArray, function(data, key) {
             if (data === "other") {
@@ -463,6 +526,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Form Personal Campaign");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.countries = NavigationService.getcountries();
 
     $scope.today = function() {
         $scope.dt = new Date();
@@ -554,7 +618,52 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         return '';
     }
+$scope.formData={};
+$scope.formComplete=false;
+$scope.exist = false;
+$scope.invalidPincode = false;
+$scope.validMobileno = false;
+$scope.submitCampaign=function(formData){
 
+console.log("submitCampaign",formData);
+if ($scope.formData) {
+  NavigationService.savePersonalCompaign($scope.formData,function(data){
+    console.log("savePersonalCompaign",data);
+    if (data.value === true) {
+        $scope.formComplete = true;
+        $scope.exist = false;
+        $scope.invalidPincode = false;
+        $scope.validMobileno = false;
+        $timeout(function() {
+            $scope.formComplete = false;
+            $scope.invalidPincode = false;
+            $scope.exist = false;
+            $scope.invalidPincode = false;
+            $scope.validMobileno = false;
+            $scope.formData = {};
+            // $scope.formData.mediaArray = [];
+
+        }, 2000);
+    } else if (data.value === false && data.error.errors.email) {
+        console.log("imin else", data.error.errors);
+        $scope.exist = true;
+        $scope.validMobileno = false;
+        $scope.invalidPincode = false;
+    } else if (data.value === false && data.error.errors.zipcode) {
+        $scope.invalidPincode = true;
+        $scope.exist = false;
+        $scope.validMobileno = false;
+    } else if (data.value === false && data.error.errors.mobileNumber) {
+        $scope.validMobileno = true;
+        $scope.exist = false;
+        $scope.invalidPincode = false;
+
+    }
+
+
+  })
+}
+}
 
 })
 
@@ -658,19 +767,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     console.log("$scope.countries", $scope.countries);
 
 
-// })
+    // })
 
-                    $scope.showDiv = false;
+    $scope.showDiv = false;
 
-                      $scope.openShowDiv = function(){
-                        $scope.showDiv = true;
-                      }
-                      $scope.closeShowDiv = function(){
-                        $scope.showDiv = false;
-                      }
+    $scope.openShowDiv = function() {
+        $scope.showDiv = true;
+    }
+    $scope.closeShowDiv = function() {
+        $scope.showDiv = false;
+    }
 
 
-        })
+})
 
 .controller('headerctrl', function($scope, TemplateService, $uibModal) {
     $scope.template = TemplateService;
