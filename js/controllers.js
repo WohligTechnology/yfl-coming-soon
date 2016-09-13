@@ -658,7 +658,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     console.log("$scope.countries", $scope.countries);
 
 
-})
+// })
+
+                    $scope.showDiv = false;
+
+                      $scope.openShowDiv = function(){
+                        $scope.showDiv = true;
+                      }
+                      $scope.closeShowDiv = function(){
+                        $scope.showDiv = false;
+                      }
+
+
+        })
 
 .controller('headerctrl', function($scope, TemplateService, $uibModal) {
     $scope.template = TemplateService;
