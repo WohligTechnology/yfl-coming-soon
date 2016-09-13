@@ -1,9 +1,9 @@
-// var adminurl = "http://104.197.77.171:1337/";
-var adminurl = "http://192.168.100.100:1337/";
+var adminurl = "http://104.197.77.171:1337/";
+// var adminurl = "http://192.168.100.100:1337/";
 
-// var adminurl="http://10.0.0.63:1337/";
+
 var imgurl = adminurl + "upload/";
-// var imgurl ="http://104.197.77.171:1337/upload";
+
 var imgpath = imgurl + "readFile";
 var uploadurl = imgurl;
 
@@ -820,6 +820,14 @@ console.log(formData,'**********************');
 console.log(formData,'**********************');
             $http({
                 url: adminurl + 'PersonalCampaign/save',
+                method: 'POST',
+                data: formData
+            }).success(callback);
+        },
+        saveYogaStudio: function(formData, callback) {
+console.log(formData,'**********************');
+            $http({
+                url: adminurl + 'TeacherCollaboration/save',
                 method: 'POST',
                 data: formData
             }).success(callback);

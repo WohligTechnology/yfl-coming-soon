@@ -82,6 +82,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
         $scope.countries = NavigationService.getcountries();
         $scope.formData = {};
+        $scope.formComplete = false;
+        $scope.exist = false;
+        $scope.invalidPincode = false;
+        $scope.validMobileno = false;
+        $scope.organizationName = false;
         $scope.formData.amenitiesArray = [];
         $scope.formData.yogaStyleOfferArray = [];
         $scope.submitYogaStudioForm = function(formData) {
@@ -96,29 +101,82 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     $scope.formData.yogaStyleOfferArray[key] = $scope.formData.myotherYogaStyle;
                 }
             });
-            console.log($scope.formData.yogaStyleOfferArray);
-            $scope.formData.amenities = " ";
-            if ($scope.formData.amenitiesArray.length > 0) {
-                _.each($scope.formData.amenitiesArray, function(n) {
-                    $scope.formData.amenities += n + ",";
+            if ($scope.formData.teachingLevel === "other") {
+                $scope.formData.teachingLevel = $scope.formData.otherCat;
+            }
+            if ($scope.formData) {
+
+                console.log($scope.formData.yogaStyleOfferArray);
+                $scope.formData.amenities = " ";
+                if ($scope.formData.amenitiesArray.length > 0) {
+                    _.each($scope.formData.amenitiesArray, function(n) {
+                        $scope.formData.amenities += n + ",";
+                    });
+
+                    console.log("data", $scope.formData);
+
+
+                };
+                $scope.formData.styleOfYoga = " ";
+                if ($scope.formData.yogaStyleOfferArray.length > 0) {
+                    _.each($scope.formData.yogaStyleOfferArray, function(n) {
+                        $scope.formData.styleOfYoga += n + ",";
+                    });
+
+                    console.log("data", $scope.formData);
+
+
+                };
+                NavigationService.saveYogaStudio($scope.formData, function(data) {
+                    console.log("iminnavigation", $scope.formData);
+                    console.log("formData", data);
+                    if (data.value === true) {
+                        $scope.formComplete = true;
+                        $scope.exist = false;
+                        $scope.invalidPincode = false;
+                        $scope.validMobileno = false;
+                        $scope.organizationName = false;
+                        $timeout(function() {
+                            $scope.formComplete = false;
+                            $scope.invalidPincode = false;
+                            $scope.exist = false;
+                            $scope.invalidPincode = false;
+                            $scope.validMobileno = false;
+                            $scope.organizationName = false;
+                            $scope.formData = {};
+                            $scope.formData.mediaArray = [];
+
+                        }, 2000);
+                    } else if (data.value === false && data.error.errors.email) {
+                        console.log("imin else", data.error.errors);
+                        $scope.exist = true;
+                        $scope.validMobileno = false;
+                        $scope.invalidPincode = false;
+                        $scope.organizationName = false;
+                    } else if (data.value === false && data.error.errors.pincode) {
+                        $scope.invalidPincode = true;
+                        $scope.exist = false;
+                        $scope.validMobileno = false;
+                        $scope.organizationName = false;
+                    } else if (data.value === false && data.error.errors.mobileNumber) {
+                        $scope.validMobileno = true;
+                        $scope.exist = false;
+                        $scope.invalidPincode = false;
+                        $scope.organizationName = false;
+
+                    } else if (data.value === false && data.error.errors.organizationName) {
+                        $scope.validMobileno = false;
+                        $scope.exist = false;
+                        $scope.invalidPincode = false;
+                        $scope.organizationName = true;
+
+                    }
+
                 });
 
-                console.log("data", $scope.formData);
 
-
-            };
-            $scope.formData.yogaOffer = " ";
-            if ($scope.formData.yogaStyleOfferArray.length > 0) {
-                _.each($scope.formData.yogaStyleOfferArray, function(n) {
-                    $scope.formData.yogaOffer += n + ",";
-                });
-
-                console.log("data", $scope.formData);
-
-
-            };
+            }
         }
-
         $scope.goToamenities = function(val) {
             var foundIndex = _.findIndex($scope.formData.amenitiesArray, function(key) {
                 return key == val;
@@ -443,7 +501,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.formData.contributArray = [];
     $scope.noContrubution = false;
     $scope.submitNutrionistForm = function(formData) {
-      console.log(formData,'*******');
+        console.log(formData, '*******');
         $scope.noContrubution = false;
         _.each($scope.formData.contributArray, function(data, key) {
             if (data === "other") {
@@ -618,52 +676,52 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         return '';
     }
-$scope.formData={};
-$scope.formComplete=false;
-$scope.exist = false;
-$scope.invalidPincode = false;
-$scope.validMobileno = false;
-$scope.submitCampaign=function(formData){
+    $scope.formData = {};
+    $scope.formComplete = false;
+    $scope.exist = false;
+    $scope.invalidPincode = false;
+    $scope.validMobileno = false;
+    $scope.submitCampaign = function(formData) {
 
-console.log("submitCampaign",formData);
-if ($scope.formData) {
-  NavigationService.savePersonalCompaign($scope.formData,function(data){
-    console.log("savePersonalCompaign",data);
-    if (data.value === true) {
-        $scope.formComplete = true;
-        $scope.exist = false;
-        $scope.invalidPincode = false;
-        $scope.validMobileno = false;
-        $timeout(function() {
-            $scope.formComplete = false;
-            $scope.invalidPincode = false;
-            $scope.exist = false;
-            $scope.invalidPincode = false;
-            $scope.validMobileno = false;
-            $scope.formData = {};
-            // $scope.formData.mediaArray = [];
+        console.log("submitCampaign", formData);
+        if ($scope.formData) {
+            NavigationService.savePersonalCompaign($scope.formData, function(data) {
+                console.log("savePersonalCompaign", data);
+                if (data.value === true) {
+                    $scope.formComplete = true;
+                    $scope.exist = false;
+                    $scope.invalidPincode = false;
+                    $scope.validMobileno = false;
+                    $timeout(function() {
+                        $scope.formComplete = false;
+                        $scope.invalidPincode = false;
+                        $scope.exist = false;
+                        $scope.invalidPincode = false;
+                        $scope.validMobileno = false;
+                        $scope.formData = {};
+                        // $scope.formData.mediaArray = [];
 
-        }, 2000);
-    } else if (data.value === false && data.error.errors.email) {
-        console.log("imin else", data.error.errors);
-        $scope.exist = true;
-        $scope.validMobileno = false;
-        $scope.invalidPincode = false;
-    } else if (data.value === false && data.error.errors.zipcode) {
-        $scope.invalidPincode = true;
-        $scope.exist = false;
-        $scope.validMobileno = false;
-    } else if (data.value === false && data.error.errors.mobileNumber) {
-        $scope.validMobileno = true;
-        $scope.exist = false;
-        $scope.invalidPincode = false;
+                    }, 2000);
+                } else if (data.value === false && data.error.errors.email) {
+                    console.log("imin else", data.error.errors);
+                    $scope.exist = true;
+                    $scope.validMobileno = false;
+                    $scope.invalidPincode = false;
+                } else if (data.value === false && data.error.errors.zipcode) {
+                    $scope.invalidPincode = true;
+                    $scope.exist = false;
+                    $scope.validMobileno = false;
+                } else if (data.value === false && data.error.errors.mobileNumber) {
+                    $scope.validMobileno = true;
+                    $scope.exist = false;
+                    $scope.invalidPincode = false;
 
+                }
+
+
+            })
+        }
     }
-
-
-  })
-}
-}
 
 })
 
@@ -769,7 +827,14 @@ if ($scope.formData) {
 
     // })
 
+    $scope.showDiv = false;
 
+    $scope.openShowDiv = function() {
+        $scope.showDiv = true;
+    }
+    $scope.closeShowDiv = function() {
+        $scope.showDiv = false;
+    }
 
 
 })
@@ -803,14 +868,6 @@ if ($scope.formData) {
         });
     };
 
-    $scope.showDiv = false;
-
-    $scope.openShowDiv = function() {
-        $scope.showDiv = true;
-    }
-    $scope.closeShowDiv = function() {
-        $scope.showDiv = false;
-    }
 })
 
 

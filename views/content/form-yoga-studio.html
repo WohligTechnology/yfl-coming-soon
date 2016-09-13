@@ -56,6 +56,7 @@
                     <input type="email" name="email" ng-model="formData.email" class="form-control" required>
                     <div class="error-msg" ng-if="userForm.email.$invalid && userForm.email.$touched">Please Enter Your Email Id</div>
                 </div>
+                  <div class="error" ng-if="exist">Email Id Already Exist</div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
@@ -91,6 +92,7 @@
                     <input type="text" name="pincode" ng-model="formData.pincode" class="form-control" required>
                     <div class="error-msg" ng-if="userForm.pincode.$invalid && userForm.pincode.$touched">Please Enter Your Pincode</div>
                 </div>
+                  <div class="error" ng-if="invalidPincode">Enter Valid Pincode</div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
@@ -112,9 +114,10 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Name of your organisation*</label>
-                    <input type="text" name="organisation" ng-model="formData.organisation" class="form-control" required>
-                    <div class="error-msg" ng-if="userForm.organisation.$invalid && userForm.organisation.$touched">Please Enter Your Organisation</div>
+                    <input type="text" name="organizationName" ng-model="formData.organizationName" class="form-control" required>
+                    <div class="error-msg" ng-if="userForm.organizationName.$invalid && userForm.organizationName.$touched">Please Enter Your Organisation</div>
                 </div>
+                  <div class="error" ng-if="organizationName">Enter Your Organisation<</div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
@@ -244,33 +247,33 @@
 
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="classLevel" id="14" value="beginner" ng-model="formData.classLevel">
+                            <input class="magic-radio" type="radio" name="teachingLevel" id="14" value="beginner" ng-model="formData.teachingLevel">
                             <label class="text" for="14">
                                 Beginner
                             </label>
                         </div>
 
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="classLevel" id="15" value="advanced" ng-model="formData.classLevel">
+                            <input class="magic-radio" type="radio" name="teachingLevel" id="15" value="advanced" ng-model="formData.teachingLevel">
                             <label class="text" for="15">
                                 Advanced
                             </label>
                         </div>
 
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="classLevel" id="16" value="open level" ng-model="formData.classLevel">
+                            <input class="magic-radio" type="radio" name="teachingLevel" id="16" value="open level" ng-model="formData.teachingLevel">
                             <label class="text" for="16">
                                 Open Level
                             </label>
                         </div>
 
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="classLevel" id="17" value="other" ng-model="formData.classLevel">
+                            <input class="magic-radio" type="radio" name="teachingLevel" id="17" value="other" ng-model="formData.teachingLevel">
                             <label class="labewidtxt" for="17">
                                 Other
                             </label>
                         </div>
-                        <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.classLevel == 'other'">
+                        <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.teachingLevel == 'other'" ng-model="formData.otherCat">
 
                     </div>
                 </div>
@@ -295,7 +298,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="website" placeholder="Please provide your website address*" ng-model="formData.website" class="form-control textbox-other" ng-if="formData.ifWebsite == 'true'" required>
+                    <input type="text" name="website" placeholder="Please provide your website address*"  class="form-control textbox-other" ng-if="formData.ifWebsite == 'true'" required ng-model="formData.officialWebsiteAddress">
                     <div class="error-msg" ng-if="userForm.website.$invalid && userForm.website.$touched">Please provide your website address</div>
                 </div>
             </div>
@@ -322,7 +325,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Are you active on any other social media platforms?*</label>
-                    <input type="text" name="anyothersocialmedia" ng-model="formData.anyothersocialmedia" class="form-control" required>
+                    <input type="text" name="anyothersocialmedia"  class="form-control" ng-model="formData.isActiveSocial" required>
                     <div class="error-msg" ng-if="userForm.anyothersocialmedia.$invalid && userForm.anyothersocialmedia.$touched">Are you active on any other social media platforms?</div>
                 </div>
             </div>
@@ -351,7 +354,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label>List the address for your branches*</label>
-                    <textarea name="branches" ng-model="formData.branches" class="form-control" required></textarea>
+                    <textarea name="branches"  class="form-control" required ng-model="formData.listBranches"></textarea>
                             <div class="error-msg" ng-if="userForm.branches.$invalid && userForm.branches.$touched">List the address for your branches</div>
                         </div>
                     </div>

@@ -131,9 +131,10 @@
                <label for="Campaignpicture">Campaign picture (Upload) (This is going to be the face of your campaign. Upload a non-pixelated, clear image preferably. Ideal Size: 700x400. If it's bigger, don’t worry, we’ll crop it for you.)
 
                </label>
-               <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span>
+               <!-- <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span>
                   <input type="file" id="Campaignpicture" class="form-control">
-               </button>
+               </button> -->
+                <upload-image ng-model="formData.picture" no-view></upload-image>
             </div>
          </div>
       </div>
@@ -143,17 +144,18 @@
                <label for="samples">End Date *(Choose a campaign end date)
 
                </label>
-               <input type="text" class="form-control " uib-datepicker-popup="{{format}}" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-model="formData.date" />
+               <input type="text" class="form-control " uib-datepicker-popup="{{format}}" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats"  ng-model="formData.endDate"/>
                <a href="" class="down" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
             </div>
          </div>
          <div class="col-md-6">
             <div class="form-group">
                <label>Cause</label>
-               <select class="form-control" name="cause">
-                  <option>Acid attack victim</option>
-                  <option>Acid attack victim</option>
-                  <option>Acid attack victim</option>
+               <select class="form-control" name="cause" ng-model="formData.cause">
+                  <option ng-selected="true" value="">Select </option>
+                  <option value="Acid attack victim1">Acid attack victim</option>
+                  <option value="Acid attack victim2">Acid attack victim</option>
+                  <option value="Acid attack victim3">Acid attack victim</option>
                </select>
                <div class="error-msg" ng-if="campaignForm.cause.$invalid && campaignForm.cause.$touched">Please Select Your Country</div>
             </div>
@@ -186,13 +188,13 @@
                <label>Recipient</label>
                <div class="magic-form">
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="myLevel" id="me" value="myself" ng-model="formData.recipient">
+                     <input class="magic-radio" type="radio" name="myLevel" id="me" value="Myself" ng-model="formData.recipient">
                      <label class="text" for="me">
                         Myself
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="myLevel" id="else" value="someoneelse" ng-model="formData.recipient">
+                     <input class="magic-radio" type="radio" name="myLevel" id="else" value="Someone else" ng-model="formData.recipient">
                      <label class="text" for="else">
                         Someone else
                      </label>
