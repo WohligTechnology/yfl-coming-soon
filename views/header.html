@@ -21,10 +21,10 @@
               <li class="pull-left"><a href="">Eat healthy</a></li>
               <li class="pull-left"><a href="">Share a story</a></li>
               <li class="pull-left"><a href="">Be giving</a></li>
-              <li class="search microscope pull-right" ng-click="toggleShowDiv()"><img src="img/searching.png" class="img-responsive" alt=""></li>
+              <li class="search microscope pull-right" ng-click="openShowDiv()"><img src="img/searching.png" class="img-responsive" alt=""></li>
               <div class="searching"  ng-if="showDiv">
                 <input type="search" name="search" class="form-control" placeholder="Search for posts, comments and users" >
-                  <a href="" class="close text-uppercase brand-white" ng-click="$dismiss();"><i class="fa fa-times" aria-hidden="true"></i></a>
+                  <a href="" class="close text-uppercase brand-white" ng-click="closeShowDiv()"><i class="fa fa-times" aria-hidden="true"></i></a>
                   <a href="" class="searches"><img src="img/searching.png" class="img-responsive" alt=""></a>
               </div>
             </ul>

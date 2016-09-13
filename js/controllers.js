@@ -612,6 +612,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                         });
                     };
 
+
+                    $scope.showDiv = false;
+
+                      $scope.openShowDiv = function(){
+                        $scope.showDiv = true;
+                      }
+                      $scope.closeShowDiv = function(){
+                        $scope.showDiv = false;
+                      }
+
+
         })
 
 
