@@ -769,14 +769,7 @@ if ($scope.formData) {
 
     // })
 
-    $scope.showDiv = false;
 
-    $scope.openShowDiv = function() {
-        $scope.showDiv = true;
-    }
-    $scope.closeShowDiv = function() {
-        $scope.showDiv = false;
-    }
 
 
 })
@@ -810,6 +803,14 @@ if ($scope.formData) {
         });
     };
 
+    $scope.showDiv = false;
+
+    $scope.openShowDiv = function() {
+        $scope.showDiv = true;
+    }
+    $scope.closeShowDiv = function() {
+        $scope.showDiv = false;
+    }
 })
 
 
