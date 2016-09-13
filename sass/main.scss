@@ -1118,6 +1118,7 @@ hr {
     height: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
+    position: relative;
     color: #000;
     text-align: left;
     margin: 0 auto;
@@ -1137,14 +1138,16 @@ hr {
             }
         }
     }
-}
+    .search {
+      cursor: pointer;
+        img {
+            width: 16px;
 
-.search {
-    img {
-        width: 16px;
-        cursor: pointer;
+        }
     }
 }
+
+
 // .title{
 //   text-transform: uppercase;
 //   padding: 15px;
@@ -1298,8 +1301,10 @@ hr {
     letter-spacing: 2px;
     border-top: 2px solid #b0b0b0;
     padding: 10px 0 0 0;
+    margin: 10px 0;
   }
   .sign-in{
+    padding: 10px 0 0;
     text-align: center;
     .btn{
       padding: 10px 80px;
@@ -1311,14 +1316,14 @@ hr {
   .forms{
     .form-group{
       margin: 0;
-      padding: 20px 0;
+      padding: 10px 0 ;
       .form-control{
-        background-image: url(../img/input-bg.png) !important;
+        background-image: url(../img/input-bg.png);
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: 100% 100%;
         background-position: center;
         padding: 25px 20px;
-        background-color: #f9f7f7 !important;
+        border: 0px;
       }
 
     }
@@ -1330,8 +1335,49 @@ hr {
   }
 }
 
-input[type=email] {
+input[type=email] ,input[type=password]{
   -webkit-appearance: none;
 }
+.space{
+    padding: 30px 0 10px!important;
+}
+}
+
+
+  .microscope{
+    &:hover{
+      .searching{
+          input[type="search"]{
+            opacity: 1;
+      }
+    }
+    }
+  }
+
+
+.searching{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  input[type="search"]{
+    border: none;
+    border-bottom: 2px solid #b0b0b0;
+    padding: 0 65px 0 0;
+  }
+  .close{
+    position: absolute;
+    top: 5px;
+    right: 40px;
+  }
+  .searches{
+    position: absolute;
+    top: 9px;
+    right: 0;
+    img{
+      width: 16px;
+    }
+  }
 }
 @import "mobile";
