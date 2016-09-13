@@ -200,7 +200,7 @@ a {
 
 .navbar-header {
     float: none;
-    padding: 10px 5px;
+    padding: 10px 0px;
 }
 
 .btn-dark {
@@ -1126,7 +1126,7 @@ hr {
 
     li {
         display: inline-block;
-        padding: 0 15px 5px;
+        padding: 0 20px 5px 0;
         font-size: 14px;
         vertical-align: middle;
 
@@ -1325,15 +1325,13 @@ hr {
   }
 .forgot{
   padding: 40px 0 10px 0;
+  h4{
+    text-decoration: underline;
+  }
 }
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px #f9f7f7 inset;}
 
-// input:focus,
-// input:-webkit-autofill:focus {
-//     border-color: #66afe9;
-//     -webkit-box-shadow: inset 0 0 0px 9999px #fff,
-//                         0 0 8px rgba(102, 175, 233, 0.6);
-// }
+input[type=email] {
+  -webkit-appearance: none;
+}
 }
 @import "mobile";
