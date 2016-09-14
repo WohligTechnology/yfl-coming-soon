@@ -152,18 +152,21 @@
                             </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="amenities" id="4" value="yoga mats" ng-model="formData.amenities.yogaMats" ng-click="goToamenities('amenities')">
+                            <input class="magic-checkbox" type="checkbox" name="amenities" id="4" value="yogaMats" ng-model="formData.amenities.yogaMats" ng-click="goToamenities('yogaMats')">
                             <label class="text" for="4">
                                 Yoga Mats
                             </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="amenities" id="5" value="other" ng-model="formData.amenities.other" ng-click="goToamenities('other')">
+                            <input class="magic-checkbox" type="checkbox" name="amenities" id="5" value="amenitiesother" ng-model="formData.amenities.amenitiesother" ng-click="goToamenities('amenitiesother')">
                             <label class="labewidtxt" for="5">
                                 Other
                             </label>
                         </div>
-                        <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.amenities.other" ng-model="formData.myother">
+                        <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.amenities.amenitiesother" ng-model="formData.myother">
+                    </div>
+                    <div class="error" ng-if="noamenities" style="font-size:16px;margin:10px 0 0;">
+                       Please select the amenities
                     </div>
                 </div>
             </div>
@@ -228,6 +231,9 @@
                     </div>
 
                 </div>
+                <div class="error" ng-if="noYogastyle" style="font-size:16px;margin:10px 0 0;">
+                   Please select Style of Yoga
+                </div>
             </div>
         </div>
 
@@ -277,6 +283,9 @@
 
                     </div>
                 </div>
+                <div class="error" ng-if="teachingLevel" style="font-size:16px;margin:10px 0 0;">
+                   Please select class level
+                </div>
             </div>
 
             <div class="col-md-6">
@@ -284,17 +293,20 @@
                     <label>Do you have an official website?*</label>
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="web" id="18" value="true" ng-model="formData.ifWebsite">
+                            <input class="magic-radio" type="radio" name="web" id="18" value="true" ng-model="formData.ifWebsite" required>
                             <label class="text" for="18">
                                 Yes
                             </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="web" id="19" value="false" ng-model="formData.ifWebsite">
+                            <input class="magic-radio" type="radio" name="web" id="19" value="false" ng-model="formData.ifWebsite" required>
                             <label class="text" for="19">
                                 No
                             </label>
                         </div>
+                    </div>
+                    <div class="error" ng-if="officialWebsiteAddress" style="font-size:16px;margin:10px 0 0;">
+                       Please select one of these.
                     </div>
                 </div>
                 <div class="form-group">
@@ -346,6 +358,9 @@
                             </label>
                         </div>
                     </div>
+                    <div class="error" ng-if="listBranches" style="font-size:16px;margin:10px 0 0;">
+                       Please select one of these.
+                    </div>
                 </div>
             </div>
         </div>
@@ -362,7 +377,7 @@
 
                 <div class="magic-form text-center">
                     <div class="magic-resize">
-                        <input class="magic-checkbox" type="checkbox" id="terms" name="terms" value="true" required>
+                        <input class="magic-checkbox" type="checkbox" id="terms" name="terms" value="true" required ng-model="formData.termsConditions">
                         <label class="text text-left" for="terms">
                             I have read and accept the&nbsp;<u>Terms &amp; Conditions</u>
                         </label>
@@ -370,8 +385,9 @@
                 </div>
 
                 <div class="form-group text-center">
-                    <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ng-disabled="userForm.$invalid"><span ng-if="userForm.$invalid">Please Enter Compulsory fields</span><span ng-if="!userForm.$invalid">Submit</span></button>
+                    <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ng-disabled="userForm.$invalid"><span ng-if="userForm.$invalid">Please Enter Compulsory fields</span><span  ng-if="!userForm.$invalid">Submit</span></button>
                 </div>
+
             </form>
         </div>
         <div class="submit-thank min-h1" ng-if="formComplete">

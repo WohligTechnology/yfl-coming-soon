@@ -82,20 +82,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
         $scope.countries = NavigationService.getcountries();
         $scope.formData = {};
+        $scope.formData.amenitiesArray = [];
+        $scope.formData.yogaStyleOfferArray = [];
         $scope.formComplete = false;
         $scope.exist = false;
         $scope.invalidPincode = false;
         $scope.validMobileno = false;
         $scope.organizationName = false;
-        $scope.formData.amenitiesArray = [];
-        $scope.formData.yogaStyleOfferArray = [];
+        $scope.noamenities = false;
+        $scope.noYogastyle = false;
+        $scope.teachingLevel = false;
+        $scope.listBranches = false;
+        $scope.officialWebsiteAddress = false;
+
         $scope.submitYogaStudioForm = function(formData) {
+
+            // console.log($scope.formData.amenitiesArray);
             _.each($scope.formData.amenitiesArray, function(data, key) {
-                if (data === "other") {
+                if (data === "amenitiesother") {
                     $scope.formData.amenitiesArray[key] = $scope.formData.myother;
                 }
             });
-            console.log($scope.formData.amenitiesArray);
             _.each($scope.formData.yogaStyleOfferArray, function(data, key) {
                 if (data === "other") {
                     $scope.formData.yogaStyleOfferArray[key] = $scope.formData.myotherYogaStyle;
@@ -106,27 +113,35 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
             if ($scope.formData) {
 
-                console.log($scope.formData.yogaStyleOfferArray);
-                $scope.formData.amenities = " ";
+
+
                 if ($scope.formData.amenitiesArray.length > 0) {
+                    $scope.noamenities = false;
+
+
                     _.each($scope.formData.amenitiesArray, function(n) {
                         $scope.formData.amenities += n + ",";
                     });
 
-                    console.log("data", $scope.formData);
+                    // console.log("data", $scope.formData);
 
 
-                };
-                $scope.formData.styleOfYoga = " ";
+                } else {
+                    $scope.noamenities = true;
+                }
                 if ($scope.formData.yogaStyleOfferArray.length > 0) {
+                    $scope.noYogastyle = false;
+
                     _.each($scope.formData.yogaStyleOfferArray, function(n) {
                         $scope.formData.styleOfYoga += n + ",";
                     });
 
                     console.log("data", $scope.formData);
+                    console.log($scope.formData.yogaStyleOfferArray);
 
-
-                };
+                } else {
+                    $scope.noYogastyle = true;
+                }
                 NavigationService.saveYogaStudio($scope.formData, function(data) {
                     console.log("iminnavigation", $scope.formData);
                     console.log("formData", data);
@@ -136,15 +151,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                         $scope.invalidPincode = false;
                         $scope.validMobileno = false;
                         $scope.organizationName = false;
+                        $scope.noamenities = false;
+                        $scope.noYogastyle = false;
+                        $scope.listBranches = false;
                         $timeout(function() {
                             $scope.formComplete = false;
+                            $scope.formData = {};
+                            $scope.formData.amenitiesArray = [];
+                            $scope.formData.yogaStyleOfferArray = [];
                             $scope.invalidPincode = false;
                             $scope.exist = false;
                             $scope.invalidPincode = false;
                             $scope.validMobileno = false;
                             $scope.organizationName = false;
-                            $scope.formData = {};
-                            $scope.formData.mediaArray = [];
+                            $scope.noamenities = false;
+                            $scope.noYogastyle = false;
+                            $scope.teachingLevel = false;
+                            $scope.listBranches = false;
+                            $scope.officialWebsiteAddress = false;
 
                         }, 2000);
                     } else if (data.value === false && data.error.errors.email) {
@@ -158,17 +182,43 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                         $scope.exist = false;
                         $scope.validMobileno = false;
                         $scope.organizationName = false;
+                        $scope.listBranches = false;
                     } else if (data.value === false && data.error.errors.mobileNumber) {
                         $scope.validMobileno = true;
                         $scope.exist = false;
                         $scope.invalidPincode = false;
                         $scope.organizationName = false;
+                        $scope.listBranches = false;
 
                     } else if (data.value === false && data.error.errors.organizationName) {
                         $scope.validMobileno = false;
                         $scope.exist = false;
                         $scope.invalidPincode = false;
                         $scope.organizationName = true;
+                        $scope.listBranches = false;
+                    } else if (data.value === false && data.error.errors.teachingLevel) {
+                        $scope.validMobileno = false;
+                        $scope.exist = false;
+                        $scope.invalidPincode = false;
+                        $scope.organizationName = false;
+                        $scope.teachingLevel = true;
+                        $scope.listBranches = false;
+                    } else if (data.value === false && data.error.errors.listBranches) {
+                        $scope.validMobileno = false;
+                        $scope.exist = false;
+                        $scope.invalidPincode = false;
+                        $scope.organizationName = false;
+                        $scope.teachingLevel = false;
+                        $scope.listBranches = true;
+
+                    } else if (data.value === false && data.error.errors.officialWebsiteAddress) {
+                        $scope.validMobileno = false;
+                        $scope.exist = false;
+                        $scope.invalidPincode = false;
+                        $scope.organizationName = false;
+                        $scope.teachingLevel = false;
+                        $scope.listBranches = false;
+                        $scope.officialWebsiteAddress = true;
 
                     }
 
@@ -177,6 +227,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             }
         }
+
+
         $scope.goToamenities = function(val) {
             var foundIndex = _.findIndex($scope.formData.amenitiesArray, function(key) {
                 return key == val;
@@ -189,6 +241,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             console.log($scope.formData.amenitiesArray);
         };
+
         $scope.goToyogaOffer = function(val) {
             var foundIndex = _.findIndex($scope.formData.yogaStyleOfferArray, function(key) {
                 return key == val;
@@ -230,7 +283,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 if ($scope.formData.primaryCategory === "other") {
                     $scope.formData.primaryCategory = $scope.formData.otherCat;
                 }
-                $scope.formData.booksMoviesGames = " ";
+                // $scope.formData.booksMoviesGames = " ";
                 if ($scope.formData.booksMoviesGamesArray.length > 0) {
                     _.each($scope.formData.booksMoviesGamesArray, function(n) {
                         $scope.formData.booksMoviesGames += n + ",";
@@ -240,7 +293,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
                 };
-                $scope.formData.clothingShoesJewelry = "";
+                // $scope.formData.clothingShoesJewelry = "";
                 if ($scope.formData.clothingShoesJewelryArray.length > 0) {
                     _.each($scope.formData.clothingShoesJewelryArray, function(n) {
                         $scope.formData.clothingShoesJewelry += n + ",";
@@ -250,7 +303,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
                 };
-                $scope.formData.beautyHealthGroceries = "";
+                // $scope.formData.beautyHealthGroceries = "";
                 if ($scope.formData.beautyHealthGroceriesArray.length > 0) {
                     _.each($scope.formData.beautyHealthGroceriesArray, function(n) {
                         $scope.formData.beautyHealthGroceries += n + ",";
@@ -260,7 +313,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
                 };
-                $scope.formData.yogaProducts = "";
+                // $scope.formData.yogaProducts = "";
                 if ($scope.formData.yogaProductsArray.length > 0) {
                     _.each($scope.formData.yogaProductsArray, function(n) {
                         $scope.formData.yogaProducts += n + ",";
@@ -270,7 +323,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
                 };
-                $scope.formData.productsFrom = "";
+                // $scope.formData.productsFrom = "";
                 if ($scope.formData.productsFromArray.length > 0) {
                     _.each($scope.formData.productsFromArray, function(n) {
                         $scope.formData.productsFrom += n + ",";
@@ -511,7 +564,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         console.log($scope.formData.contributArray);
         if ($scope.formData) {
             console.log("  $scope.formData", $scope.formData);
-            $scope.formData.contribute = " ";
+            // $scope.formData.contribute = " ";
             if ($scope.formData.contributArray.length > 0) {
                 _.each($scope.formData.contributArray, function(n) {
                     $scope.formData.contribute += n + ",";
@@ -753,7 +806,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         console.log($scope.formData.mediaArray);
         if ($scope.formData) {
             console.log("  $scope.formData", $scope.formData);
-            $scope.formData.mediaFor = " ";
+            // $scope.formData.mediaFor = " ";
             if ($scope.formData.mediaArray.length > 0) {
                 _.each($scope.formData.mediaArray, function(n) {
                     $scope.formData.mediaFor += n + ",";

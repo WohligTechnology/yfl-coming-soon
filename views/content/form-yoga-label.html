@@ -209,19 +209,19 @@
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="movieandgames" id="11" value="MusicalInstruments" ng-click="booksGame('MusicalInstruments')">
+                     <input class="magic-checkbox" type="checkbox" name="movieandgames" id="11" value="Musical Instruments" ng-click="booksGame('Musical Instruments')">
                      <label class="text" for="11">
                         Musical Instruments
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="movieandgames" id="12" value="Musical" ng-click="booksGame('Musical')">
+                     <input class="magic-checkbox" type="checkbox" name="movieandgames" id="12" value="Music" ng-click="booksGame('Music')">
                      <label class="text" for="12">
                         Musical
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="movieandgames" id="13" value="VideoGames" ng-click="booksGame('VideoGames')">
+                     <input class="magic-checkbox" type="checkbox" name="movieandgames" id="13" value="Video Games" ng-click="booksGame('Video Games')">
                      <label class="text" for="13">
                         Video Games
                      </label>
@@ -291,7 +291,7 @@
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="BHG" id="22" value="PersonalCareAppliances" ng-click="beautyHealthGroceriesFun('PersonalCareAppliances')">
+                     <input class="magic-checkbox" type="checkbox" name="BHG" id="22" value="Personal Care Appliances" ng-click="beautyHealthGroceriesFun('Personal Care Appliances')">
                      <label class="text" for="22">
                         Personal Care Appliances
                      </label>
@@ -379,7 +379,7 @@
 
             <div class="form-group">
                <label>What is your annual turnover? *</label>
-               <select name="income" id="" ng-model="formData.annualTurnover">
+               <select name="income" id="" ng-model="formData.annualTurnover" required>
                   <option value="" ng-selected="true">Please select </option>
                   <option value="Less-1lakh">Less Than 1 lakh</option>
                   <option value="Btwn 1-10 l">Between 1 lakh and 10 lakh</option>
@@ -392,7 +392,7 @@
          <div class="col-md-6">
             <div class="form-group">
                <label>How many products do you sell? *</label>
-               <select name="sales" id="" ng-model="formData.productSell">
+               <select name="sales" id="" ng-model="formData.productSell" required>
                   <option value="" ng-selected="true">Please select </option>
                   <option value="1-10">1-10</option>
                   <option value="11-100">11-100</option>
@@ -409,13 +409,13 @@
                <label>Do you sell on other websites? *</label>
                <div class="magic-form">
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="otherweb" id="31" value="Yes" ng-model="formData.sellOtherWebsite">
+                     <input class="magic-radio" type="radio" name="otherweb" id="31" value="Yes" ng-model="formData.sellOtherWebsite" required>
                      <label class="text" for="31">
                         Yes
                      </label>
                   </div>
                   <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="otherweb" id="32" value="No" ng-model="formData.sellOtherWebsite">
+                     <input class="magic-radio" type="radio" name="otherweb" id="32" value="No" ng-model="formData.sellOtherWebsite" required>
                      <label class="text" for="32">
                         No
                      </label>
