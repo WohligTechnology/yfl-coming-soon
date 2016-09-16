@@ -158,12 +158,12 @@
                             </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="amenities" id="5" value="amenitiesother" ng-model="formData.amenities.amenitiesother" ng-click="goToamenities('amenitiesother')">
+                            <input class="magic-checkbox" type="checkbox" name="amenities" id="5" value="other" ng-model="formData.amenities.other" ng-click="goToamenities('other')">
                             <label class="labewidtxt" for="5">
                                 Other
                             </label>
                         </div>
-                        <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.amenities.amenitiesother" ng-model="formData.myother">
+                        <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.amenities.other" ng-model="formData.myother">
                     </div>
                     <div class="error" ng-if="noamenities" style="font-size:16px;margin:10px 0 0;">
                        Please select the amenities

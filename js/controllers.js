@@ -82,6 +82,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
         $scope.countries = NavigationService.getcountries();
         $scope.formData = {};
+        $scope.formData.amenities= [];
+        $scope.formData.styleOfYoga= [];
+
         $scope.formData.amenitiesArray = [];
         $scope.formData.yogaStyleOfferArray = [];
         $scope.formComplete = false;
@@ -99,7 +102,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             // console.log($scope.formData.amenitiesArray);
             _.each($scope.formData.amenitiesArray, function(data, key) {
-                if (data === "amenitiesother") {
+                if (data === "other") {
                     $scope.formData.amenitiesArray[key] = $scope.formData.myother;
                 }
             });
@@ -266,6 +269,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.countries = NavigationService.getcountries();
 
         $scope.formData = {};
+        $scope.formData.booksMoviesGames = [];
+        $scope.formData.clothingShoesJewelry = [];
+        $scope.formData.beautyHealthGroceries = [];
+        $scope.formData.yogaProducts = [];
+        $scope.formData.productsFrom = [];
+
         $scope.formData.booksMoviesGamesArray = [];
         $scope.formData.clothingShoesJewelryArray = [];
         $scope.formData.beautyHealthGroceriesArray = [];
@@ -552,6 +561,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.validMobileno = false;
     $scope.formData = {};
     $scope.formData.contributArray = [];
+    $scope.formData.contribute = [];
     $scope.noContrubution = false;
     $scope.submitNutrionistForm = function(formData) {
         console.log(formData, '*******');
@@ -795,6 +805,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.validMobileno = false;
     $scope.formData = {};
     $scope.formData.mediaArray = [];
+    $scope.formData.mediaFor = [];
     $scope.noMedia = false;
     $scope.submitArtistForm = function(formData) {
         $scope.noMedia = false;
