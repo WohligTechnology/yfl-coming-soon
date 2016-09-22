@@ -891,14 +891,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     // })
 
-    $scope.showDiv = false;
-
-    $scope.openShowDiv = function() {
-        $scope.showDiv = true;
-    }
-    $scope.closeShowDiv = function() {
-        $scope.showDiv = false;
-    }
+   
 
 
 })
@@ -931,7 +924,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             scope: $scope
         });
     };
+ $scope.showDiv = false;
 
+    $scope.openShowDiv = function() {
+        $scope.showDiv = true;
+    }
+    $scope.closeShowDiv = function() {
+        $scope.showDiv = false;
+    }
 })
 
 
