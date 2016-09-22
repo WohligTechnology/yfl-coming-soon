@@ -1417,4 +1417,12 @@ input[type=email] ,input[type=password]{
 .error{
   color:#ff0000;
 }
+
+.size{
+  .modal-content{
+       width: 85%;
+  }
+}
+
+
 @import "mobile";

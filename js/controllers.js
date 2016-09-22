@@ -903,25 +903,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
     $.fancybox.close(true);
 
+    // $scope.sign = function() {
+    //     $uibModal.open({
+    //         animation: true,
+    //         templateUrl: "views/modal/signup.html",
+    //         scope: $scope
+    //     });
+    // };
     $scope.sign = function() {
         $uibModal.open({
             animation: true,
             templateUrl: "views/modal/signup.html",
-            scope: $scope
-        });
-    };
-    $scope.sign = function() {
-        $uibModal.open({
-            animation: true,
-            templateUrl: "views/modal/signup.html",
-            scope: $scope
+            scope: $scope,
+             windowClass: "size"
         });
     };
     $scope.signup = function() {
         $uibModal.open({
             animation: true,
             templateUrl: "views/modal/sign.html",
-            scope: $scope
+            scope: $scope,
+            windowClass: "size"
         });
     };
  $scope.showDiv = false;
