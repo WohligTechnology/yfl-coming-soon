@@ -13,37 +13,104 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         'img/slider_love.jpg'
     ];
 
-    angular.element(document).ready(function() {
-        var feed = new Instafeed({
-            get: 'tagged',
-            tagName: 'yogafoodlove',
-            accessToken: '1388790889.e437b0c.e485f0e11e654dcdb5d92b3cc31c343d',
-            resolution: 'standard_resolution',
-            template: '<div class="col-xs-6 col-sm-4 margin-bot"><div class="relative"><img class="full-image"src="{{image}}"/><div class="caption"><div class="middle-margin">{{caption}}</div></div><div class="prod_info"><a href="https://www.facebook.com/dialog/share?app_id=956680054426963&display=popup&href={{link}}&redirect_uri=http://www.yogafoodlove.com"target="_blank"><i class=" trans fa fa-facebook"></i></a><a href="http://twitter.com/home?status={{link}}"target="_blank"><i class=" trans fa fa-twitter"></i></a><a href="http://pinterest.com/pin/create/button/?url={{link}}&media={{image}}"target="_blank"><i class=" trans fa fa-pinterest"></i></a><a href="{{link}}"target="_blank"><i class=" trans fa fa-instagram"></i></a></div></div></div>'
-        });
-        feed.run();
-    });
+    $scope.myInterval = 3000;
+    $scope.noWrapSlides = false;
+    $scope.activeSlide = 0;
+    $scope.slides = [{
+        image: 'img/new/r6.jpg'
+    }, {
+        image: 'img/new/r6.jpg'
+    }, {
+        image: 'img/new/r6.jpg'
+    }, {
+        image: 'img/new/r6.jpg'
+    }];
+}
 
-    setTimeout(function() {
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
+$scope.teacher = [{
+
+        descp: "Sed ut perspiciatis unde omnis iste natexplicab."
+    }, {
+
+        descp: "Sed ut perspiciatis unde omnis iste natexplicab."
+    }, {
+
+        descp: "Sed ut perspiciatis unde omnis iste natexplicab."
+    }
+
+];
+
+$scope.healthSlider = [{
+    img: "img/new/r6.jpg",
+    head: "HEALTHY FOOD FACTS",
+    descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+}, {
+    img: "img/new/r6.jpg",
+    head: "HEALTHY FOOD FACTS",
+    descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+}, {
+    img: "img/new/r6.jpg",
+    head: "HEALTHY FOOD FACTS",
+    descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+}];
+
+$scope.foodSlider = [{
+    img: "img/new/r6.jpg",
+    head: "Food",
+    descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+}, {
+    img: "img/new/r6.jpg",
+    head: "Food",
+    descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+}, {
+    img: "img/new/r6.jpg",
+    head: "Food",
+    descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+}];
+
+$scope.yogaclasses = [{
+    img: "img/new/yoga-classes.jpg",
+    head: "yoga classes",
+    descp: "Sed ut perspiciatis unde omnis iste natus error sit."
+}, {
+    img: "img/new/yoga-classes.jpg",
+    head: "yoga classes",
+    descp: "Sed ut perspiciatis unde omnis iste natus error sit."
+}, {
+    img: "img/new/yoga-classes.jpg",
+    head: "yoga classes",
+    descp: "Sed ut perspiciatis unde omnis iste natus error sit."
+}]; angular.element(document).ready(function() {
+    var feed = new Instafeed({
+        get: 'tagged',
+        tagName: 'yogafoodlove',
+        accessToken: '1388790889.e437b0c.e485f0e11e654dcdb5d92b3cc31c343d',
+        resolution: 'standard_resolution',
+        template: '<div class="col-xs-6 col-sm-4 margin-bot"><div class="relative"><img class="full-image"src="{{image}}"/><div class="caption"><div class="middle-margin">{{caption}}</div></div><div class="prod_info"><a href="https://www.facebook.com/dialog/share?app_id=956680054426963&display=popup&href={{link}}&redirect_uri=http://www.yogafoodlove.com"target="_blank"><i class=" trans fa fa-facebook"></i></a><a href="http://twitter.com/home?status={{link}}"target="_blank"><i class=" trans fa fa-twitter"></i></a><a href="http://pinterest.com/pin/create/button/?url={{link}}&media={{image}}"target="_blank"><i class=" trans fa fa-pinterest"></i></a><a href="{{link}}"target="_blank"><i class=" trans fa fa-instagram"></i></a></div></div></div>'
+    });
+    feed.run();
+});
+
+setTimeout(function() {
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.7";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    ! function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id)) {
             js = d.createElement(s);
             js.id = id;
-            js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.7";
+            js.src = p + "://platform.twitter.com/widgets.js";
             fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-        ! function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0],
-                p = /^http:/.test(d.location) ? 'http' : 'https';
-            if (!d.getElementById(id)) {
-                js = d.createElement(s);
-                js.id = id;
-                js.src = p + "://platform.twitter.com/widgets.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }
-        }(document, "script", "twitter-wjs");
-    });
+        }
+    }(document, "script", "twitter-wjs");
+});
 
 })
 
@@ -82,8 +149,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
         $scope.countries = NavigationService.getcountries();
         $scope.formData = {};
-        $scope.formData.amenities= [];
-        $scope.formData.styleOfYoga= [];
+        $scope.formData.amenities = [];
+        $scope.formData.styleOfYoga = [];
 
         $scope.formData.amenitiesArray = [];
         $scope.formData.yogaStyleOfferArray = [];
@@ -891,7 +958,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     // })
 
-   
+
 
 
 })
@@ -915,7 +982,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             animation: true,
             templateUrl: "views/modal/signup.html",
             scope: $scope,
-             windowClass: "size"
+            windowClass: "size"
         });
     };
     $scope.signup = function() {
@@ -926,7 +993,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             windowClass: "size"
         });
     };
- $scope.showDiv = false;
+    $scope.showDiv = false;
 
     $scope.openShowDiv = function() {
         $scope.showDiv = true;

@@ -1,42 +1,281 @@
 <section>
-    <div class="yfl-relative">
-        <div class="main-slider hidden-xs">
-            <flex-slider flex-slide="s in mySlides" prev-text="" next-text="">
-            <li auto-height>
-                <img ng-src="{{s}}" class="img-responsive">
-            </li>
-        </flex-slider>
+  <div class="yfl-relative">
+    <div class="main-slider hidden-xs">
+      <flex-slider flex-slide="s in mySlides" prev-text="" next-text="">
+        <li auto-height>
+          <img ng-src="{{s}}" class="img-responsive">
+        </li>
+      </flex-slider>
     </div>
     <div class="main-middle text-center">
-        <div class="logo"><img src="img/logo.png" class="img-responsive"></div>
-        <h1>Welcome to Yoga Food Love</h1>
-        <p class="mid-cont">Yoga Food Love is a global community being built on the principles of yoga. At YFL we aim to facilitate connecting like-minded people who believe in conscious living with an attitude of gratitude. A family that breathes deeply,
-            gives freely and loves openly.</p>
-        <p>"Yoga is the journey of the self, through the self, to the self." -
-            <span class="red-text">The Bhagavad Gita</span>
-        </p>
+      <div class="logo"><img src="img/logo.png" class="img-responsive"></div>
+      <h1>Welcome to Yoga Food Love</h1>
+      <p class="mid-cont">Yoga Food Love is a global community being built on the principles of yoga. At YFL we aim to facilitate connecting like-minded people who believe in conscious living with an attitude of gratitude. A family that breathes deeply, gives freely and
+        loves openly.</p>
+      <p>"Yoga is the journey of the self, through the self, to the self." -
+        <span class="red-text">The Bhagavad Gita</span>
+      </p>
 
-        <h1>Stay Tuned</h1>
-        <p>
-            <strong>We’ve got a lot more coming soon.</strong>
-        </p>
+      <h1>Stay Tuned</h1>
+      <p>
+        <strong>We’ve got a lot more coming soon.</strong>
+      </p>
 
-        <div class="input-group search">
-            <input type="text" class="form-control search-input" placeholder="Subscribe to our Newsletter">
-            <span class="input-group-btn">
+      <div class="input-group search">
+        <input type="text" class="form-control search-input" placeholder="Subscribe to our Newsletter">
+        <span class="input-group-btn">
                 <button class="btn btn-default go-btn" type="button"><img src="img/arr.png" alt=""></button>
             </span>
-        </div>
+      </div>
     </div>
-</div>
+  </div>
 </section>
-
+<!--<section class="quote">
+  <div class="row-flex">
+    <div class="col-flex">
+      <div class="quote-slider">
+        <flex-slider class="carousel " flex-slide="teach in teacher track by $index" direction-nav="false" animation="slide" animation-loop="true">
+          <li>
+            <div class="yogaclass-inside bg-slider">
+              <div class="black-overlay"></div>
+              <div class="food-detail text-center">
+              <p class="descp  uppercase quotes font30 f22 line-130">{{teach.descp}}</p>
+            </div>
+          </div>
+          </li>
+        </flex-slider>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!--<section class="food-section">
+  <div class="food-slider">
+    <div class="yogaclass-inside bg-slider">
+      <div class="black-overlay"></div>
+      <img ng-src="{{foodSlider[0].img}}" class="img-responsive">
+      <div class="food-detail text-center">
+        <h2 class="heading uppercase head-size font-jura">{{foodSlider[0].head}}</h2>
+        <p class="descp  f30 f21 line-130">{{foodSlider[0].descp}}</p>
+      </div>
+    </div>
+  </div>
+</section>-->
 <div class="container">
-<div class="contact">
+  <div class="subscribtion text-center love-section">
+    <ul class="subscribtion-text inline ">
+      <li class=" uppercase f22 font-rubikm"><span><i class="fa fa-inr" aria-hidden="true"></i></span>999 a month</li>
+      <li class="uppercase f22 font-rubikm">no commitments</li>
+      <li class="uppercase f22 font-rubikm">cancel anytime</li>
+    </ul>
+  </div>
+</div>
+<section class="location">
+  <!--<div class="row-flex">
+        <div class="col-flex">
+<div class="padd15">
+      <h2 class="head-size margin0 font-jura">FIND YOUR YOGA STUDIO &amp; YOUR FAVORITE FOOD PLACE</h2>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem .</p>
+    </div>
+        </div>
+        <div class="col-flex">
+<div class="map">
+      <img src="img/new/map.png" class="img-responsive" alt="map">
+    </div>
+  </div>
+  
+        </div>-->
+  <div class="text-center">
+    <div class="padd15">
+      <h2 class="head-size margin0 font-jura">FIND YOUR YOGA STUDIO &amp; YOUR FAVORITE FOOD PLACE</h2>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem .</p>
+    </div>
+
+    <div class="map">
+      <img src="img/new/map.png" class="img-responsive" alt="map">
+    </div>
+  </div>
+</section>
+<section class="yoga-section">
+  <div class="row-flex">
+    <div class="col-flex">
+      <div class="yoga-classes-slider text-center ">
+        <flex-slider class="carousel" flex-slide="class in yogaclasses track by $index" direction-nav="false" animation="slide" animation-loop="true">
+          <li>
+            <div class="yogaclass-inside bg-slider">
+              <img ng-src="{{class.img}}" class="img-responsive">
+              <div class="black-overlay"></div>
+              <div class="yoga-detail">
+                <h2 class="heading text-up head-size font-jura">{{class.head}}</h2>
+                <p class="descp line-130">{{class.descp}}</p>
+                <div class="mt30">
+                  <button class="btn btn-green btn-texture uppercase">Yoga Studios</button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </flex-slider>
+      </div>
+    </div>
+    <div class="col-flex">
+      <div class="teachers">
+        <div class="row-flex">
+          <div class="col-flex">
+            <img src="img/new/yoga-stlying.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-flex">
+            <div class="trending text-center">
+              <h2 class="uppercase head-size font-jura">TRENDING YOGA STYLES</h2>
+              <span>Sed ut perspiciatis unde omnis perspiciatis unde omnis</span>
+              <div class="mt15">
+                <button class="btn btn-green btn-texture uppercase"> Book your class</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="yoga-teachers text-center  bg-slider">
+        <img src="img/new/bg2.png" class="img-responsive">
+        <div class="yoga-detail">
+          <h2 class="uppercase  head-size dark font-jura">KNOW OUR TEACHERS</h2>
+          <span>Sed ut perspiciatis unde omnis</span>
+          <div class="teachers-names">
+            <div class="expert-teacher">
+              <div class="img"></div>
+              <span class="display-block">Sanjana Singh</span>
+              <span class="display-block">Expertise in Hathe Yoga</span>
+            </div>
+            <div class="expert-teacher">
+              <div class="img"></div>
+              <span class="display-block">Sanjana Singh</span>
+              <span class="display-block">Expertise in Hathe Yoga</span>
+            </div>
+
+            <div class="expert-teacher">
+              <div class="img"></div>
+              <span class="display-block">Sanjana Singh</span>
+              <span class="display-block">Expertise in Hathe Yoga</span>
+            </div>
+          </div>
+          <button class="btn btn-green btn-texture uppercase mt20">Are you a Teacher ? Get on the list</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<section class="food-facts">
+  <div class="row-flex">
+    <div class="col-flex">
+      <div style="height: 305px">
+        <div ng-controller="CarouselDemoCtrl" id="slides_control">
+          <div>
+            <uib-carousel interval="myInterval" active="activeSlide">
+              <uib-slide ng-repeat="slide in slides" index="$index">
+                <img ng-src="{{slide.image}}" style="margin:auto;">
+                <div class="carousel-caption">
+                  <h4>Slide {{$index+1}}</h4>
+                </div>
+              </uib-slide>
+            </uib-carousel>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--<flex-slider class="carousel " flex-slide="health in healthSlider track by $index" direction-nav="false" animation="slide" animation-loop="true">
+        <li>
+          <div class="yogaclass-inside bg-slider">
+            <div class="health-detail text-center">
+              <h2 class="heading uppercase head-size font-jura">{{health.head}}</h2>
+              <p class="descp  f30 f21 line-130">{{health.descp}}</p>
+            </div>
+          </div>
+        </li>
+      </flex-slider>-->
+  </div>
+  <div class="col-flex">
+    <div class="trending text-center">
+      <h2 class="uppercase text-center head-size font-jura">trending food recipes</h2>
+      <span class="text-center">Sed ut perspiciatis unde omnis perspiciatis unde omnis</span>
+      <div class="mt15">
+        <button class="btn btn-green btn-texture text-uppercase"> READ MORE</button>
+        <button class="btn btn-green btn-texture text-uppercase"> share yours</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-flex">
+    <div class="yoga-classes-slider text-center ">
+
+    </div>
+  </div>
+
+  </div>
+</section>
+<section class="product">
+  <div class="row-flex">
+    <div class="col-flex">
+      <div class="yoga-classes-slider text-center ">
+        <!--<flex-slider class="carousel" flex-slide="class in yogaclasses track by $index" direction-nav="false" animation="slide" animation-loop="true">
+          <li>
+            <div class="yogaclass-inside bg-slider">
+              <img ng-src="{{class.img}}" class="img-responsive">
+              <div class="black-overlay"></div>
+              <div class="yoga-detail">
+              <h2 class="heading text-up head-size font-jura">blog</h2>
+              <p class="descp line-130">{{class.descp}}</p>
+            <div class="mt30">
+                <button class="btn btn-green uppercase">Yoga Studios</button>
+            </div>
+              </div>
+            </div>
+          </li>
+        </flex-slider>-->
+      </div>
+    </div>
+    <div class="col-flex">
+      <div class="yoga-classes-slider text-center ">
+        <!--<flex-slider class="carousel" flex-slide="class in yogaclasses track by $index" direction-nav="false" animation="slide" animation-loop="true">
+          <li>
+            <div class="yogaclass-inside bg-slider">
+              <img ng-src="{{class.img}}" class="img-responsive">
+              <div class="black-overlay"></div>
+              <div class="yoga-detail">
+              <h2 class="heading text-up head-size font-jura">product collaborates</h2>
+              <p class="descp line-130">{{class.descp}}</p>
+            <div class="mt30">
+                <button class="btn btn-green uppercase">Yoga Studios</button>
+            </div>
+              </div>
+            </div>
+          </li>
+        </flex-slider>-->
+      </div>
+    </div>
+    <div class="col-flex">
+      <div class="teachers">
+        <!--<div class="row-flex">-->
+        <!--<div class="col-flex">
+            <img src="img/new/yoga-stlying.jpg" class="img-responsive" alt="">
+          </div>-->
+        <!--<div class="col-flex">-->
+        <div class="trending text-center">
+          <h2 class="text-up text-center head-size font-jura">ARTICLE OF THE WEEK</h2>
+          <span class="text-center">Sed ut perspiciatis unde omnis perspiciatis unde omnis</span>
+          <div class="mt15">
+            <button class="btn btn-green btn-texture text-uppercase"> READ MORE</button>
+            <button class="btn btn-green btn-texture text-uppercase"> write yours</button>
+          </div>
+        </div>
+        <!--</div>-->
+        <!--</div>-->
+      </div>
+    </div>
+  </div>
+</section>
+<!--<div class="contact">
     <p>Inspire Us</p>
     <div class="border_image"></div>
 
     <div class="row" id="instafeed"></div>
 
-</div>
-</div>
+</div>-->
