@@ -14,25 +14,87 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     ];
     $scope.myInterval = 5000;
     $scope.noWrapSlides = false;
-    $scope.active = 0;
-    var slides = $scope.slides = [];
-    var currIndex = 0;
+    $scope.slides = [{
+        id: 0,
+        image: 'img/new/yoga-classes.jpg',
+        head: "HEALTHY FOOD FACTS",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
-    $scope.addSlide = function() {
-        var newWidth = 600 + slides.length + 1;
-        slides.push({
-            image: 'img/new/yoga-classes.jpg',
-            text: ['trending food recipes', 'trending food recipes', 'trending food recipes', 'trending food recipes'][slides.length % 4],
-            descp: 'Sed ut perspiciatis unde omnis perspiciatis unde omnis',
-            id: currIndex++
-        });
-    };
+    }, {
+        id: 1,
+        image: 'img/new/yoga-classes.jpg',
+        head: "HEALTHY FOOD FACTS",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+
+    }, {
+        id: 2,
+        image: 'img/new/yoga-classes.jpg',
+        head: "HEALTHY FOOD FACTS",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+
+    }];
+
+    $scope.slidings = [{
+        id: 0,
+        image: 'img/new/yoga-classes.jpg',
+        head: "YOGA CLASS",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+
+    }, {
+        id: 1,
+        image: 'img/new/yoga-classes.jpg',
+        head: "YOGA CLASS",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+
+    }, {
+        id: 2,
+        image: 'img/new/yoga-classes.jpg',
+        head: "YOGA CLASS",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+
+    }];
 
 
+    $scope.sliding = [{
+        id: 0,
+        image: 'img/new/yoga-classes.jpg',
+        head: "TRENDING FOOD RECIPES",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
-    for (var i = 0; i < 4; i++) {
-        $scope.addSlide();
-    }
+    }, {
+        id: 1,
+        image: 'img/new/yoga-classes.jpg',
+        head: "TRENDING FOOD RECIPES",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+
+    }, {
+        id: 2,
+        image: 'img/new/yoga-classes.jpg',
+        head: "TRENDING FOOD RECIPES",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+
+    }];
+
+    $scope.sliders = [{
+        id: 0,
+        image: 'img/new/yoga-classes.jpg',
+        head: " FOOD FACTS",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+
+    }, {
+        id: 1,
+        image: 'img/new/yoga-classes.jpg',
+        head: " FOOD FACTS",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+
+    }, {
+        id: 2,
+        image: 'img/new/yoga-classes.jpg',
+        head: " FOOD FACTS",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+
+    }];
+
 
 
     // http://stackoverflow.com/questions/962802#962890

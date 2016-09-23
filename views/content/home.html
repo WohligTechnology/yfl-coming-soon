@@ -98,12 +98,12 @@
 <section class="yoga-section">
   <div class="row-flex">
     <div class="col-flex">
-      <div style="height: 305px">
+      <div style="position:relative">
         <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-          <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+          <div uib-slide ng-repeat="slide in slidings track by slide.id" index="slide.id">
             <img ng-src="{{slide.image}}" style="margin:auto;">
             <div class="carousel-caption">
-              <p class="uppercase dark f22">{{slide.text}}</p>
+              <p class="uppercase dark f22">{{slide.head}}</p>
               <p class="uppercase dark">{{slide.descp}}</p>
               <div class="but">
                 <button class="btn btn-green btn-texture text-uppercase"> READ MORE</button>
@@ -166,7 +166,7 @@
 <section class="food-facts">
   <div class="row-flex">
     <div class="col-flex">
-      <div style="height: 305px">
+      <div>
         <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
           <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
             <img ng-src="{{slide.image}}" style="margin:auto;">
@@ -195,7 +195,22 @@
     </div>
     <div class="col-flex">
       <div class="yoga-classes-slider text-center ">
+        <div style="position:relative">
+          <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+            <div uib-slide ng-repeat="slide in sliders track by slide.id" index="slide.id">
+              <img ng-src="{{slide.image}}" style="margin:auto;">
+              <div class="carousel-caption">
+                <p class="uppercase dark f22">{{slide.head}}</p>
+                <p class="uppercase dark">{{slide.descp}}</p>
+                <div class="but">
+                  <button class="btn btn-green btn-texture text-uppercase"> READ MORE</button>
+                  <button class="btn btn-green btn-texture text-uppercase"> share yours</button>
+                </div>
+              </div>
 
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -205,49 +220,30 @@
   <div class="row-flex">
     <div class="col-flex">
       <div class="yoga-classes-slider text-center ">
-        <!--<flex-slider class="carousel" flex-slide="class in yogaclasses track by $index" direction-nav="false" animation="slide" animation-loop="true">
-          <li>
-            <div class="yogaclass-inside bg-slider">
-              <img ng-src="{{class.img}}" class="img-responsive">
-              <div class="black-overlay"></div>
-              <div class="yoga-detail">
-              <h2 class="heading text-up head-size font-jura">blog</h2>
-              <p class="descp line-130">{{class.descp}}</p>
-            <div class="mt30">
-                <button class="btn btn-green uppercase">Yoga Studios</button>
-            </div>
-              </div>
-            </div>
-          </li>
-        </flex-slider>-->
+
       </div>
     </div>
     <div class="col-flex">
-      <div class="yoga-classes-slider text-center ">
-        <!--<flex-slider class="carousel" flex-slide="class in yogaclasses track by $index" direction-nav="false" animation="slide" animation-loop="true">
-          <li>
-            <div class="yogaclass-inside bg-slider">
-              <img ng-src="{{class.img}}" class="img-responsive">
-              <div class="black-overlay"></div>
-              <div class="yoga-detail">
-              <h2 class="heading text-up head-size font-jura">product collaborates</h2>
-              <p class="descp line-130">{{class.descp}}</p>
-            <div class="mt30">
-                <button class="btn btn-green uppercase">Yoga Studios</button>
-            </div>
+      <div style="position:relative">
+        <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+          <div uib-slide ng-repeat="slide in sliding track by slide.id" index="slide.id">
+            <img ng-src="{{slide.image}}" style="margin:auto;">
+            <div class="carousel-caption">
+              <p class="uppercase dark f22">{{slide.head}}</p>
+              <p class="uppercase dark">{{slide.descp}}</p>
+              <div class="but">
+                <button class="btn btn-green btn-texture text-uppercase"> READ MORE</button>
+                <button class="btn btn-green btn-texture text-uppercase"> share yours</button>
               </div>
             </div>
-          </li>
-        </flex-slider>-->
+
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-flex">
-      <div class="teachers">
-        <!--<div class="row-flex">-->
-        <!--<div class="col-flex">
-            <img src="img/new/yoga-stlying.jpg" class="img-responsive" alt="">
-          </div>-->
-        <!--<div class="col-flex">-->
+
+      <!--<div class="teachers">
         <div class="trending text-center">
           <h2 class="text-up text-center head-size font-jura">ARTICLE OF THE WEEK</h2>
           <span class="text-center">Sed ut perspiciatis unde omnis perspiciatis unde omnis</span>
@@ -256,9 +252,8 @@
             <button class="btn btn-green btn-texture text-uppercase"> write yours</button>
           </div>
         </div>
-        <!--</div>-->
-        <!--</div>-->
-      </div>
+
+      </div>-->
     </div>
   </div>
 </section>
@@ -268,15 +263,4 @@
 
     <div class="row" id="instafeed"></div>
 
-</div>-->
-
-
-<!--<div class="carousel">
-  <div style="height: 305px">
-    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-      <div uib-slide ng-repeat="health in healthSlider track by $index">
-        <img ng-src="{{health.img}}" style="margin:auto;" class="img-responsive">
-      </div>
-    </div>
-  </div>
 </div>-->
