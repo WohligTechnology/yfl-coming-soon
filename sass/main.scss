@@ -324,10 +324,10 @@ a {
                 outline: 0;
             }
             img {
-                width: 65px;
+                width: 55px;
                 position: absolute;
-                top: 10px;
-                right: 0;
+                top: 15px;
+                right: 10px;
                 &:focus {
                     outline: 0;
                 }
@@ -1544,6 +1544,17 @@ hr {
             top: -50px;
             left: -140px;
         }
+    }
+}
+
+.carousel-caption {
+    top: 50%;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+    .btn {
+        padding: 8px 13px;
     }
 }
 

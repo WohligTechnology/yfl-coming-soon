@@ -98,22 +98,21 @@
 <section class="yoga-section">
   <div class="row-flex">
     <div class="col-flex">
-      <div class="yoga-classes-slider text-center ">
-        <flex-slider class="carousel" flex-slide="class in yogaclasses track by $index" direction-nav="false" animation="slide" animation-loop="true">
-          <li>
-            <div class="yogaclass-inside bg-slider">
-              <img ng-src="{{class.img}}" class="img-responsive">
-              <div class="black-overlay"></div>
-              <div class="yoga-detail">
-                <h2 class="heading text-up head-size font-jura">{{class.head}}</h2>
-                <p class="descp line-130">{{class.descp}}</p>
-                <div class="mt30">
-                  <button class="btn btn-green btn-texture uppercase">Yoga Studios</button>
-                </div>
+      <div style="height: 305px">
+        <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+          <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+            <img ng-src="{{slide.image}}" style="margin:auto;">
+            <div class="carousel-caption">
+              <p class="uppercase dark f22">{{slide.text}}</p>
+              <p class="uppercase dark">{{slide.descp}}</p>
+              <div class="but">
+                <button class="btn btn-green btn-texture text-uppercase"> READ MORE</button>
+                <button class="btn btn-green btn-texture text-uppercase"> share yours</button>
               </div>
             </div>
-          </li>
-        </flex-slider>
+
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-flex">
@@ -168,46 +167,37 @@
   <div class="row-flex">
     <div class="col-flex">
       <div style="height: 305px">
-        <div ng-controller="CarouselDemoCtrl" id="slides_control">
-          <div>
-            <uib-carousel interval="myInterval" active="activeSlide">
-              <uib-slide ng-repeat="slide in slides" index="$index">
-                <img ng-src="{{slide.image}}" style="margin:auto;">
-                <div class="carousel-caption">
-                  <h4>Slide {{$index+1}}</h4>
-                </div>
-              </uib-slide>
-            </uib-carousel>
+        <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+          <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+            <img ng-src="{{slide.image}}" style="margin:auto;">
+            <div class="carousel-caption">
+              <p class="uppercase dark f22">{{slide.text}}</p>
+              <p class="uppercase dark">{{slide.descp}}</p>
+              <div class="but">
+                <button class="btn btn-green btn-texture text-uppercase"> READ MORE</button>
+                <button class="btn btn-green btn-texture text-uppercase"> share yours</button>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
     </div>
-    <!--<flex-slider class="carousel " flex-slide="health in healthSlider track by $index" direction-nav="false" animation="slide" animation-loop="true">
-        <li>
-          <div class="yogaclass-inside bg-slider">
-            <div class="health-detail text-center">
-              <h2 class="heading uppercase head-size font-jura">{{health.head}}</h2>
-              <p class="descp  f30 f21 line-130">{{health.descp}}</p>
-            </div>
-          </div>
-        </li>
-      </flex-slider>-->
-  </div>
-  <div class="col-flex">
-    <div class="trending text-center">
-      <h2 class="uppercase text-center head-size font-jura">trending food recipes</h2>
-      <span class="text-center">Sed ut perspiciatis unde omnis perspiciatis unde omnis</span>
-      <div class="mt15">
-        <button class="btn btn-green btn-texture text-uppercase"> READ MORE</button>
-        <button class="btn btn-green btn-texture text-uppercase"> share yours</button>
+    <div class="col-flex">
+      <div class="trending text-center">
+        <h2 class="uppercase text-center head-size font-jura">trending food recipes</h2>
+        <span class="text-center">Sed ut perspiciatis unde omnis perspiciatis unde omnis</span>
+        <div class="mt15">
+          <button class="btn btn-green btn-texture text-uppercase"> READ MORE</button>
+          <button class="btn btn-green btn-texture text-uppercase"> share yours</button>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-flex">
-    <div class="yoga-classes-slider text-center ">
+    <div class="col-flex">
+      <div class="yoga-classes-slider text-center ">
 
+      </div>
     </div>
-  </div>
 
   </div>
 </section>
@@ -278,4 +268,15 @@
 
     <div class="row" id="instafeed"></div>
 
+</div>-->
+
+
+<!--<div class="carousel">
+  <div style="height: 305px">
+    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+      <div uib-slide ng-repeat="health in healthSlider track by $index">
+        <img ng-src="{{health.img}}" style="margin:auto;" class="img-responsive">
+      </div>
+    </div>
+  </div>
 </div>-->
