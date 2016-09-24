@@ -37,58 +37,80 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.slidings = [{
         id: 0,
         image: 'img/new/yoga-classes.jpg',
-        head: "YOGA CLASS",
+        head: "YOGA COLLABORATES",
         descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }, {
         id: 1,
         image: 'img/new/yoga-classes.jpg',
-        head: "YOGA CLASS",
+        head: "YOGA COLLABORATES",
         descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }, {
         id: 2,
         image: 'img/new/yoga-classes.jpg',
-        head: "YOGA CLASS",
+        head: "YOGA COLLABORATES",
         descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
     }];
 
 
     $scope.sliding = [{
         id: 0,
-        image: 'img/new/a1.jpg',
+        image: 'img/new/form-food.jpg',
         head: "FOOD COLLABORATERS",
         descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }, {
         id: 1,
-        image: 'img/new/a1.jpg',
+        image: 'img/new/form-food.jpg',
         head: "FOOD COLLABORATERS",
         descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }, {
         id: 2,
-        image: 'img/new/a1.jpg',
+        image: 'img/new/form-food.jpg',
         head: "FOOD COLLABORATERS",
         descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }];
 
+
+    $scope.slidrs = [{
+        id: 0,
+        image: 'img/new/yoga-stlying.jpg',
+        head: "YOGA CLASS",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+
+    }, {
+        id: 1,
+        image: 'img/new/yoga-stlying.jpg',
+        head: "YOGA CLASS",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+
+    }, {
+        id: 2,
+        image: 'img/new/yoga-stlying.jpg',
+        head: "YOGA CLASS",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+
+    }];
+
+
     $scope.sliders = [{
         id: 0,
-        image: 'img/new/yoga-classes.jpg',
+        image: 'img/new/carren.jpg',
         head: " BLOG",
         descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }, {
         id: 1,
-        image: 'img/new/yoga-classes.jpg',
+        image: 'img/new/carren.jpg',
         head: " BLOG",
         descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }, {
         id: 2,
-        image: 'img/new/yoga-classes.jpg',
+        image: 'img/new/carren.jpg',
         head: " BLOG",
         descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 

@@ -119,7 +119,23 @@
       <div class="teachers">
         <div class="row-flex">
           <div class="col-flex">
-            <img src="img/new/yoga-stlying.jpg" class="img-responsive" alt="">
+            <div CLASS="yog-studio" style="position:relative">
+              <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+                <div uib-slide ng-repeat="slide in slidrs track by slide.id" index="slide.id">
+                  <img ng-src="{{slide.image}}" style="margin:auto;">
+                  <div class="carousel-caption">
+                    <p class="uppercase dark f22">{{slide.head}}</p>
+                    <p class="uppercase dark">{{slide.descp}}</p>
+                    <div class="but">
+                      <button class="btn btn-green btn-texture text-uppercase"> READ MORE</button>
+                      <button class="btn btn-green btn-texture text-uppercase"> share yours</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <!--<img src="img/new/yoga-stlying.jpg" class="img-responsive" alt="">-->
           </div>
           <div class="col-flex">
             <div class="trending text-center">
