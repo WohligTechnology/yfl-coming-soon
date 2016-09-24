@@ -16,7 +16,7 @@
                     <!--<a href="#"  ng-click="sign();">Sign in</a>-->
                 </div>
             </div>
-            <div class="scroll">
+            <!--<div class="scroll">
                 <ul class="list-inline text-center additional-nav clearfix">
                     <li class="pull-left"><a href="">Do yoga</a></li>
                     <li class="pull-left"><a href="">Eat healthy</a></li>
@@ -31,6 +31,22 @@
                         <a href="" class="searches"><img src="img/searching.png" class="img-responsive" alt=""></a>
                     </div>
                 </ul>
+            </div>-->
+            <div class="scroll">
+                <ul class="list-inline text-center additional-nav clearfix">
+                    <li><a href="">Do yoga</a></li>
+                    <li><a href="">Eat healthy</a></li>
+                    <li><a href="">Share a story</a></li>
+                    <li><a href="">Be giving</a></li>
+                    <li><a href="">For You</a></li>
+                    <li><a href="">YFL's pride</a></li>
+                </ul>
+                <div class="search microscope" ng-click="openShowDiv()"><img src="img/searching.png" class="img-responsive" alt=""></div>
+                <div class="searching" ng-if="showDiv">
+                    <input type="search" name="search" class="form-control" placeholder="Search for posts, comments and users">
+                    <a href="" class="close text-uppercase brand-white" ng-click="closeShowDiv()"><i class="fa fa-times" aria-hidden="true"></i></a>
+                    <a href="" class="searches"><img src="img/searching.png" class="img-responsive" alt=""></a>
+                </div>
             </div>
         </div>
     </nav>

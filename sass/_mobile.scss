@@ -64,13 +64,14 @@
         overflow-y: hidden;
         color: rgba(0, 0, 0, .44);
         text-align: center;
+        width: 287px;
         margin: 0 auto;
-        border-top: 1px solid #b0b0b0;
+        // border-top: 1px solid #b0b0b0;
         padding: 0;
         li {
-            display: inline-block;
+            display: table-cell;
             padding: 10px 6px 10px 0;
-            font-size: 12px;
+            font-size: 11px;
         }
     }
     .hamburger {
@@ -180,10 +181,6 @@
             padding: 8px;
         }
     }
-    .additional-nav li {
-        padding: 10px 4px 10px 0;
-        font-size: 9px;
-    }
     .additional-nav .search img {
         width: 14px !important;
     }
@@ -272,6 +269,19 @@
     }
     .yfl-relative .main-middle .mid-cont {
         margin: 0;
+    }
+    .search {
+        position: absolute;
+        top: 12px;
+        right: -10px;
+        padding: 0 !important;
+    }
+    .searching {
+        right: -10px;
+        top: 0 !important;
+    }
+    .scroll {
+        border-top: 1px solid #ccc;
     }
 }
 

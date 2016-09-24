@@ -1039,6 +1039,11 @@ hr {
     }
 }
 
+.scroll {
+    position: relative;
+    border-top: 1px solid #b0b0b0;
+}
+
 .additional-nav {
     flex-direction: row;
     text-align: left;
@@ -1047,15 +1052,16 @@ hr {
     overflow-y: hidden;
     position: relative;
     color: #000;
-    text-align: left;
     margin: 0 auto;
     padding: 10px 0 5px;
-    border-top: 1px solid #b0b0b0;
     li {
-        display: inline-block;
-        padding: 0 20px 5px 0;
-        font-size: 14px;
-        vertical-align: middle;
+        display: table-cell;
+        padding: 13px 20px 15px 0;
+        font-size: 16px;
+        letter-spacing: 0;
+        font-weight: 400;
+        font-style: normal;
+        white-space: nowrap;
         a {
             &:hover {
                 color: #ff004d !important;
@@ -1063,12 +1069,15 @@ hr {
             }
         }
     }
-    .search {
-        padding: 0 0px 5px 0 !important;
-        cursor: pointer;
-        img {
-            width: 16px;
-        }
+}
+
+.search {
+    position: absolute;
+    top: 27px;
+    right: 0;
+    cursor: pointer;
+    img {
+        width: 16px;
     }
 }
 
@@ -1295,7 +1304,7 @@ hr {
 
 .searching {
     position: absolute;
-    top: 0;
+    top: 20px;
     bottom: 0;
     left: 0;
     right: 0;
