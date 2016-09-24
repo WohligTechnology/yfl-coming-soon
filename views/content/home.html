@@ -171,12 +171,12 @@
           <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
             <img ng-src="{{slide.image}}" style="margin:auto;">
             <div class="carousel-caption">
-              <p class="uppercase dark f22">{{slide.text}}</p>
+              <p class="uppercase dark f22">{{slide.head}}</p>
               <p class="uppercase dark">{{slide.descp}}</p>
-              <div class="but">
+              <!--<div class="but">
                 <button class="btn btn-green btn-texture text-uppercase"> READ MORE</button>
                 <button class="btn btn-green btn-texture text-uppercase"> share yours</button>
-              </div>
+              </div>-->
             </div>
 
           </div>
@@ -197,7 +197,7 @@
       <div class="yoga-classes-slider text-center ">
         <div style="position:relative">
           <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-            <div uib-slide ng-repeat="slide in sliders track by slide.id" index="slide.id">
+            <div uib-slide ng-repeat="slide in sliding track by slide.id" index="slide.id">
               <img ng-src="{{slide.image}}" style="margin:auto;">
               <div class="carousel-caption">
                 <p class="uppercase dark f22">{{slide.head}}</p>
@@ -219,14 +219,27 @@
 <section class="product">
   <div class="row-flex">
     <div class="col-flex">
-      <div class="yoga-classes-slider text-center ">
+      <div style="position:relative">
+        <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+          <div uib-slide ng-repeat="slide in slidr track by slide.id" index="slide.id">
+            <img ng-src="{{slide.image}}" style="margin:auto;">
+            <div class="carousel-caption">
+              <p class="uppercase dark f22">{{slide.head}}</p>
+              <p class="uppercase dark">{{slide.descp}}</p>
+              <div class="but">
+                <button class="btn btn-green btn-texture text-uppercase"> READ MORE</button>
+                <button class="btn btn-green btn-texture text-uppercase"> share yours</button>
+              </div>
+            </div>
 
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-flex">
       <div style="position:relative">
         <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-          <div uib-slide ng-repeat="slide in sliding track by slide.id" index="slide.id">
+          <div uib-slide ng-repeat="slide in sliders track by slide.id" index="slide.id">
             <img ng-src="{{slide.image}}" style="margin:auto;">
             <div class="carousel-caption">
               <p class="uppercase dark f22">{{slide.head}}</p>
@@ -243,7 +256,7 @@
     </div>
     <div class="col-flex">
 
-      <!--<div class="teachers">
+      <div class="teachers">
         <div class="trending text-center">
           <h2 class="text-up text-center head-size font-jura">ARTICLE OF THE WEEK</h2>
           <span class="text-center">Sed ut perspiciatis unde omnis perspiciatis unde omnis</span>
@@ -253,7 +266,7 @@
           </div>
         </div>
 
-      </div>-->
+      </div>
     </div>
   </div>
 </section>

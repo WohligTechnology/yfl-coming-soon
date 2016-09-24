@@ -1558,4 +1558,9 @@ hr {
     }
 }
 
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .glyphicon-chevron-right {
+    display: none;
+}
+
 @import "_mobile";

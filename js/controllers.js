@@ -18,19 +18,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         id: 0,
         image: 'img/new/yoga-classes.jpg',
         head: "HEALTHY FOOD FACTS",
-        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }, {
         id: 1,
         image: 'img/new/yoga-classes.jpg',
         head: "HEALTHY FOOD FACTS",
-        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }, {
         id: 2,
         image: 'img/new/yoga-classes.jpg',
         head: "HEALTHY FOOD FACTS",
-        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }];
 
@@ -38,60 +38,79 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         id: 0,
         image: 'img/new/yoga-classes.jpg',
         head: "YOGA CLASS",
-        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }, {
         id: 1,
         image: 'img/new/yoga-classes.jpg',
         head: "YOGA CLASS",
-        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }, {
         id: 2,
         image: 'img/new/yoga-classes.jpg',
         head: "YOGA CLASS",
-        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
-
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
     }];
 
 
     $scope.sliding = [{
         id: 0,
         image: 'img/new/yoga-classes.jpg',
-        head: "TRENDING FOOD RECIPES",
-        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+        head: "FOOD COLLABORATERS",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }, {
         id: 1,
         image: 'img/new/yoga-classes.jpg',
-        head: "TRENDING FOOD RECIPES",
-        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+        head: "FOOD COLLABORATERS",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }, {
         id: 2,
         image: 'img/new/yoga-classes.jpg',
-        head: "TRENDING FOOD RECIPES",
-        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+        head: "FOOD COLLABORATERS",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }];
 
     $scope.sliders = [{
         id: 0,
         image: 'img/new/yoga-classes.jpg',
-        head: " FOOD FACTS",
-        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+        head: " BLOG",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }, {
         id: 1,
         image: 'img/new/yoga-classes.jpg',
-        head: " FOOD FACTS",
-        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+        head: " BLOG",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }, {
         id: 2,
         image: 'img/new/yoga-classes.jpg',
-        head: " FOOD FACTS",
-        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+        head: " BLOG",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+
+    }];
+
+    $scope.slidr = [{
+        id: 0,
+        image: 'img/new/yoga-classes.jpg',
+        head: "PRODUCT COLLABORATERS ",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+
+    }, {
+        id: 1,
+        image: 'img/new/yoga-classes.jpg',
+        head: "PRODUCT COLLABORATERS ",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
+
+    }, {
+        id: 2,
+        image: 'img/new/yoga-classes.jpg',
+        head: "PRODUCT COLLABORATERS ",
+        descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }];
 
