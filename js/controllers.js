@@ -16,19 +16,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.noWrapSlides = false;
     $scope.slides = [{
         id: 0,
-        image: 'img/new/yoga-classes.jpg',
+        image: 'img/new/form-food.jpg',
         head: "HEALTHY FOOD FACTS",
         descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }, {
         id: 1,
-        image: 'img/new/yoga-classes.jpg',
+        image: 'img/new/form-food.jpg',
         head: "HEALTHY FOOD FACTS",
         descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }, {
         id: 2,
-        image: 'img/new/yoga-classes.jpg',
+        image: 'img/new/form-food.jpg',
         head: "HEALTHY FOOD FACTS",
         descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
@@ -56,19 +56,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     $scope.sliding = [{
         id: 0,
-        image: 'img/new/yoga-classes.jpg',
+        image: 'img/new/a1.jpg',
         head: "FOOD COLLABORATERS",
         descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }, {
         id: 1,
-        image: 'img/new/yoga-classes.jpg',
+        image: 'img/new/a1.jpg',
         head: "FOOD COLLABORATERS",
         descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }, {
         id: 2,
-        image: 'img/new/yoga-classes.jpg',
+        image: 'img/new/a1.jpg',
         head: "FOOD COLLABORATERS",
         descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
