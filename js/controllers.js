@@ -1102,44 +1102,44 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     $scope.loveSlider = [{
-        img: "img/b1.jpg"
+        img: "img/restaurant/b1.jpg"
 
     }, {
-        img: "img/b1.jpg"
+        img: "img/restaurant/b1.jpg"
 
     }, {
-        img: "img/b1.jpg"
+        img: "img/restaurant/b1.jpg"
 
     }];
     $scope.rowdata = [{
-        img: "img/m1.jpg",
+        img: "img/restaurant/m1.jpg",
         title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
         data: "Colaba, Mumbai | Italian, Continental Cost for 2:  ₹ 500 -  ₹ 1000 | 9am - 6pm"
 
     }, {
-        img: "img/m1.jpg",
+        img: "img/restaurant/m1.jpg",
         title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
         data: "Colaba, Mumbai | Italian, Continental Cost for 2:  ₹ 500 -  ₹ 1000 | 9am - 6pm"
     }, {
-        img: "img/m1.jpg",
-        title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
-        data: "Colaba, Mumbai | Italian, Continental Cost for 2:  ₹ 500 -  ₹ 1000 | 9am - 6pm"
-
-
-    }, {
-        img: "img/m1.jpg",
+        img: "img/restaurant/m1.jpg",
         title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
         data: "Colaba, Mumbai | Italian, Continental Cost for 2:  ₹ 500 -  ₹ 1000 | 9am - 6pm"
 
 
     }, {
-        img: "img/m1.jpg",
+        img: "img/restaurant/m1.jpg",
         title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
         data: "Colaba, Mumbai | Italian, Continental Cost for 2:  ₹ 500 -  ₹ 1000 | 9am - 6pm"
 
 
     }, {
-        img: "img/m1.jpg",
+        img: "img/restaurant/m1.jpg",
+        title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
+        data: "Colaba, Mumbai | Italian, Continental Cost for 2:  ₹ 500 -  ₹ 1000 | 9am - 6pm"
+
+
+    }, {
+        img: "img/restaurant/m1.jpg",
         title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
         data: "Colaba, Mumbai | Italian, Continental Cost for 2:  ₹ 500 -  ₹ 1000 | 9am - 6pm"
 
