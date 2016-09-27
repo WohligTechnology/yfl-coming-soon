@@ -1,0 +1,252 @@
+<section>
+    <div class="home-slider nav-none">
+        <flex-slider class="carousel " flex-slide="love in loveSlider track by $index">
+            <li>
+                <div class="img position-relative">
+                    <img ng-src="{{love.img}}" alt="">
+                    <div class="overlay"></div>
+                    <div class="slider-data">
+                        <h2 class="font-rubik color-grey  f28  m-auto">Lorem ipsum dolor </h4>
+                            <h4 class="font-rubik color-grey f28 mob-margin m-font12"><span class=" font-rubik color-grey f40">sit amet ,</span> Consectetuer <br> adipscing ati.</h4>
+                            <div class="box-rat mt35 hidden-md hidden-lg">
+                                <img src="img/rating.png" alt="">
+                            </div>
+                            <div class="btn-know mt35 mar-mob">
+                                <button type="button" class="btn-white font-rubik text-up kno-btn" name="button">BOOK NOW</button>
+                            </div>
+                    </div>
+                </div>
+            </li>
+        </flex-slider>
+    </div>
+</section>
+<div class="bg">
+    <section class="bg-black hidden-xs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="journey">
+                        <div class="col-xs-12">
+                            <div class="text-center">
+                                <p class="font-rubikm color-white text-up f18">I am looking to start my journey at <span class="display-inline position-relative mr10"><input type="text" placeholder="COLABA" class="input-span f18 font-rubikm"><img src="img/close.png" class="close" alt=""></span>&amp;
+                                    Find a fulfilling
+                                    <span class="display-inline position-relative mr10"><input type="text" placeholder="HATHA STYLE" class="input-span font-rubikm f18 text-up"><img src="img/close.png" class="close" alt=""></span></p>
+                                <p class="font-rubikm color-white text-up f18">Class in the <span class="display-inline position-relative mr10"><input type="text" placeholder="MORNING" class="input-span f18 font-rubikm text-up" ><img src="img/close.png" class="close" alt=""></span>for
+                                    a price between
+                                    <span class="display-inline position-relative mr10"><input type="text" class="input-span f18 font-rubikm text-up" placeholder="`500 - `1000. "><img src="img/close.png" class="close" alt=""></span></p>
+                                <div class="btn-apply mt45">
+                                    <button type="button" class="btn-green font-rubikm f18 text-up">Apply</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="acco hidden-md hidden-lg">
+        <div class="container">
+            <div class="accordion">
+                <uib-accordion close-others="oneAtATime">
+                    <uib-accordion-group is-open="status.open1">
+                        <uib-accordion-heading>
+                            <span class="font-light font-rubik">filter</span><i class="pull-right fa" ng-class="{'fa fa-minus': status.open1, 'fa fa-plus': !status.open1}"></i>
+                        </uib-accordion-heading>
+                        <p class="font-rubikm color-white text-up f18">I am looking to journey to <span class="display-inline position-relative mr10"><input type="text" placeholder="COLABA" class="input-span f18 font-rubikm"><img src="img/close.png" class="close" alt=""></span>&
+                            Find a place that serves
+                            <span class="display-inline position-relative mr10"><input type="text" placeholder="italian " class="input-span font-rubikm f18 text-up"><img src="img/close.png" class="close" alt=""></span></p>
+                        <p class="font-rubikm color-white text-up f18">Cuisine in the <span class="display-inline position-relative mr10"><input type="text" placeholder="afternoon" class="input-span f18 font-rubikm text-up" ><img src="img/close.png" class="close" alt=""></span>the
+                            cost for 2 being between
+                            <span class="display-inline position-relative mr10"><input type="text" class="input-span f18 font-rubikm text-up" placeholder="`500 - `1000. "><img src="img/close.png" class="close" alt=""></span></p>
+                        <div class="btn-apply mt45"><button type="button" class="btn-green font-rubikm f18 text-up">Apply</button></div>
+                    </uib-accordion-group>
+                </uib-accordion>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="bg-color">
+            <div class="container-fluid">
+                <div class="row mar30">
+                    <div class="col-md-5 col-sm-5 col-xs-6">
+                        <div class="mt35">
+                            <span class="font-rubik text-up f18 color-bl">Sort BY: </span>
+                            <div class="display-inline">
+                                <select class="form-control font-rubik text-up f18 select-cl color-bl">
+                                <option>POPULARITY</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-4 col-xs-offset-1">
+                        <div class="mt50">
+                            <div class="toggle-btn pull-right">
+                                <span class="font-rubik f18 text-up color-bl mr10" style="vertical-align: top;">Map View </span>
+                                <div class="display-inline">
+                                    <div class="onoffswitch">
+                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" ng-model="check.map" id="myonoffswitch">
+                                        <label class="onoffswitch-label" for="myonoffswitch">
+                            <span class="onoffswitch-inner"></span>
+                            <span class="onoffswitch-switch"></span>
+                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row" ng-show="!check.map">
+                    <div class="col-md-4 mt35" ng-repeat="item in rowdata1 track by $index">
+                        <div class="body-img position-relative">
+                            <div class="img-main position-relative">
+                                <img ng-src="{{item.img}}" alt="" class="img-responsive">
+                                <div class="sponser">
+                                    <div class="top-left">
+                                        <span>Sponsored</span>
+                                    </div>
+                                    <div class="top-right pull-right">
+                                        <img src="img/like.png" alt="" class="img-responsive">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="title text-center">
+                                <h5 class="text-up color-bl f18 font-light">{{item.title}}</h5>
+                                <span class="color-second high">{{item.data}}</span>
+                            </div>
+                            <div class="rating text-center mt20">
+                                <img src="img/star.png" alt="">
+                            </div>
+                            <div class="text-center mt10">
+                                <button class="know-m text-up btn-green font-light f18">know more</button>
+                            </div>
+                            <div class="second-layer">
+                                <div class="up-title">
+                                    <h4>Seema Sondhi Yoga Studio </h4>
+                                </div>
+                                <div class="data-det mt15">
+                                    <p>
+                                        The yoga studio is an ambient space that was created by Seema Sondhi in 2001, where she could spread the light of yoga. The
+                                        thought is to help individuals on a healthier and more peaceful path by teaching
+                                        them a system of exercise that fully integrates the body, mind and soul.
+                                    </p>
+                                </div>
+                                <div class="position-relative" style="width: 100%; height: 100%;">
+                                    <div class="text-center mt10 btn-down">
+                                        <button class="know-m text-up btn-yellow font-light f18">know more</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row" ng-show="!check.map">
+                    <div class="col-md-4 mt35" ng-repeat="item in rowdata track by $index">
+                        <div class="body-img position-relative">
+                            <div class="img-main position-relative">
+                                <img ng-src="{{item.img}}" alt="" class="img-responsive">
+                                <div class="sponser">
+                                    <div class="top-left">
+                                        <span>Sponsored</span>
+                                    </div>
+                                    <div class="top-right pull-right">
+                                        <img src="img/like.png" alt="" class="img-responsive">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="title text-center">
+                                <h5 class="text-up color-bl f18 font-light">{{item.title}}</h5>
+                                <span class="color-second high">{{item.data}}</span>
+                            </div>
+                            <div class="rating text-center mt20">
+                                <img src="img/star.png" alt="">
+                            </div>
+                            <div class="text-center mt10">
+                                <button class="know-m text-up btn-green font-light f18">know more</button>
+                            </div>
+                            <div class="second-layer">
+                                <div class="up-title">
+                                    <h4>Amica Cafe</h4>
+                                </div>
+                                <div class="data-det mt15">
+                                    <p>
+                                        The yoga studio is an ambient space that was created by Seema Sondhi in 2001, where she could spread the light of yoga. The
+                                        thought is to help individuals on a healthier and more peaceful path by teaching
+                                        them a system of exercise that fully integrates the body, mind and soul.
+                                    </p>
+                                </div>
+                                <div class="position-relative" style="width: 100%; height: 100%;">
+                                    <div class="text-center mt10 btn-down">
+                                        <button class="know-m text-up btn-yellow font-light f18">know more</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row" ng-show="!check.map">
+                    <div class="text-center p40">
+                        <h4 class="font-neutra font-light" style="color:#a7a9ac;">Loading..</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section ng-show="check.map">
+        <div class="container-fluid pl0">
+            <div class="row">
+                <div class="col-md-6 padding0 col-sm-6">
+                    <div class="larg-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15097.574594355174!2d72.81450373600775!3d18.913962344069734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1srestaurants+near+Colaba%2C+Mumbai%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1466056650330"
+                            width="100%" max-width="100%" height="700" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6 padding0 col-sm-6">
+                    <div class="list-view">
+                        <ul>
+                            <li ng-repeat="item in rowdata track by $index">
+                                <div class="box-data">
+                                    <div class="spo top-left">
+                                        <span>Sponsored</span>
+                                    </div>
+                                    <div class="box-title">
+                                        <h4 class="text-up font-rubik font-light f24 cpointer">{{item.title}}</h4>
+                                    </div>
+                                    <div class="box-datas">
+                                        <span class="font-rubik">{{item.data}}</span>
+                                    </div>
+                                    <div class="box-rat">
+                                        <div class="rating">
+                                            <span uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"
+                                                titles="['one','two','three']" aria-labelledby="default-rating"></span>
+                                        </div>
+                                    </div>
+                                    <div class="box-like mt20">
+                                        <div class="float-left">
+                                            <img src="img/likes.png" alt="" class="img-responsive">
+                                        </div>
+                                        <div class="float-right btn-apply mt-25">
+                                            <button type="button" class="btn-green font-rubikm f18 text-up">Know more</button>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
