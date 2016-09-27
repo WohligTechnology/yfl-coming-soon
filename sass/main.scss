@@ -1618,6 +1618,10 @@ $green: #51b1ac !default;
     font-weight: 400;
 }
 
+.font500 {
+    font-weight: 500 !important;
+}
+
 .font-rubik {
     font-weight: 100;
 }
@@ -1648,6 +1652,10 @@ $green: #51b1ac !default;
 
 .mt20 {
     margin-top: 20px;
+}
+
+.mt30 {
+    margin-top: 30px;
 }
 
 .mb30 {
@@ -1722,4 +1730,5 @@ $green: #51b1ac !default;
     }
 }
 
+@import "ruchi";
 @import "_mobile";

@@ -1162,33 +1162,33 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
 
         $scope.loveSlider = [{
-            img: "img/b1.jpg"
+            img: "img/article/b1.jpg"
 
         }, {
-            img: "img/b1.jpg"
+            img: "img/article/b1.jpg"
 
         }, {
-            img: "img/b1.jpg"
+            img: "img/article/b1.jpg"
 
         }];
         $scope.rowdata = [{
-            img: "img/a2.jpg",
+            img: "img/article/a2.jpg",
             title: "Conscious Eating - Your Body Knows Best",
             data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
         }, {
-            img: "img/a2.jpg",
+            img: "img/article/a2.jpg",
             title: "Conscious Eating - Your Body Knows Best",
             data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
         }, {
-            img: "img/a2.jpg",
+            img: "img/article/a2.jpg",
             title: "Conscious Eating - Your Body Knows Best",
             data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
 
         }, {
-            img: "img/a2.jpg",
+            img: "img/article/a2.jpg",
             title: "Conscious Eating - Your Body Knows Best",
             data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
