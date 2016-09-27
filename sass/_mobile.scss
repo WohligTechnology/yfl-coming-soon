@@ -283,6 +283,368 @@
     .scroll {
         border-top: 1px solid #ccc;
     }
+    .style-detail {
+        .style-banner {
+            height: 200px;
+        }
+    }
+    .expert-detail {
+        .list-inline {
+            li {
+                width: 100%;
+            }
+        }
+    }
+    .social {
+        .insta-img {
+            margin-bottom: 10px;
+        }
+    }
+    .teacher-profile {
+        .style-banner {
+            height: 100px;
+            width: auto;
+        }
+        .expert-detail {
+            .expert-text {
+                span {
+                    color: #333;
+                }
+            }
+            .rounded {
+                height: 100px;
+                width: 100px;
+            }
+        }
+    }
+    .calender,
+    .date-slider {
+        width: 100%;
+    }
+    .sliding-text {
+        .select-city {
+            width: 100%;
+        }
+    }
+    .follow {
+        width: 100%;
+        margin-left: 0;
+    }
+    .drop-boxes {
+        .style-box {
+            width: 100%;
+        }
+        .style-box+.style-box {
+            margin-left: 0;
+        }
+    }
+    .style-description,
+    .teach-details {
+        .teacher-name {
+            padding: 0;
+            margin-bottom: 40px;
+        }
+        .style-detailing {
+            padding: 20px 0 30px;
+        }
+        .rounded {
+            height: 80px;
+            width: 80px;
+        }
+        .dotted {
+            border-right: none;
+        }
+    }
+    .studio-detail {
+        .style-banner {
+            h3 {
+                font-size: 24px;
+            }
+        }
+        .tabs li {
+            width: 100%;
+            text-align: center;
+        }
+        .style-banner {
+            img {
+                height: 150px;
+            }
+        }
+        .sliding-text {
+            padding: 10px 30px 20px;
+            .follow {
+                button {
+                    width: 100%;
+                    padding: 10px 50px;
+                    span {
+                        padding: 3px;
+                    }
+                }
+            }
+        }
+        .studio-description {
+            .decsription {
+                p {
+                    width: auto;
+                }
+            }
+        }
+    }
+    .teacher-listing,
+    .style-listing {
+        h3 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 14px;
+        }
+        .rounded {
+            width: 100px;
+            height: 100px;
+        }
+        .style-banner {
+            img {
+                height: 200px;
+            }
+        }
+        .know-m {
+            width: 100%;
+        }
+    }
+    .style-listing {
+        .style-banner {
+            height: 200px;
+        }
+        .rounded {
+            width: 100px;
+            height: 100px;
+        }
+    }
+    .block {
+        display: block;
+    }
+    .acco {
+        background-color: $green;
+        .accordion {
+            .panel,
+            .panel-default>.panel-heading {
+                background-color: transparent;
+                border: none;
+                box-shadow: none;
+                text-transform: uppercase;
+                margin-top: 10px;
+                color: #fff;
+            }
+            .panel-title {
+                font-size: 22px;
+            }
+            .mr14 {
+                margin-top: 14px;
+            }
+            span {
+                margin-top: 10px;
+            }
+        }
+    }
+    .bg-color {
+        padding-bottom: 14px;
+        .mt50 {
+            margin-top: 20px;
+        }
+    }
+    .select-cl {
+        margin-left: 0;
+    }
+    .mar30 {
+        margin: 0;
+    }
+    .flex-direction-nav {
+        display: none;
+    }
+    .slider-data {
+        left: 40%;
+    }
+    .flexslider {
+        overflow: hidden;
+        .slides img {
+            height: auto;
+            width: 100%;
+        }
+    }
+    .f24 {
+        font-size: 20px;
+    }
+    .btn-apply {
+        margin-top: 20px;
+        button {
+            padding: 14px 90px;
+        }
+    }
+    .social-link ul {
+        li {
+            padding: 0 10px;
+            a {
+                img {
+                    width: 45px;
+                }
+            }
+        }
+    }
+    .more {
+        color: $green;
+        border-bottom: 1px solid $green;
+        font-size: 16px;
+        font-style: italic;
+        cursor: pointer;
+        .fa {
+            margin: 0 5px;
+        }
+    }
+    .desc-restaurant {
+        text-align: justify;
+    }
+    .f29 {
+        font-size: 29px;
+    }
+    .top-left {
+        display: none;
+    }
+    .connect-with-us {
+        .place input,
+        h4 {
+            font-size: 14px;
+        }
+    }
+    .connected {
+        h3 {
+            font-size: 14px;
+        }
+    }
+    .top-right {
+        width: 60px;
+    }
+    //added by ruchira//
+    .mar-mob {
+        margin-top: 15px !important;
+    }
+    .flex-control-nav {
+        display: none;
+    }
+    .kno-btn {
+        font-size: 14px;
+        padding: 6px 26px;
+    }
+    .f28 {
+        font-size: 15px;
+    }
+    .f40 {
+        font-size: 20px;
+    }
+    .slider-data {
+        left: 40%;
+    }
+    .f-sign {
+        font-size: 12px;
+    }
+    .f65 {
+        font-size: 25px;
+    }
+    .f30 {
+        font-size: 14px;
+    }
+    .btn {
+        font-size: 12px;
+        padding: 6px 14px;
+    }
+    .f55 {
+        font-size: 18px;
+    }
+    .f34 {
+        font-size: 13px;
+    }
+    .yoga-info p {
+        font-size: 30px;
+    }
+    .list-inline li {
+        margin: 3px;
+    }
+    .z-img {
+        zoom: 0.6;
+    }
+    .mt35 {
+        margin-top: 24px;
+    }
+    .mt38 {
+        margin-top: 26px;
+    }
+    body {
+        padding-top: 70px;
+        font-family: $font-family-sans-serif;
+    }
+    //article-detail starts//
+    .float-right {
+        float: right;
+    }
+    .user-img {
+        width: 70px;
+        height: 70px;
+    }
+    .read-more {
+        display: block;
+        .btn {
+            padding: 15px 14px;
+            width: 100%;
+        }
+    }
+    .art-title {
+        h4 {
+            font-size: 16px;
+        }
+    }
+    .expert-teacher {
+        display: inline-block;
+        padding: 0 10px;
+        border: 0;
+        span {
+            font-size: 12px;
+        }
+    }
+    .yoga-detail a {
+        margin-top: 0;
+        font-size: 14px;
+    }
+    //article-detail ends//
+    //footer//
+    .connected {
+        text-align: center;
+    }
+    .neu {
+        p {
+            font-size: 11px;
+        }
+    }
+    .list {
+        text-align: center;
+    }
+    .float-left {
+        float: left;
+    }
+    .float-right {
+        float: right;
+    }
+    //footer//
+    .flex-direction-nav {
+        .flex-next {
+            right: 18px !important;
+        }
+        .flex-prev {
+            left: 18px;
+        }
+    }
+    .user-img {
+        height: 50px;
+        width: 50px;
+    }
 }
 
 @media (max-width:480px) {
