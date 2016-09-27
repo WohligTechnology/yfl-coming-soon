@@ -1173,23 +1173,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }];
         $scope.rowdata = [{
             img: "img/a2.jpg",
-            title: "Conscious Eating - YourBody Knows Best",
+            title: "Conscious Eating - Your Body Knows Best",
             data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
         }, {
             img: "img/a2.jpg",
-            title: "Conscious Eating - YourBody Knows Best",
+            title: "Conscious Eating - Your Body Knows Best",
             data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
         }, {
             img: "img/a2.jpg",
-            title: "Conscious Eating - YourBody Knows Best",
+            title: "Conscious Eating - Your Body Knows Best",
             data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
 
         }, {
             img: "img/a2.jpg",
-            title: "Conscious Eating - YourBody Knows Best",
+            title: "Conscious Eating - Your Body Knows Best",
             data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
 
@@ -1221,23 +1221,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }];
         $scope.rowdata = [{
             img: "img/a2.jpg",
-            title: "Conscious Eating - YourBody Knows Best",
+            title: "Conscious Eating - Your Body Knows Best",
             data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
         }, {
             img: "img/a2.jpg",
-            title: "Conscious Eating - YourBody Knows Best",
+            title: "Conscious Eating - Your Body Knows Best",
             data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
         }, {
             img: "img/a2.jpg",
-            title: "Conscious Eating - YourBody Knows Best",
+            title: "Conscious Eating - Your Body Knows Best",
             data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
 
         }, {
             img: "img/a2.jpg",
-            title: "Conscious Eating - YourBody Knows Best",
+            title: "Conscious Eating - Your Body Knows Best",
             data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
 
@@ -1270,23 +1270,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }];
     $scope.rowdata = [{
         img: "img/a2.jpg",
-        title: "Conscious Eating - YourBody Knows Best",
+        title: "Conscious Eating - Your Body Knows Best",
         data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
     }, {
         img: "img/a2.jpg",
-        title: "Conscious Eating - YourBody Knows Best",
+        title: "Conscious Eating - Your Body Knows Best",
         data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
     }, {
         img: "img/a2.jpg",
-        title: "Conscious Eating - YourBody Knows Best",
+        title: "Conscious Eating - Your Body Knows Best",
         data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
 
     }, {
         img: "img/a2.jpg",
-        title: "Conscious Eating - YourBody Knows Best",
+        title: "Conscious Eating - Your Body Knows Best",
         data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
 
@@ -1373,23 +1373,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }];
     $scope.rowdata = [{
         img: "img/article/a2.jpg",
-        title: "Conscious Eating - YourBody Knows Best",
+        title: "Conscious Eating - Your Body Knows Best",
         data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
     }, {
         img: "img/article/a2.jpg",
-        title: "Conscious Eating - YourBody Knows Best",
+        title: "Conscious Eating - Your Body Knows Best",
         data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
     }, {
         img: "img/article/a2.jpg",
-        title: "Conscious Eating - YourBody Knows Best",
+        title: "Conscious Eating - Your Body Knows Best",
         data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
 
     }, {
         img: "img/article/a2.jpg",
-        title: "Conscious Eating - YourBody Knows Best",
+        title: "Conscious Eating - Your Body Knows Best",
         data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
 

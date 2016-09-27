@@ -1604,4 +1604,122 @@ hr {
     background-image: none;
 }
 
+//new css for new pages from .yfl-relative
+$green: #51b1ac !default;
+.padding0 {
+    padding: 0;
+}
+
+.cpointer {
+    cursor: pointer;
+}
+
+.font-light {
+    font-weight: 400;
+}
+
+.font-rubik {
+    font-weight: 100;
+}
+
+.color-second {
+    color: #4e4f51;
+}
+
+.color-third {
+    color: #464646;
+}
+
+.pos-abs h1 {
+    font-weight: 700;
+    color: #fff;
+    font-family: inherit;
+}
+
+.border-box {
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 15px 0;
+}
+
+.mt40 {
+    margin-top: 40px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mb30 {
+    margin-bottom: 30px;
+}
+
+.f40 {
+    font-size: 40px;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.color-green {
+    color: #51b1ac;
+}
+
+.top-right-icon {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.pos-abs {
+    top: 50%;
+    left: 50%;
+}
+
+.pos-abs,
+.style-banner .banner-text {
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.margin0 {
+    margin: 0;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.text-up {
+    text-transform: uppercase;
+}
+
+.pads {
+    padding: 35px 0;
+}
+
+.bg-blue {
+    background-color: $green;
+    color: #fff;
+    h3 {
+        padding: 20px 0;
+    }
+}
+
+.active {
+    @extend .bg-blue;
+    h3 {
+        background: #f5bf33;
+        color: #fff;
+        border-bottom: 6px solid #cd9c1d;
+    }
+}
+
+.art-title {
+    p {
+        font-weight: 400;
+    }
+}
+
 @import "_mobile";
