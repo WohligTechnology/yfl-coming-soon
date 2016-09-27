@@ -1,0 +1,112 @@
+<section>
+    <div class="position-relative">
+        <img src="img/article/article.jpg" alt="" class="img-responsive width">
+        <div class="pos-abs text-center">
+            <h1 class="font-rubik f40">Lorem ipsumdolor sit</h1>
+        </div>
+    </div>
+</section>
+<div class="bg">
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="pads">
+                        <p class="font-rubik font-light color-second">aperiam, eaque ipsa quae ab illo inventore veritatis et.aperiam, eaque ipsa quae ab illoinventore
+                            veritatis et.aperiam, eaque ipsa quae ab illo inventore veritatis et.aperia.aperiam, eaque ipsa
+                            quae ab illo inventore veritatis et.aperiam, eaque ipsa quae ab illoinventore veritatis et.aperiam,
+                            eaque ipsa quae ab illo inventore veritatis et.aperia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="two-tab">
+            <div class="container-fluid">
+                <div class="row bg-blue">
+                    <div class="">
+                        <div class="col-md-6 col-sm-6 text-center padding0 {{classa}}">
+                            <h3 class="text-up font-rubik font-light cpointer margin0" ng-click="tabchange('article',1)">article</h3>
+                        </div>
+                        <div class="col-md-6 col-sm-6 text-center padding0 {{classb}} ">
+                            <h3 class="text-up font-rubik font-light cpointer margin0" ng-click="tabchange('recipes',2)">recipes</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="container">
+                <div class="row mt40 " ng-show="tab=='article'">
+                    <div class="col-md-6 font-rubik mb30" ng-repeat="data in rowdata track by $index">
+                        <div class="border-box">
+                            <div class="col-md-5 col-sm-6 col-xs-12">
+                                <div class="art-img position-relative">
+                                    <img ng-src="{{data.img}}" alt="" class="img-responsive width100">
+                                    <div class="top-right-icon">
+                                        <img src="img/article/fav.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7 col-sm-6 col-xs-12">
+                                <div class="art-title">
+                                    <h4 class="color-green">{{data.title}}</h4>
+                                    <p>by <span class="color-green font500">Abha Singh</span></p>
+                                </div>
+                                <div class="art-data mt10">
+                                    <p class="font-light color-third">{{data.data}} </p>
+                                </div>
+                                <div class="art-date mt20">
+                                    <span class="color-third">August 12, 2015</span>
+                                </div>
+                                <div class="read-more mt20">
+                                    <button class="text-up btn-green ">read more</button>
+                                </div>
+
+                            </div>
+                            <div class="reads-more mt20">
+                                <button class="text-up btn-green ">read more</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="row mt40" ng-show="tab=='recipes'">
+                    <div class="col-md-6 font-rubik mb30" ng-repeat="data in rowdata track by $index">
+                        <div class="border-box">
+                            <div class="col-md-5 col-sm-6 col-xs-12">
+                                <div class="art-img position-relative">
+                                    <img ng-src="{{data.img}}" alt="" class="img-responsive width100">
+                                    <div class="top-right-icon">
+                                        <img src="img/article/fav.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7 col-sm-6 col-xs-12">
+                                <div class="art-title">
+                                    <h4 class="color-green">{{data.title}}</h4>
+                                    <p>by <span class="color-green font500">Abha Singh</span></p>
+                                </div>
+                                <div class="art-data mt10">
+                                    <p class="font-light color-third">{{data.data}} </p>
+                                </div>
+                                <div class="art-date mt20">
+                                    <span class="color-third">August 12, 2015</span>
+                                </div>
+                                <div class="read-more mt20">
+                                    <button class="text-up btn-green ">read more</button>
+                                </div>
+                            </div>
+                            <div class="reads-more mt20">
+                                <button class="text-up btn-green ">read more</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

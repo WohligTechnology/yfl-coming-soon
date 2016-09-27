@@ -1,6 +1,6 @@
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ksSwiper', 'imageupload'])
 
-.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("home");
     $scope.menutitle = NavigationService.makeactive("Coming Soon");
@@ -204,7 +204,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         head: "yoga classes",
         descp: "Sed ut perspiciatis unde omnis iste natus error sit."
     }];
-    angular.element(document).ready(function() {
+    angular.element(document).ready(function () {
         var feed = new Instafeed({
             get: 'tagged',
             tagName: 'yogafoodlove',
@@ -215,8 +215,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         feed.run();
     });
 
-    setTimeout(function() {
-        (function(d, s, id) {
+    setTimeout(function () {
+        (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
             js = d.createElement(s);
@@ -224,7 +224,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.7";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-        ! function(d, s, id) {
+        ! function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0],
                 p = /^http:/.test(d.location) ? 'http' : 'https';
             if (!d.getElementById(id)) {
@@ -238,7 +238,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('PrivacyCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+.controller('PrivacyCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("privacy-policy");
     $scope.menutitle = NavigationService.makeactive("Privacy Policy");
@@ -253,19 +253,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     ];
 })
 
-.controller('CollaborateWithUsCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
+.controller('CollaborateWithUsCtrl', function ($scope, TemplateService, NavigationService, $timeout, $state) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("collaborate-with-us");
     $scope.menutitle = NavigationService.makeactive("Collaborate With Us");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
 
-    $scope.goTo = function(data) {
+    $scope.goTo = function (data) {
         $state.go(data);
     };
 })
 
-.controller('FormYogaStudioCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+.controller('FormYogaStudioCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("form-yoga-studio");
         $scope.menutitle = NavigationService.makeactive("Yoga Studio Collaboration Form");
@@ -289,15 +289,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.listBranches = false;
         $scope.officialWebsiteAddress = false;
 
-        $scope.submitYogaStudioForm = function(formData) {
+        $scope.submitYogaStudioForm = function (formData) {
 
             // console.log($scope.formData.amenitiesArray);
-            _.each($scope.formData.amenitiesArray, function(data, key) {
+            _.each($scope.formData.amenitiesArray, function (data, key) {
                 if (data === "other") {
                     $scope.formData.amenitiesArray[key] = $scope.formData.myother;
                 }
             });
-            _.each($scope.formData.yogaStyleOfferArray, function(data, key) {
+            _.each($scope.formData.yogaStyleOfferArray, function (data, key) {
                 if (data === "other") {
                     $scope.formData.yogaStyleOfferArray[key] = $scope.formData.myotherYogaStyle;
                 }
@@ -313,7 +313,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     $scope.noamenities = false;
 
 
-                    _.each($scope.formData.amenitiesArray, function(n) {
+                    _.each($scope.formData.amenitiesArray, function (n) {
                         $scope.formData.amenities += n + ",";
                     });
 
@@ -326,7 +326,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 if ($scope.formData.yogaStyleOfferArray.length > 0) {
                     $scope.noYogastyle = false;
 
-                    _.each($scope.formData.yogaStyleOfferArray, function(n) {
+                    _.each($scope.formData.yogaStyleOfferArray, function (n) {
                         $scope.formData.styleOfYoga += n + ",";
                     });
 
@@ -336,7 +336,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 } else {
                     $scope.noYogastyle = true;
                 }
-                NavigationService.saveYogaStudio($scope.formData, function(data) {
+                NavigationService.saveYogaStudio($scope.formData, function (data) {
                     console.log("iminnavigation", $scope.formData);
                     console.log("formData", data);
                     if (data.value === true) {
@@ -348,7 +348,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                         $scope.noamenities = false;
                         $scope.noYogastyle = false;
                         $scope.listBranches = false;
-                        $timeout(function() {
+                        $timeout(function () {
                             $scope.formComplete = false;
                             $scope.formData = {};
                             $scope.formData.amenitiesArray = [];
@@ -423,8 +423,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
 
 
-        $scope.goToamenities = function(val) {
-            var foundIndex = _.findIndex($scope.formData.amenitiesArray, function(key) {
+        $scope.goToamenities = function (val) {
+            var foundIndex = _.findIndex($scope.formData.amenitiesArray, function (key) {
                 return key == val;
             });
             if (foundIndex == -1) {
@@ -436,8 +436,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log($scope.formData.amenitiesArray);
         };
 
-        $scope.goToyogaOffer = function(val) {
-            var foundIndex = _.findIndex($scope.formData.yogaStyleOfferArray, function(key) {
+        $scope.goToyogaOffer = function (val) {
+            var foundIndex = _.findIndex($scope.formData.yogaStyleOfferArray, function (key) {
                 return key == val;
             });
             if (foundIndex == -1) {
@@ -451,7 +451,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     })
-    .controller('FormYogaLabelCollaborationCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    .controller('FormYogaLabelCollaborationCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("form-yoga-label");
         $scope.menutitle = NavigationService.makeactive("Yoga Label Collaboration Form");
@@ -476,7 +476,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.invalidPincode = false;
         $scope.validMobileno = false;
         $scope.validlandlineNo = false;
-        $scope.submitYogaLabelForm = function(formData) {
+        $scope.submitYogaLabelForm = function (formData) {
             console.log("frm submit", formData);
             if ($scope.formData) {
 
@@ -485,7 +485,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
                 // $scope.formData.booksMoviesGames = " ";
                 if ($scope.formData.booksMoviesGamesArray.length > 0) {
-                    _.each($scope.formData.booksMoviesGamesArray, function(n) {
+                    _.each($scope.formData.booksMoviesGamesArray, function (n) {
                         $scope.formData.booksMoviesGames += n + ",";
                     });
 
@@ -495,7 +495,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 };
                 // $scope.formData.clothingShoesJewelry = "";
                 if ($scope.formData.clothingShoesJewelryArray.length > 0) {
-                    _.each($scope.formData.clothingShoesJewelryArray, function(n) {
+                    _.each($scope.formData.clothingShoesJewelryArray, function (n) {
                         $scope.formData.clothingShoesJewelry += n + ",";
                     });
 
@@ -505,7 +505,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 };
                 // $scope.formData.beautyHealthGroceries = "";
                 if ($scope.formData.beautyHealthGroceriesArray.length > 0) {
-                    _.each($scope.formData.beautyHealthGroceriesArray, function(n) {
+                    _.each($scope.formData.beautyHealthGroceriesArray, function (n) {
                         $scope.formData.beautyHealthGroceries += n + ",";
                     });
 
@@ -515,7 +515,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 };
                 // $scope.formData.yogaProducts = "";
                 if ($scope.formData.yogaProductsArray.length > 0) {
-                    _.each($scope.formData.yogaProductsArray, function(n) {
+                    _.each($scope.formData.yogaProductsArray, function (n) {
                         $scope.formData.yogaProducts += n + ",";
                     });
 
@@ -525,7 +525,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 };
                 // $scope.formData.productsFrom = "";
                 if ($scope.formData.productsFromArray.length > 0) {
-                    _.each($scope.formData.productsFromArray, function(n) {
+                    _.each($scope.formData.productsFromArray, function (n) {
                         $scope.formData.productsFrom += n + ",";
                     });
 
@@ -533,14 +533,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
                 };
-                NavigationService.saveYogaLabelForm($scope.formData, function(data) {
+                NavigationService.saveYogaLabelForm($scope.formData, function (data) {
                     console.log("saveYogaLabelForm", data);
                     if (data.value === true) {
                         $scope.formComplete = true;
                         $scope.exist = false;
                         $scope.invalidPincode = false;
                         $scope.validMobileno = false;
-                        $timeout(function() {
+                        $timeout(function () {
                             $scope.formComplete = false;
                             $scope.invalidPincode = false;
                             $scope.exist = false;
@@ -581,9 +581,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         }
 
-        $scope.booksGame = function(val) {
+        $scope.booksGame = function (val) {
 
-            var foundIndex = _.findIndex($scope.formData.booksMoviesGamesArray, function(key) {
+            var foundIndex = _.findIndex($scope.formData.booksMoviesGamesArray, function (key) {
                 return key == val;
             });
             if (foundIndex == -1) {
@@ -594,9 +594,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             console.log($scope.formData.booksMoviesGamesArray);
         };
-        $scope.clothingShoesJewelryFun = function(val) {
+        $scope.clothingShoesJewelryFun = function (val) {
 
-            var foundIndex = _.findIndex($scope.formData.clothingShoesJewelryArray, function(key) {
+            var foundIndex = _.findIndex($scope.formData.clothingShoesJewelryArray, function (key) {
                 return key == val;
             });
             if (foundIndex == -1) {
@@ -607,9 +607,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             console.log($scope.formData.clothingShoesJewelryArray);
         };
-        $scope.beautyHealthGroceriesFun = function(val) {
+        $scope.beautyHealthGroceriesFun = function (val) {
             console.log("inn", val);
-            var foundIndex = _.findIndex($scope.formData.beautyHealthGroceriesArray, function(key) {
+            var foundIndex = _.findIndex($scope.formData.beautyHealthGroceriesArray, function (key) {
                 return key == val;
             });
             if (foundIndex == -1) {
@@ -620,9 +620,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             console.log($scope.formData.beautyHealthGroceriesArray);
         };
-        $scope.yogaProductsFun = function(val) {
+        $scope.yogaProductsFun = function (val) {
 
-            var foundIndex = _.findIndex($scope.formData.yogaProductsArray, function(key) {
+            var foundIndex = _.findIndex($scope.formData.yogaProductsArray, function (key) {
                 return key == val;
             });
             if (foundIndex == -1) {
@@ -633,9 +633,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             console.log($scope.formData.yogaProductsArray);
         };
-        $scope.productsFromFun = function(val) {
+        $scope.productsFromFun = function (val) {
 
-            var foundIndex = _.findIndex($scope.formData.productsFromArray, function(key) {
+            var foundIndex = _.findIndex($scope.formData.productsFromArray, function (key) {
                 return key == val;
             });
             if (foundIndex == -1) {
@@ -649,7 +649,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     })
 
 
-.controller('FormRestaurantCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+.controller('FormRestaurantCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("form-restaurant");
     $scope.menutitle = NavigationService.makeactive("Form Restaurant");
@@ -664,10 +664,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.conatctNumber = false;
     $scope.resPhone = false;
 
-    $scope.submitRestaurantForm = function(formData) {
+    $scope.submitRestaurantForm = function (formData) {
         console.log("formData", formData);
         if (formData) {
-            NavigationService.saveRestaurantForm($scope.formData, function(data) {
+            NavigationService.saveRestaurantForm($scope.formData, function (data) {
                 console.log(data, "data");
                 if (data.value === true) {
                     $scope.formComplete = true;
@@ -676,7 +676,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     $scope.invalidPincode = false;
                     $scope.conatctNumber = false;
                     $scope.resPhone = false;
-                    $timeout(function() {
+                    $timeout(function () {
                         $scope.formComplete = false;
                         $scope.exist = false;
                         $scope.invalidPincode = false;
@@ -739,7 +739,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('FormNutrionistCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+.controller('FormNutrionistCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("form-nutrionist");
     $scope.menutitle = NavigationService.makeactive("Form Nutritonist");
@@ -754,10 +754,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.formData.contributArray = [];
     $scope.formData.contribute = [];
     $scope.noContrubution = false;
-    $scope.submitNutrionistForm = function(formData) {
+    $scope.submitNutrionistForm = function (formData) {
         console.log(formData, '*******');
         $scope.noContrubution = false;
-        _.each($scope.formData.contributArray, function(data, key) {
+        _.each($scope.formData.contributArray, function (data, key) {
             if (data === "other") {
                 $scope.formData.contributArray[key] = $scope.formData.myother;
             }
@@ -767,11 +767,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log("  $scope.formData", $scope.formData);
             // $scope.formData.contribute = " ";
             if ($scope.formData.contributArray.length > 0) {
-                _.each($scope.formData.contributArray, function(n) {
+                _.each($scope.formData.contributArray, function (n) {
                     $scope.formData.contribute += n + ",";
                 });
 
-                NavigationService.saveNutrionistForm($scope.formData, function(data) {
+                NavigationService.saveNutrionistForm($scope.formData, function (data) {
                     console.log("iminnavigation", $scope.formData);
                     console.log("formData", data);
                     if (data.value === true) {
@@ -779,7 +779,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                         $scope.exist = false;
                         $scope.invalidPincode = false;
                         $scope.validMobileno = false;
-                        $timeout(function() {
+                        $timeout(function () {
                             $scope.formComplete = false;
                             $scope.invalidPincode = false;
                             $scope.exist = false;
@@ -816,9 +816,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         }
     };
-    $scope.contributionType = function(val) {
+    $scope.contributionType = function (val) {
 
-        var foundIndex = _.findIndex($scope.formData.contributArray, function(key) {
+        var foundIndex = _.findIndex($scope.formData.contributArray, function (key) {
             return key == val;
         });
         if (foundIndex == -1) {
@@ -832,7 +832,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('FormPersonalCampaignCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+.controller('FormPersonalCampaignCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("form-personal-campaign");
     $scope.menutitle = NavigationService.makeactive("Form Personal Campaign");
@@ -840,12 +840,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     $scope.countries = NavigationService.getcountries();
 
-    $scope.today = function() {
+    $scope.today = function () {
         $scope.dt = new Date();
     };
     $scope.today();
 
-    $scope.clear = function() {
+    $scope.clear = function () {
         $scope.dt = null;
     };
 
@@ -870,22 +870,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
     }
 
-    $scope.toggleMin = function() {
+    $scope.toggleMin = function () {
         $scope.inlineOptions.minDate = $scope.inlineOptions.minDate ? null : new Date();
         $scope.dateOptions.minDate = $scope.inlineOptions.minDate;
     };
 
     $scope.toggleMin();
 
-    $scope.open1 = function() {
+    $scope.open1 = function () {
         $scope.popup1.opened = true;
     };
 
-    $scope.open2 = function() {
+    $scope.open2 = function () {
         $scope.popup2.opened = true;
     };
 
-    $scope.setDate = function(year, month, day) {
+    $scope.setDate = function (year, month, day) {
         $scope.dt = new Date(year, month, day);
     };
 
@@ -935,18 +935,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.exist = false;
     $scope.invalidPincode = false;
     $scope.validMobileno = false;
-    $scope.submitCampaign = function(formData) {
+    $scope.submitCampaign = function (formData) {
 
         console.log("submitCampaign", formData);
         if ($scope.formData) {
-            NavigationService.savePersonalCompaign($scope.formData, function(data) {
+            NavigationService.savePersonalCompaign($scope.formData, function (data) {
                 console.log("savePersonalCompaign", data);
                 if (data.value === true) {
                     $scope.formComplete = true;
                     $scope.exist = false;
                     $scope.invalidPincode = false;
                     $scope.validMobileno = false;
-                    $timeout(function() {
+                    $timeout(function () {
                         $scope.formComplete = false;
                         $scope.invalidPincode = false;
                         $scope.exist = false;
@@ -980,7 +980,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 })
 
 
-.controller('FormArtistCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+.controller('FormArtistCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("form-artist");
     $scope.menutitle = NavigationService.makeactive("Form Artist");
@@ -998,9 +998,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.formData.mediaArray = [];
     $scope.formData.mediaFor = [];
     $scope.noMedia = false;
-    $scope.submitArtistForm = function(formData) {
+    $scope.submitArtistForm = function (formData) {
         $scope.noMedia = false;
-        _.each($scope.formData.mediaArray, function(data, key) {
+        _.each($scope.formData.mediaArray, function (data, key) {
             if (data === "other") {
                 $scope.formData.mediaArray[key] = $scope.formData.myother;
             }
@@ -1010,11 +1010,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log("  $scope.formData", $scope.formData);
             // $scope.formData.mediaFor = " ";
             if ($scope.formData.mediaArray.length > 0) {
-                _.each($scope.formData.mediaArray, function(n) {
+                _.each($scope.formData.mediaArray, function (n) {
                     $scope.formData.mediaFor += n + ",";
                 });
 
-                NavigationService.saveArtistForm($scope.formData, function(data) {
+                NavigationService.saveArtistForm($scope.formData, function (data) {
                     console.log("iminnavigation", $scope.formData);
                     console.log("formData", data);
                     if (data.value === true) {
@@ -1022,7 +1022,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                         $scope.exist = false;
                         $scope.invalidPincode = false;
                         $scope.validMobileno = false;
-                        $timeout(function() {
+                        $timeout(function () {
                             $scope.formComplete = false;
                             $scope.invalidPincode = false;
                             $scope.exist = false;
@@ -1061,9 +1061,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     };
 
 
-    $scope.mediafor = function(val) {
+    $scope.mediafor = function (val) {
 
-        var foundIndex = _.findIndex($scope.formData.mediaArray, function(key) {
+        var foundIndex = _.findIndex($scope.formData.mediaArray, function (key) {
             return key == val;
         });
         if (foundIndex == -1) {
@@ -1087,9 +1087,671 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('headerctrl', function($scope, TemplateService, $uibModal) {
+
+.controller('RestaurantCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+    $scope.template = TemplateService.changecontent("restaurant");
+    $scope.menutitle = NavigationService.makeactive("Restaurant");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.accordian = [];
+    $scope.accordian.push({
+        isFirstOpen: true,
+        isFirstDisabled: false
+    });
+
+
+
+    $scope.loveSlider = [{
+        img: "img/b1.jpg"
+
+    }, {
+        img: "img/b1.jpg"
+
+    }, {
+        img: "img/b1.jpg"
+
+    }];
+    $scope.rowdata = [{
+        img: "img/m1.jpg",
+        title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
+        data: "Colaba, Mumbai | Italian, Continental Cost for 2:  ₹ 500 -  ₹ 1000 | 9am - 6pm"
+
+    }, {
+        img: "img/m1.jpg",
+        title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
+        data: "Colaba, Mumbai | Italian, Continental Cost for 2:  ₹ 500 -  ₹ 1000 | 9am - 6pm"
+    }, {
+        img: "img/m1.jpg",
+        title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
+        data: "Colaba, Mumbai | Italian, Continental Cost for 2:  ₹ 500 -  ₹ 1000 | 9am - 6pm"
+
+
+    }, {
+        img: "img/m1.jpg",
+        title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
+        data: "Colaba, Mumbai | Italian, Continental Cost for 2:  ₹ 500 -  ₹ 1000 | 9am - 6pm"
+
+
+    }, {
+        img: "img/m1.jpg",
+        title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
+        data: "Colaba, Mumbai | Italian, Continental Cost for 2:  ₹ 500 -  ₹ 1000 | 9am - 6pm"
+
+
+    }, {
+        img: "img/m1.jpg",
+        title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
+        data: "Colaba, Mumbai | Italian, Continental Cost for 2:  ₹ 500 -  ₹ 1000 | 9am - 6pm"
+
+    }];
+    $scope.rate = 7;
+    $scope.max = 10;
+    $scope.isReadonly = false;
+
+    $scope.hoveringOver = function (value) {
+        $scope.overStar = value;
+        $scope.percent = 100 * (value / $scope.max);
+    };
+})
+
+
+.controller('ArticleDetailCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+        $scope.template = TemplateService.changecontent("article-detail");
+        $scope.menutitle = NavigationService.makeactive("Article-Detail");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+        $scope.loveSlider = [{
+            img: "img/b1.jpg"
+
+        }, {
+            img: "img/b1.jpg"
+
+        }, {
+            img: "img/b1.jpg"
+
+        }];
+        $scope.rowdata = [{
+            img: "img/a2.jpg",
+            title: "Conscious Eating - YourBody Knows Best",
+            data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
+
+        }, {
+            img: "img/a2.jpg",
+            title: "Conscious Eating - YourBody Knows Best",
+            data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
+
+        }, {
+            img: "img/a2.jpg",
+            title: "Conscious Eating - YourBody Knows Best",
+            data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
+
+
+        }, {
+            img: "img/a2.jpg",
+            title: "Conscious Eating - YourBody Knows Best",
+            data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
+
+
+        }];
+        $scope.rate = 7;
+        $scope.max = 10;
+        $scope.isReadonly = false;
+
+        $scope.hoveringOver = function (value) {
+            $scope.overStar = value;
+            $scope.percent = 100 * (value / $scope.max);
+        };
+    })
+    .controller('RecipesDetailCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+        $scope.template = TemplateService.changecontent("recipes-detail");
+        $scope.menutitle = NavigationService.makeactive("Recipes-Detail");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+        $scope.loveSlider = [{
+            img: "img/b1.jpg"
+
+        }, {
+            img: "img/b1.jpg"
+
+        }, {
+            img: "img/b1.jpg"
+
+        }];
+        $scope.rowdata = [{
+            img: "img/a2.jpg",
+            title: "Conscious Eating - YourBody Knows Best",
+            data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
+
+        }, {
+            img: "img/a2.jpg",
+            title: "Conscious Eating - YourBody Knows Best",
+            data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
+
+        }, {
+            img: "img/a2.jpg",
+            title: "Conscious Eating - YourBody Knows Best",
+            data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
+
+
+        }, {
+            img: "img/a2.jpg",
+            title: "Conscious Eating - YourBody Knows Best",
+            data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
+
+
+        }];
+        $scope.rate = 7;
+        $scope.max = 10;
+        $scope.isReadonly = false;
+
+        $scope.hoveringOver = function (value) {
+            $scope.overStar = value;
+            $scope.percent = 100 * (value / $scope.max);
+        };
+    })
+
+.controller('StyleListCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+    $scope.template = TemplateService.changecontent("style-listing");
+    $scope.menutitle = NavigationService.makeactive("Style Listing");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+    $scope.loveSlider = [{
+        img: "img/b1.jpg"
+
+    }, {
+        img: "img/b1.jpg"
+
+    }, {
+        img: "img/b1.jpg"
+
+    }];
+    $scope.rowdata = [{
+        img: "img/a2.jpg",
+        title: "Conscious Eating - YourBody Knows Best",
+        data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
+
+    }, {
+        img: "img/a2.jpg",
+        title: "Conscious Eating - YourBody Knows Best",
+        data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
+
+    }, {
+        img: "img/a2.jpg",
+        title: "Conscious Eating - YourBody Knows Best",
+        data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
+
+
+    }, {
+        img: "img/a2.jpg",
+        title: "Conscious Eating - YourBody Knows Best",
+        data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
+
+
+    }];
+    $scope.rate = 7;
+    $scope.max = 10;
+    $scope.isReadonly = false;
+
+    $scope.hoveringOver = function (value) {
+        $scope.overStar = value;
+        $scope.percent = 100 * (value / $scope.max);
+    };
+})
+
+
+.controller('StyleDetailCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+    $scope.template = TemplateService.changecontent("style-detail");
+    $scope.menutitle = NavigationService.makeactive("Style Detail");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    // $scope.accordian = [];
+    // $scope.accordian.push({
+    //   isFirstOpen: true,
+    //   isFirstDisabled: false
+    // });
+
+    $scope.loveSlider = [{
+        img: "img/b1.jpg"
+
+    }, {
+        img: "img/b1.jpg"
+
+    }, {
+        img: "img/b1.jpg"
+
+    }];
+    $scope.rowdata = [{
+        img: "img/mom.jpg",
+        title: "Lorem ipsum dolor sit amet",
+        location: "Colaba, Mumbai",
+        style: "Ashtanga Vinyasa,Hatha Yoga,Vinyasa Flow",
+        timing: "9am - 6pm"
+    }, {
+        img: "img/mom.jpg",
+        title: "Lorem ipsum dolor sit amet",
+        location: "Colaba, Mumbai",
+        style: "Ashtanga Vinyasa,Hatha Yoga,Vinyasa Flow",
+        timing: "9am - 6pm"
+    }, {
+        img: "img/mom.jpg",
+        title: "Lorem ipsum dolor sit amet",
+        location: "Colaba, Mumbai",
+        style: "Ashtanga Vinyasa,Hatha Yoga,Vinyasa Flow",
+        timing: "9am - 6pm"
+    }];
+    $scope.rate = 3;
+    $scope.max = 5;
+    $scope.isReadonly = false;
+
+    $scope.hoveringOver = function (value) {
+        $scope.overStar = value;
+        $scope.percent = 100 * (value / $scope.max);
+    };
+})
+
+
+
+
+.controller('ArticleCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+    $scope.template = TemplateService.changecontent("article");
+    $scope.menutitle = NavigationService.makeactive("Article");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+    $scope.loveSlider = [{
+        img: "img/article/b1.jpg"
+
+    }, {
+        img: "img/article/b1.jpg"
+
+    }, {
+        img: "img/article/b1.jpg"
+
+    }];
+    $scope.rowdata = [{
+        img: "img/article/a2.jpg",
+        title: "Conscious Eating - YourBody Knows Best",
+        data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
+
+    }, {
+        img: "img/article/a2.jpg",
+        title: "Conscious Eating - YourBody Knows Best",
+        data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
+
+    }, {
+        img: "img/article/a2.jpg",
+        title: "Conscious Eating - YourBody Knows Best",
+        data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
+
+
+    }, {
+        img: "img/article/a2.jpg",
+        title: "Conscious Eating - YourBody Knows Best",
+        data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
+
+
+    }];
+    $scope.rate = 3;
+    $scope.max = 5;
+    $scope.isReadonly = false;
+
+    $scope.hoveringOver = function (value) {
+        $scope.overStar = value;
+        $scope.percent = 100 * (value / $scope.max);
+    };
+
+    $scope.tab = 'article';
+    $scope.classa = 'active';
+    $scope.classb = '';
+
+    $scope.tabchange = function (tab, a) {
+        //        console.log(tab);
+        $scope.tab = tab;
+        if (a == 1) {
+
+            $scope.classa = "active";
+            $scope.classb = '';
+        } else {
+
+            $scope.classa = '';
+            $scope.classb = "active";
+        }
+    };
+})
+
+
+.controller('TeacherCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+    $scope.template = TemplateService.changecontent("teacher-listing");
+    $scope.menutitle = NavigationService.makeactive("Teacher Listing");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.rowdata = [{
+        img: "img/a2.jpg",
+        title: "Conscious Eating - YourBody Knows Best",
+        data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
+
+    }, {
+        img: "img/a2.jpg",
+        title: "Conscious Eating - YourBody Knows Best",
+        data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
+
+    }, {
+        img: "img/a2.jpg",
+        title: "Conscious Eating - YourBody Knows Best",
+        data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
+
+
+    }, {
+        img: "img/a2.jpg",
+        title: "Conscious Eating - YourBody Knows Best",
+        data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
+
+
+    }];
+
+    $scope.tab = 'article';
+    $scope.classa = 'active';
+    $scope.classb = '';
+
+    $scope.tabchange = function (tab, a) {
+        //        console.log(tab);
+        $scope.tab = tab;
+        if (a == 1) {
+
+            $scope.classa = "active";
+            $scope.classb = '';
+        } else {
+
+            $scope.classa = '';
+            $scope.classb = "active";
+        }
+    };
+})
+
+.controller('TeachProfileCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+    $scope.template = TemplateService.changecontent("teacher-profile");
+    $scope.menutitle = NavigationService.makeactive("Teacher Profile");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.rowdata = [{
+        img: "img/mom.jpg",
+        title: "Lorem ipsum dolor sit amet",
+        location: "Colaba, Mumbai",
+        style: "Ashtanga Vinyasa,Hatha Yoga,Vinyasa Flow",
+        timing: "9am - 6pm"
+    }, {
+        img: "img/mom.jpg",
+        title: "Lorem ipsum dolor sit amet",
+        location: "Colaba, Mumbai",
+        style: "Ashtanga Vinyasa,Hatha Yoga,Vinyasa Flow",
+        timing: "9am - 6pm"
+    }, {
+        img: "img/mom.jpg",
+        title: "Lorem ipsum dolor sit amet",
+        location: "Colaba, Mumbai",
+        style: "Ashtanga Vinyasa,Hatha Yoga,Vinyasa Flow",
+        timing: "9am - 6pm"
+    }];
+    $scope.rate = 2;
+    $scope.max = 5;
+    $scope.isReadonly = false;
+
+    $scope.hoveringOver = function (value) {
+        $scope.overStar = value;
+        $scope.percent = 100 * (value / $scope.max);
+    }
+    $scope.tab = 'article';
+    $scope.classa = 'active';
+    $scope.classb = '';
+
+    $scope.tabchange = function (tab, a) {
+        //        console.log(tab);
+        $scope.tab = tab;
+        if (a == 1) {
+
+            $scope.classa = "active";
+            $scope.classb = '';
+        } else {
+
+            $scope.classa = '';
+            $scope.classb = "active";
+        }
+    };
+})
+
+
+
+.controller('StudioDetailCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+    $scope.template = TemplateService.changecontent("studio-detail");
+    $scope.menutitle = NavigationService.makeactive("Studio Detail");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+    $scope.loveSlider = [{
+        img: "img/r2.jpg"
+
+    }, {
+        img: "img/r3.jpg"
+
+    }, {
+        img: "img/r4.jpg"
+
+    }];
+    $scope.rowdata = [{
+        img: "img/mom.jpg",
+        title: "Lorem ipsum dolor sit amet",
+        location: "Colaba, Mumbai",
+        style: "Ashtanga Vinyasa,Hatha Yoga,Vinyasa Flow",
+        timing: "9am - 6pm"
+    }, {
+        img: "img/mom.jpg",
+        title: "Lorem ipsum dolor sit amet",
+        location: "Colaba, Mumbai",
+        style: "Ashtanga Vinyasa,Hatha Yoga,Vinyasa Flow",
+        timing: "9am - 6pm"
+    }, {
+        img: "img/mom.jpg",
+        title: "Lorem ipsum dolor sit amet",
+        location: "Colaba, Mumbai",
+        style: "Ashtanga Vinyasa,Hatha Yoga,Vinyasa Flow",
+        timing: "9am - 6pm"
+    }];
+    $scope.rowdata2 = [{
+        img: "img/re1.jpg",
+        title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
+        location: "Colaba, Mumbai",
+        cuisine: "Italian, Continental",
+        costForTwo: " ₹ 500 -  ₹ 1000",
+        timing: "9am - 6pm"
+    }, {
+        img: "img/re1.jpg",
+        title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
+        location: "Colaba, Mumbai",
+        cuisine: "Italian, Continental",
+        costForTwo: " ₹ 500 -  ₹ 1000",
+        timing: "9am - 6pm"
+    }, {
+        img: "img/re1.jpg",
+        title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
+        location: "Colaba, Mumbai",
+        cuisine: "Italian, Continental",
+        costForTwo: " ₹ 500 -  ₹ 1000",
+        timing: "9am - 6pm"
+    }];
+
+    $scope.rate = 2;
+    $scope.max = 5;
+    $scope.isReadonly = false;
+
+    $scope.hoveringOver = function (value) {
+        $scope.overStar = value;
+        $scope.percent = 100 * (value / $scope.max);
+    }
+})
+
+.controller('StudioListCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+    $scope.template = TemplateService.changecontent("studio-list");
+    $scope.menutitle = NavigationService.makeactive("Studio List");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.check = {};
+    $scope.check.map = true;
+    $scope.loveSlider = [{
+        img: "img/r2.jpg"
+
+    }, {
+        img: "img/r3.jpg"
+
+    }, {
+        img: "img/r4.jpg"
+
+    }];
+    $scope.rowdata = [{
+            img: "img/mom.jpg",
+            title: "Lorem ipsum dolor sit amet",
+            data: "Colaba, Mumbai |Ashtanga Vinyasa,Hatha Yoga,Vinyasa Flow| 9am - 6pm"
+
+        }, {
+            img: "img/mom.jpg",
+            title: "Lorem ipsum dolor sit amet",
+            data: "Colaba, Mumbai | Hatha Yoga | 9am - 6pm"
+
+
+        },
+
+        {
+            img: "img/mom.jpg",
+            title: "Lorem ipsum dolor sit amet",
+            data: "Colaba, Mumbai | Ashtanga Vinyasa,Hatha Yoga,Vinyasa Flow | 9am - 6pm"
+
+
+        },
+
+    ];
+    $scope.rowdata1 = [{
+            img: "img/mom.jpg",
+            title: " ipsum dolor sit amet",
+            data: "Colaba, Mumbai |Ashtanga Vinyasa,Hatha Yoga,Vinyasa Flow| 9am - 6pm"
+
+        }, {
+            img: "img/mom.jpg",
+            title: " ipsum dolor sit amet",
+            data: "Colaba, Mumbai | Hatha Yoga | 9am - 6pm"
+
+
+        },
+
+        {
+            img: "img/mom.jpg",
+            title: " ipsum dolor sit amet",
+            data: "Colaba, Mumbai | Ashtanga Vinyasa,Hatha Yoga,Vinyasa Flow | 9am - 6pm"
+
+
+        },
+
+    ];
+
+    $scope.rate = 7;
+    $scope.max = 10;
+    $scope.isReadonly = false;
+
+    $scope.hoveringOver = function (value) {
+        $scope.overStar = value;
+        $scope.percent = 100 * (value / $scope.max);
+    }
+})
+
+
+.controller('RestaurantDetailCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+    $scope.template = TemplateService.changecontent("restaurant-detail");
+    $scope.menutitle = NavigationService.makeactive("Restaurant-Detail");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.loveSlider = [{
+        img: "img/r1.jpg"
+
+    }, {
+        img: "img/r2.jpg"
+
+    }, {
+        img: "img/r1.jpg"
+
+    }, {
+        img: "img/r2.jpg"
+
+    }];
+    $scope.accordian = [];
+    $scope.accordian.push({
+        isFirstOpen: true,
+        isFirstDisabled: false
+    });
+    $scope.accordian.push({
+        isFirstOpen: true,
+        isFirstDisabled: false
+    });
+    $scope.accordian.push({
+        isFirstOpen: true,
+        isFirstDisabled: false
+    });
+    $scope.accordian.push({
+        isFirstOpen: true,
+        isFirstDisabled: false
+    });
+    $scope.accordian.push({
+        isFirstOpen: true,
+        isFirstDisabled: false
+    });
+    $scope.accordian.push({
+        isFirstOpen: true,
+        isFirstDisabled: false
+    });
+    $scope.accordian.push({
+        isFirstOpen: true,
+        isFirstDisabled: false
+    });
+    $scope.rowdata = [{
+        img: "img/m1.jpg",
+        title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
+        data: "Colaba, Mumbai | Italian, Continental Cost for 2:  ₹ 500 -  ₹ 1000 | 9am - 6pm"
+
+    }, {
+        img: "img/m1.jpg",
+        title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
+        data: "Colaba, Mumbai | Italian, Continental Cost for 2:  ₹ 500 -  ₹ 1000 | 9am - 6pm"
+    }, {
+        img: "img/m1.jpg",
+        title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
+        data: "Colaba, Mumbai | Italian, Continental Cost for 2:  ₹ 500 -  ₹ 1000 | 9am - 6pm"
+
+
+    }, {
+        img: "img/m1.jpg",
+        title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
+        data: "Colaba, Mumbai | Italian, Continental Cost for 2:  ₹ 500 -  ₹ 1000 | 9am - 6pm"
+
+
+    }, {
+        img: "img/m1.jpg",
+        title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
+        data: "Colaba, Mumbai | Italian, Continental Cost for 2:  ₹ 500 -  ₹ 1000 | 9am - 6pm"
+
+
+    }, {
+        img: "img/m1.jpg",
+        title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
+        data: "Colaba, Mumbai | Italian, Continental Cost for 2:  ₹ 500 -  ₹ 1000 | 9am - 6pm"
+
+    }];
+})
+
+
+
+.controller('headerctrl', function ($scope, TemplateService, $uibModal) {
     $scope.template = TemplateService;
-    $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+    $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
         $(window).scrollTop(0);
     });
     $.fancybox.close(true);
@@ -1101,7 +1763,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     //         scope: $scope
     //     });
     // };
-    $scope.sign = function() {
+    $scope.sign = function () {
         $uibModal.open({
             animation: true,
             templateUrl: "views/modal/signup.html",
@@ -1109,7 +1771,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             windowClass: "size"
         });
     };
-    $scope.signup = function() {
+    $scope.signup = function () {
         $uibModal.open({
             animation: true,
             templateUrl: "views/modal/sign.html",
@@ -1119,10 +1781,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     };
     $scope.showDiv = false;
 
-    $scope.openShowDiv = function() {
+    $scope.openShowDiv = function () {
         $scope.showDiv = true;
     }
-    $scope.closeShowDiv = function() {
+    $scope.closeShowDiv = function () {
         $scope.showDiv = false;
     }
 })
@@ -1130,9 +1792,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
 
-.controller('languageCtrl', function($scope, TemplateService, $translate, $rootScope) {
+.controller('languageCtrl', function ($scope, TemplateService, $translate, $rootScope) {
 
-    $scope.changeLanguage = function() {
+    $scope.changeLanguage = function () {
         console.log("Language CLicked");
 
         if (!$.jStorage.get("language")) {

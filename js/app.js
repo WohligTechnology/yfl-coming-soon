@@ -10,7 +10,7 @@ var firstapp = angular.module('firstapp', [
     'imageupload'
 ]);
 
-firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
+firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
     // for http request with session
     $httpProvider.defaults.withCredentials = true;
     $stateProvider
@@ -68,30 +68,91 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
         controller: 'FormNutrionistCtrl'
     })
 
-
-
-
-
     .state('form-restaurant', {
         url: "/form-restaurant",
         templateUrl: "views/template.html",
         controller: 'FormRestaurantCtrl'
+    })
+
+    .state('article', {
+            url: "/article",
+            templateUrl: "views/template.html",
+            controller: 'ArticleCtrl'
+        })
+        .state('recipes-detail', {
+            url: "/recipes-detail",
+            templateUrl: "views/template.html",
+            controller: 'RecipesDetailCtrl'
+        })
+        .state('article-detail', {
+            url: "/article-detail",
+            templateUrl: "views/template.html",
+            controller: 'ArticleDetailCtrl'
+        })
+        .state('restaurant-detail', {
+            url: "/restaurant-detail",
+            templateUrl: "views/template.html",
+            controller: 'RestaurantDetailCtrl'
+        })
+        .state('restaurant', {
+            url: "/restaurant",
+            templateUrl: "views/template.html",
+            controller: 'RestaurantCtrl'
+        })
+
+    .state('studio-detail', {
+        url: "/studio-detail",
+        templateUrl: "views/template.html",
+        controller: 'StudioDetailCtrl'
+    })
+
+    .state('teacher-listing', {
+        url: "/teacher-listing",
+        templateUrl: "views/template.html",
+        controller: 'TeacherCtrl'
+    })
+
+    .state('style-listing', {
+        url: "/style-listing",
+        templateUrl: "views/template.html",
+        controller: 'StyleListCtrl'
+    })
+
+    .state('style-detail', {
+        url: "/style-detail",
+        templateUrl: "views/template.html",
+        controller: 'StyleDetailCtrl'
+    })
+
+    .state('teacher-profile', {
+        url: "/teacher-profile",
+        templateUrl: "views/template.html",
+        controller: 'TeachProfileCtrl'
+    })
+
+
+    .state('studio-list', {
+        url: "/studio-list",
+        templateUrl: "views/template.html",
+        controller: 'StudioListCtrl'
     });
+
+
     $urlRouterProvider.otherwise("/");
     $locationProvider.html5Mode(isproduction);
 });
 
 
-firstapp.directive('img', function($compile, $parse) {
+firstapp.directive('img', function ($compile, $parse) {
     return {
         restrict: 'E',
         replace: false,
-        link: function($scope, element, attrs) {
+        link: function ($scope, element, attrs) {
             var $element = $(element);
             if (!attrs.noloading) {
                 $element.after("<img src='img/loading.gif' class='loading' />");
                 var $loading = $element.next(".loading");
-                $element.load(function() {
+                $element.load(function () {
                     $loading.remove();
                     $(this).addClass("doneLoading");
                 });
@@ -101,11 +162,11 @@ firstapp.directive('img', function($compile, $parse) {
         }
     };
 });
-firstapp.directive('ngEnter', function() {
-    return function(scope, element, attrs) {
-        element.bind("keydown keypress", function(event) {
+firstapp.directive('ngEnter', function () {
+    return function (scope, element, attrs) {
+        element.bind("keydown keypress", function (event) {
             if (event.which === 13) {
-                scope.$apply(function() {
+                scope.$apply(function () {
                     scope.$eval(attrs.ngEnter);
                 });
 
@@ -116,11 +177,11 @@ firstapp.directive('ngEnter', function() {
 });
 
 
-firstapp.directive('fancyboxBox', function($document) {
+firstapp.directive('fancyboxBox', function ($document) {
     return {
         restrict: 'EA',
         replace: false,
-        link: function(scope, element, attr) {
+        link: function (scope, element, attr) {
             var $element = $(element);
             var target;
             if (attr.rel) {
@@ -141,28 +202,28 @@ firstapp.directive('fancyboxBox', function($document) {
     };
 });
 
-firstapp.directive('autoHeight', function($compile, $parse) {
+firstapp.directive('autoHeight', function ($compile, $parse) {
     return {
         restrict: 'EA',
         replace: false,
-        link: function($scope, element, attrs) {
+        link: function ($scope, element, attrs) {
             var $element = $(element);
             var windowHeight = $(window).height();
-            var addHeight = function() {
+            var addHeight = function () {
                 $element.css("min-height", windowHeight);
             };
             addHeight();
         }
     };
 });
-firstapp.directive('autoHeightfixed', function($compile, $parse) {
+firstapp.directive('autoHeightfixed', function ($compile, $parse) {
     return {
         restrict: 'EA',
         replace: false,
-        link: function($scope, element, attrs) {
+        link: function ($scope, element, attrs) {
             var $element = $(element);
             var windowHeight = $(window).height();
-            var addHeight = function() {
+            var addHeight = function () {
                 $element.css("height", windowHeight);
             };
             addHeight();
@@ -170,11 +231,11 @@ firstapp.directive('autoHeightfixed', function($compile, $parse) {
     };
 });
 
-firstapp.directive('autoHeightfixed', function($compile, $parse) {
+firstapp.directive('autoHeightfixed', function ($compile, $parse) {
     return {
         restrict: 'EA',
         replace: false,
-        link: function($scope, element, attrs) {
+        link: function ($scope, element, attrs) {
             var $element = $(element);
             var feed = new Instafeed({
                 get: 'tagged',
@@ -187,10 +248,10 @@ firstapp.directive('autoHeightfixed', function($compile, $parse) {
 });
 
 
-firstapp.directive('numbersOnly', function() {
+firstapp.directive('numbersOnly', function () {
     return {
         require: 'ngModel',
-        link: function(scope, element, attr, ngModelCtrl) {
+        link: function (scope, element, attr, ngModelCtrl) {
             function fromUser(text) {
                 if (text) {
                     var transformedInput = text.replace(/[^0-9]/g, '');
@@ -208,10 +269,10 @@ firstapp.directive('numbersOnly', function() {
     };
 });
 
-firstapp.directive('aplhaOnly', function() {
+firstapp.directive('aplhaOnly', function () {
     return {
         require: 'ngModel',
-        link: function(scope, element, attr, ngModelCtrl) {
+        link: function (scope, element, attr, ngModelCtrl) {
             function fromUser(text) {
                 var transformedInput = text.replace(/[^a-zA-Z]/g, '');
                 if (transformedInput !== text) {
@@ -226,8 +287,8 @@ firstapp.directive('aplhaOnly', function() {
 });
 
 
-firstapp.filter('uploadpath', function() {
-    return function(input, width, height, style) {
+firstapp.filter('uploadpath', function () {
+    return function (input, width, height, style) {
         var other = "";
         if (width && width != "") {
             other += "&width=" + width;
@@ -248,8 +309,8 @@ firstapp.filter('uploadpath', function() {
     };
 });
 
-firstapp.filter('showbtn', function(NavigationService) {
-    return function(input, data) {
+firstapp.filter('showbtn', function (NavigationService) {
+    return function (input, data) {
         if (input && data && input != "" && data != "") {
             if (data._id && data.shortList && data.shortList.length > 0) {
                 var foundIndex = _.findIndex(data.shortList, {
@@ -268,25 +329,25 @@ firstapp.filter('showbtn', function(NavigationService) {
         }
     };
 });
-firstapp.directive('imageonload', function() {
+firstapp.directive('imageonload', function () {
     return {
         restrict: 'A',
-        link: function(scope, element, attrs) {
-            element.bind('load', function() {
+        link: function (scope, element, attrs) {
+            element.bind('load', function () {
                 scope.$apply(attrs.imageonload);
             });
         }
     };
 });
 
-firstapp.directive('uploadImage', function($http, $filter) {
+firstapp.directive('uploadImage', function ($http, $filter) {
     return {
         templateUrl: 'views/directive/uploadFile.html',
         scope: {
             model: '=ngModel',
             callback: "=ngCallback"
         },
-        link: function($scope, element, attrs) {
+        link: function ($scope, element, attrs) {
             $scope.isMultiple = false;
             $scope.inObject = false;
             if (attrs.multiple || attrs.multiple === "") {
@@ -299,7 +360,7 @@ firstapp.directive('uploadImage', function($http, $filter) {
             if ($scope.model) {
                 if (_.isArray($scope.model)) {
                     $scope.image = [];
-                    _.each($scope.model, function(n) {
+                    _.each($scope.model, function (n) {
                         $scope.image.push({
                             url: $filter("uploadpath")(n)
                         });
@@ -310,10 +371,10 @@ firstapp.directive('uploadImage', function($http, $filter) {
             if (attrs.inobj || attrs.inobj === "") {
                 $scope.inObject = true;
             }
-            $scope.clearOld = function() {
+            $scope.clearOld = function () {
                 $scope.model = [];
             };
-            $scope.uploadNow = function(image) {
+            $scope.uploadNow = function (image) {
                 var Template = this;
                 image.hide = true;
                 var formData = new FormData();
@@ -323,7 +384,7 @@ firstapp.directive('uploadImage', function($http, $filter) {
                         'Content-Type': undefined
                     },
                     transformRequest: angular.identity
-                }).success(function(data) {
+                }).success(function (data) {
                     console.log("success");
                     if ($scope.callback) {
                         $scope.callback(data);
@@ -346,18 +407,18 @@ firstapp.directive('uploadImage', function($http, $filter) {
     };
 });
 
-firstapp.directive('img', function($compile, $parse) {
+firstapp.directive('img', function ($compile, $parse) {
 
     return {
         restrict: 'E',
         replace: false,
-        link: function($scope, element, attrs) {
+        link: function ($scope, element, attrs) {
             var $element = $(element);
 
             if (!attrs.noloading) {
                 $element.after("<img src='img/loading.gif' class='loading' />");
                 var $loading = $element.next(".loading");
-                $element.load(function() {
+                $element.load(function () {
                     $loading.remove();
                     $(this).addClass("doneLoading");
                 });
@@ -368,14 +429,14 @@ firstapp.directive('img', function($compile, $parse) {
     };
 });
 
-firstapp.directive('fancybox', function($compile, $parse) {
+firstapp.directive('fancybox', function ($compile, $parse) {
     return {
         restrict: 'EA',
         replace: false,
-        link: function($scope, element, attrs) {
+        link: function ($scope, element, attrs) {
             $element = $(element);
             console.log("Checking Fancybox");
-            setTimeout(function() {
+            setTimeout(function () {
                 $(".various").fancybox({
                     maxWidth: 800,
                     maxHeight: 600,
@@ -391,11 +452,11 @@ firstapp.directive('fancybox', function($compile, $parse) {
         }
     };
 });
-firstapp.directive('fancybox2', function($compile, $parse) {
+firstapp.directive('fancybox2', function ($compile, $parse) {
     return {
         restrict: 'C',
         replace: false,
-        link: function($scope, element, attrs) {
+        link: function ($scope, element, attrs) {
 
             $(".fancybox2").fancybox({
                 openEffect: 'none',
@@ -407,11 +468,11 @@ firstapp.directive('fancybox2', function($compile, $parse) {
     };
 });
 
-firstapp.directive('onlyDigits', function() {
+firstapp.directive('onlyDigits', function () {
     return {
         require: 'ngModel',
         restrict: 'A',
-        link: function(scope, element, attr, ctrl) {
+        link: function (scope, element, attr, ctrl) {
             function inputValue(val) {
                 if (val) {
                     var digits = val.replace(/[^0-9]/g, '');
@@ -430,7 +491,7 @@ firstapp.directive('onlyDigits', function() {
 });
 
 
-firstapp.config(function($translateProvider) {
+firstapp.config(function ($translateProvider) {
     $translateProvider.translations('en', LanguageEnglish);
     $translateProvider.translations('hi', LanguageHindi);
     $translateProvider.preferredLanguage('en');
