@@ -98,19 +98,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     $scope.sliders = [{
         id: 0,
-        image: 'img/new/carren.jpg',
+        image: 'img/new/yoga-classes.jpg',
         head: " BLOG",
         descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }, {
         id: 1,
-        image: 'img/new/carren.jpg',
+        image: 'img/new/yoga-classes.jpg',
         head: " BLOG",
         descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
     }, {
         id: 2,
-        image: 'img/new/carren.jpg',
+        image: 'img/new/yoga-classes.jpg',
         head: " BLOG",
         descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat."
 
