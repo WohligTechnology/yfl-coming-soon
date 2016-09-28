@@ -51,7 +51,7 @@ a {
 }
 
 body {
-    padding-top: 69px;
+    padding-top: 100px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: $font-family-serif;
@@ -258,7 +258,6 @@ a {
 
 .yfl-relative {
     position: relative;
-    margin-top: 18px;
     .main-middle {
         background-image: url("../img/subscribe_bg.jpg");
         background-size: cover;
@@ -1759,7 +1758,6 @@ $green: #51b1ac !default;
 }
 
 .home-slider {
-    margin-top: 30px;
     .overlay {
         height: auto;
         z-index: 1;
@@ -1853,6 +1851,24 @@ $green: #51b1ac !default;
                 cursor: default;
             }
         }
+    }
+}
+
+.glyphicon {
+    color: $brand-warning;
+    // &:hover{
+    //   color: $main;
+    //   color:#333;
+    // }
+    &:active {
+        color: $brand-warning;
+    }
+    &:focus {
+        color: $brand-warning;
+        outline: 0;
+    }
+    &:visited {
+        color: $brand-warning;
     }
 }
 
