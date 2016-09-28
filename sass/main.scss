@@ -57,6 +57,10 @@ body {
     font-family: $font-family-serif;
 }
 
+.capitalize {
+    text-transform: capitalize;
+}
+
 .btn,
 button {
     font-family: $font-family-sans-serif;
@@ -1869,6 +1873,45 @@ $green: #51b1ac !default;
     }
     &:visited {
         color: $brand-warning;
+    }
+}
+
+.studio-description {
+    .sliding-text {
+        .select-city {
+            width: auto;
+        }
+        .follow {
+            margin-left: 85px;
+            button {
+                padding: 17px 70px;
+                border: none;
+                span {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    top: 0;
+                    padding: 8px;
+                    background-color: rgba(0, 0, 0, .1);
+                }
+            }
+        }
+        .decsription {
+            p {
+                width: 500px;
+                padding-bottom: 15px;
+            }
+            .more {
+                color: #51b1ac;
+                border-bottom: 1px solid #51b1ac;
+                font-size: 16px;
+                font-style: italic;
+                cursor: pointer;
+            }
+        }
+        .rating {
+            margin: 15px 0;
+        }
     }
 }
 
