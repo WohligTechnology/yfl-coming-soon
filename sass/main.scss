@@ -7,6 +7,7 @@
 @import "../bower_components/fancyBox/source/jquery.fancybox.css";
 @import "../bower_components/swiper/dist/css/swiper.min.css";
 @import "../bower_components/smart-app-banner/smart-app-banner.css";
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
 
 /* Start writing sass here */
 
@@ -24,8 +25,10 @@ $magic-checkbox-size: 20px !default;
 $magic-dot-size: 8px !default;
 $magic-border-color: #c0c0c0 !default;
 $magic-main-color: $brand-primary !default;
-$magic-disabled-color: lighten($magic-border-color, 14%) !default;
-$magic-disabled-checked-color: lighten($magic-main-color, 30%) !default;
+$magic-disabled-color: lighten($magic-border-color,
+14%) !default;
+$magic-disabled-checked-color: lighten($magic-main-color,
+30%) !default;
 $font-family-sans-serif: "Jura",
 Helvetica,
 Arial,
