@@ -803,6 +803,12 @@ hr {
     position: relative;
 }
 
+.main-slider {
+    .flex-direction-nav {
+        display: none;
+    }
+}
+
 .error-msg {
     position: absolute;
     left: 50%;
@@ -1667,10 +1673,6 @@ $green: #51b1ac !default;
 
 .mt40 {
     margin-top: 40px;
-}
-
-.mt20 {
-    margin-top: 20px;
 }
 
 .mt30 {

@@ -221,6 +221,10 @@
     font-size: 28px;
 }
 
+.f24 {
+    font-size: 24px;
+}
+
 // .home-slider .flex-direction-nav a.flex-prev:before {
 //     content: '';
 //     background: url(../img/restaurant/left1.png) center no-repeat;
@@ -273,18 +277,30 @@
 //     right: 80px;
 //     text-align: right;
 // }
-// .input-span,
-// placeholder {
-//     border-left: 0;
-//     border-right: 0;
-//     border-top: 0;
-//     background: 0 0;
-//     border-bottom: 1px solid #fff;
-//     color: #f5bf33;
-// }
+// 
 // .flexslider .flex-direction-nav a {
 //     display: block;
 // }
+.flexslider {
+    border: none;
+    margin: 0;
+    background-color: transparent;
+}
+
+.flex-control-nav {
+    bottom: 10px;
+    z-index: 9;
+}
+
+.flex-control-paging li a {
+    background-color: #fff;
+}
+
+.nav-none .flex-control-paging li a.flex-active {
+    background: #f5bf33;
+    cursor: default;
+}
+
 .f18 {
     font-size: 18px;
 }
@@ -301,8 +317,8 @@
     margin: 0 30px;
 }
 
-.mt35 {
-    margin-top: 35px;
+.mt50 {
+    margin-top: 50px;
 }
 
 .select-cl {
@@ -385,4 +401,56 @@
 
 .onoffswitch-checkbox {
     display: none;
+}
+
+.input-span,
+placeholder {
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    background: 0 0;
+    border-bottom: 1px solid #fff;
+    color: #f5bf33;
+}
+
+.box-data {
+    padding: 35px 35px 15px;
+    border-bottom: 2px solid rgba(51, 51, 51, .59);
+}
+
+.top-left {
+    background: #f4be33;
+    display: inline-block;
+    padding: 5px;
+}
+
+.box-title {
+    margin: 0 26px 0 0;
+}
+
+.cpointer {
+    cursor: pointer;
+}
+
+.box-datas span {
+    font-size: 18px;
+    color: #4e4f51;
+    font-weight: 400;
+    margin: 0 200px 0 0;
+    display: block;
+}
+
+.box-data span {
+    font-weight: 300;
+}
+
+.list-view {
+    height: 700px;
+    overflow-x: auto;
+    ul {
+        padding: 0;
+        li {
+            list-style: none;
+        }
+    }
 }

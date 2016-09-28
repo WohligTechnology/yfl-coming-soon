@@ -12,8 +12,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         'img/slider_food.jpg',
         'img/slider_love.jpg'
     ];
-    $scope.myInterval = 5000;
-    $scope.noWrapSlides = false;
+    // $scope.myInterval = 5000;
+    // $scope.noWrapSlides = false;
     $scope.slides = [{
         id: 0,
         image: 'img/new/form-food.jpg',
