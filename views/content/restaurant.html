@@ -11,8 +11,9 @@
                         <h2 class="font-rubik color-white f40 m-auto">Amica Cafe</h2>
                         <h4 class="font-rubik color-white f28 mob-margin m-font12">Lorem Ipsum Dolor Sit Amet</h4>
                         <h4 class="font-rubik color-white f28 mob-margin m-font12">Consectetuer ati.</h4>
-                        <div class="box-rat mt35 hidden-md hidden-lg">
-                            <img src="img/restaurant/rating.png" alt="">
+                        <div class="box-rat rating mt35 hidden-md hidden-lg">
+                            <span uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"
+                                titles="['one','two','three']" aria-labelledby="default-rating"></span>
                         </div>
                         <div class="btn-know mt35 mar-mob">
                             <button type="button" class="btn-white font-rubik text-up kno-btn" name="button">KNOW MORE</button>
@@ -181,15 +182,16 @@
                                 <div class="box-datas">
                                     <span class="font-rubik">{{item.data}}</span>
                                 </div>
-                                <div class="box-rat mt35">
-                                    <img src="img/restaurant/rating.png" alt="">
+                                <div class="box-rat mt35 rating">
+                                    <span uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"
+                                        titles="['one','two','three']" aria-labelledby="default-rating"></span>
                                 </div>
                                 <div class="box-like mt20">
                                     <div class="pull-left">
                                         <img src="img/restaurant/likes.png" alt="" class="img-responsive">
                                     </div>
                                     <div class="pull-right btn-apply mt-25">
-                                        <button type="button" class="btn-green font-rubikm f18 text-up" ui-sref="restaurant-detail">Know more</button>
+                                        <button type="button" class="btn-green font-rubikm f18 text-up btn btn-primary btn-texture" ui-sref="restaurant-detail">Know more</button>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>

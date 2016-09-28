@@ -76,11 +76,61 @@
     }
 }
 
+.bg-white {
+    background-color: #fff;
+    padding: 50px 0;
+}
+
 .teacher-listing {
+    .teachers-list {
+        padding: 15px;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 10px;
+        box-shadow: 2px 2px 2px #ccc;
+    }
+    .bg-grey {
+        background-color: rgba(204, 204, 204, .14);
+    }
+    .sort .select-cl {
+        border-color: #464646;
+        height: 35px;
+        padding: 0 50px 0 15px;
+        margin: 20px 0;
+        cursor: pointer;
+    }
     .style-banner {
         height: 320px;
         background-image: url("../img/teacher/teaching.jpg");
     }
+    .rounded {
+        position: absolute;
+        top: 25px;
+        left: 15px;
+        height: 115px;
+        width: 115px;
+        border-radius: 100%;
+        background-image: url("../img/teacher/achal.png");
+        background-color: #fff;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .teacher-detail {
+        padding-left: 150px;
+    }
+    .know-m {
+        width: 45%;
+        padding: 10px 0;
+        border: none;
+        margin-top: 40px;
+    }
+}
+
+.style-banner .banner-text {
+    top: 50%;
+    left: 50%;
+    text-align: center;
 }
 
 .style-listing {
@@ -102,7 +152,7 @@
             width: 115px;
             border-radius: 100%;
             background-repeat: no-repeat;
-            background-image: url("../img/lamp.png");
+            background-image: url("../img/teacher/lamp.png");
             background-color: #ffffff;
             background-position: top center;
             background-size: cover;
@@ -469,3 +519,26 @@ placeholder {
     border-radius: 0;
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, #51b1ac), color-stop(0.72, #51b1ac), color-stop(0.86, #51b1ac));
 }
+
+.btn-apply button {
+    padding: 14px 70px;
+    border: none;
+}
+
+.glyphicon {
+    color: #f4be33;
+    &:active {
+        color: #f4be33;
+    }
+    &:focus {
+        color: #f4be33;
+        outline: 0;
+    }
+    &:visited {
+        color: #f4be33;
+    }
+}
+
+// .glyphicon-star:before {
+//     content: "\f006";
+// }

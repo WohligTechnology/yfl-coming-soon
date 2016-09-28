@@ -662,6 +662,56 @@
                 min-height: 0;
             }
         }
+        .list-view .box-datas span {
+            width: 255px;
+            font-size: 14px;
+        }
+        .list-view .box-like img,
+        .user-img {
+            width: 50px;
+        }
+        .list-view .box-like .btn-apply {
+            margin-top: 0;
+        }
+        .btn-apply button {
+            padding: 14px 50px;
+        }
+        .select-cl {
+            padding: 3px 0;
+            height: 35px;
+        }
+        .f18 {
+            font-size: 11px;
+        }
+        .home-slider .slider-data {
+            left: 50%;
+        }
+        .carousel-caption {
+            .btn {
+                padding: 8px 6px;
+            }
+        }
+        .slider-data .kno-btn {
+            font-size: 12px;
+            font-weight: 400;
+            padding: 5px 40px;
+            border: 1px solid #fff;
+        }
+        .mob-margin {
+            margin: 0;
+        }
+        .slider-data .f28 {
+            font-size: 14px;
+        }
+        .f40 {
+            font-size: 15px;
+        }
+        .style-listing .style-banner,
+        .teacher-listing .style-banner {
+            height: 200px;
+            background-position: center;
+            background-size: cover;
+        }
     }
     
     @media (max-width:480px) {
