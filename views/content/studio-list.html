@@ -122,7 +122,8 @@
                                 <span class="color-second high">{{item.data}}</span>
                             </div>
                             <div class="rating text-center mt20">
-                                <img src="img/star.png" alt="">
+                                <span uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"
+                                    titles="['one','two','three']" aria-labelledby="default-rating"></span>
                             </div>
                             <div class="text-center mt10">
                                 <button class="know-m text-up btn-green font-light f18">know more</button>

@@ -1,0 +1,412 @@
+<div class="studio-detail">
+<section class="studio-description">
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 padding0 col-sm-6">
+      <flex-slider class="carousel " flex-slide="love in loveSlider track by $index">
+          <li>
+              <div class="img position-relative distance">
+
+                  <img ng-src="{{love.img}}" alt="">
+
+
+
+                  <!-- <div class="slider-data">
+                      <h2 class="font-rubik color-white f40 m-auto">Amica Cafe</h2>
+                      <h4 class="font-rubik color-white f28 mob-margin m-font12">Lorem Ipsum Dolor Sit Amet</h4>
+                      <h4 class="font-rubik color-white f28 mob-margin m-font12">Consectetuer ati.</h4>
+                      <div class="box-rat mt35 hidden-md hidden-lg">
+                          <img src="img/rating.png" alt="">
+                      </div>
+                      <div class="btn-know mt35 mar-mob">
+                          <button type="button" class="btn-white font-rubik text-up kno-btn" name="button">KNOW MORE</button>
+                      </div>
+                  </div> -->
+              </div>
+          </li>
+      </flex-slider>
+    </div>
+    <div class="col-md-6 padding0 col-sm-6">
+      <div class="sliding-text">
+      <div class="rest-name">
+          <h3 class="font-rubik color-second font500 text-up">Kadambari Yoga <br>Fitness Studio</h3>
+      </div>
+      <div class="select-city display-inline">
+          <select class="form-control font-rubik text-caps  select-cl color-bl">
+              <option>Colaba, Mumbai</option>
+              <option>Colaba, Mumbai</option>
+              <option>Colaba, Mumbai</option>
+
+          </select>
+      </div>
+      <div class="follow display-inline">
+         <button type="button" class="btn-green font-rubikm  text-up relative"><span><img src="img/hand-gesture.png" class="img-responsive" alt="" /></span>follow</button>
+       </div>
+
+
+      <div class="rating ">
+<span uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+</div>
+<div class="decsription">
+<p class="line">The yoga studio is an ambient space that was created by <span class="green">Seema Sondhi in 2001,</span> where she could spread the light of yoga.  The thought is to help individuals on a healthier and more peaceful path by teaching them a system of exercise that fully integrates the body, mind and soul. </p>
+<span class="capitalize more">read more<i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+</div>
+    </div>
+    </div>
+  </div>
+</div>
+</section>
+<section class="tabs">
+  <div class="container">
+  <div class="tab">
+    <ul class="list-inline">
+      <li><a class="text-uppercase" href="" ng-click="changePage(styles)">classes</a></li>
+      <li><a class="text-uppercase" href="">yoga styles</a></li>
+      <li><a class="text-uppercase" href="">teachers</a></li>
+      <li><a class="text-uppercase" href="">restaurants</a></li>
+    </ul>
+  <!-- <uib-tabset>
+      <uib-tab>
+          <uib-tab-heading>
+              <span class="text-uppercase">classes</span>
+          </uib-tab-heading>
+      </uib-tab>
+      <uib-tab>
+          <uib-tab-heading>
+              <span class="text-uppercase">yoga styles</span>
+          </uib-tab-heading>
+      </uib-tab>
+      <uib-tab>
+          <uib-tab-heading>
+              <span class="text-uppercase">teachers</span>
+          </uib-tab-heading>
+      </uib-tab>
+      <uib-tab>
+          <uib-tab-heading>
+              <span class="text-uppercase">restaurants</span>
+          </uib-tab-heading>
+      </uib-tab>
+    </uib-tabset> -->
+      </div>
+      </div>
+</section>
+    <section class="schedule">
+      <div class="container">
+<h3 class="text-up text-center font-light">upcoming class schedule</h3>
+<div class="cal-slider">
+  <div class="date-slider">
+      <span class="color-white font-rubikm">10 December, 2016 (Thursday)</span>
+  </div>
+  <div class="calender">
+    <span class="color-white text-up font-rubikm">Calender</span>
+    <span><i class="fa color-white pull-right fa-calendar" aria-hidden="true"></i></span>
+  </div>
+</div>
+<div class="drop-boxes">
+  <div class="style-box">
+    <span class="pull-left text-up font-rubikm">Style</span>
+    <span class="caret pull-right mt10"></span>
+  </div>
+  <div class="style-box">
+    <span class="pull-left text-up font-rubikm">Teacher</span>
+    <span class="caret pull-right mt10"></span>
+  </div>
+  <div class="style-box">
+    <span class="pull-left text-up font-rubikm">Timing</span>
+    <span class="caret pull-right mt10"></span>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<table class="table table-striped table-responsive">
+    <!-- <thead>
+      <tr>
+        <th colspan="2" class="text-center">10 December, 2016 (Thursday)  </th>
+        <th class="text-center text-up bg-green color-white"><span class="pull-left font-rubikm">Calendar</span><i class="fa pull-right fa-calendar" aria-hidden="true"></i></th>
+      </tr>
+    </thead> -->
+    <tbody>
+      <!-- <tr class="wide">
+        <td colspan="1" class="bg-green">
+          <div class="btn-group">
+      <button id="single-button" type="button" class="btn btn-primary text-up">
+        style <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+      </ul>
+    </div>
+        </td>
+        <td colspan="1" class="bg-green">
+          <div class="btn-group">
+    <button id="single-button" type="button" class="btn btn-primary text-up">
+      timing <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Another action</a></li>
+      <li><a href="#">Something else here</a></li>
+    </ul>
+  </div>
+</td>
+<td colspan="1" class="bg-green">
+  <div class="btn-group">
+<button id="single-button" type="button" class="btn btn-primary text-up">
+teacher <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="#">Action</a></li>
+<li><a href="#">Another action</a></li>
+<li><a href="#">Something else here</a></li>
+</ul>
+</div>
+</td>
+      </tr> -->
+      <tr>
+        <td class="text-uppercase text-center">HATHA Yoga (MID LEVEL)</td>
+        <td><span class="pull-left">Alex Hunt</span><span class="pull-right">6:30am-8am</span></td>
+        <td class="reserve-book"><span class="pull-left mt10"><i class="fa fa-inr" aria-hidden="true"></i>750/-Per person</span><span class="pull-right relative"><button type="button" class="btn-green font-rubik text-up kno-btn no-hover" name="button">RESERVE</button>
+      </span></td>
+      </tr>
+        <!-- <button type="button" class="on-hover font-rubik text-up kno-btn " name="button">booked</button> -->
+      <tr>
+        <td class="text-uppercase text-center">HATHA Yoga (MID LEVEL)</td>
+        <td><span class="pull-left">Alex Hunt</span><span class="pull-right">6:30am-8am</span></td>
+        <td class="reserve-book"><span class="pull-left mt10"><i class="fa fa-inr" aria-hidden="true"></i>750/-Per person</span><span class="pull-right relative"><button type="button" class="btn-green font-rubik text-up kno-btn no-hover" name="button">RESERVE</button></span></td>
+      </tr>
+      <tr>
+        <td class="text-uppercase text-center">HATHA Yoga (MID LEVEL)</td>
+        <td><span class="pull-left">Alex Hunt</span><span class="pull-right">6:30am-8am</span></td>
+        <td class="reserve-book"><span class="pull-left mt10"><i class="fa fa-inr" aria-hidden="true"></i>750/-Per person</span><span class="pull-right relative"><button type="button" class="btn-green font-rubik text-up kno-btn no-hover" name="button">RESERVE</button></span></td>
+      </tr>
+      <tr>
+        <td class="text-uppercase text-center">HATHA Yoga (MID LEVEL)</td>
+        <td><span class="pull-left">Alex Hunt</span><span class="pull-right">6:30am-8am</span></td>
+        <td class="reserve-book"><span class="pull-left mt10"><i class="fa fa-inr" aria-hidden="true"></i>750/-Per person</span><span class="pull-right relative"><button type="button" class="btn-green font-rubik text-up kno-btn no-hover" name="button">RESERVE</button></span></td>
+      </tr>
+      <tr>
+        <td class="text-uppercase text-center">HATHA Yoga (MID LEVEL)</td>
+        <td><span class="pull-left">Alex Hunt</span><span class="pull-right">6:30am-8am</span></td>
+        <td class="reserve-book"><span class="pull-left mt10"><i class="fa fa-inr" aria-hidden="true"></i>750/-Per person</span><span class="pull-right relative"><button type="button" class="btn-green font-rubik text-up kno-btn no-hover" name="button">RESERVE</button></span></td>
+      </tr>
+    </tbody>
+  </table>
+      </div>
+    </section>
+    <section class="bik-ansura">
+        <div class="container-fluid padding0">
+      <div class="style-banner relative">
+      <!-- <img src="img/r7.jpg" class="img-responsive" alt=""> -->
+      <div class="banner-text">
+      <h3 class="text-uppercase font-rubik color-white font-light">yoga styles</h3>
+    </div>
+    </div>
+  </div>
+    </section>
+    <section class="yoga-styles" id="styles">
+      <div class="container">
+    <div class="style-description">
+      <div class="row">
+        <div class="col-md-6">
+<div class="style-detailing clearfix dotted">
+        <h3 class="text-up">anusura</h3>
+        <p class="line">Developed by American yogi John Friend in 1997, anusara yoga is a relative newcomer to the yoga world. Based on the belief that we are all filled with an intrinsic goodness, anusara seeks to use the physical practice of yoga to help students open their hearts, experience grace, and let their inner goodness shine.</p>
+        <button type="button" class=" pull-left white-button font-rubikm  text-up">Know more</button>
+        <button type="button" class="pull-right btn-green font-rubikm  text-up">view classes</button>
+        </div>
+        </div>
+        <div class="col-md-6">
+          <div class="style-detailing clearfix">
+<h3 class="text-up">bikram</h3>
+<p  class="line">Approximately 30 years ago, Bikram Choudhury developed this school of yoga where classes are held in artificially heated rooms. In a Bikram class, you will sweat like you've never sweated before as you work your way through a series of 26 poses (like ashtanga, a Bikram class alwaysfollows the same sequence).</p>
+<button type="button" class="pull-left white-button font-rubikm  text-up" ui-sref="">Know more</button>
+<button type="button" class="pull-right btn-green font-rubikm  text-up">view classes</button>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+    </section>
+    <section class="teach-descript">
+      <div class="bg-like mt30">
+        <div class="pos-top text-center">
+          <h3 class="font-rubik color-white font-light text-uppercase">teachers</h3>
+          <p class="font-rubik color-white  font-light">Lorem ipsum dolor sit amet, consectetur adipisicing labore dolorem aperiam amet</p>
+        <p class="font-rubik color-white   font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+      <div class="teach-details">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="teacher-name dotted">
+              <div class="row">
+                <div class="style-detailing clearfix">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <p class="rounded"></p>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-8">
+                  <div class="border-dotted">
+                  <h3 class="text-up">alex john</h3>
+                  <p>Expertise in Ashtanga Vinyasa,Hatha Yoga</p>
+                  <p class="line">For Vandana, yoga was a calling.She was a cabin crew for 9 years living abroad, when health and emotional setbacks brought her to yoga.</p>
+                </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class=" pull-left white-button font-rubikm  text-up" ui-sref="teacher-profile">Know more</button>
+            <button type="button" class="pull-right btn-green font-rubikm  text-up">view classes</button>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="teacher-name">
+              <div class="row">
+                <div class="style-detailing clearfix">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <p class="rounded"></p>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-8">
+                  <h3 class="text-up">alex john</h3>
+                  <p>Expertise in Ashtanga Vinyasa,Hatha Yoga</p>
+                  <p class="line">For Vandana, yoga was a calling.She was a cabin crew for 9 years living abroad, when health and emotional setbacks brought her to yoga.</p>
+                </div>
+              </div>
+              </div>
+              <button type="button" class=" pull-left white-button font-rubikm  text-up" ui-sref="teacher-profile">Know more</button>
+              <button type="button" class="pull-right btn-green font-rubikm  text-up">view classes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <section class="sondhi mt30">
+      <div class="container">
+        <h3 class="text-uppercase text-center mt0">more seema sondhi yoga centers</h3>
+      <div class="row">
+                  <div class="col-md-4 mt35" ng-repeat="item in rowdata track by $index">
+                      <div class="body-img position-relative">
+                          <div class="img-main position-relative">
+                              <img ng-src="{{item.img}}" alt="" class="img-responsive">
+                              <div class="sponser">
+                                  <div class="top-left">
+                                      <span>Sponsored</span>
+                                  </div>
+                                  <div class="top-right pull-right">
+                                      <img src="img/like.png" alt="" class="img-responsive">
+                                  </div>
+                                  <div class="clearfix"></div>
+                              </div>
+                          </div>
+                          <div class="title text-center">
+                              <h5 class="text-up color-bl f18 font-light">{{item.title}}</h5>
+                              <span class="color-second">{{item.location}}</span> <br>
+                              <span class="color-second">{{item.style}}</span> <br>
+                              <span class="color-second">{{item.timing}}</span>
+                          </div>
+                          <div class="rating text-center">
+                    <span uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+                    </div>
+                          <div class="text-center mt10">
+                              <button class="know-m text-up btn-green font-light " ui-sref="studio-list">know more</button>
+                          </div>
+                          <!-- <div class="second-layer">
+                            <div class="up-title">
+                              <h4>Seema Sondhi Yoga Studio </h4>
+                            </div>
+                            <div class="data-det mt15">
+                              <p>
+                                The yoga studio is an ambient space that was created by Seema Sondhi in 2001, where she could spread the light of yoga.  The thought is to help individuals on a healthier and more peaceful path by teaching them a system of exercise that fully integrates the body, mind and soul.
+                              </p>
+                            </div>
+                          <div class="position-relative" style="width: 100%; height: 100%;">
+                            <div class="text-center mt10 btn-down">
+                                <button class="know-m text-up btn-yellow font-light f18">know more</button>
+                            </div>
+                          </div>
+                          </div> -->
+
+                      </div>
+                  </div>
+
+              </div>
+              </div>
+    </section>
+    <section>
+        <div class="container-fluid padding0">
+      <div class="style-banner relative">
+      <!-- <img src="img/r6.jpg" class="img-responsive" alt=""> -->
+        <div class="banner-text">
+      <h3 class="text-uppercase font-rubik color-white font-light">restaurants</h3>
+      <p class="text-uppercase font-rubik color-white font-light">places to eat</p>
+    </div>
+    </div>
+  </div>
+    </section>
+    <!-- <section class="schedule">
+      <div class="container">
+
+      </div>
+    </section> -->
+    <section class="cafe">
+      <div class="container">
+        <p class="cafe-space capitalize color-bl f18 font-light text-center">Lorem ipsum dolor sit amet, consectetur.</p>
+      <div class="row ">
+          <div class="col-md-4 mt35" ng-repeat="item in rowdata2 track by $index">
+              <div class="body-img position-relative">
+                  <div class="img-main position-relative">
+                      <img ng-src="{{item.img}}" alt="" class="img-responsive">
+                      <div class="sponser">
+                          <div class="top-left">
+                              <span>Sponsored</span>
+                          </div>
+                          <div class="top-right pull-right">
+                              <img src="img/like.png" alt="" class="img-responsive">
+                          </div>
+                          <div class="clearfix"></div>
+                      </div>
+                  </div>
+                  <div class="title text-center">
+                      <h5 class="text-up color-bl f18 font-light">{{item.title}}</h5>
+                      <span class="color-second">{{item.location}} | {{item.cuisine}}</span> <br>
+                      <span class="color-second">Cost for 2: {{item.costForTwo}} | {{item.timing}}</span>
+                  </div>
+                  <div class="rating text-center">
+            <span uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+            </div>
+                  <div class="text-center mt10">
+                      <button class="know-m text-up btn-green font-light  hidden-xs"  ui-sref="restaurant">know more</button>
+                      <button class="know-m text-up btn-green font-light  hidden-md hidden-sm hidden-lg">view more</button>
+                  </div>
+                  <!-- <div class="second-layer">
+                      <div class="up-title">
+                          <h4>Amica Cafe</h4>
+                      </div>
+                      <div class="data-det mt15">
+                          <p>
+                              The yoga studio is an ambient space that was created by Seema Sondhi in 2001, where she could spread the light of yoga. The thought is to help individuals on a healthier and more peaceful path by teaching them a system of exercise that fully integrates
+                              the body, mind and soul.
+                          </p>
+                      </div>
+                      <div class="position-relative" style="width: 100%; height: 100%;">
+                          <div class="text-center mt10 btn-down">
+                              <button class="know-m text-up btn-yellow font-light f18">view more</button>
+                          </div>
+                      </div>
+                  </div> -->
+
+              </div>
+          </div>
+
+      </div>
+      <div class="row">
+          <div class="text-center p40">
+              <h4 class="font-neutra font-light" style="color:#a7a9ac;">Loading..</h4>
+          </div>
+      </div>
+    </div>
+    </section>
+
+    </div>

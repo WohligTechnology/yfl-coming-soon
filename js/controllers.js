@@ -1582,8 +1582,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         timing: "9am - 6pm"
     }];
 
-    $scope.rate = 2;
-    $scope.max = 5;
+    $scope.rate = 7;
+    $scope.max = 10;
     $scope.isReadonly = false;
 
     $scope.hoveringOver = function (value) {
