@@ -330,12 +330,12 @@
         }
         .sliding-text {
             .select-city {
-                width: 100%;
+                width: 100% !important;
             }
         }
         .follow {
-            width: 100%;
-            margin-left: 0;
+            width: 100% !important;
+            margin-left: 0 !important;
         }
         .drop-boxes {
             .style-box {

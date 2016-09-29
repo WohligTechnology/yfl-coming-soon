@@ -274,7 +274,12 @@ a {
             position: absolute;
             bottom: 40px;
             text-align: center;
-            .flexslider .flex-control-nav li .flex-active {
+            display: block;
+            left: 0%;
+            right: 0;
+            top: 91%;
+            z-index: 999;
+            li .flex-active {
                 background: #f5bf33;
             }
         }
@@ -600,6 +605,12 @@ footer {
     }
     &.food-banner {
         background-image: url("../img/form-food.jpg");
+    }
+    &.artist-banner {
+        background-image: url("../img/new/writing.jpg");
+    }
+    &.foods-banner {
+        background-image: url("../img/new/foods.jpg");
     }
     .yoga-title {
         position: absolute;

@@ -1,234 +1,235 @@
-<div class="big-yoga food-banner">
-   <div class="black-overlay"></div>
-   <div class="container yoga-title text-center">
-      <h1>Personal Campaign</h1>
-   </div>
+<div class="big-yoga artist-banner">
+  <div class="black-overlay"></div>
+  <div class="container yoga-title text-center">
+    <h1>Personal Campaign</h1>
+  </div>
 </div>
 
 <div class="container main-form" ng-if="!formComplete">
-   <h3 class="text-center">Please enter the below details</h3>
-   <form name="campaignForm" class="mid-form" ng-submit="submitCampaign(formData)" ng-if="!formComplete">
-      <h4>Personal Details</h4>
-      <hr>
-      <div class="row">
-         <div class="col-md-4">
-            <div class="form-group">
-               <label>First Name*</label>
-               <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
-               <div class="error-msg" ng-if="campaignForm.firstName.$invalid && campaignForm.firstName.$touched">Please Enter Your First Name</div>
-            </div>
-         </div>
-         <div class="col-md-4">
-            <div class="form-group">
-               <label>Middle Name*</label>
-               <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" required aplha-only>
-               <div class="error-msg" ng-if="campaignForm.middleName.$invalid && campaignForm.middleName.$touched">Please Enter Your Middle Name</div>
-            </div>
-         </div>
-         <div class="col-md-4">
-            <div class="form-group">
-               <label>Last Name*</label>
-               <input type="text" name="lastName" ng-model="formData.lastName" class="form-control" required aplha-only>
-               <div class="error-msg" ng-if="campaignForm.lastName.$invalid && campaignForm.lastName.$touched">Please Enter Your Last Name</div>
-            </div>
-         </div>
+  <h3 class="text-center">Please enter the below details</h3>
+  <form name="campaignForm" class="mid-form" ng-submit="submitCampaign(formData)" ng-if="!formComplete">
+    <h4>Personal Details</h4>
+    <hr>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>First Name*</label>
+          <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
+          <div class="error-msg" ng-if="campaignForm.firstName.$invalid && campaignForm.firstName.$touched">Please Enter Your First Name</div>
+        </div>
       </div>
-      <div class="row">
-         <div class="col-md-6">
-            <div class="form-group">
-               <label>Mobile*</label>
-               <input type="text" name="mobileNumber" ng-model="formData.mobileNumber" class="form-control" required numbers-only>
-               <div class="error-msg" ng-if="campaignForm.mobileNumber.$invalid && campaignForm.mobileNumber.$touched">Please Enter Your Mobile</div>
-            </div>
-              <div class="error" ng-if="validMobileno">Mobile Number is not valid or it should be 10 digits</div>
-         </div>
-         <div class="col-md-6">
-            <div class="form-group">
-               <label>Landline</label>
-               <input type="text" name="landlineNumber" ng-model="formData.landlineNumber" class="form-control" numbers-only>
-               <!-- <div class="error-msg" ng-if="campaignForm.landline.$invalid && campaignForm.landline.$touched">Please Enter Your Phone Number</div> -->
-            </div>
-         </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Middle Name*</label>
+          <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" required aplha-only>
+          <div class="error-msg" ng-if="campaignForm.middleName.$invalid && campaignForm.middleName.$touched">Please Enter Your Middle Name</div>
+        </div>
       </div>
-      <div class="row">
-         <div class="col-md-6">
-            <div class="form-group">
-               <label>Email*</label>
-               <input type="email" name="email" ng-model="formData.email" class="form-control" required>
-               <div class="error-msg" ng-if="campaignForm.email.$invalid && campaignForm.email.$touched">Please Enter Your Email Id</div>
-            </div>
-            <div class="error" ng-if="exist">Email Id Already Exist</div>
-         </div>
-         <div class="col-md-6">
-            <div class="form-group">
-               <label>Country*</label>
-               <select class="form-control" name="country" ng-model="formData.country" required>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Last Name*</label>
+          <input type="text" name="lastName" ng-model="formData.lastName" class="form-control" required aplha-only>
+          <div class="error-msg" ng-if="campaignForm.lastName.$invalid && campaignForm.lastName.$touched">Please Enter Your Last Name</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Mobile*</label>
+          <input type="text" name="mobileNumber" ng-model="formData.mobileNumber" class="form-control" required numbers-only>
+          <div class="error-msg" ng-if="campaignForm.mobileNumber.$invalid && campaignForm.mobileNumber.$touched">Please Enter Your Mobile</div>
+        </div>
+        <div class="error" ng-if="validMobileno">Mobile Number is not valid or it should be 10 digits</div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Landline</label>
+          <input type="text" name="landlineNumber" ng-model="formData.landlineNumber" class="form-control" numbers-only>
+          <!-- <div class="error-msg" ng-if="campaignForm.landline.$invalid && campaignForm.landline.$touched">Please Enter Your Phone Number</div> -->
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Email*</label>
+          <input type="email" name="email" ng-model="formData.email" class="form-control" required>
+          <div class="error-msg" ng-if="campaignForm.email.$invalid && campaignForm.email.$touched">Please Enter Your Email Id</div>
+        </div>
+        <div class="error" ng-if="exist">Email Id Already Exist</div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Country*</label>
+          <select class="form-control" name="country" ng-model="formData.country" required>
                   <option value="{{country.name}}" ng-repeat="country in countries">{{country.name}}</option>
                </select>
-               <div class="error-msg" ng-if="campaignForm.country.$invalid && campaignForm.country.$touched">Please Select Your Country</div>
-            </div>
-         </div>
+          <div class="error-msg" ng-if="campaignForm.country.$invalid && campaignForm.country.$touched">Please Select Your Country</div>
+        </div>
       </div>
-      <div class="row">
-         <div class="col-md-6">
-            <div class="form-group">
-               <label>State*</label>
-               <input type="text" name="state" ng-model="formData.state" class="form-control" required>
-               <div class="error-msg" ng-if="campaignForm.state.$invalid && campaignForm.state.$touched">Please Enter Your State</div>
-            </div>
-         </div>
-         <div class="col-md-6">
-            <div class="form-group">
-               <label>City*</label>
-               <input type="text" name="city" ng-model="formData.city" class="form-control" required>
-               <div class="error-msg" ng-if="campaignForm.city.$invalid && campaignForm.city.$touched">Please Enter Your City</div>
-            </div>
-         </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>State*</label>
+          <input type="text" name="state" ng-model="formData.state" class="form-control" required>
+          <div class="error-msg" ng-if="campaignForm.state.$invalid && campaignForm.state.$touched">Please Enter Your State</div>
+        </div>
       </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>City*</label>
+          <input type="text" name="city" ng-model="formData.city" class="form-control" required>
+          <div class="error-msg" ng-if="campaignForm.city.$invalid && campaignForm.city.$touched">Please Enter Your City</div>
+        </div>
+      </div>
+    </div>
 
-      <div class="row">
-         <div class="col-md-6">
-            <div class="form-group">
-               <label>Pincode*</label>
-               <input type="text" name="zipcode" ng-model="formData.zipcode" class="form-control" required>
-               <div class="error-msg" ng-if="campaignForm.zipcode.$invalid && campaignForm.zipcode.$touched">Please Enter Your Pincode</div>
-            </div>
-              <div class="error" ng-if="invalidPincode">Enter Valid Pincode</div>
-         </div>
-         <div class="col-md-6">
-            <div class="form-group">
-               <label>Address Line 1*</label>
-               <input type="text" name="address1" ng-model="formData.address1" class="form-control" required>
-               <div class="error-msg" ng-if="campaignForm.address.$invalid && campaignForm.address1.$touched">Please Enter Your Address</div>
-            </div>
-         </div>
-         <div class="col-md-12">
-            <div class="form-group">
-               <label>Address Line 2</label>
-               <input type="text" name="address2" ng-model="formData.address2" class="form-control">
-            </div>
-         </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Pincode*</label>
+          <input type="text" name="zipcode" ng-model="formData.zipcode" class="form-control" required>
+          <div class="error-msg" ng-if="campaignForm.zipcode.$invalid && campaignForm.zipcode.$touched">Please Enter Your Pincode</div>
+        </div>
+        <div class="error" ng-if="invalidPincode">Enter Valid Pincode</div>
       </div>
-      <div class="row">
-         <div class="col-md-12">
-            <div class="form-group">
-               <label>Campaign Title (What are you raising funds for?)</label>
-               <input type="text" name="campaigntitle" class="form-control" ng-model="formData.title">
-            </div>
-         </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Address Line 1*</label>
+          <input type="text" name="address1" ng-model="formData.address1" class="form-control" required>
+          <div class="error-msg" ng-if="campaignForm.address.$invalid && campaignForm.address1.$touched">Please Enter Your Address</div>
+        </div>
       </div>
-      <div class="row">
-         <div class="col-md-12">
-            <div class="form-group">
-               <label>Goal (How much do you want to raise?)</label>
-               <input type="text" name="goal" class="form-control" ng-model="formData.goal">
-            </div>
-         </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <label>Address Line 2</label>
+          <input type="text" name="address2" ng-model="formData.address2" class="form-control">
+        </div>
       </div>
-      <div class="row">
-         <div class="col-md-12">
-            <div class="form-group">
-               <label for="Campaignpicture">Campaign picture (Upload) (This is going to be the face of your campaign. Upload a non-pixelated, clear image preferably. Ideal Size: 700x400. If it's bigger, don’t worry, we’ll crop it for you.)
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label>Campaign Title (What are you raising funds for?)</label>
+          <input type="text" name="campaigntitle" class="form-control" ng-model="formData.title">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label>Goal (How much do you want to raise?)</label>
+          <input type="text" name="goal" class="form-control" ng-model="formData.goal">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="Campaignpicture">Campaign picture (Upload) (This is going to be the face of your campaign. Upload a non-pixelated, clear image preferably. Ideal Size: 700x400. If it's bigger, don’t worry, we’ll crop it for you.)
 
                </label>
-               <!-- <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span>
+          <!-- <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span>
                   <input type="file" id="Campaignpicture" class="form-control">
                </button> -->
-                <upload-image ng-model="formData.picture" no-view></upload-image>
-            </div>
-         </div>
+          <upload-image ng-model="formData.picture" no-view></upload-image>
+        </div>
       </div>
-      <div class="row">
-         <div class="col-md-6">
-            <div class="form-group practice relate">
-               <label for="samples">End Date *(Choose a campaign end date)
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group practice relate">
+          <label for="samples">End Date *(Choose a campaign end date)
 
                </label>
-               <input type="text" class="form-control " uib-datepicker-popup="{{format}}" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats"  ng-model="formData.endDate"/>
-               <a href="" class="down" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
-            </div>
-         </div>
-         <div class="col-md-6">
-            <div class="form-group">
-               <label>Cause</label>
-               <select class="form-control" name="cause" ng-model="formData.cause">
+          <input type="text" class="form-control " uib-datepicker-popup="{{format}}" is-open="popup1.opened" datepicker-options="dateOptions"
+            ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-model="formData.endDate" />
+          <a href="" class="down" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Cause</label>
+          <select class="form-control" name="cause" ng-model="formData.cause">
                   <option ng-selected="true" value="">Select </option>
                   <option value="Acid attack victim1">Acid attack victim</option>
                   <option value="Acid attack victim2">Acid attack victim</option>
                   <option value="Acid attack victim3">Acid attack victim</option>
                </select>
-               <div class="error-msg" ng-if="campaignForm.cause.$invalid && campaignForm.cause.$touched">Please Select Your Country</div>
-            </div>
-         </div>
+          <div class="error-msg" ng-if="campaignForm.cause.$invalid && campaignForm.cause.$touched">Please Select Your Country</div>
+        </div>
       </div>
-      <div class="row">
-         <div class="col-md-12">
-            <div class="form-group">
-               <label for="desc">Short Description (Explain your campaign in short)
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="desc">Short Description (Explain your campaign in short)
                </label>
-               <input type="text" class="form-control" id="desc" ng-model="formData.description">
-            </div>
-         </div>
+          <input type="text" class="form-control" id="desc" ng-model="formData.description">
+        </div>
       </div>
-      <div class="row">
-         <div class="col-md-12">
-            <div class="form-group">
-               <label for="story">Campaign Story (Write a story that does justice to your cause and makes the supporter reach the donate button.Don't get overwhelmed, if you feel stuck. Follow these steps:1. Talk about who you're raising funds for, be it yourself or your
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="story">Campaign Story (Write a story that does justice to your cause and makes the supporter reach the donate button.Don't get overwhelmed, if you feel stuck. Follow these steps:1. Talk about who you're raising funds for, be it yourself or your
                   loved one.2. Explain why you're raising funds.3. Make an appeal to your supporters.Avoid pasting information directly from a Word document.)
                </label>
-               <textarea rows="4" cols="50" class="form-control resize" id="story" ng-model="formData.story">
+          <textarea rows="4" cols="50" class="form-control resize" id="story" ng-model="formData.story">
 
                </textarea>
-            </div>
-         </div>
+        </div>
       </div>
-      <div class="row">
-         <div class="col-md-12">
-            <div class="form-group">
-               <label>Recipient</label>
-               <div class="magic-form">
-                  <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="myLevel" id="me" value="Myself" ng-model="formData.recipient">
-                     <label class="text" for="me">
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label>Recipient</label>
+          <div class="magic-form">
+            <div class="magic-resize">
+              <input class="magic-radio" type="radio" name="myLevel" id="me" value="Myself" ng-model="formData.recipient">
+              <label class="text" for="me">
                         Myself
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="myLevel" id="else" value="Someone else" ng-model="formData.recipient">
-                     <label class="text" for="else">
+            </div>
+            <div class="magic-resize">
+              <input class="magic-radio" type="radio" name="myLevel" id="else" value="Someone else" ng-model="formData.recipient">
+              <label class="text" for="else">
                         Someone else
                      </label>
-                  </div>
-
-               </div>
             </div>
-         </div>
-      </div>
 
-      <div class="row">
-         <div class="col-md-12">
-            <div class="form-group">
-               <label for="footprint">Link to your best social footprint
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="footprint">Link to your best social footprint
                </label>
-               <input type="text" class="form-control" id="footprint" ng-model="formData.socialFootprint">
-            </div>
-         </div>
+          <input type="text" class="form-control" id="footprint" ng-model="formData.socialFootprint">
+        </div>
       </div>
-      <div class="magic-form text-center">
-         <div class="magic-resize">
-            <input class="magic-checkbox" type="checkbox" id="terms" name="terms" value="true" required ng-model="formData.termsConditions">
-            <label class="text text-left" for="terms">
+    </div>
+    <div class="magic-form text-center">
+      <div class="magic-resize">
+        <input class="magic-checkbox" type="checkbox" id="terms" name="terms" value="true" required ng-model="formData.termsConditions">
+        <label class="text text-left" for="terms">
                I have read and accept the&nbsp;<u>Terms &amp; Conditions</u>
             </label>
-         </div>
       </div>
+    </div>
 
-      <div class="form-group text-center">
-         <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ng-disabled="campaignForm.$invalid"><span ng-if="campaignForm.$invalid">Please Enter Compulsory fields</span><span ng-if="!campaignForm.$invalid">Submit</span></button>
-      </div>
-   </form>
+    <div class="form-group text-center">
+      <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ng-disabled="campaignForm.$invalid"><span ng-if="campaignForm.$invalid">Please Enter Compulsory fields</span><span ng-if="!campaignForm.$invalid">Submit</span></button>
+    </div>
+  </form>
 </div>
 <div class="submit-thank min-h1" ng-if="formComplete">
-   <h3 class="text-center">Thank You, we'll get back to you soon.</h3>
+  <h3 class="text-center">Thank You, we'll get back to you soon.</h3>
 
 </div>
