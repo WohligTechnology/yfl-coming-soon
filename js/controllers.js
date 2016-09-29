@@ -1210,33 +1210,33 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
 
         $scope.loveSlider = [{
-            img: "img/b1.jpg"
+            img: "img/article/b1.jpg"
 
         }, {
-            img: "img/b1.jpg"
+            img: "img/article/b1.jpg"
 
         }, {
-            img: "img/b1.jpg"
+            img: "img/article/b1.jpg"
 
         }];
         $scope.rowdata = [{
-            img: "img/a2.jpg",
+            img: "img/article/a2.jpg",
             title: "Conscious Eating - Your Body Knows Best",
             data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
         }, {
-            img: "img/a2.jpg",
+            img: "img/article/a2.jpg",
             title: "Conscious Eating - Your Body Knows Best",
             data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
         }, {
-            img: "img/a2.jpg",
+            img: "img/article/a2.jpg",
             title: "Conscious Eating - Your Body Knows Best",
             data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
 
         }, {
-            img: "img/a2.jpg",
+            img: "img/article/a2.jpg",
             title: "Conscious Eating - Your Body Knows Best",
             data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididuntut labore et dolore magna aliqua. "
 
@@ -1477,19 +1477,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.rowdata = [{
-        img: "img/mom.jpg",
+        img: "img/teacher/mom.jpg",
         title: "Lorem ipsum dolor sit amet",
         location: "Colaba, Mumbai",
         style: "Ashtanga Vinyasa,Hatha Yoga,Vinyasa Flow",
         timing: "9am - 6pm"
     }, {
-        img: "img/mom.jpg",
+        img: "img/teacher/mom.jpg",
         title: "Lorem ipsum dolor sit amet",
         location: "Colaba, Mumbai",
         style: "Ashtanga Vinyasa,Hatha Yoga,Vinyasa Flow",
         timing: "9am - 6pm"
     }, {
-        img: "img/mom.jpg",
+        img: "img/teacher/mom.jpg",
         title: "Lorem ipsum dolor sit amet",
         location: "Colaba, Mumbai",
         style: "Ashtanga Vinyasa,Hatha Yoga,Vinyasa Flow",
@@ -1541,40 +1541,40 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     }];
     $scope.rowdata = [{
-        img: "img/mom.jpg",
+        img: "img/teacher/mom.jpg",
         title: "Lorem ipsum dolor sit amet",
         location: "Colaba, Mumbai",
         style: "Ashtanga Vinyasa,Hatha Yoga,Vinyasa Flow",
         timing: "9am - 6pm"
     }, {
-        img: "img/mom.jpg",
+        img: "img/teacher/mom.jpg",
         title: "Lorem ipsum dolor sit amet",
         location: "Colaba, Mumbai",
         style: "Ashtanga Vinyasa,Hatha Yoga,Vinyasa Flow",
         timing: "9am - 6pm"
     }, {
-        img: "img/mom.jpg",
+        img: "img/teacher/mom.jpg",
         title: "Lorem ipsum dolor sit amet",
         location: "Colaba, Mumbai",
         style: "Ashtanga Vinyasa,Hatha Yoga,Vinyasa Flow",
         timing: "9am - 6pm"
     }];
     $scope.rowdata2 = [{
-        img: "img/re1.jpg",
+        img: "img/teacher/re1.jpg",
         title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
         location: "Colaba, Mumbai",
         cuisine: "Italian, Continental",
         costForTwo: " ₹ 500 -  ₹ 1000",
         timing: "9am - 6pm"
     }, {
-        img: "img/re1.jpg",
+        img: "img/teacher/re1.jpg",
         title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
         location: "Colaba, Mumbai",
         cuisine: "Italian, Continental",
         costForTwo: " ₹ 500 -  ₹ 1000",
         timing: "9am - 6pm"
     }, {
-        img: "img/re1.jpg",
+        img: "img/teacher/re1.jpg",
         title: "Lorem Ipsum Dolor Sit Amet Consectetuer",
         location: "Colaba, Mumbai",
         cuisine: "Italian, Continental",

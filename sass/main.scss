@@ -58,6 +58,10 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: $font-family-serif;
+    font-family: $font-family-sans-serif;
+    background-image: url("../img/main.jpg");
+    background-repeat: repeat;
+    background-size: 100% auto;
 }
 
 .capitalize {
@@ -259,6 +263,20 @@ a {
         }
         .flex-direction-nav .flex-prev .flex-next {
             display: none;
+        }
+    }
+}
+
+.studio-detail {
+    .studio-description {
+        .flex-control-nav {
+            width: 100%;
+            position: absolute;
+            bottom: 40px;
+            text-align: center;
+            .flexslider .flex-control-nav li .flex-active {
+                background: #f5bf33;
+            }
         }
     }
 }
@@ -1883,6 +1901,7 @@ $green: #51b1ac !default;
     .sliding-text {
         .select-city {
             width: auto;
+            margin: 20px auto 0;
         }
         .follow {
             margin-left: 85px;
@@ -1893,7 +1912,7 @@ $green: #51b1ac !default;
                     position: absolute;
                     left: 0;
                     bottom: 0;
-                    top: 0;
+                    top: 2px;
                     padding: 8px;
                     background-color: rgba(0, 0, 0, .1);
                 }
@@ -1919,4 +1938,4 @@ $green: #51b1ac !default;
 }
 
 @import "ruchi";
-@import "_mobile";
+@import "mobile";

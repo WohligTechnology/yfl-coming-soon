@@ -1,3 +1,4 @@
+$green:#51b1ac;
 .style-detail {
     .style-banner {
         height: 300px;
@@ -24,15 +25,27 @@
 .teacher-profile {
     .style-banner {
         background-image: url("../img/teacher/yog.jpg");
+        height: 200px;
+        width: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: none!important;
     }
     .expert-detail {
         text-align: center;
         padding-top: 70px;
+        position: relative;
         .rounded {
+            background: url("../img/teacher/tutor.png") top center no-repeat #fff;
             position: absolute;
-            top: 0%;
+            top: 0;
             left: 50%;
             transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            padding: 20px;
+            border-radius: 100%;
         }
         .list-inline {
             a {
@@ -62,11 +75,29 @@
     }
     .social-media {
         .social {
-            padding: 30px 0;
             ul {
-                margin: 0;
+                margin: 30px 0;
                 li {
-                    margin: 0 0 25px;
+                    list-style-type: none;
+                    margin: 25px 0;
+                    a {
+                        display: inline-block;
+                        padding-bottom: 10px;
+                        .fa {
+                            opacity: 0;
+                        }
+                        &:hover {
+                            color: #000;
+                        }
+                        &:active {
+                            color: $green;
+                            border-bottom: 2px solid $green;
+                            text-transform: uppercase;
+                            .fa {
+                                opacity: 1;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -131,6 +162,9 @@
     top: 50%;
     left: 50%;
     text-align: center;
+    h3 {
+        font-size: 52px;
+    }
 }
 
 .style-listing {
@@ -182,7 +216,7 @@
 }
 
 .bg-like {
-    background: url(img/bg-like.png) top right no-repeat #47a7a2;
+    background: url("../img/bg-like.png") top right no-repeat #47a7a2;
     background-size: cover;
 }
 
@@ -537,6 +571,289 @@ placeholder {
     &:visited {
         color: #f4be33;
     }
+}
+
+.teacher-profile .sondhi {
+    background: rgba(204, 204, 204, .24);
+}
+
+.sondhi {
+    padding: 50px 0;
+    background: linear-gradient(rgba(204, 204, 204, .16), #fff);
+}
+
+.mt0 {
+    margin-top: 0;
+}
+
+.body-img {
+    border: 1px solid #ececec;
+    box-shadow: 2px 0 8px 0 #ececec;
+    padding: 8px 8px 10px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all .3s ease;
+    .know-m {
+        width: 100%;
+        padding: 15px 0;
+        border: none;
+    }
+}
+
+.sponser {
+    width: 100%;
+    top: 0;
+    height: 100%;
+    position: absolute;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.top-right {
+    padding: 10px;
+}
+
+.teacher-profile .social-media {
+    padding: 20px 0;
+}
+
+.teacher-profile .social-media h3 {
+    border-bottom: 2px solid #000;
+    padding-bottom: 15px;
+}
+
+.teacher-profile .social-media .social ul li a {
+    display: inline-block;
+    padding-bottom: 10px;
+    &:hover {
+        text-decoration: none;
+        color: #000;
+    }
+    &:active {
+        color: #51b1ac;
+        border-bottom: 2px solid #51b1ac;
+        text-transform: uppercase;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    &:focus {
+        color: #51b1ac;
+        outline: 0;
+    }
+}
+
+.teacher-profile .social-media .social ul li a .fa {
+    opacity: 0;
+}
+
+//recipe-detail
+.recipe p span {
+    color: #51b1ac;
+}
+
+.recipe p {
+    color: #464646;
+}
+
+.recipe h4 {
+    color: #51b1ac;
+}
+
+//studio-detail
+.sliding-text {
+    padding: 10px 30px 0;
+    .select-cl {
+        padding: 0 15px;
+        margin-left: 0;
+    }
+}
+
+.decsription .more .fa {
+    margin: 0 5px;
+}
+
+.tabs {
+    background-color: #51b1ac;
+    .tab {
+        margin-top: 10px;
+    }
+    li {
+        padding: 10px 60px;
+        margin: 0 25px;
+        a {
+            color: #fff;
+            &:hover {
+                outline: 0;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.schedule h3 {
+    margin: 30px 0;
+}
+
+.cal-slider {
+    margin-bottom: 3px;
+}
+
+.date-slider {
+    background-color: #ccc;
+    width: calc(66% + 3px);
+    padding: 10px 20px;
+    span {
+        display: block;
+        text-align: center;
+        font-weight: 400;
+    }
+}
+
+.date-slider,
+.follow {
+    display: inline-block;
+}
+
+.calender {
+    display: inline-block;
+}
+
+.calender,
+.drop-boxes .style-box {
+    background-color: #51b1ac;
+    width: 33%;
+    padding: 10px 20px;
+}
+
+.drop-boxes .style-box {
+    float: left;
+    color: #fff;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    min-height: .01%;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+.table tbody tr td {
+    text-align: center;
+    border-top: none;
+}
+
+.follow,
+.inline li+li:before,
+.media-middle,
+.table tbody tr td {
+    vertical-align: middle;
+}
+
+.fa.fa-pull-right,
+.fa.pull-right {
+    margin-left: .3em;
+}
+
+.drop-boxes .style-box+.style-box {
+    margin-left: 3px;
+}
+
+.bik-ansura .style-banner {
+    background-image: url("../img/teacher/r7.jpg");
+    height: 200px;
+    width: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bannors {
+    height: 200px;
+    width: auto;
+    background-image: url("../img/new/r6.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .banner-text {
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-align: center;
+        h3 {
+            font-size: 52px;
+        }
+    }
+}
+
+.cafe-space {
+    padding-top: 25px;
+}
+
+.style-description .style-detailing {
+    padding: 20px 30px 30px 0;
+    margin: 15px 0;
+}
+
+.dotted {
+    border-right: 1px dotted #000;
+}
+
+.style-detailing {
+    h3 {
+        margin-bottom: 20px;
+    }
+    p {
+        padding-bottom: 20px;
+    }
+}
+
+.style-detailing .white-button,
+.teacher-name .white-button {
+    padding: 7px 25px;
+    background-color: #fff;
+    border: 1px solid #000;
+}
+
+.style-detailing button,
+.teacher-name button {
+    padding: 7px 25px;
+    border: 1px solid #51b1ac;
+}
+
+.teacher-name {
+    padding: 0 25px 30px 0;
+    margin: 15px 0;
+}
+
+.style-detailing {
+    padding: 20px 0 30px;
+    .rounded {
+        background: url("../img/teacher/tutor.png") top center no-repeat #fff;
+        width: 150px;
+        height: 150px;
+        padding: 20px;
+        border-radius: 100%;
+    }
+}
+
+.btn-green:hover.active,
+.btn-green:hover:active,
+.btn-green:hover:hover,
+.open>.btn-green:hover.dropdown-toggle {
+    color: #fff;
+    background-color: #408f8b;
+    border-color: #3d8884;
 }
 
 // .glyphicon-star:before {

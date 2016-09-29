@@ -1,354 +1,361 @@
 <div class="big-yoga food-banner">
-   <div class="black-overlay"></div>
-   <div class="container yoga-title text-center">
-      <h1>Artist</h1>
-   </div>
+    <div class="black-overlay"></div>
+    <div class="container yoga-title text-center">
+        <h1>Artist</h1>
+    </div>
 </div>
 
 <div class="container main-form" ng-if="!formComplete">
-   <h3 class="text-center">Please enter the below details</h3>
-   <form name="artistForm" class="mid-form" ng-submit="submitArtistForm(formData)" ng-if="!formComplete">
-      <div class="row">
-         <div class="col-md-4">
-            <div class="form-group">
-               <label>First Name*</label>
-               <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
-               <div class="error-msg" ng-if="artistForm.firstName.$invalid && artistForm.firstName.$touched">Please Enter Your First Name</div>
+    <h3 class="text-center">Please enter the below details</h3>
+    <form name="artistForm" class="mid-form" ng-submit="submitArtistForm(formData)" ng-if="!formComplete">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>First Name*</label>
+                    <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
+                    <div class="error-msg" ng-if="artistForm.firstName.$invalid && artistForm.firstName.$touched">Please Enter Your First Name</div>
+                </div>
             </div>
-         </div>
-         <div class="col-md-4">
-            <div class="form-group">
-               <label>Middle Name</label>
-               <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" aplha-only>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Middle Name</label>
+                    <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" aplha-only>
+                </div>
             </div>
-         </div>
-         <div class="col-md-4">
-            <div class="form-group">
-               <label>Last Name*</label>
-               <input type="text" name="lastName" ng-model="formData.lastName" class="form-control" required aplha-only>
-               <div class="error-msg" ng-if="artistForm.lastName.$invalid && artistForm.lastName.$touched">Please Enter Your Last Name</div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Last Name*</label>
+                    <input type="text" name="lastName" ng-model="formData.lastName" class="form-control" required aplha-only>
+                    <div class="error-msg" ng-if="artistForm.lastName.$invalid && artistForm.lastName.$touched">Please Enter Your Last Name</div>
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="row">
-         <div class="col-md-6">
-            <div class="form-group">
-               <label>Mobile*</label>
-               <input type="text" name="mobileNumber" ng-model="formData.mobileNumber" class="form-control" required numbers-only>
-               <div class="error-msg" ng-if="artistForm.mobileNumber.$invalid && artistForm.mobileNumber.$touched">Please Enter Your Mobile</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Mobile*</label>
+                    <input type="text" name="mobileNumber" ng-model="formData.mobileNumber" class="form-control" required numbers-only>
+                    <div class="error-msg" ng-if="artistForm.mobileNumber.$invalid && artistForm.mobileNumber.$touched">Please Enter Your Mobile</div>
+                </div>
+                <div class="error" ng-if="validMobileno">Mobile Number is not valid or it should be 10 digits</div>
             </div>
-            <div class="error" ng-if="validMobileno">Mobile Number is not valid or it should be 10 digits</div>
-         </div>
-         <div class="col-md-6">
-            <div class="form-group">
-               <label>Landline</label>
-               <input type="text" name="landlineNumber" ng-model="formData.phone" class="form-control" numbers-only>
-               <div class="error-msg" ng-if="artistForm.landlineNumber.$invalid && artistForm.landlineNumber.$touched">Please Enter Your Phone Number</div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Landline</label>
+                    <input type="text" name="landlineNumber" ng-model="formData.phone" class="form-control" numbers-only>
+                    <div class="error-msg" ng-if="artistForm.landlineNumber.$invalid && artistForm.landlineNumber.$touched">Please Enter Your Phone Number</div>
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="row">
-         <div class="col-md-6">
-            <div class="form-group">
-               <label>Email*</label>
-               <input type="email" name="email" ng-model="formData.email" class="form-control" required>
-               <div class="error-msg" ng-if="artistForm.email.$invalid && artistForm.email.$touched">Please Enter Your Email Id</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Email*</label>
+                    <input type="email" name="email" ng-model="formData.email" class="form-control" required>
+                    <div class="error-msg" ng-if="artistForm.email.$invalid && artistForm.email.$touched">Please Enter Your Email Id</div>
+                </div>
+                <div class="error" ng-if="exist">Email Id Already Exist</div>
             </div>
-            <div class="error" ng-if="exist">Email Id Already Exist</div>
-         </div>
-         <div class="col-md-6">
-            <div class="form-group">
-               <label>Country*</label>
-               <select class="form-control" name="country" ng-model="formData.country" required>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Country*</label>
+                    <select class="form-control" name="country" ng-model="formData.country" required>
                   <option value="{{country.name}}" ng-repeat="country in countries">{{country.name}}</option>
                </select>
-               <div class="error-msg" ng-if="artistForm.country.$invalid && artistForm.country.$touched">Please Select Your Country</div>
+                    <div class="error-msg" ng-if="artistForm.country.$invalid && artistForm.country.$touched">Please Select Your Country</div>
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="row">
-         <div class="col-md-6">
-            <div class="form-group">
-               <label>State*</label>
-               <input type="text" name="state" ng-model="formData.state" class="form-control" required>
-               <div class="error-msg" ng-if="artistForm.state.$invalid && artistForm.state.$touched">Please Enter Your State</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>State*</label>
+                    <input type="text" name="state" ng-model="formData.state" class="form-control" required>
+                    <div class="error-msg" ng-if="artistForm.state.$invalid && artistForm.state.$touched">Please Enter Your State</div>
+                </div>
             </div>
-         </div>
-         <div class="col-md-6">
-            <div class="form-group">
-               <label>City*</label>
-               <input type="text" name="city" ng-model="formData.city" class="form-control" required>
-               <div class="error-msg" ng-if="artistForm.city.$invalid && artistForm.city.$touched">Please Enter Your City</div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>City*</label>
+                    <input type="text" name="city" ng-model="formData.city" class="form-control" required>
+                    <div class="error-msg" ng-if="artistForm.city.$invalid && artistForm.city.$touched">Please Enter Your City</div>
+                </div>
             </div>
-         </div>
-      </div>
+        </div>
 
-      <div class="row">
-         <div class="col-md-6">
-            <div class="form-group">
-               <label>Pincode*</label>
-               <input type="text" name="pincode" ng-model="formData.pincode" class="form-control" required>
-               <div class="error-msg" ng-if="artistForm.pincode.$invalid && artistForm.pincode.$touched">Please Enter Your Pincode</div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Pincode*</label>
+                    <input type="text" name="pincode" ng-model="formData.pincode" class="form-control" required>
+                    <div class="error-msg" ng-if="artistForm.pincode.$invalid && artistForm.pincode.$touched">Please Enter Your Pincode</div>
+                </div>
+                <div class="error" ng-if="invalidPincode">Enter Valid Pincode</div>
             </div>
-            <div class="error" ng-if="invalidPincode">Enter Valid Pincode</div>
-         </div>
-         <div class="col-md-6">
-            <div class="form-group">
-               <label>Address Line 1*</label>
-               <input type="text" name="address1" ng-model="formData.address" class="form-control" required>
-               <div class="error-msg" ng-if="artistForm.address1.$invalid && artistForm.address1.$touched">Please Enter Your Address</div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Address Line 1*</label>
+                    <input type="text" name="address1" ng-model="formData.address" class="form-control" required>
+                    <div class="error-msg" ng-if="artistForm.address1.$invalid && artistForm.address1.$touched">Please Enter Your Address</div>
+                </div>
             </div>
-         </div>
-         <div class="col-md-12">
-            <div class="form-group">
-               <label>Address Line 2</label>
-               <input type="text" name="address2" ng-model="formData.address2" class="form-control">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Address Line 2</label>
+                    <input type="text" name="address2" ng-model="formData.address2" class="form-control">
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="row">
-         <div class="col-md-12">
-            <div class="form-group">
-               <label>Website link</label>
-               <input type="url" name="websiteLink" class="form-control" ng-model="formData.websiteLink">
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Website link</label>
+                    <input type="url" name="websiteLink" class="form-control" ng-model="formData.websiteLink">
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="row">
-         <div class="col-md-12">
-            <div class="form-group">
-               <label>Professional Experience (Years, months)</label>
-               <input type="text" name="professionalExperience" class="form-control" ng-model="formData.professionalExperience">
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Professional Experience (Years, months)</label>
+                    <input type="text" name="professionalExperience" class="form-control" ng-model="formData.professionalExperience">
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="row">
-         <div class="col-md-12">
-            <div class="form-group">
-               <label>Media</label>
-               <div class="magic-form">
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Media*</label>
+                    <div class="magic-form">
 
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="fineArt" value="fineArt" ng-model="formData.style.fineArt" ng-click="mediafor('fineArt')">
-                     <label class="text" for="fineArt">
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="fineArt" value="fineArt" ng-model="formData.style.fineArt"
+                                ng-click="mediafor('fineArt')">
+                            <label class="text" for="fineArt">
                         Painting - fine art
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="decorative" value="decorative" ng-model="formData.style.decorative" ng-click="mediafor('decorative')">
-                     <label class="text" for="decorative">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="decorative" value="decorative" ng-model="formData.style.decorative"
+                                ng-click="mediafor('decorative')">
+                            <label class="text" for="decorative">
                         Painting - decorative
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="photo" value="photos" ng-model="formData.style.photos" ng-click="mediafor('photos')">
-                     <label class="text" for="photo">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="photo" value="photos" ng-model="formData.style.photos" ng-click="mediafor('photos')">
+                            <label class="text" for="photo">
                         Photography
                      </label>
-                  </div>
+                        </div>
 
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="draw" value="draws" ng-model="formData.style.draws" ng-click="mediafor('draws')">
-                     <label class="text" for="draw">
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="draw" value="draws" ng-model="formData.style.draws" ng-click="mediafor('draws')">
+                            <label class="text" for="draw">
                         Drawing
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="paper" value="papers" ng-model="formData.style.papers" ng-click="mediafor('papers')">
-                     <label class="text" for="paper">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="paper" value="papers" ng-model="formData.style.papers" ng-click="mediafor('papers')">
+                            <label class="text" for="paper">
                         Paper/Mixed Media
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="glass" value="glass" ng-model="formData.style.glass" ng-click="mediafor('glass')">
-                     <label class="text" for="glass">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="glass" value="glass" ng-model="formData.style.glass" ng-click="mediafor('glass')">
+                            <label class="text" for="glass">
                         Glass
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="furnishings" value="furnish" ng-model="formData.style.furnish" ng-click="mediafor('furnish')">
-                     <label class="text" for="furnishings">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="furnishings" value="furnish" ng-model="formData.style.furnish"
+                                ng-click="mediafor('furnish')">
+                            <label class="text" for="furnishings">
                         Wood - furnishings
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="wood" value="wood" ng-model="formData.style.wood" ng-click="mediafor('wood')">
-                     <label class="text" for="wood">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="wood" value="wood" ng-model="formData.style.wood" ng-click="mediafor('wood')">
+                            <label class="text" for="wood">
                         Wood - decorative
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="calligraphy" value="calli" ng-model="formData.style.calli" ng-click="mediafor('calli')">
-                     <label class="text" for="calligraphy">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="calligraphy" value="calli" ng-model="formData.style.calli"
+                                ng-click="mediafor('calli')">
+                            <label class="text" for="calligraphy">
                         Calligraphy
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="ceramics" value="ceramic" ng-model="formData.style.ceramic" ng-click="mediafor('ceramic')">
-                     <label class="text" for="ceramics">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="ceramics" value="ceramic" ng-model="formData.style.ceramic"
+                                ng-click="mediafor('ceramic')">
+                            <label class="text" for="ceramics">
                         Ceramics
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="pottery" value="pot" ng-model="formData.style.pot" ng-click="mediafor('pot')">
-                     <label class="text" for="pottery">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="pottery" value="pot" ng-model="formData.style.pot" ng-click="mediafor('pot')">
+                            <label class="text" for="pottery">
                         Pottery
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="sculpture" value="sculpt" ng-model="formData.style.sculpt" ng-click="mediafor('sculpt')">
-                     <label class="text" for="sculpture">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="sculpture" value="sculpt" ng-model="formData.style.sculpt"
+                                ng-click="mediafor('sculpt')">
+                            <label class="text" for="sculpture">
                         Sculpture
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="music" value="music" ng-model="formData.style.music" ng-click="mediafor('music')">
-                     <label class="text" for="music">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="music" value="music" ng-model="formData.style.music" ng-click="mediafor('music')">
+                            <label class="text" for="music">
                         Music
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="toys" value="toy" ng-model="formData.style.toy" ng-click="mediafor('toy')">
-                     <label class="text" for="toys">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="toys" value="toy" ng-model="formData.style.toy" ng-click="mediafor('toy')">
+                            <label class="text" for="toys">
                         Toys
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="jewellery" value="jewel" ng-model="formData.style.jewel" ng-click="mediafor('jewel')">
-                     <label class="text" for="jewellery">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="jewellery" value="jewel" ng-model="formData.style.jewel" ng-click="mediafor('jewel')">
+                            <label class="text" for="jewellery">
                         Jewellery
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="floral" value="flora" ng-model="formData.style.flora" ng-click="mediafor('flora')">
-                     <label class="text" for="floral">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="floral" value="flora" ng-model="formData.style.flora" ng-click="mediafor('flora')">
+                            <label class="text" for="floral">
                         Floral
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="fabric" value="fabric" ng-model="formData.style.fabric" ng-click="mediafor('fabric')">
-                     <label class="text" for="fabric">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="fabric" value="fabric" ng-model="formData.style.fabric" ng-click="mediafor('fabric')">
+                            <label class="text" for="fabric">
                         Fabric - decorative
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="clothing" value="cloths" ng-model="formData.style.cloths" ng-click="mediafor('cloths')">
-                     <label class="text" for="clothing">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="clothing" value="cloths" ng-model="formData.style.cloths"
+                                ng-click="mediafor('cloths')">
+                            <label class="text" for="clothing">
                         Fabric - clothing
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="weaving" value="weave" ng-model="formData.style.weave" ng-click="mediafor('weave')">
-                     <label class="text" for="weaving">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="weaving" value="weave" ng-model="formData.style.weave" ng-click="mediafor('weave')">
+                            <label class="text" for="weaving">
                         Weaving (Fabric/other)
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="style" id="metal" value="works" ng-model="formData.style.works" ng-click="mediafor('works')">
-                     <label class="text" for="metal">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="style" id="metal" value="works" ng-model="formData.style.works" ng-click="mediafor('works')">
+                            <label class="text" for="metal">
                         Metal works
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-checkbox" type="checkbox" name="nutrition" id="otheroption" ng-model="formData.nutrition.other" ng-click="mediafor('other')">
-                     <label class="labewidtxt" for="otheroption">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="nutrition" id="otheroption" ng-model="formData.nutrition.other" ng-click="mediafor('other')">
+                            <label class="labewidtxt" for="otheroption">
                         Other
                      </label>
-                  </div>
-                  <input ng-model="formData.myother" type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.nutrition.other">
-               </div>
-               <div class="error" ng-if="noMedia" style="font-size:16px;margin:10px 0 0;">
-                  Please select a Media
-               </div>
+                        </div>
+                        <input ng-model="formData.myother" type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.nutrition.other">
+                    </div>
+                    <div class="error" ng-if="noMedia" style="font-size:16px;margin:10px 0 0;">
+                        Please select a Media
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="row">
-         <div class="col-md-12">
-            <div class="form-group">
-               <label for="media">Other Media : (Please give an additional description of your work, including information about the process used to create your artwork.)
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="media">Other Media : (Please give an additional description of your work, including information about the process used to create your artwork.)
                </label>
-               <input type="text" class="form-control" id="media" name="otherMedia" ng-model="formData.otherMedia">
+                    <input type="text" class="form-control" id="media" name="otherMedia" ng-model="formData.otherMedia">
 
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="row">
-         <div class="col-md-12">
-            <div class="form-group">
-               <label for="artwork">Artwork Description:
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="artwork">Artwork Description:
                </label>
-               <input type="text" class="form-control" id="artwork" name="artwork" ng-model="formData.artwork">
+                    <input type="text" class="form-control" id="artwork" name="artwork" ng-model="formData.artwork">
 
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="row">
-         <div class="col-md-12">
-            <div class="form-group">
-               <label for="worksample">Work Sample (Upload 3)
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="worksample">Work Sample (Upload 3)
                </label>
-               <input type="text" class="form-control" id="worksample" name="workSample" ng-model="formData.workSample">
+                    <input type="text" class="form-control" id="worksample" name="workSample" ng-model="formData.workSample">
 
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="row">
-         <div class="col-md-12">
-            <div class="form-group">
-               <label>Would you be interested in doing a demonstration?</label>
-               <div class="magic-form">
-                  <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="demonstration" id="yess" value="true" ng-model="formData.demonstration">
-                     <label class="text" for="yess">
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Would you be interested in doing a demonstration?</label>
+                    <div class="magic-form">
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="demonstration" id="yess" value="true" ng-model="formData.demonstration">
+                            <label class="text" for="yess">
                         Yes
                      </label>
-                  </div>
-                  <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="demonstration" id="noo" value="false" ng-model="formData.demonstration">
-                     <label class="text" for="noo">
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="demonstration" id="noo" value="false" ng-model="formData.demonstration">
+                            <label class="text" for="noo">
                         No
                      </label>
-                  </div>
+                        </div>
 
-               </div>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="row">
-         <div class="col-md-12">
-            <div class="form-group">
-               <label for="technique">If yes, what technique or craft would you be demonstrating?
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="technique">If yes, what technique or craft would you be demonstrating?
                </label>
-               <input type="text" class="form-control" id="technique" name="techniqueCraft" ng-model="formData.techniqueCraft">
+                    <input type="text" class="form-control" id="technique" name="techniqueCraft" ng-model="formData.techniqueCraft">
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="row">
-         <div class="col-md-12">
-            <div class="form-group">
-               <label for="foots">Link to your best social footprint
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="foots">Link to your best social footprint
                </label>
-               <input type="text" class="form-control" id="foots" name="socialFootprint" ng-model="formData.socialFootprint">
+                    <input type="text" class="form-control" id="foots" name="socialFootprint" ng-model="formData.socialFootprint">
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="magic-form text-center">
-         <div class="magic-resize">
-            <input class="magic-checkbox" type="checkbox" id="terms" name="terms" value="true" required ng-model="formData.termsConditions">
-            <label class="text text-left" for="terms">
+        </div>
+        <div class="magic-form text-center">
+            <div class="magic-resize">
+                <input class="magic-checkbox" type="checkbox" id="terms" name="terms" value="true" required ng-model="formData.termsConditions">
+                <label class="text text-left" for="terms">
                I have read and accept the&nbsp;<u>Terms &amp; Conditions</u>
             </label>
-         </div>
-      </div>
+            </div>
+        </div>
 
-      <div class="form-group text-center">
-         <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ng-disabled="artistForm.$invalid"><span ng-if="artistForm.$invalid">Please Enter Compulsory fields</span><span ng-if="!artistForm.$invalid">Submit</span></button>
-      </div>
-   </form>
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ng-disabled="artistForm.$invalid"><span ng-if="artistForm.$invalid">Please Enter Compulsory fields</span><span ng-if="!artistForm.$invalid">Submit</span></button>
+        </div>
+    </form>
 
 </div>
 <div class="submit-thank min-h1" ng-if="formComplete">
-   <h3 class="text-center">Thank You, we'll get back to you soon.</h3>
+    <h3 class="text-center">Thank You, we'll get back to you soon.</h3>
 
 </div>
