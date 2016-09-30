@@ -146,6 +146,13 @@ a {
     @include box-shadow(none);
 }
 
+@mixin transition($transition...) {
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
 .form-control:focus {
     border-color: $brand-primary;
     outline: 0;

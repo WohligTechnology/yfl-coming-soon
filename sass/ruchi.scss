@@ -856,6 +856,133 @@ placeholder {
     border-color: #3d8884;
 }
 
+.about {
+    .select-city {
+        width: 30%;
+        margin: 20px auto 0;
+    }
+}
+
+.mt25 {
+    margin-top: 25px;
+}
+
+.social-link ul li {
+    padding: 0 15px;
+}
+
+.bg-bks {
+    background: url(img/brush.png) center no-repeat;
+    background-size: cover;
+}
+
+.menu-bg {
+    background-color: #51b1ac;
+    padding: 8px 0;
+}
+
+.panel-group {
+    margin-bottom: 20px;
+}
+
+.body-img {
+    border: 1px solid #ececec;
+    box-shadow: 2px 0 8px 0 #ececec;
+    padding: 8px 8px 10px;
+    background-color: #fff;
+    cursor: pointer;
+    // @include transition (all 300ms ease);
+    .second-layer {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        background: rgb(224, 241, 240);
+        margin-left: -8px;
+        display: none;
+        // @include transition (all 300ms ease);
+    }
+    &:hover .second-layer {
+        display: block;
+    }
+}
+
+.up-title {
+    padding: 15px 20px 0;
+    h4 {
+        font-size: 24px;
+        color: #2e2e2e;
+    }
+}
+
+.data-det {
+    padding: 0 20px;
+}
+
+.btn-down {
+    position: absolute;
+    width: 100%;
+    top: 44%;
+    transform: translateY(-50%);
+    padding: 0 10px;
+}
+
+.btn-yellow {
+    color: #4e4f51;
+    background-color: #f6c83b;
+    // border-color: #f6c83b;
+}
+
+.menu-list .panel {
+    margin-bottom: 5px;
+    background-color: transparent;
+    border: 0 solid transparent;
+    border-radius: 0!important;
+    -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .05);
+    box-shadow: 0 0 0 rgba(0, 0, 0, .05);
+}
+
+.menu-list .panel-default>.panel-heading {
+    color: #fff;
+    background-color: #51b1ac;
+    border-color: #51b1ac;
+    padding: 20px 15px;
+    border-bottom: 0 solid transparent;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    a {
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.panel-title {
+    margin-top: 0;
+    font-size: 16px;
+}
+
+.hypen {
+    background-color: #f5bf33;
+    color: #4e4f51;
+    padding: 0 5px;
+    border-radius: 4px;
+}
+
+.f13 {
+    font-size: 13px;
+}
+
+.social-link ul li a img {
+    width: 60px;
+}
+
+.custom-li ul li {
+    display: inline-block;
+    a {
+        display: inline-block
+    }
+}
+
 // .glyphicon-star:before {
 //     content: "\f006";
 // }
