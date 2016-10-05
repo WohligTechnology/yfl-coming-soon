@@ -297,7 +297,7 @@ $green:#51b1ac;
 
 .btn,
 .kno-btn {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
 }
 
@@ -361,7 +361,7 @@ $green:#51b1ac;
 //     right: 80px;
 //     text-align: right;
 // }
-// 
+//
 // .flexslider .flex-direction-nav a {
 //     display: block;
 // }
@@ -816,6 +816,10 @@ placeholder {
     p {
         padding-bottom: 20px;
     }
+}
+
+.min-hi {
+    min-height: 115px;
 }
 
 .style-detailing .white-button,

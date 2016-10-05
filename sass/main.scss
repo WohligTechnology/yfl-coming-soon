@@ -29,7 +29,7 @@ $magic-disabled-color: lighten($magic-border-color,
 14%) !default;
 $magic-disabled-checked-color: lighten($magic-main-color,
 30%) !default;
-$font-family-sans-serif: "Jura",
+$font-family-sans-serif: "TradeGothic",
 Helvetica,
 Arial,
 sans-serif !default;
@@ -39,16 +39,16 @@ Times,
 serif !default;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 @font-face {
-    font-family: "Jura";
-    src: url('../fonts/Jura-Bold.ttf');
+    font-family: "TradeGothic";
+    src: url('../fonts/TradeGothic.otf');
+    // src: url('../fonts/Jura-Bold.ttf');
     font-weight: 700;
 }
 
-@font-face {
-    font-family: "Jura";
-    src: url('../fonts/Jura-Regular.ttf');
-}
-
+// @font-face {
+//     font-family: "Jura";
+//     src: url('../fonts/Jura-Regular.ttf');
+// }
 a {
     color: inherit;
 }
@@ -58,7 +58,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: $font-family-serif;
-    font-family: $font-family-sans-serif;
+    // font-family: $font-family-sans-serif;
     background-image: url("../img/main.jpg");
     background-repeat: repeat;
     background-size: 100% auto;
@@ -1249,7 +1249,7 @@ hr {
                 padding-top: 2px;
                 font-size: 14px;
                 font-weight: 700;
-                font-family: "Jura";
+                font-family: "TradeGothic";
                 @include transition (all ease 300ms);
             }
             .magic-checkbox:checked+label:before {
@@ -1450,8 +1450,8 @@ hr {
     bottom: 0;
     right: 0;
     display: block;
-    height: 600px;
-    background: rgba(0, 0, 0, 0.10);
+    // height: 600px;
+    background: rgba(0, 0, 0, 0.35);
 }
 
 .subscribtion {
@@ -1647,6 +1647,7 @@ hr {
     right: 0;
     bottom: 0;
     transform: translate(-50%, -50%);
+    z-index: 9999;
     .btn {
         padding: 8px 13px;
     }
@@ -1660,7 +1661,7 @@ hr {
 .yog-studio {
     .btn {
         padding: 8px 5px;
-        font-size: 12px;
+        font-size: 10px;
     }
 }
 
@@ -1939,7 +1940,7 @@ $green: #51b1ac !default;
         .decsription {
             p {
                 width: 500px;
-                padding-bottom: 15px;
+                // padding-bottom: 15px;
             }
             .more {
                 color: #51b1ac;
@@ -1953,6 +1954,11 @@ $green: #51b1ac !default;
             margin: 15px 0;
         }
     }
+}
+
+a,
+span:focus {
+    outline: 0;
 }
 
 @import "ruchi";
