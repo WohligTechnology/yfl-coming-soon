@@ -48,6 +48,17 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
             templateUrl: "views/template.html",
             controller: 'FormYogaLabelCollaborationCtrl'
         })
+             .state('form-enthu', {
+            url: "/form-enthu",
+            templateUrl: "views/template.html",
+            controller: 'FormEnthuCtrl'
+        })
+                .state('form-teacher', {
+            url: "/form-teacher",
+            templateUrl: "views/template.html",
+            controller: 'FormTeacherCtrl'
+        })
+
 
     .state('form-artist', {
         url: "/form-artist",

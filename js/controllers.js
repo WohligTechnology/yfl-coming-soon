@@ -167,15 +167,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     ];
 
-    // $scope.healthSlider = [{
-    //     img: "img/new/r6.jpg",
-    //     head: "HEALTHY FOOD FACTS",
-    //     descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
-    // }, {
-    //     img: "img/new/r6.jpg",
-    //     head: "HEALTHY FOOD FACTS",
-    //     descp: "Sed ut perspiciatis unde omnis iste natus error sit voluptat.Sed ut perspiciatis unde omnis iste natus error sit voluptat."
-    // }];
 
     $scope.foodSlider = [{
         img: "img/new/r6.jpg",
@@ -265,6 +256,29 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     };
 })
 
+.controller('FormEnthuCtrl', function ($scope, TemplateService, NavigationService, $timeout, $state) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("form-enthu");
+    $scope.menutitle = NavigationService.makeactive("Form enthusiast");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+    $scope.goTo = function (data) {
+        $state.go(data);
+    };
+})
+
+.controller('FormTeacherCtrl', function ($scope, TemplateService, NavigationService, $timeout, $state) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("form-teacher");
+    $scope.menutitle = NavigationService.makeactive("Form teacher");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+    $scope.goTo = function (data) {
+        $state.go(data);
+    };
+})
 .controller('FormYogaStudioCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("form-yoga-studio");
