@@ -200,10 +200,72 @@
            <div class="col-md-6">
  <div class="form-group">
                     <label>Do you have an official website? If yes, please provide your website address.</label>
-                    <input type="text" name="affiliated" ng-model="formData.affiliated" class="form-control">
+                    <input type="text" name="official" ng-model="formData.official" class="form-control">
                 </div>
            </div>
        </div>
+             <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Please provide a link to your Facebook Page.</label>
+                    <input type="text" name="facebook" ng-model="formData.facebook" class="form-control" required>
+                    <div class="error-msg" ng-if="userForm.facebook.$invalid && userForm.facebook.$touched">Please Enter Your Organisation</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Please provide a link to your Instagram account.</label>
+                    <input type="text" name="instagram" ng-model="formData.description" class="form-control">
+                    <div class="error-msg" ng-if="userForm.instagram.$invalid && userForm.instagram.$touched">Please Enter Your Description</div>
+                </div>
+            </div>
+        </div>
+                      <div class="row">
+           <div class="col-md-6">
+                <div class="form-group">
+                    <label>Are you active on any other social media platforms? (Pinterest, Youtube, Twitter, Google +, etc) *</label>
+                    <input type="text" name="social" ng-model="formData.social" class="form-control">
+                </div>
+           </div>
+           <div class="col-md-6">
+ <div class="form-group">
+                    <label>Do you use a particular platform for your class scheduling? *</label>
+                    <div class="magic-form">
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="teachingLevel" id="14" value="beginner" ng-model="formData.teachingLevel">
+                            <label class="text" for="14">
+                             Yes
+                            </label>
+                        </div>
+                          <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="teachingLevel" id="14" value="beginner" ng-model="formData.teachingLevel">
+                            <label class="text" for="14">
+                           No
+                            </label>
+                        </div>
+                </div>
+                      
+                      
+                
+           </div>
+       </div>
+       </div>
+       <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Please share available hours and days from your schedule when you would be able to accommodate new classes. *</label>
+                    <input type="text" name="available" ng-model="formData.available" class="form-control" required>
+                    <div class="error-msg" ng-if="userForm.available.$invalid && userForm.available.$touched">Please Enter Your Organisation</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Feedback / Queries</label>
+                    <input type="text" name="feedback" ng-model="formData.feedback" class="form-control">
+                    <div class="error-msg" ng-if="userForm.feedback.$invalid && userForm.feedback.$touched">Please Enter Your Description</div>
+                </div>
+            </div>
+        </div>
         <!--<div class="row">
             <div class="col-md-6">
                 <div class="form-group">
