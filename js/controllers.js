@@ -268,6 +268,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     };
 })
 
+.controller('FormFoodieCtrl', function ($scope, TemplateService, NavigationService, $timeout, $state) {
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("form-foodie");
+    $scope.menutitle = NavigationService.makeactive("Form Foodie");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+    $scope.goTo = function (data) {
+        $state.go(data);
+    };
+})
+
 .controller('FormTeacherCtrl', function ($scope, TemplateService, NavigationService, $timeout, $state) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("form-teacher");

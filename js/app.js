@@ -53,6 +53,11 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
             templateUrl: "views/template.html",
             controller: 'FormEnthuCtrl'
         })
+                .state('form-foodie', {
+            url: "/form-foodie",
+            templateUrl: "views/template.html",
+            controller: 'FormFoodieCtrl'
+        })
                 .state('form-teacher', {
             url: "/form-teacher",
             templateUrl: "views/template.html",
