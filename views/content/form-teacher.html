@@ -120,12 +120,14 @@
                 <div class="form-group">
                     <label>Are you a certified yoga teacher? If yes, please specify certification details. *</label>
                     <input type="text" name="certification" ng-model="formData.certification" class="form-control">
+                 <div class="error-msg" ng-if="teacherForm.certification.$invalid && teacherForm.certification.$touched">Please fill this field</div>
                 </div>
            </div>
            <div class="col-md-6">
  <div class="form-group">
                     <label>Other qualifications *</label>
                     <input type="text" name="qualifications" ng-model="formData.qualifications" class="form-control">
+                       <div class="error-msg" ng-if="teacherForm.qualifications.$invalid && teacherForm.qualifications.$touched">Please fill this field</div>  
                 </div>
            </div>
        </div>
@@ -134,12 +136,14 @@
                 <div class="form-group">
                     <label>Professional Experience (in years) *</label>
                     <input type="text" name="professional" ng-model="formData.professional" class="form-control">
+                <div class="error-msg" ng-if="teacherForm.professional.$invalid && teacherForm.professional.$touched">Please fill this field</div>  
                 </div>
            </div>
            <div class="col-md-6">
  <div class="form-group">
                     <label>Specialisation (Style of Yoga you teach) *</label>
                     <input type="text" name="specialisation" ng-model="formData.specialisation" class="form-control">
+                <div class="error-msg" ng-if="teacherForm.specialisation.$invalid && teacherForm.specialisation.$touched">Please fill this field</div>  
                 </div>
            </div>
        </div>
@@ -149,25 +153,25 @@
                     <label>Kindly select the level you teach from the below options. *</label>
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="amenities" id="1" value="lockers" ng-model="formData.amenities.lockers" ng-click="goToamenities('lockers')">
+                            <input class="magic-checkbox" type="checkbox" name="beginner" id="1" value="begin" ng-model="formData.beginner.begin" ng-click="goTobeginner('begin')">
                             <label class="text" for="1">
                                 Beginner
                             </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="amenities" id="2" value="showers" ng-model="formData.amenities.showers" ng-click="goToamenities('showers')">
+                            <input class="magic-checkbox" type="checkbox" name="intermediate" id="2" value="interms" ng-model="formData.intermediate.interms" ng-click="goTointermediate('interms')">
                             <label class="text" for="2">
                              Intermediate
                             </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="amenities" id="3" value="changingRoom" ng-model="formData.amenities.changingRoom" ng-click="goToamenities('changingRoom')">
+                            <input class="magic-checkbox" type="checkbox" name="advanced" id="3" value="advance" ng-model="formData.advanced.advance" ng-click="goToadvanced('advance')">
                             <label class="text" for="3">
                                Advanced
                             </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="amenities" id="4" value="yogaMats" ng-model="formData.amenities.yogaMats" ng-click="goToamenities('yogaMats')">
+                            <input class="magic-checkbox" type="checkbox" name="open" id="4" value="openlevel" ng-model="formData.open.openlevel" ng-click="goToopen('openlevel')">
                             <label class="text" for="4">
                               Open level
                             </label>
@@ -208,15 +212,15 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Please provide a link to your Facebook Page.</label>
-                    <input type="text" name="facebook" ng-model="formData.facebook" class="form-control" required>
-                    <div class="error-msg" ng-if="userForm.facebook.$invalid && userForm.facebook.$touched">Please Enter Your Organisation</div>
+                    <input type="text" name="facebook" ng-model="formData.facebook" class="form-control">
+                    <!--<div class="error-msg" ng-if="teacherForm.facebook.$invalid && teacherForm.facebook.$touched">Please Enter Your Organisation</div>-->
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Please provide a link to your Instagram account.</label>
-                    <input type="text" name="instagram" ng-model="formData.description" class="form-control">
-                    <div class="error-msg" ng-if="userForm.instagram.$invalid && userForm.instagram.$touched">Please Enter Your Description</div>
+                    <input type="text" name="instagram" ng-model="formData.instagram" class="form-control">
+                    <!--<div class="error-msg" ng-if="userForm.instagram.$invalid && userForm.instagram.$touched">Please Enter Your Description</div>-->
                 </div>
             </div>
         </div>
@@ -225,6 +229,7 @@
                 <div class="form-group">
                     <label>Are you active on any other social media platforms? (Pinterest, Youtube, Twitter, Google +, etc) *</label>
                     <input type="text" name="social" ng-model="formData.social" class="form-control">
+                    <div class="error-msg" ng-if="teacherForm.social.$invalid && teacherForm.social.$touched">Please Enter Your Organisation</div>
                 </div>
            </div>
            <div class="col-md-6">
@@ -232,14 +237,14 @@
                     <label>Do you use a particular platform for your class scheduling? *</label>
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="teachingLevel" id="14" value="beginner" ng-model="formData.teachingLevel">
+                            <input class="magic-radio" type="radio" name="scheduling" id="14" value="yes" ng-model="formData.scheduling">
                             <label class="text" for="14">
                              Yes
                             </label>
                         </div>
                           <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="teachingLevel" id="14" value="beginner" ng-model="formData.teachingLevel">
-                            <label class="text" for="14">
+                            <input class="magic-radio" type="radio" name="scheduling" id="15" value="no" ng-model="formData.scheduling">
+                            <label class="text" for="15">
                            No
                             </label>
                         </div>
@@ -255,281 +260,17 @@
                 <div class="form-group">
                     <label>Please share available hours and days from your schedule when you would be able to accommodate new classes. *</label>
                     <input type="text" name="available" ng-model="formData.available" class="form-control" required>
-                    <div class="error-msg" ng-if="userForm.available.$invalid && userForm.available.$touched">Please Enter Your Organisation</div>
+                    <div class="error-msg" ng-if="teacherForm.available.$invalid && teacherForm.available.$touched">Please fill this field</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Feedback / Queries</label>
                     <input type="text" name="feedback" ng-model="formData.feedback" class="form-control">
-                    <div class="error-msg" ng-if="userForm.feedback.$invalid && userForm.feedback.$touched">Please Enter Your Description</div>
+                    <!--<div class="error-msg" ng-if="teacherForm.feedback.$invalid && teacherForm.feedback.$touched">Please Enter Your Description</div>-->
                 </div>
             </div>
         </div>
-        <!--<div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Name of your organisation*</label>
-                    <input type="text" name="organizationName" ng-model="formData.organizationName" class="form-control" required>
-                    <div class="error-msg" ng-if="userForm.organizationName.$invalid && userForm.organizationName.$touched">Please Enter Your Organisation</div>
-                </div>
-                  <div class="error" ng-if="organizationName">Enter Your Organisation<</div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Give a brief description about the type of yoga taught at your institute</label>
-                    <input type="text" name="description" ng-model="formData.description" class="form-control">
-                    <div class="error-msg" ng-if="userForm.description.$invalid && userForm.description.$touched">Please Enter Your Description</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Please select the amenities offered at your studio*</label>
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="amenities" id="1" value="lockers" ng-model="formData.amenities.lockers" ng-click="goToamenities('lockers')">
-                            <label class="text" for="1">
-                                Lockers
-                            </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="amenities" id="2" value="showers" ng-model="formData.amenities.showers" ng-click="goToamenities('showers')">
-                            <label class="text" for="2">
-                                Showers
-                            </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="amenities" id="3" value="changingRoom" ng-model="formData.amenities.changingRoom" ng-click="goToamenities('changingRoom')">
-                            <label class="text" for="3">
-                                Changing Room
-                            </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="amenities" id="4" value="yogaMats" ng-model="formData.amenities.yogaMats" ng-click="goToamenities('yogaMats')">
-                            <label class="text" for="4">
-                                Yoga Mats
-                            </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="amenities" id="5" value="other" ng-model="formData.amenities.other" ng-click="goToamenities('other')">
-                            <label class="labewidtxt" for="5">
-                                Other
-                            </label>
-                        </div>
-                        <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.amenities.other" ng-model="formData.myother">
-                    </div>
-                    <div class="error" ng-if="noamenities" style="font-size:16px;margin:10px 0 0;">
-                       Please select the amenities
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Style of Yoga   at your studio*</label>
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="style" id="6" value="Power Yoga" ng-model="formData.style.powerYoga" ng-click="goToyogaOffer('Power Yoga')">
-                            <label class="text" for="6">
-                                Power Yoga
-                            </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="style" id="7" value="Iyengar Yoga" ng-model="formData.style.iyengarYoga" ng-click="goToyogaOffer('Iyengar Yoga')">
-                            <label class="text" for="7">
-                                Iyengar Yoga
-                            </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="style" id="8" value="Ashtanga Yoga" ng-model="formData.style.ashtangaYoga" ng-click="goToyogaOffer('Ashtanga Yoga')">
-                            <label class="text" for="8">
-                                Ashtanga Yoga
-                            </label>
-                        </div>
-
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="style" id="9" value="Bikram Yoga" ng-model="formData.style.bikramYoga" ng-click="goToyogaOffer('Bikram Yoga')">
-                            <label class="text" for="9">
-                                Bikram Yoga
-                            </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="style" id="10" value="Vinyasa Yoga" ng-model="formData.style.vinyasaYoga" ng-click="goToyogaOffer('Vinyasa Yoga')">
-                            <label class="text" for="10">
-                                Vinyasa Yoga
-                            </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="style" id="11" value="Hatha Yoga" ng-model="formData.style.hathYoga" ng-click="goToyogaOffer('Hatha Yoga')">
-                            <label class="text" for="11">
-                                Hatha Yoga
-                            </label>
-                        </div>
-
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="style" id="12" value="Sivananda Yoga" ng-model="formData.style.sivanandaYoga" ng-click="goToyogaOffer('Sivananda Yoga')">
-                            <label class="text" for="12">
-                                Sivananda Yoga
-                            </label>
-                        </div>
-
-                        <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="style" id="13" value="other" ng-model="formData.style.other" ng-click="goToyogaOffer('other')">
-                            <label class="labewidtxt" for="13">
-                                Other
-                            </label>
-                        </div>
-                        <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.style.other" ng-model="formData.myotherYogaStyle">
-
-                    </div>
-
-                </div>
-                <div class="error" ng-if="noYogastyle" style="font-size:16px;margin:10px 0 0;">
-                   Please select Style of Yoga
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label>Please list the teachers/instructors at your studio</label>
-                    <input type="text" name="studio" ng-model="formData.studio" class="form-control">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Kindly provide the class level*</label>
-
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="teachingLevel" id="14" value="beginner" ng-model="formData.teachingLevel">
-                            <label class="text" for="14">
-                                Beginner
-                            </label>
-                        </div>
-
-                        <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="teachingLevel" id="15" value="advanced" ng-model="formData.teachingLevel">
-                            <label class="text" for="15">
-                                Advanced
-                            </label>
-                        </div>
-
-                        <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="teachingLevel" id="16" value="open level" ng-model="formData.teachingLevel">
-                            <label class="text" for="16">
-                                Open Level
-                            </label>
-                        </div>
-
-                        <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="teachingLevel" id="17" value="other" ng-model="formData.teachingLevel">
-                            <label class="labewidtxt" for="17">
-                                Other
-                            </label>
-                        </div>
-                        <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.teachingLevel == 'other'" ng-model="formData.otherCat">
-
-                    </div>
-                </div>
-                <div class="error" ng-if="teachingLevel" style="font-size:16px;margin:10px 0 0;">
-                   Please select class level
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Do you have an official website?*</label>
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="web" id="18" value="true" ng-model="formData.ifWebsite" required>
-                            <label class="text" for="18">
-                                Yes
-                            </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="web" id="19" value="false" ng-model="formData.ifWebsite" required>
-                            <label class="text" for="19">
-                                No
-                            </label>
-                        </div>
-                    </div>
-                    <div class="error" ng-if="officialWebsiteAddress" style="font-size:16px;margin:10px 0 0;">
-                       Please select one of these.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <input type="text" name="website" placeholder="Please provide your website address*"  class="form-control textbox-other" ng-if="formData.ifWebsite == 'true'" required ng-model="formData.officialWebsiteAddress">
-                    <div class="error-msg" ng-if="userForm.website.$invalid && userForm.website.$touched">Please provide your website address</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Please provide a link to your Facebook Page</label>
-                    <input type="text" name="facebookpagelink" ng-model="formData.facebookpagelink" class="form-control">
-                    <div class="error-msg" ng-if="userForm.facebookpagelink.$invalid && userForm.facebookpagelink.$touched">Please provide a link to your Facebook Page</div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Please provide a link to your Instagram account</label>
-                    <input type="text" name="instagrampagelink" ng-model="formData.instagrampagelink" class="form-control">
-                    <div class="error-msg" ng-if="userForm.instagrampagelink.$invalid && userForm.instagrampagelink.$touched">Please provide a link to your Instagram account</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Are you active on any other social media platforms?*</label>
-                    <input type="text" name="anyothersocialmedia"  class="form-control" ng-model="formData.isActiveSocial" required>
-                    <div class="error-msg" ng-if="userForm.anyothersocialmedia.$invalid && userForm.anyothersocialmedia.$touched">Are you active on any other social media platforms?</div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Do you have other branches?*</label>
-                    <div class="magic-form">
-                        <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="branches" id="20" value="true" ng-model="formData.ifBranches">
-                            <label class="text" for="20">
-                                Yes
-                            </label>
-                        </div>
-                        <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="branches" id="21" value="false" ng-model="formData.ifBranches">
-                            <label class="text" for="21">
-                                No
-                            </label>
-                        </div>
-                    </div>
-                    <div class="error" ng-if="listBranches" style="font-size:16px;margin:10px 0 0;">
-                       Please select one of these.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row" ng-if="formData.ifBranches == 'true'">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label>List the address for your branches*</label>
-                    <textarea name="branches"  class="form-control" required ng-model="formData.listBranches"></textarea>
-                            <div class="error-msg" ng-if="userForm.branches.$invalid && userForm.branches.$touched">List the address for your branches</div>
-                        </div>
-                    </div>
-                </div>-->
 
                 <div class="magic-form text-center">
                     <div class="magic-resize">
@@ -541,7 +282,7 @@
                 </div>
 
                 <div class="form-group text-center">
-                    <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ng-disabled="userForm.$invalid"><span ng-if="userForm.$invalid">Please Enter Compulsory fields</span><span  ng-if="!userForm.$invalid">Submit</span></button>
+                    <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ng-disabled="teacherForm.$invalid"><span ng-if="teacherForm.$invalid">Please Enter Compulsory fields</span><span  ng-if="!teacherForm.$invalid">Submit</span></button>
                 </div>
 
             </form>
