@@ -58,6 +58,19 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
             templateUrl: "views/template.html",
             controller: 'FormFoodieCtrl'
         })
+
+         .state('form-charity', {
+            url: "/form-charity",
+            templateUrl: "views/template.html",
+            controller: 'FormCharityCtrl'
+        })
+
+         .state('form-chef', {
+            url: "/form-chef",
+            templateUrl: "views/template.html",
+            controller: 'FormChefCtrl'
+        })
+
                 .state('form-teacher', {
             url: "/form-teacher",
             templateUrl: "views/template.html",
