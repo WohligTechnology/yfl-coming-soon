@@ -48,6 +48,13 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
             templateUrl: "views/template.html",
             controller: 'FormYogaLabelCollaborationCtrl'
         })
+
+              .state('form-product-manufacturer', {
+            url: "/form-product-manufacturer",
+            templateUrl: "views/template.html",
+            controller: 'FormProductManufacturerCtrl'
+        })
+
              .state('form-enthu', {
             url: "/form-enthu",
             templateUrl: "views/template.html",
