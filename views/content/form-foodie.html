@@ -109,11 +109,13 @@
       </div>
       </div>
         <div class="row">
+          <div class="head">  
+  <label>Professional Experience</label>
+          </div>
    
-          <div class="col-md-12">
-                 <div class="form-group">
-               <label>Professional Experience</label>
-               <select name="experience" id="sel1">
+          <div class="col-md-4">
+                 <div class="form-group">         
+               <select class="form-control" name="experience" id="sel1">
                   <option value="" ng-selected="true">Hr </option>
                   <option value="01">01</option>
                   <option value="02">02</option>
@@ -121,7 +123,11 @@
                   <option value="04">04</option>
                   <option value="05">05</option>
                </select>
-                <select name="experience" id="sel2">
+               </div>
+               </div>
+               <div class="col-md-4">
+                 <div class="form-group">
+                <select class="form-control" name="experience" id="sel2">
                   <option value="" ng-selected="true">Min</option>
                   <option value="01">01</option>
                   <option value="02">02</option>
@@ -129,13 +135,18 @@
                   <option value="04">04</option>
                   <option value="05">05</option>
                </select>
-                <select name="experience" id="sel3">
+                </div>
+               </div>
+               <div class="col-md-4">
+                 <div class="form-group">
+                <select class="form-control" name="experience" id="sel3">
                   <option value="" ng-selected="true">A.M</option>
                    <option value="P.M">P.M</option>
                </select>
+                </div>
+               </div>
             </div>
-          </div>
-          </div>
+          
    
      <div class="row">
     <div class="col-md-6">
@@ -231,5 +242,6 @@
 </div>
 <div class="submit-thank min-h1" ng-if="formComplete">
   <h3 class="text-center">Thank You, we'll get back to you soon.</h3>
-
+</div>
+          </div>
 </div>
