@@ -315,6 +315,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.goTo = function (data) {
         $state.go(data);
     };
+
+     $scope.popup2 = false;
+        $scope.showpopup = function (value) {
+            // $scope.popup = value == "y";
+            $scope.popup2 = value == "y";
+        }
 })
 
 .controller('FormTeacherCtrl', function ($scope, TemplateService, NavigationService, $timeout, $state) {

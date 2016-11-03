@@ -206,18 +206,21 @@ Fusion
                      </label>
                         </div>
                                      <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="cuisine" id="salads" value="salad" >
+                            <input class="magic-radio" type="radio" name="cuisine" id="salads" value="salad">
                             <label class="text" for="salads">
                    Salads
                      </label>
                         </div>
                                       <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="nutrition" id="otheroption" value="other" ng-model="formData.nutrition.other">
+                            <input class="magic-radio" type="radio" name="nutrition" id="otheroption" value="other" ng-model="formData.nutrition.other" ng-click="showpopup('y')">
                             <label class="text" for="otheroption">
                         Other
                      </label>
                         </div>
-                        <input ng-model="formData.myother" type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.nutrition.other">
+                        <div class="pop" ng-show="popup2">
+ <input ng-model="formData.myother" type="text" class="form-control textbox-other" placeholder="Please mention other" >
+                        </div>
+                       
 
                     </div>
                 </div>
