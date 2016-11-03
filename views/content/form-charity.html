@@ -7,6 +7,7 @@
 
 <div class="container main-form" ng-if="!formComplete">
     <h3 class="text-center">Please enter the below details</h3>
+      <p class="text-center">All questions must be answered which are marked *</p>
     <form name="charityForm" class="mid-form" ng-submit="submitCharityForm(formData)" ng-if="!formComplete">
          <h4>NGO details</h4>
         <hr>
@@ -146,9 +147,10 @@
           <label for="samples">End Date*(Choose a campaign end date)
 
                </label>
-          <input type="text" class="form-control " uib-datepicker-popup="{{format}}" is-open="popup1.opened" datepicker-options="dateOptions"
+          <input type="text" name="date" class="form-control " uib-datepicker-popup="{{format}}" is-open="popup1.opened" datepicker-options="dateOptions"
             ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-model="formData.endDate" />
           <a href="" class="down" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+          <div class="error-msg" ng-if="charityForm.date.$invalid && charityForm.date.$touched">Please Enter This Field</div>
         </div>
       </div>
       <div class="col-md-6">

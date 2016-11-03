@@ -7,6 +7,7 @@
 
 <div class="container main-form" ng-if="!formComplete">
   <h3 class="text-center">Please enter the below details</h3>
+    <p class="text-center">All questions must be answered which are marked *</p>
   <form name="nutrionistForm" class="mid-form" ng-submit="submitNutrionistForm(formData)" ng-if="!formComplete">
     <h4>Personal Details</h4>
     <hr>
@@ -113,8 +114,8 @@
       <div class="col-md-12">
         <div class="form-group">
           <label>Educational Qualifications*</label>
-          <input type="text" name="qualifications" class="form-control" ng-model="formData.qualifications">
-
+          <input type="text" name="qualifications" class="form-control" ng-model="formData.qualifications" required>
+<div class="error-msg" ng-if="nutrionistForm.qualifications.$invalid && nutrionistForm.qualifications.$touched ">Please Enter Your Qualifications</div>
         </div>
       </div>
       <div class="col-md-6">
@@ -233,7 +234,7 @@
     </div>
 
     <div class="form-group text-center">
-      <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ng-disabled="nutrionistForm.$invalid"><span ng-if="nutrionistForm.$invalid">Please Enter Compulsory fields</span><span ng-if="!nutrionistForm.$invalid">Submit</span></button>
+      <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn" ng-disabled="nutrionistForm.$invalid"><span ng-if="nutrionistForm.$invalid">Please Enter Mandate fields</span><span ng-if="!nutrionistForm.$invalid">Submit</span></button>
     </div>
   </form>
 </div>

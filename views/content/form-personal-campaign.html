@@ -7,6 +7,7 @@
 
 <div class="container main-form" ng-if="!formComplete">
   <h3 class="text-center">Please enter the below details</h3>
+    <p class="text-center">All questions must be answered which are marked *</p>
   <form name="campaignForm" class="mid-form" ng-submit="submitCampaign(formData)" ng-if="!formComplete">
     <h4>Personal Details</h4>
     <hr>
@@ -99,7 +100,7 @@
         <div class="form-group">
           <label>Address Line 1*</label>
           <input type="text" name="address1" ng-model="formData.address1" class="form-control" required>
-          <div class="error-msg" ng-if="campaignForm.address.$invalid && campaignForm.address1.$touched">Please Enter Your Address</div>
+          <div class="error-msg" ng-if="campaignForm.address1.$invalid && campaignForm.address1.$touched">Please Enter Your Address</div>
         </div>
       </div>
       <div class="col-md-12">
@@ -144,8 +145,9 @@
           <label for="samples">End Date *(Choose a campaign end date)
 
                </label>
-          <input type="text" class="form-control " uib-datepicker-popup="{{format}}" is-open="popup1.opened" datepicker-options="dateOptions"
-            ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-model="formData.endDate" />
+          <input type="text" name="date" class="form-control " uib-datepicker-popup="{{format}}" is-open="popup1.opened" datepicker-options="dateOptions"
+            ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-model="formData.endDate" /required>
+         <div class="error-msg" ng-if="campaignForm.date.$invalid && campaignForm.date.$touched">Please Fill This Field</div>
           <a href="" class="down" ng-click="open1()"><i class="fa fa-calendar" aria-hidden="true"></i></a>
         </div>
       </div>

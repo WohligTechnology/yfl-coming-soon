@@ -7,6 +7,7 @@
 
 <div class="container main-form" ng-if="!formComplete">
    <h3 class="text-center">Please enter the details below to collaborate with us</h3>
+     <p class="text-center">All questions must be answered which are marked *</p>
    <form name="restaurantForm" class="mid-form" ng-submit="submitRestaurantForm(formData)" ng-if="!formComplete">
       <h4>Your Personal Details</h4>
       <hr>
@@ -20,9 +21,9 @@
          </div>
          <div class="col-md-4">
             <div class="form-group">
-               <label>Middle Name*</label>
-               <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" required aplha-only>
-               <div class="error-msg" ng-if="restaurantForm.middleName.$invalid && restaurantForm.middleName.$touched">Please Enter Your Middle Name</div>
+               <label>Middle Name</label>
+               <input type="text" name="middleName" ng-model="formData.middleName" class="form-control"  aplha-only>
+               <!--<div class="error-msg" ng-if="restaurantForm.middleName.$invalid && restaurantForm.middleName.$touched">Please Enter Your Middle Name</div>-->
             </div>
          </div>
          <div class="col-md-4">
@@ -101,7 +102,7 @@
          <div class="col-md-6">
             <div class="form-group">
                <label>Zip Code</label>
-               <input type="text" name="zipcode" ng-model="formData.zipcode" class="form-control" numbers-only>
+               <input type="text" name="zipcode" ng-model="formData.zipcode" class="form-control" numbers-only required>
                <div class="error-msg" ng-if="restaurantForm.zipcode.$invalid && restaurantForm.zipcode.$touched">Please Enter Zip Code</div>
             </div>
          </div>
@@ -118,7 +119,7 @@
          <div class="col-md-6">
             <div class="form-group">
                <label>Phone Number</label>
-               <input type="text" name="resPhoneNumbers" ng-model="formData.resPhoneNumbers" class="form-control" numbers-only>
+               <input type="text" name="resPhoneNumbers" ng-model="formData.resPhoneNumbers" class="form-control" numbers-only required>
                <div class="error-msg" ng-if="restaurantForm.resPhoneNumbers.$invalid && restaurantForm.resPhoneNumbers.$touched">Please Enter Phone Number</div>
             </div>
             <div class="error" ng-if="resPhone">Phone Number is not valid </div>

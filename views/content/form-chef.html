@@ -7,6 +7,7 @@
 
 <div class="container main-form" ng-if="!formComplete">
     <h3 class="text-center">Please enter the below details</h3>
+      <p class="text-center">All questions must be answered which are marked *</p>
     <form name="chefForm" class="mid-form" ng-submit="submitChefForm(formData)" ng-if="!formComplete">
        
         <div class="row">
@@ -14,7 +15,7 @@
                 <div class="form-group">
                     <label>First Name*</label>
                     <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
-                    <div class="error-msg" ng-if="chefForm.firstName.$invalid && chefFartistFormorm.firstName.$touched">Please Enter Your First Name</div>
+                    <div class="error-msg" ng-if="chefForm.firstName.$invalid && chefForm.firstName.$touched">Please Enter Your First Name</div>
                 </div>
             </div>
             <div class="col-md-4">
@@ -53,7 +54,33 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label>Professional Experience (Years, months)</label>
-                    <input type="text" name="professionalExperience" class="form-control" ng-model="formData.professionalExperience">
+                    <div class="row">
+                          <div class="col-md-4">
+                 <div class="form-group">         
+               <select class="form-control" name="experience" id="sel1">
+                  <option value="" ng-selected="true">Years</option>
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+               </select>
+               </div>
+               </div>
+                 <div class="col-md-4">
+                 <div class="form-group">         
+               <select class="form-control" name="experience" id="sel1">
+                  <option value="" ng-selected="true">Months</option>
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+               </select>
+               </div>
+               </div>
+                    </div>
+                    <!--<input type="text" name="professionalExperience" class="form-control" ng-model="formData.professionalExperience">-->
                 </div>
             </div>
         </div>
@@ -185,11 +212,12 @@ Fusion
                      </label>
                         </div>
                                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="cuisine" id="other" value="others" >
+                            <input class="magic-radio" type="radio" name="cuisine" id="other"   ng-model="formData.cuisine.other" ng-click="mediafor('other')">
                             <label class="text" for="other">
                   Other:
                      </label>
                         </div>
+                         <input ng-model="formData.myother" type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.cuisine.other">
 
                     </div>
                 </div>

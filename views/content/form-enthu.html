@@ -7,6 +7,7 @@
 
 <div class="container main-form" ng-if="!formComplete">
   <h3 class="text-center">Please enter the below details</h3>
+    <p class="text-center">All questions must be answered which are marked *</p>
   <form name="enthusiastForm" class="mid-form" ng-submit="submitEnthusiastForm(formData)" ng-if="!formComplete">
     <h4>Personal Details</h4>
     <hr>
@@ -22,7 +23,7 @@
         <div class="form-group">
           <label>Middle Name</label>
           <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" required aplha-only>
-          <div class="error-msg" ng-if="enthusiastForm.middleName.$invalid && enthusiastForm.middleName.$touched">Please Enter Your Middle Name</div>
+          <!--<div class="error-msg" ng-if="enthusiastForm.middleName.$invalid && enthusiastForm.middleName.$touched">Please Enter Your Middle Name</div>-->
         </div>
       </div>
       <div class="col-md-4">
@@ -98,8 +99,8 @@
            <div class="col-md-6">
         <div class="form-group">
           <label>Age*</label>
-          <input type="text" name="age" ng-model="formData.age" class="form-control">
-            <div class="error-msg" ng-if="enthusiastForm.age.$invalid && enthusiastForm.age.$touched">Please Enter Your Age</div>
+          <input type="text" name="ages" ng-model="formData.ages" class="form-control" required>
+            <div class="error-msg" ng-if="enthusiastForm.ages.$invalid && enthusiastForm.ages.$touched">Please Enter Your Age</div>
         </div>
       </div>
       <div class="col-md-6">
@@ -121,8 +122,8 @@
       <div class="col-md-12">
         <div class="form-group">
           <label> Qualifications*</label>
-          <input type="text" name="qualifications" class="form-control" ng-model="formData.qualifications">
-
+          <input type="text" name="qualifications" class="form-control" ng-model="formData.qualifications" required>
+ <div class="error-msg" ng-if="enthusiastForm.qualifications.$invalid && enthusiastForm.qualifications.$touched">Please Enter Your Qualifications</div>
         </div>
       </div>
     </div>
@@ -130,16 +131,19 @@
        <div class="col-md-12">
         <div class="form-group">
           <label> Specialisation (Type of Yoga you practice) *</label>
-          <input type="text" name="Specialisation " class="form-control" ng-model="formData.Specialisation ">
-
+          <input type="text" name="specialisation " class="form-control" ng-model="formData.specialisation " required>
+<div class="error-msg" ng-if="enthusiastForm.specialisation.$invalid && enthusiastForm.specialisation.$touched">Please Enter Your Specialisation</div>
         </div>
       </div> 
 </div>
 <div class="row">
        <div class="col-md-12">
         <div class="form-group">
-          <label> Briefly mention about your experience in Learning/Teaching Yoga</label>
-          <input type="text" name="experience " class="form-control" ng-model="formData.experience ">
+          <label for="expo"> Briefly mention about your experience in Learning/Teaching Yoga</label>
+               <textarea rows="3" cols="50" class="form-control resize" id="expo" ng-model="formData.expo">
+
+               </textarea>
+          <!--<input type="text" name="experience " class="form-control" ng-model="formData.experience ">-->
 
         </div>
       </div> 

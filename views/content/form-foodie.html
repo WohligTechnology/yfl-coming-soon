@@ -7,6 +7,7 @@
 
 <div class="container main-form" ng-if="!formComplete">
   <h3 class="text-center">Please enter the below details</h3>
+    <p class="text-center">All questions must be answered which are marked *</p>
   <form name="foodieForm" class="mid-form" ng-submit="submitFoodieForm(formData)" ng-if="!formComplete">
     <h4>Personal Details</h4>
     <hr>
@@ -116,7 +117,7 @@
           <div class="col-md-4">
                  <div class="form-group">         
                <select class="form-control" name="experience" id="sel1">
-                  <option value="" ng-selected="true">Hr </option>
+                  <option value="" ng-selected="true">Years</option>
                   <option value="01">01</option>
                   <option value="02">02</option>
                   <option value="03">03</option>
@@ -128,7 +129,7 @@
                <div class="col-md-4">
                  <div class="form-group">
                 <select class="form-control" name="experience" id="sel2">
-                  <option value="" ng-selected="true">Min</option>
+                  <option value="" ng-selected="true">Months</option>
                   <option value="01">01</option>
                   <option value="02">02</option>
                   <option value="03">03</option>
@@ -137,14 +138,14 @@
                </select>
                 </div>
                </div>
-               <div class="col-md-4">
+               <!--<div class="col-md-4">
                  <div class="form-group">
                 <select class="form-control" name="experience" id="sel3">
                   <option value="" ng-selected="true">A.M</option>
                    <option value="P.M">P.M</option>
                </select>
                 </div>
-               </div>
+               </div>-->
             </div>
           
    
@@ -218,7 +219,7 @@
 <div class="row">
     <div class="col-md-12">
          <label>What makes you unique to collaborate with YogaFoodLove**(I am a foodie is not an acceptable answer)</label>
-          <input type="text" name="unique" ng-model="formData.unique" class="form-control">
+          <input type="text" name="unique" ng-model="formData.unique" class="form-control" required>
           <div class="error-msg" ng-if="foodieForm.unique.$invalid && foodieForm.unique.$touched">Please fill this field</div>
     </div>
 </div>

@@ -7,6 +7,7 @@
 
 <div class="container main-form" ng-if="!formComplete">
     <h3 class="text-center">Please enter the below details</h3>
+      <p class="text-center">All questions must be answered which are marked *</p>
     <form name="userForm" class="mid-form" ng-submit="submitYogaStudioForm(formData)">
         <h4>Personal Details</h4>
         <hr>
@@ -20,9 +21,9 @@
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label>Middle Name*</label>
-                    <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" required aplha-only>
-                    <div class="error-msg" ng-if="userForm.middleName.$invalid && userForm.middleName.$touched">Please Enter Your Middle Name</div>
+                    <label>Middle Name</label>
+                    <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" aplha-only>
+                    <!--<div class="error-msg" ng-if="userForm.middleName.$invalid && userForm.middleName.$touched">Please Enter Your Middle Name</div>-->
                 </div>
             </div>
             <div class="col-md-4">
@@ -98,7 +99,7 @@
                 <div class="form-group">
                     <label>Address Line 1*</label>
                     <input type="text" name="address" ng-model="formData.address1" class="form-control" required>
-                    <div class="error-msg" ng-if="userForm.address1.$invalid && userForm.address1.$touched">Please Enter Your Address</div>
+                    <div class="error-msg" ng-if="userForm.address.$invalid && userForm.address.$touched">Please Enter Your Address</div>
                 </div>
             </div>
             <div class="col-md-12">
@@ -240,8 +241,11 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <label>Please list the teachers/instructors at your studio</label>
-                    <input type="text" name="studio" ng-model="formData.studio" class="form-control">
+                    <label for="instructors">Please list the teachers/instructors at your studio</label>
+                    <!--<input type="text" name="studio" ng-model="formData.studio" class="form-control">-->
+                     <textarea rows="3" cols="50" class="form-control resize" id="instructors" ng-model="formData.instructors">
+
+               </textarea>
                 </div>
             </div>
         </div>

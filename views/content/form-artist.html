@@ -5,8 +5,10 @@
     </div>
 </div>
 
-<div class="container main-form" ng-if="!formComplete">
+
+<div class="container main-form " ng-if="!formComplete">
     <h3 class="text-center">Please enter the below details</h3>
+      <p class="text-center">All questions must be answered which are marked *</p>
     <form name="artistForm" class="mid-form" ng-submit="submitArtistForm(formData)" ng-if="!formComplete">
         <div class="row">
             <div class="col-md-4">
@@ -292,10 +294,19 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="form-group">
-                    <label for="worksample">Work Sample (Upload 3)
+                <div class="form-group mids-form">
+                    <label for="worksample" >Work Sample (Upload 3)
                </label>
-                    <input type="text" class="form-control" id="worksample" name="workSample" ng-model="formData.workSample">
+                   <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span>
+                  <input type="file" id="worksample" class="form-control">
+               </button>
+                <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span>
+                  <input type="file" id="worksample" class="form-control">
+               </button>
+                <button type="submit" class="btn btn-primary btn-texture btn-lg sub-btn relate choosing margin0"><span>Choose file</span>
+                  <input type="file" id="worksample" class="form-control">
+               </button>
+                    <!--<input type="text" class="form-control" id="worksample" name="workSample" ng-model="formData.workSample">-->
 
                 </div>
             </div>

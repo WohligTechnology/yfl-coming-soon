@@ -7,6 +7,7 @@
 
 <div class="container main-form" ng-if="!formComplete">
     <h3 class="text-center">Please enter the below details</h3>
+      <p class="text-center">All questions must be answered which are marked *</p>
     <form name="teacherForm" class="mid-form">
         <h4>Personal Details</h4>
         <hr>
@@ -20,9 +21,9 @@
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label>Middle Name*</label>
-                    <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" required aplha-only>
-                    <div class="error-msg" ng-if="teacherForm.middleName.$invalid && teacherForm.middleName.$touched">Please Enter Your Middle Name</div>
+                    <label>Middle Name</label>
+                    <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" aplha-only>
+                    <!--<div class="error-msg" ng-if="teacherForm.middleName.$invalid && teacherForm.middleName.$touched">Please Enter Your Middle Name</div>-->
                 </div>
             </div>
             <div class="col-md-4">
@@ -105,7 +106,7 @@
                 <div class="form-group">
                     <label>Address Line 1*</label>
                     <input type="text" name="address" ng-model="formData.address1" class="form-control" required>
-                    <div class="error-msg" ng-if="teacherForm.address1.$invalid && teacherForm.address1.$touched">Please Enter Your Address</div>
+                    <div class="error-msg" ng-if="teacherForm.address.$invalid && teacherForm.address.$touched">Please Enter Your Address</div>
                 </div>
             </div>
             <div class="col-md-6">
@@ -119,14 +120,14 @@
            <div class="col-md-6">
                 <div class="form-group">
                     <label>Are you a certified yoga teacher? If yes, please specify certification details. *</label>
-                    <input type="text" name="certification" ng-model="formData.certification" class="form-control">
+                    <input type="text" name="certification" ng-model="formData.certification" class="form-control" required>
                  <div class="error-msg" ng-if="teacherForm.certification.$invalid && teacherForm.certification.$touched">Please fill this field</div>
                 </div>
            </div>
            <div class="col-md-6">
  <div class="form-group">
                     <label>Other qualifications *</label>
-                    <input type="text" name="qualifications" ng-model="formData.qualifications" class="form-control">
+                    <input type="text" name="qualifications" ng-model="formData.qualifications" class="form-control" required>
                        <div class="error-msg" ng-if="teacherForm.qualifications.$invalid && teacherForm.qualifications.$touched">Please fill this field</div>  
                 </div>
            </div>
@@ -135,14 +136,14 @@
            <div class="col-md-6">
                 <div class="form-group">
                     <label>Professional Experience (in years) *</label>
-                    <input type="text" name="professional" ng-model="formData.professional" class="form-control">
+                    <input type="text" name="professional" ng-model="formData.professional" class="form-control" required>
                 <div class="error-msg" ng-if="teacherForm.professional.$invalid && teacherForm.professional.$touched">Please fill this field</div>  
                 </div>
            </div>
            <div class="col-md-6">
  <div class="form-group">
                     <label>Specialisation (Style of Yoga you teach) *</label>
-                    <input type="text" name="specialisation" ng-model="formData.specialisation" class="form-control">
+                    <input type="text" name="specialisation" ng-model="formData.specialisation" class="form-control" required>
                 <div class="error-msg" ng-if="teacherForm.specialisation.$invalid && teacherForm.specialisation.$touched">Please fill this field</div>  
                 </div>
            </div>
@@ -228,8 +229,8 @@
            <div class="col-md-6">
                 <div class="form-group">
                     <label>Are you active on any other social media platforms? (Pinterest, Youtube, Twitter, Google +, etc) *</label>
-                    <input type="text" name="social" ng-model="formData.social" class="form-control">
-                    <div class="error-msg" ng-if="teacherForm.social.$invalid && teacherForm.social.$touched">Please Enter Your Organisation</div>
+                    <input type="text" name="social" ng-model="formData.social" class="form-control" required>
+                    <div class="error-msg" ng-if="teacherForm.social.$invalid && teacherForm.social.$touched">Please Fill This Field</div>
                 </div>
            </div>
            <div class="col-md-6">
