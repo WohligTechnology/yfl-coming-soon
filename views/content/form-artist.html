@@ -317,13 +317,13 @@
                     <label>Would you be interested in doing a demonstration?</label>
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="demonstration" id="yess" value="true" ng-model="formData.demonstration">
+                            <input class="magic-radio" type="radio" name="demonstration" id="yess" value="true" ng-model="formData.demonstration" ng-click="showpopup('y')">
                             <label class="text" for="yess">
                         Yes
                      </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="demonstration" id="noo" value="false" ng-model="formData.demonstration">
+                            <input class="magic-radio" type="radio" name="demonstration" id="noo" value="false" ng-model="formData.demonstration" ng-click="showpopup('n')">
                             <label class="text" for="noo">
                         No
                      </label>
@@ -335,7 +335,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="form-group">
+                <div class="form-group " ng-show="popup2">
                     <label for="technique">If yes, what technique or craft would you be demonstrating?
                </label>
                     <input type="text" class="form-control" id="technique" name="techniqueCraft" ng-model="formData.techniqueCraft">
