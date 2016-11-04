@@ -693,6 +693,31 @@ hr {
        .sub-btn {      
         width: 25%;
     }
+    .form-group{
+        display: inline-block;
+        .btn-upload{
+        background-color: transparent !important;
+        background-image: url('../img/btn-primary.png');
+        background-size: 100% 100%;
+        border: 0 !important;
+        padding: 8px;
+        &:focus {
+            color: #fff;
+        }
+        &.btn-fb {
+            background-image: url('../img/btn-fb.png');
+        }
+        &.btn-danger {
+            background-image: url('../img/btn-danger.png');
+        }
+        &.btn-warning {
+            background-image: url('../img/btn-warning.png');
+        }
+        .btn-primary{
+            opacity: 0;
+        }
+        }
+    }
 }
 
 .blocker {
