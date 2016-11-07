@@ -15,22 +15,22 @@
       <div class="col-md-4">
         <div class="form-group">
           <label>First Name*</label>
-          <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" aplha-only>
-          <!--<div class="error-msg" ng-if="nutrionistForm.firstName.$invalid && nutrionistForm.firstName.$touched">Please Enter Your First Name</div>-->
+          <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
+          <div class="error-msg" ng-if="pmanufacturerForm.firstName.$invalid && pmanufacturerForm.firstName.$touched">Please Enter Your First Name</div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="form-group">
           <label>Middle Name</label>
-          <input type="text" name="middleName" ng-model="formData.middleName" class="form-control"  aplha-only>
-          <!--<div class="error-msg" ng-if="nutrionistForm.middleName.$invalid && nutrionistForm.middleName.$touched">Please Enter Your Middle Name</div>-->
+          <input type="text" name="middleName" ng-model="formData.middleName" class="form-control"  required aplha-only>
+          <div class="error-msg" ng-if="pmanufacturerForm.middleName.$invalid && pmanufacturerForm.middleName.$touched">Please Enter Your Middle Name</div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="form-group">
           <label>Last Name*</label>
-          <input type="text" name="lastName" ng-model="formData.lastName" class="form-control"  aplha-only>
-          <!--<div class="error-msg" ng-if="nutrionistForm.lastName.$invalid && nutrionistForm.lastName.$touched">Please Enter Your Last Name</div>-->
+          <input type="text" name="lastName" ng-model="formData.lastName" class="form-control"  required aplha-only>
+          <div class="error-msg" ng-if="pmanufacturerForm.lastName.$invalid && pmanufacturerForm.lastName.$touched">Please Enter Your Last Name</div>
         </div>
       </div>
     </div>
@@ -38,18 +38,18 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Mobile*</label>
-                    <input type="text" name="mobileNumber" ng-model="formData.mobileNumber" class="form-control" numbers-only>
-                    <!--<div class="error-msg" ng-if="pmanufacturerForm.mobileNumber.$invalid && pmanufacturerForm.mobileNumber.$touched">Please Enter Your Mobile</div>-->
+                    <input type="text" name="mobileNumber" ng-model="formData.mobileNumber" class="form-control" required numbers-only>
+                    <div class="error-msg" ng-if="pmanufacturerForm.mobileNumber.$invalid && pmanufacturerForm.mobileNumber.$touched">Please Enter Your Mobile</div>
                 </div>
-                <!--<div class="error" ng-if="validMobileno">Mobile Number is not valid or it should be 10 digits</div>-->
+                <div class="error" ng-if="validMobileno">Mobile Number is not valid or it should be 10 digits</div>
             </div>
             <div class="col-md-6">
                         <div class="form-group">
                     <label>Email*</label>
-                    <input type="email" name="email" ng-model="formData.email" class="form-control" >
-                    <!--<div class="error-msg" ng-if="pmanufacturerForm.email.$invalid && pmanufacturerForm.email.$touched">Please Enter Your Email Id</div>-->
+                    <input type="email" name="email" ng-model="formData.email" class="form-control"  required>
+                    <div class="error-msg" ng-if="pmanufacturerForm.email.$invalid && pmanufacturerForm.email.$touched">Please Enter Your Email Id</div>
                 </div>
-                <!--<div class="error" ng-if="exist">Email Id Already Exist</div>-->
+                <div class="error" ng-if="exist">Email Id Already Exist</div>
             </div>
         </div>
           
@@ -59,47 +59,49 @@
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Years Trading*</label>
-                     <select class="form-control" name="trading" ng-model="formData.trading">
+                     <select class="form-control" name="trading" ng-model="formData.trading" required>
                   <option ng-selected="true" value="">Select </option>
                   <option value="0-1">0-1</option>
                  <option value="1-2">1-2</option>
                 <option value="2-3">2-3</option>
                </select>
-          <!--<div class="error-msg" ng-if="pmanufacturerForm.trading.$invalid && pmanufacturerForm.trading.$touched">Please Select Your Cause</div>-->
+          <div class="error-msg" ng-if="pmanufacturerForm.trading.$invalid && pmanufacturerForm.trading.$touched">Please Select an Option</div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Number of Products*</label>
-                    <select class="form-control" name="products" ng-model="formData.products">
+                    <select class="form-control" name="products" ng-model="formData.products" required>
                   <option ng-selected="true" value="">Select </option>
                   <option value="1-2">1-2</option>
                  <option value="3-5">3-5</option>
                 <option value="6-10">6-10</option>
                </select>
-          <!--<div class="error-msg" ng-if="pmanufacturerForm.products.$invalid && pmanufacturerForm.products.$touched">Please Select Your Cause</div>-->
+          <div class="error-msg" ng-if="pmanufacturerForm.products.$invalid && pmanufacturerForm.products.$touched">Please Select an Option</div>
                 </div>
             </div>
             <div class="col-md-2">
                 <div class="form-group">
                     <label>Annual Gross Revenue*</label>
-                     <select class="form-control" name="revenue" ng-model="formData.revenue">
+                     <select class="form-control" name="revenue" ng-model="formData.revenue" required>
                   <option ng-selected="true" value="">Select </option>
                   <option value="I prefer not to say">I prefer not to say</option>
                  <option value="0-10L">0-10L</option>
                 <option value="1-20L">1-20L</option>
                </select>
+               <div class="error-msg" ng-if="pmanufacturerForm.revenue.$invalid && pmanufacturerForm.revenue.$touched">Please Select an Option</div>
                 </div>
             </div>
               <div class="col-md-4">
                 <div class="form-group">
                     <label>Which best describes your product industry?*</label>
-                     <select class="form-control" name="industry" ng-model="formData.industry">
+                     <select class="form-control" name="industry" ng-model="formData.industry" required>
                   <option ng-selected="true" value="">Select </option>
                   <option value="accessories">accessories</option>
                  <option value="arts/crafts">arts/crafts</option>
                 <option value="baby">baby</option>
                </select>
+                 <div class="error-msg" ng-if="pmanufacturerForm.industry.$invalid && pmanufacturerForm.industry.$touched">Please Select an Option</div>
                 </div>
             </div>
         </div>
@@ -107,7 +109,8 @@
             <div class="col-md-12">
         <div class="form-group">
           <label>Company Address*</label>
-          <input type="text" name="companyaddress" ng-model="formData.companyaddress" class="form-control"  aplha-only>
+          <input type="text" name="companyaddress" ng-model="formData.companyaddress" class="form-control"  required aplha-only>
+        <div class="error-msg" ng-if="pmanufacturerForm.companyaddress.$invalid && pmanufacturerForm.companyaddress.$touched">Please Enter Your Company's Address</div>
         </div>
       </div>
 
@@ -116,13 +119,15 @@
             <div class="col-md-6">
         <div class="form-group">
           <label>City*</label>
-          <input type="text" name="city" ng-model="formData.city" class="form-control"  aplha-only>
+          <input type="text" name="city" ng-model="formData.city" class="form-control" required aplha-only>
+          <div class="error-msg" ng-if="pmanufacturerForm.city.$invalid && pmanufacturerForm.city.$touched">Please Enter Your City</div>
         </div>
       </div>
               <div class="col-md-6">
         <div class="form-group">
           <label>Zipcode*</label>
-          <input type="text" name="zipcode" ng-model="formData.zipcode" class="form-control"  aplha-only>
+          <input type="text" name="zipcode" ng-model="formData.zipcode" class="form-control"  required aplha-only>
+            <div class="error-msg" ng-if="pmanufacturerForm.zipcode.$invalid && pmanufacturerForm.zipcode.$touched">Please Enter Your Zipcode</div>
         </div>
       </div>
 
@@ -131,18 +136,20 @@
             <div class="col-md-6">
         <div class="form-group">
           <label>State*</label>
-          <input type="text" name="state" ng-model="formData.state" class="form-control"  aplha-only>
+          <input type="text" name="state" ng-model="formData.state" class="form-control" required aplha-only>
+            <div class="error-msg" ng-if="pmanufacturerForm.state.$invalid && pmanufacturerForm.state.$touched">Please Enter Your State</div>
         </div>
       </div>
               <div class="col-md-6">
         <div class="form-group">
           <label>Country*</label>
-           <select class="form-control" name="country" ng-model="formData.country">
+           <select class="form-control" name="country" ng-model="formData.country" required>
                   <option ng-selected="true" value="">Select </option>
                   <option value="accessories">India</option>
                  <option value="arts/crafts">USA</option>
                 <option value="baby">New Zealand</option>
                </select>
+                <div class="error-msg" ng-if="pmanufacturerForm.country.$invalid && pmanufacturerForm.country.$touched">Please Select Your Country</div>
         </div>
       </div>
 
@@ -151,19 +158,22 @@
             <div class="col-md-4">
         <div class="form-group">
           <label>Contact Person*</label>
-          <input type="text" name="cperson" ng-model="formData.cperson" class="form-control"  aplha-only>
+          <input type="text" name="cperson" ng-model="formData.cperson" class="form-control"  required aplha-only>
+          <div class="error-msg" ng-if="pmanufacturerForm.cperson.$invalid && pmanufacturerForm.cperson.$touched">Please Enter Contact Person</div>
         </div>
       </div>
               <div class="col-md-4">
         <div class="form-group">
           <label>Landline Number*</label>
-          <input type="text" name="landline" ng-model="formData.landline" class="form-control"  aplha-only>
+          <input type="text" name="landline" ng-model="formData.landline" class="form-control"  required aplha-only>
+         <div class="error-msg" ng-if="pmanufacturerForm.landline.$invalid && pmanufacturerForm.landline.$touched">Please Enter Landline Number</div>
         </div>
       </div>
                 <div class="col-md-4">
         <div class="form-group">
           <label>Company Website*</label>
-          <input type="text" name="cwebsite" ng-model="formData.cwebsite" class="form-control"  aplha-only>
+          <input type="text" name="cwebsite" ng-model="formData.cwebsite" class="form-control"  required aplha-only>
+          <div class="error-msg" ng-if="pmanufacturerForm.cwebsite.$invalid && pmanufacturerForm.cwebsite.$touched">Please Enter Company's Website</div>
         </div>
       </div>
 
