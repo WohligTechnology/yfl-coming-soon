@@ -86,12 +86,13 @@
                         Organic Clothing
                      </label>
                   </div>
-                  <div class="magic-resize">
-                     <input class="magic-radio" type="radio" name="primarycategory" id="7" value="other" ng-model="formData.primaryCategory">
+                  <div class="magic-resize resizing">
+                     <!--<input class="magic-radio" type="radio" name="primarycategory" id="7" value="other" ng-model="formData.primaryCategory">-->
                      <label class="labewidtxt" for="7">
                         Other :
                         <input type="text" class="form-control textbox-other" placeholder="" ng-model="formData.otherCat">
                      </label>
+
                   </div>
                </div>
 
@@ -322,7 +323,7 @@
                         Other
                      </label>
                   </div>
-
+ <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.yogaproduct.other" ng-model="formData.myother">
                </div>
             </div>
          </div>

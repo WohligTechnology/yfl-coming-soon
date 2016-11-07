@@ -277,13 +277,14 @@
                             </label>
                         </div>
 
-                        <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="teachingLevel" id="17" value="other" ng-model="formData.teachingLevel">
+                        <div class="magic-resize resizing">
+                            <!--<input class="magic-radio" type="radio" name="teachingLevel" id="17" value="other" ng-model="formData.teachingLevel">-->
                             <label class="labewidtxt" for="17">
                                 Other
                             </label>
+                             <input type="text" class="form-control" placeholder="Please mention other" >
                         </div>
-                        <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.teachingLevel == 'other'" ng-model="formData.otherCat">
+                       
 
                     </div>
                 </div>

@@ -211,12 +211,11 @@ Fusion
                    Salads
                      </label>
                         </div>
-                                      <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="nutrition" id="otheroption" value="other" ng-model="formData.nutrition.other" ng-click="showpopup('y')">
-                            <label class="text" for="otheroption">
-                        Other
-                     </label>
-                        </div>
+                          <div class="magic-resize resizing">
+                     <label>Other:</label>
+                     <input type="text" class="form-control" placeholder="Please mention other">
+
+                  </div>
                         <div class="pop" ng-show="popup2">
  <input ng-model="formData.myother" type="text" class="form-control textbox-other" placeholder="Please mention other" >
                         </div>
@@ -249,13 +248,11 @@ Fusion
                       Blogger
                      </label>
                         </div>
-                            <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="ocollab" id="Other" value="true" ng-model="formData.ocollab.true">
-                            <label class="text" for="Other">
-                       Other
-                     </label>
-                        </div>
-                                <input ng-model="formData.myother" type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.ocollab.true">
+                              <div class="magic-resize resizing">
+                     <label>Other:</label>
+                     <input type="text" class="form-control" placeholder="Please mention other">
+
+                  </div>
                     </div>
                 </div>
             </div>

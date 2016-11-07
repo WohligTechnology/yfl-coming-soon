@@ -2001,5 +2001,22 @@ span:focus {
     margin-left: 15px;
 }
 
+//forms
+.resizing{
+    width: auto !important;
+    label{
+        margin-left: 0 !important;
+    }
+.form-control{
+    display: inline-block;
+    width: auto;
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+}
+
+
+
 @import "ruchi";
 @import "mobile";
