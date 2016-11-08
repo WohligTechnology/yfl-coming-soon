@@ -386,7 +386,7 @@
 
             <div class="form-group">
                <label>What is your annual turnover? *</label>
-               <select name="income" id="" ng-model="formData.annualTurnover" required>
+               <select name="income" class="form-control" id="" ng-model="formData.annualTurnover" required>
                   <option value="" ng-selected="true">Please select </option>
                   <option value="Less-1lakh">Less Than 1 lakh</option>
                   <option value="Btwn 1-10 l">Between 1 lakh and 10 lakh</option>
@@ -394,12 +394,13 @@
                   <option value="More-1crore">More than 1 crore</option>
                   <option value="unknown">I don't know</option>
                </select>
+               <div class="error-msg" ng-if="labelForm.income.$invalid && labelForm.income.$touched">Please Select an Option</div>
             </div>
          </div>
          <div class="col-md-6">
             <div class="form-group">
                <label>How many products do you sell? *</label>
-               <select name="sales" id="" ng-model="formData.productSell" required>
+               <select name="sales" class="form-control"  id="" ng-model="formData.productSell" required>
                   <option value="" ng-selected="true">Please select </option>
                   <option value="1-10">1-10</option>
                   <option value="11-100">11-100</option>
@@ -407,6 +408,7 @@
                   <option value="More-500">More than 500</option>
                   <option value="unknown">I don't know</option>
                </select>
+               <div class="error-msg" ng-if="labelForm.sales.$invalid && labelForm.sales.$touched">Please Select an Option</div>
             </div>
          </div>
       </div>
