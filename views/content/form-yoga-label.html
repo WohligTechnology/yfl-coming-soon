@@ -46,7 +46,7 @@
          </div>
       </div>
       <div class="row">
-         <div class="col-md-6">
+         <div class="col-md-12">
             <div class="form-group">
                <label>Primary Category*</label>
                <div class="magic-form">
@@ -157,31 +157,36 @@
       <hr>
       <p>If you sell only Books or Fabrics/Textiles (unstitched) then you are generally exempted from providing VAT & CST registration number.</p>
       <div class="row">
-         <div class="col-md-4">
+         <div class="col-md-6">
             <div class="form-group">
                <label>Pan number*</label>
                <input type="text" name="pan" ng-model="formData.pan" class="form-control" placeholder="" required>
                <div class="error-msg" ng-if="labelForm.pan.$invalid && labelForm.pan.$touched"> Please Enter Your Pan number</div>
             </div>
+            </div>
+              <div class="col-md-6">
             <div class="form-group">
                <label>VAT / TIN Number*</label>
                <input type="text" name="vatTin" ng-model="formData.vatTin" class="form-control" placeholder="" required>
                <div class="error-msg" ng-if="labelForm.vatTin.$invalid && labelForm.vatTin.$touched"> Please Enter Your Vat/TIN number</div>
             </div>
+            </div>
+           
+      </div>
+      <div class="row">
+         <div class="col-md-6">
             <div class="form-group">
                <label>CST number*</label>
                <input type="text" name="cst" ng-model="formData.cst" class="form-control" placeholder="" required>
                <div class="error-msg" ng-if="labelForm.cst.$invalid && labelForm.cst.$touched"> Please Enter Your CST number</div>
             </div>
          </div>
-      </div>
-      <div class="row">
          <div class="col-md-6">
             <div class="form-group">
                <label>Don't have VAT/CST?</label>
 
                <div class="magic-form">
-                  <div class="magic-resize">
+                  <div class="magic-resize w0">
                      <input class="magic-checkbox" type="checkbox" name="isVatCst" id="8" value="option3">
                      <label class="text" for="8">
                         Sell in VAT exempted categories
@@ -334,7 +339,7 @@
             <div class="form-group">
                <label>Other</label>
                <div class="magic-form">
-                  <div class="magic-resize">
+                  <div class="magic-resize w0">
                      <input class="magic-checkbox" type="checkbox" name="BHG" id="26" value="option8" ng-model="formData.other">
                      <label class="text" for="26">
                         My Category is not here
