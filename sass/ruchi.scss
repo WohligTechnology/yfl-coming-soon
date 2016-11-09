@@ -1,8 +1,8 @@
 $green:#51b1ac;
 .style-detail {
     .style-banner {
-        height: 300px;
-        background-image: url("../img/anusura.jpg");
+        height: 430px;
+        background-image: url("../img/teacher/r7.jpg");
     }
     .more {
         color: #51b1ac;
@@ -19,6 +19,12 @@ $green:#51b1ac;
     }
     .detail-text {
         padding: 20px 0;
+    }
+    .relative{
+        border:none;
+        &:hover{
+            border:none;
+        }
     }
 }
 
@@ -113,6 +119,7 @@ $green:#51b1ac;
 }
 
 .teacher-listing {
+       
     .teachers-list {
         padding: 15px;
         width: 100%;
@@ -133,6 +140,7 @@ $green:#51b1ac;
     .style-banner {
         height: 320px;
         background-image: url("../img/teacher/teaching.jpg");
+     
     }
     .rounded {
         position: absolute;
@@ -170,8 +178,9 @@ $green:#51b1ac;
 .style-listing {
     .style-banner {
         height: 320px;
-        background-image: url("../img/teacher/teaching.jpg");
+        background-image: url("../img/teacher/r7.jpg");
     }
+  
     .teachers-list {
         padding: 15px;
         width: 100%;
@@ -309,62 +318,6 @@ $green:#51b1ac;
     font-size: 24px;
 }
 
-// .home-slider .flex-direction-nav a.flex-prev:before {
-//     content: '';
-//     background: url(../img/restaurant/left1.png) center no-repeat;
-//     width: 64px;
-//     height: 62px;
-// }
-// .home-slider .flex-direction-nav a.flex-next:before {
-//     content: '';
-//     background: url(../img/restaurant/right1.png) center no-repeat;
-//     width: 64px;
-//     height: 62px;
-// }
-// .flex-direction-nav a:before {
-//     font-family: flexslider-icon;
-//     font-size: 40px;
-//     display: inline-block;
-//     content: '\f001';
-// }
-// .flex-direction-nav a,
-// .flex-direction-nav a:before {
-//     color: rgba(0, 0, 0, .8);
-//     text-shadow: 1px 1px 0 rgba(255, 255, 255, .3);
-// }
-// .home-slider .flex-direction-nav .flex-prev {
-//     left: 80px;
-// }
-// .home-slider .flex-direction-nav a {
-//     width: 64px;
-//     height: 66px;
-//     opacity: 1;
-// }
-// .flex-direction-nav .flex-prev {
-//     left: -50px;
-// }
-// .flex-direction-nav a {
-//     text-decoration: none;
-//     display: block;
-//     width: 40px;
-//     height: 40px;
-//     margin: -20px 0 0;
-//     position: absolute;
-//     top: 50%;
-//     z-index: 10;
-//     overflow: hidden;
-//     opacity: 0;
-//     cursor: pointer;
-//     transition: all .3s ease-in-out;
-// }
-// .home-slider .flex-direction-nav .flex-next {
-//     right: 80px;
-//     text-align: right;
-// }
-//
-// .flexslider .flex-direction-nav a {
-//     display: block;
-// }
 .flexslider {
     border: none;
     margin: 0;
@@ -987,6 +940,11 @@ placeholder {
     }
 }
 
-// .glyphicon-star:before {
-//     content: "\f006";
-// }
+.style-listing,.teacher-listing{
+      .relative{
+            border:none !important;
+            &:hover{
+                border:none !important;
+            }
+        }
+}

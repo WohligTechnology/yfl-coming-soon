@@ -374,27 +374,7 @@ a {
                 }
             }
         }
-        //   .newsletter {
-        //     width: 100%;
-        //     float: left;
-        //     position: relative;
-        //     margin: 22px 0px;
-        //      input {
-        //       background-color: white;
-        //       color: black;
-        //       height: 65px;
-        //       max-width: 300px;
-        //       font-size: 15px;
-        //    }
-        //    .submit{
-        //      font-size: 36px;
-        //      max-width: 57px;
-        //      height: 65px;
-        //      background-color: #97d3d3;
-        //      padding: 5px 0 5px 13px;
-        //      color: #fff;
-        //    }
-        // }
+        
     }
 }
 
@@ -492,7 +472,6 @@ footer {
 }
 
 .copyright {
-    // width: 50%;
     font-family: $font-family-sans-serif;
     font-weight: 700;
     float: left;
@@ -589,7 +568,6 @@ footer {
         background-color: #fff;
     }
     .copyright {
-        // width: 50%;
         font-family: $font-family-sans-serif;
         font-weight: 700;
         float: left;
@@ -792,7 +770,6 @@ hr {
         .magic-checkbox,
         .magic-radio {
             position: relative;
-            // display: none;
         }
         .magic-checkbox[disabled],
         .magic-radio[disabled] {
@@ -804,7 +781,7 @@ hr {
             display: block;
             padding: 5px 0 0;
             cursor: pointer;
-            vertical-align: middle;
+            // vertical-align: middle;
             &:hover {
                 &:before {
                     animation-duration: 0.4s;
@@ -1030,7 +1007,6 @@ hr {
 .logo-header {
     display: inline-block;
     width: 55px;
-    // padding: 10px 0 0;
     img {
         width: 100%;
         height: auto;
@@ -1133,7 +1109,6 @@ hr {
     padding: 3px 0 0;
     a {
         &:hover {
-            //   color: #000 !important;
             text-decoration: none;
         }
         &:focus {
@@ -1185,18 +1160,10 @@ hr {
     }
 }
 
-// .title{
-//   text-transform: uppercase;
-//   padding: 15px;
-//   vertical-align: middle;
-//   display: inline-block;
-//   cursor: pointer;
-// }
 .logo-header {
     display: inline-block;
     width: 160px;
     margin-top: 5px;
-    // padding: 5px 0 ;
     img {
         width: 100%;
         height: auto;
@@ -1420,7 +1387,6 @@ hr {
     right: 0;
     input[type="search"] {
         border: none;
-        // border-bottom: 1px solid #b0b0b0;
         padding: 0 65px 0 0;
     }
     .close {
@@ -1497,7 +1463,6 @@ hr {
     bottom: 0;
     right: 0;
     display: block;
-    // height: 600px;
     background: rgba(0, 0, 0, 0.35);
 }
 
@@ -1947,10 +1912,6 @@ $green: #51b1ac !default;
 
 .glyphicon {
     color: $brand-warning;
-    // &:hover{
-    //   color: $main;
-    //   color:#333;
-    // }
     &:active {
         color: $brand-warning;
     }
@@ -1987,7 +1948,6 @@ $green: #51b1ac !default;
         .decsription {
             p {
                 width: 500px;
-                // padding-bottom: 15px;
             }
             .more {
                 color: #51b1ac;
@@ -2026,6 +1986,18 @@ span:focus {
 
 }
 
+.studio-detail{
+    .table{
+        .reserve-book{
+            .relative{
+                 border:none;
+                 &:hover{
+                     border-color:transparent;
+                 }
+            }
+        }
+    }
+}
 
 
 @import "ruchi";
