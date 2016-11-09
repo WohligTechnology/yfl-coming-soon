@@ -252,6 +252,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
 
     $scope.goTo = function (data) {
+        console.log("data",data);
         $state.go(data);
     };
 })

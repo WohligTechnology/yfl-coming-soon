@@ -99,7 +99,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
 
 
     .state('form-nutrionist', {
-        url: "/form-nutrionist",
+        url: "/form-nutritionist",
         templateUrl: "views/template.html",
         controller: 'FormNutrionistCtrl'
     })
