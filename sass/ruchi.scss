@@ -127,9 +127,7 @@ $green:#51b1ac;
         margin-bottom: 10px;
         box-shadow: 2px 2px 2px #ccc;
     }
-    .bg-grey {
-        background-color: rgba(204, 204, 204, .14);
-    }
+   
     .sort .select-cl {
         border-color: #464646;
         height: 35px;
@@ -948,4 +946,7 @@ placeholder {
                 border:none !important;
             }
         }
+         .bg-grey {
+        background-image: url("../img/brush.png");
+    }
 }
